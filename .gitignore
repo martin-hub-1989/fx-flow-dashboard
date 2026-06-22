@@ -1,0 +1,35 @@
+# Runtime artifacts
+data/monthly_brief.sqlite
+data/update_plan.json
+data/update_report.json
+reports/fx_flow_dashboard.html
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Node
+node_modules/
+
+# Temp
+*.tmp
+*.swp
+
+# Large data files (kept locally, not in repo)
+FX Chartbook - Flow 0515.xlsx
+待处理数据.xlsx
+
+# Inspection outputs (large JSON)
+.inspection/deep_inventory.json
+.inspection/series_extract.json
+.inspection/artifact_*.log
