@@ -33,3 +33,4 @@ FX Chartbook - Flow 0515.xlsx
 .inspection/deep_inventory.json
 .inspection/series_extract.json
 .inspection/artifact_*.log
+.inspection/node_modules

@@ -1,0 +1,3452 @@
+[
+  {
+    "series_id": "fdi:AQ",
+    "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:差额:当季值",
+    "module": "3.FDI",
+    "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:差额:当季值",
+    "frequency": "季",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        -345.356382
+      ],
+      [
+        "2026-04-30",
+        -125.844403
+      ],
+      [
+        "2026-05-31",
+        -360.242138
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:AR",
+    "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:当季值",
+    "module": "3.FDI",
+    "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:当季值",
+    "frequency": "季",
+    "unit": "343",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        151.622646
+      ],
+      [
+        "2026-04-30",
+        185.13867
+      ],
+      [
+        "2026-05-31",
+        -0.501556
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:AS",
+    "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:当季值",
+    "module": "3.FDI",
+    "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:当季值",
+    "frequency": "季",
+    "unit": "-444",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        -496.979027
+      ],
+      [
+        "2026-04-30",
+        -310.983073
+      ],
+      [
+        "2026-05-31",
+        -359.740582
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:AT",
+    "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:股权:当季值",
+    "module": "3.FDI",
+    "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:股权:当季值",
+    "frequency": "季",
+    "unit": "382",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        221.833556
+      ],
+      [
+        "2026-04-30",
+        190.581388
+      ],
+      [
+        "2026-05-31",
+        52.060553
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:AU",
+    "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:关联企业债务:当季值",
+    "module": "3.FDI",
+    "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:关联企业债务:当季值",
+    "frequency": "季",
+    "unit": "-39",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        -70.210911
+      ],
+      [
+        "2026-04-30",
+        -5.442718
+      ],
+      [
+        "2026-05-31",
+        -52.562109
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:AV",
+    "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:股权:当季值",
+    "module": "3.FDI",
+    "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:股权:当季值",
+    "frequency": "季",
+    "unit": "-365",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        -338.123803
+      ],
+      [
+        "2026-04-30",
+        -290.491086
+      ],
+      [
+        "2026-05-31",
+        -414.767309
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:AW",
+    "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:关联企业债务:当季值",
+    "module": "3.FDI",
+    "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:关联企业债务:当季值",
+    "frequency": "季",
+    "unit": "-79",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        -158.855224
+      ],
+      [
+        "2026-04-30",
+        -20.491987
+      ],
+      [
+        "2026-05-31",
+        55.026727
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:B",
+    "display_name": "实际使用外资金额:外商直接投资:当月值",
+    "module": "3.FDI",
+    "wind_indicator": "实际使用外资金额:外商直接投资:当月值",
+    "frequency": "月",
+    "unit": "亿美元",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ],
+      [
+        "2026-05-31",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:BD",
+    "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:差额:当季值:年度:合计值",
+    "module": "3.FDI",
+    "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:差额:当季值:年度:合计值",
+    "frequency": "年",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        -198.463717
+      ],
+      [
+        "2026-04-30",
+        -1743.30476
+      ],
+      [
+        "2026-05-31",
+        -1495.53458
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:BE",
+    "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:当季值:年度:合计值",
+    "module": "3.FDI",
+    "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:当季值:年度:合计值",
+    "frequency": "年",
+    "unit": "343",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        1902.037891
+      ],
+      [
+        "2026-04-30",
+        513.380768
+      ],
+      [
+        "2026-05-31",
+        426.46542
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:BF",
+    "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:当季值:年度:合计值",
+    "module": "3.FDI",
+    "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:当季值:年度:合计值",
+    "frequency": "年",
+    "unit": "-444",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        -2100.501608
+      ],
+      [
+        "2026-04-30",
+        -2256.685528
+      ],
+      [
+        "2026-05-31",
+        -1922.0
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:BG",
+    "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:股权:当季值:年度:合计值",
+    "module": "3.FDI",
+    "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:股权:当季值:年度:合计值",
+    "frequency": "年",
+    "unit": "382",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        1687.023696
+      ],
+      [
+        "2026-04-30",
+        869.236174
+      ],
+      [
+        "2026-05-31",
+        743.804184
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:BH",
+    "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:关联企业债务:当季值:年度:合计值",
+    "module": "3.FDI",
+    "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:关联企业债务:当季值:年度:合计值",
+    "frequency": "年",
+    "unit": "-39",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        215.014194
+      ],
+      [
+        "2026-04-30",
+        -355.855405
+      ],
+      [
+        "2026-05-31",
+        -317.338764
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:BI",
+    "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:股权:当季值:年度:合计值",
+    "module": "3.FDI",
+    "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:股权:当季值:年度:合计值",
+    "frequency": "年",
+    "unit": "-365",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        -1415.107234
+      ],
+      [
+        "2026-04-30",
+        -1510.844902
+      ],
+      [
+        "2026-05-31",
+        -1509.4
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:BJ",
+    "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:关联企业债务:当季值:年度:合计值",
+    "module": "3.FDI",
+    "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:关联企业债务:当季值:年度:合计值",
+    "frequency": "年",
+    "unit": "-79",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        -685.394375
+      ],
+      [
+        "2026-04-30",
+        -745.840627
+      ],
+      [
+        "2026-05-31",
+        -412.6
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:C",
+    "display_name": "实际使用外资金额:合计:累计值",
+    "module": "3.FDI",
+    "wind_indicator": "实际使用外资金额:合计:累计值",
+    "frequency": "月",
+    "unit": "亿美元",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ],
+      [
+        "2026-05-31",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:D",
+    "display_name": "实际使用外资金额:外商直接投资:累计值",
+    "module": "3.FDI",
+    "wind_indicator": "实际使用外资金额:外商直接投资:累计值",
+    "frequency": "月",
+    "unit": "亿美元",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ],
+      [
+        "2026-05-31",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:E",
+    "display_name": "制造业:实际使用外商直接投资:累计值",
+    "module": "3.FDI",
+    "wind_indicator": "制造业:实际使用外商直接投资:累计值",
+    "frequency": "月",
+    "unit": "亿美元",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ],
+      [
+        "2026-05-31",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:F",
+    "display_name": "服务业:实际使用外商直接投资:累计值",
+    "module": "3.FDI",
+    "wind_indicator": "服务业:实际使用外商直接投资:累计值",
+    "frequency": "月",
+    "unit": "亿美元",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ],
+      [
+        "2026-05-31",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:G",
+    "display_name": "非金融类对外直接投资:当月值",
+    "module": "3.FDI",
+    "wind_indicator": "非金融类对外直接投资:当月值",
+    "frequency": "月",
+    "unit": "亿美元",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        125.2
+      ],
+      [
+        "2026-04-30",
+        120.7
+      ],
+      [
+        "2026-05-31",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:H",
+    "display_name": "非金融类对外直接投资:累计值",
+    "module": "3.FDI",
+    "wind_indicator": "非金融类对外直接投资:累计值",
+    "frequency": "月",
+    "unit": "亿美元",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        335.1
+      ],
+      [
+        "2026-04-30",
+        455.8
+      ],
+      [
+        "2026-05-31",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:I",
+    "display_name": "银行代客结汇:直接投资:当月值",
+    "module": "3.FDI",
+    "wind_indicator": "银行代客结汇:直接投资:当月值",
+    "frequency": "月",
+    "unit": "亿美元",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        47.9078
+      ],
+      [
+        "2026-04-30",
+        34.1261
+      ],
+      [
+        "2026-05-31",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:J",
+    "display_name": "银行代客售汇:直接投资:当月值",
+    "module": "3.FDI",
+    "wind_indicator": "银行代客售汇:直接投资:当月值",
+    "frequency": "月",
+    "unit": "亿美元",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        73.4575
+      ],
+      [
+        "2026-04-30",
+        55.4387
+      ],
+      [
+        "2026-05-31",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:K",
+    "display_name": "中国:实际使用外资金额:外商直接投资:人民币:当月值",
+    "module": "3.FDI",
+    "wind_indicator": "中国:实际使用外资金额:外商直接投资:人民币:当月值",
+    "frequency": "月",
+    "unit": "亿元",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        881.5
+      ],
+      [
+        "2026-04-30",
+        380.9
+      ],
+      [
+        "2026-05-31",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:L",
+    "display_name": "中国:实际使用外资金额:外商直接投资:人民币:累计值",
+    "module": "3.FDI",
+    "wind_indicator": "中国:实际使用外资金额:外商直接投资:人民币:累计值",
+    "frequency": "月",
+    "unit": "亿元",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        2496.0
+      ],
+      [
+        "2026-04-30",
+        2876.9
+      ],
+      [
+        "2026-05-31",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:M",
+    "display_name": "中国:中间价:美元兑人民币:月:平均值",
+    "module": "3.FDI",
+    "wind_indicator": "中国:中间价:美元兑人民币:月:平均值",
+    "frequency": "月",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        6.903690909090909
+      ],
+      [
+        "2026-04-30",
+        6.868314285714286
+      ],
+      [
+        "2026-05-31",
+        6.838516666666667
+      ]
+    ]
+  },
+  {
+    "series_id": "fdi:X",
+    "display_name": "Column_X",
+    "module": "3.FDI",
+    "wind_indicator": "",
+    "frequency": "monthly",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        3.0
+      ],
+      [
+        "2026-03-31",
+        2.0
+      ],
+      [
+        "2026-04-30",
+        1.0
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_cspot:AH",
+    "display_name": "Column_AH",
+    "module": "3.代客即期",
+    "wind_indicator": "",
+    "frequency": "monthly",
+    "unit": "货物贸易",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-01-31",
+        3.0
+      ],
+      [
+        "2026-02-28",
+        2.0
+      ],
+      [
+        "2026-03-31",
+        1.0
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_cspot:B",
+    "display_name": "银行代客结汇:经常项目:当月值",
+    "module": "3.代客即期",
+    "wind_indicator": "银行代客结汇:经常项目:当月值",
+    "frequency": "月",
+    "unit": "2007.3795",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        1698.381
+      ],
+      [
+        "2026-03-31",
+        2244.0861
+      ],
+      [
+        "2026-04-30",
+        2007.3795
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_cspot:BB",
+    "display_name": "Column_BB",
+    "module": "3.代客即期",
+    "wind_indicator": "",
+    "frequency": "monthly",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2024-10-31",
+        -70.53796666666666
+      ],
+      [
+        "2024-11-30",
+        -58.82103333333333
+      ],
+      [
+        "2024-12-31",
+        -91.57706666666668
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_cspot:C",
+    "display_name": "银行代客结汇:货物贸易:当月值",
+    "module": "3.代客即期",
+    "wind_indicator": "银行代客结汇:货物贸易:当月值",
+    "frequency": "月",
+    "unit": "1801.685",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        1518.1965
+      ],
+      [
+        "2026-03-31",
+        2018.5956
+      ],
+      [
+        "2026-04-30",
+        1801.685
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_cspot:D",
+    "display_name": "银行代客结汇:服务贸易:当月值",
+    "module": "3.代客即期",
+    "wind_indicator": "银行代客结汇:服务贸易:当月值",
+    "frequency": "月",
+    "unit": "159.7152",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        140.6394
+      ],
+      [
+        "2026-03-31",
+        176.4173
+      ],
+      [
+        "2026-04-30",
+        159.7152
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_cspot:E",
+    "display_name": "银行代客结汇:收益和经常转移:当月值",
+    "module": "3.代客即期",
+    "wind_indicator": "银行代客结汇:收益和经常转移:当月值",
+    "frequency": "月",
+    "unit": "45.9793",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        39.5451
+      ],
+      [
+        "2026-03-31",
+        49.0732
+      ],
+      [
+        "2026-04-30",
+        45.9793
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_cspot:F",
+    "display_name": "银行代客结汇:资本与金融项目:当月值",
+    "module": "3.代客即期",
+    "wind_indicator": "银行代客结汇:资本与金融项目:当月值",
+    "frequency": "月",
+    "unit": "493.4597",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        298.2535
+      ],
+      [
+        "2026-03-31",
+        396.9896
+      ],
+      [
+        "2026-04-30",
+        493.4597
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_cspot:G",
+    "display_name": "银行代客结汇:直接投资:当月值",
+    "module": "3.代客即期",
+    "wind_indicator": "银行代客结汇:直接投资:当月值",
+    "frequency": "月",
+    "unit": "34.1261",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        31.3508
+      ],
+      [
+        "2026-03-31",
+        47.9078
+      ],
+      [
+        "2026-04-30",
+        34.1261
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_cspot:H",
+    "display_name": "银行代客结汇:证券投资:当月值",
+    "module": "3.代客即期",
+    "wind_indicator": "银行代客结汇:证券投资:当月值",
+    "frequency": "月",
+    "unit": "444.8627",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        256.3958
+      ],
+      [
+        "2026-03-31",
+        326.2125
+      ],
+      [
+        "2026-04-30",
+        444.8627
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_cspot:I",
+    "display_name": "银行代客售汇:经常项目:当月值",
+    "module": "3.代客即期",
+    "wind_indicator": "银行代客售汇:经常项目:当月值",
+    "frequency": "月",
+    "unit": "1663.7398",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        1174.9584
+      ],
+      [
+        "2026-03-31",
+        1771.2031
+      ],
+      [
+        "2026-04-30",
+        1663.7398
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_cspot:J",
+    "display_name": "银行代客售汇:货物贸易:当月值",
+    "module": "3.代客即期",
+    "wind_indicator": "银行代客售汇:货物贸易:当月值",
+    "frequency": "月",
+    "unit": "1325.0503",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        918.4495
+      ],
+      [
+        "2026-03-31",
+        1419.3361
+      ],
+      [
+        "2026-04-30",
+        1325.0503
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_cspot:K",
+    "display_name": "银行代客售汇:服务贸易:当月值",
+    "module": "3.代客即期",
+    "wind_indicator": "银行代客售汇:服务贸易:当月值",
+    "frequency": "月",
+    "unit": "276.3415",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        236.329
+      ],
+      [
+        "2026-03-31",
+        312.0538
+      ],
+      [
+        "2026-04-30",
+        276.3415
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_cspot:L",
+    "display_name": "银行代客售汇:收益和经常转移:当月值",
+    "module": "3.代客即期",
+    "wind_indicator": "银行代客售汇:收益和经常转移:当月值",
+    "frequency": "月",
+    "unit": "62.348",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        20.1799
+      ],
+      [
+        "2026-03-31",
+        39.8132
+      ],
+      [
+        "2026-04-30",
+        62.348
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_cspot:M",
+    "display_name": "银行代客售汇:资本与金融项目:当月值",
+    "module": "3.代客即期",
+    "wind_indicator": "银行代客售汇:资本与金融项目:当月值",
+    "frequency": "月",
+    "unit": "416.8323",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        269.8242
+      ],
+      [
+        "2026-03-31",
+        515.2547
+      ],
+      [
+        "2026-04-30",
+        416.8323
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_cspot:N",
+    "display_name": "银行代客售汇:直接投资:当月值",
+    "module": "3.代客即期",
+    "wind_indicator": "银行代客售汇:直接投资:当月值",
+    "frequency": "月",
+    "unit": "55.4387",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        42.3799
+      ],
+      [
+        "2026-03-31",
+        73.4575
+      ],
+      [
+        "2026-04-30",
+        55.4387
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_cspot:O",
+    "display_name": "银行代客售汇:证券投资:当月值",
+    "module": "3.代客即期",
+    "wind_indicator": "银行代客售汇:证券投资:当月值",
+    "frequency": "月",
+    "unit": "328.4384",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        202.5561
+      ],
+      [
+        "2026-03-31",
+        400.1142
+      ],
+      [
+        "2026-04-30",
+        328.4384
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_fwd:AL",
+    "display_name": "即期汇率:美元兑人民币:月",
+    "module": "3.即远期",
+    "wind_indicator": "即期汇率:美元兑人民币:月",
+    "frequency": "月",
+    "unit": "6.836952380952381",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        6.908535714285714
+      ],
+      [
+        "2026-03-31",
+        6.895809090909091
+      ],
+      [
+        "2026-04-30",
+        6.836952380952381
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_fwd:B",
+    "display_name": "银行自身结汇:当月值",
+    "module": "3.即远期",
+    "wind_indicator": "银行自身结汇:当月值",
+    "frequency": "月",
+    "unit": "72.3267",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        67.4536
+      ],
+      [
+        "2026-03-31",
+        95.0419
+      ],
+      [
+        "2026-04-30",
+        72.3267
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_fwd:C",
+    "display_name": "银行自身售汇:当月值",
+    "module": "3.即远期",
+    "wind_indicator": "银行自身售汇:当月值",
+    "frequency": "月",
+    "unit": "91.7948",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        190.9941
+      ],
+      [
+        "2026-03-31",
+        289.9038
+      ],
+      [
+        "2026-04-30",
+        91.7948
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_fwd:D",
+    "display_name": "银行自身结售汇差额:当月值",
+    "module": "3.即远期",
+    "wind_indicator": "银行自身结售汇差额:当月值",
+    "frequency": "月",
+    "unit": "-19.4681",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        -123.5405
+      ],
+      [
+        "2026-03-31",
+        -194.8619
+      ],
+      [
+        "2026-04-30",
+        -19.4681
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_fwd:E",
+    "display_name": "银行代客远期结汇签约:当月值",
+    "module": "3.即远期",
+    "wind_indicator": "银行代客远期结汇签约:当月值",
+    "frequency": "月",
+    "unit": "482.919",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        382.8575
+      ],
+      [
+        "2026-03-31",
+        530.2224
+      ],
+      [
+        "2026-04-30",
+        482.919
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_fwd:F",
+    "display_name": "银行代客远期售汇签约:当月值",
+    "module": "3.即远期",
+    "wind_indicator": "银行代客远期售汇签约:当月值",
+    "frequency": "月",
+    "unit": "414.0625",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        66.8417
+      ],
+      [
+        "2026-03-31",
+        352.3675
+      ],
+      [
+        "2026-04-30",
+        414.0625
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_fwd:G",
+    "display_name": "银行代客远期净结汇:当月值",
+    "module": "3.即远期",
+    "wind_indicator": "银行代客远期净结汇:当月值",
+    "frequency": "月",
+    "unit": "68.8565",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        316.0158
+      ],
+      [
+        "2026-03-31",
+        177.8549
+      ],
+      [
+        "2026-04-30",
+        68.8565
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_fwd:H",
+    "display_name": "银行代客远期结汇累计未到期额",
+    "module": "3.即远期",
+    "wind_indicator": "银行代客远期结汇累计未到期额",
+    "frequency": "月",
+    "unit": "1938.7718",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        1825.7047
+      ],
+      [
+        "2026-03-31",
+        1878.0547
+      ],
+      [
+        "2026-04-30",
+        1938.7718
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_fwd:I",
+    "display_name": "银行代客远期售汇累计未到期额",
+    "module": "3.即远期",
+    "wind_indicator": "银行代客远期售汇累计未到期额",
+    "frequency": "月",
+    "unit": "874.7776",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        755.9657
+      ],
+      [
+        "2026-03-31",
+        809.7073
+      ],
+      [
+        "2026-04-30",
+        874.7776
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_fwd:J",
+    "display_name": "银行代客远期净结汇累计未到期额",
+    "module": "3.即远期",
+    "wind_indicator": "银行代客远期净结汇累计未到期额",
+    "frequency": "月",
+    "unit": "1063.9942",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        1069.739
+      ],
+      [
+        "2026-03-31",
+        1068.3474
+      ],
+      [
+        "2026-04-30",
+        1063.9942
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_fwd:K",
+    "display_name": "银行代客结汇:当月值",
+    "module": "3.即远期",
+    "wind_indicator": "银行代客结汇:当月值",
+    "frequency": "月",
+    "unit": "2500.8392",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        1996.6345
+      ],
+      [
+        "2026-03-31",
+        2641.0757
+      ],
+      [
+        "2026-04-30",
+        2500.8392
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_fwd:L",
+    "display_name": "银行代客售汇:当月值",
+    "module": "3.即远期",
+    "wind_indicator": "银行代客售汇:当月值",
+    "frequency": "月",
+    "unit": "2080.5721",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        1444.7826
+      ],
+      [
+        "2026-03-31",
+        2286.4578
+      ],
+      [
+        "2026-04-30",
+        2080.5721
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_fwd:M",
+    "display_name": "银行代客结售汇顺差:当月值",
+    "module": "3.即远期",
+    "wind_indicator": "银行代客结售汇顺差:当月值",
+    "frequency": "月",
+    "unit": "420.2671",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        551.8519
+      ],
+      [
+        "2026-03-31",
+        354.6179
+      ],
+      [
+        "2026-04-30",
+        420.2671
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_fwd:N",
+    "display_name": "银行结售汇:未到期期权Delta净敞口",
+    "module": "3.即远期",
+    "wind_indicator": "银行结售汇:未到期期权Delta净敞口",
+    "frequency": "月",
+    "unit": "248.4857",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        140.4871
+      ],
+      [
+        "2026-03-31",
+        197.7281
+      ],
+      [
+        "2026-04-30",
+        248.4857
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_services:B",
+    "display_name": "中国:服务出口金额:人民币:累计值",
+    "module": "3.服务贸易",
+    "wind_indicator": "中国:服务出口金额:人民币:累计值",
+    "frequency": "亿元",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        7045.2
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ],
+      [
+        "2026-05-31",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_services:C",
+    "display_name": "中国:服务进口金额:人民币:累计值",
+    "module": "3.服务贸易",
+    "wind_indicator": "中国:服务进口金额:人民币:累计值",
+    "frequency": "亿元",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        11183.8
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ],
+      [
+        "2026-05-31",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_services:D",
+    "display_name": "中国:旅行服务出口金额:人民币:累计同比",
+    "module": "3.服务贸易",
+    "wind_indicator": "中国:旅行服务出口金额:人民币:累计同比",
+    "frequency": "%",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        32.3
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ],
+      [
+        "2026-05-31",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_services:E",
+    "display_name": "中国:旅行服务进口金额:人民币:累计同比",
+    "module": "3.服务贸易",
+    "wind_indicator": "中国:旅行服务进口金额:人民币:累计同比",
+    "frequency": "%",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ],
+      [
+        "2026-05-31",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_services:F",
+    "display_name": "中国:中间价:美元兑人民币:月:平均值",
+    "module": "3.服务贸易",
+    "wind_indicator": "中国:中间价:美元兑人民币:月:平均值",
+    "frequency": "monthly",
+    "unit": "6.838516666666667",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-03-31",
+        6.903690909090909
+      ],
+      [
+        "2026-04-30",
+        6.868314285714286
+      ],
+      [
+        "2026-05-31",
+        6.838516666666667
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_crossborder:AN",
+    "display_name": "Column_AN",
+    "module": "3.涉外收付",
+    "wind_indicator": "",
+    "frequency": "monthly",
+    "unit": "货物贸易",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-01-31",
+        3.0
+      ],
+      [
+        "2026-02-28",
+        2.0
+      ],
+      [
+        "2026-03-31",
+        1.0
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_crossborder:B",
+    "display_name": "境内银行代客涉外收付款顺差:当月值",
+    "module": "3.涉外收付",
+    "wind_indicator": "境内银行代客涉外收付款顺差:当月值",
+    "frequency": "月",
+    "unit": "619.446613",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        356.029805
+      ],
+      [
+        "2026-03-31",
+        -320.689005
+      ],
+      [
+        "2026-04-30",
+        619.446613
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_crossborder:BH",
+    "display_name": "Column_BH",
+    "module": "3.涉外收付",
+    "wind_indicator": "",
+    "frequency": "monthly",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2024-10-31",
+        -61.72383933333334
+      ],
+      [
+        "2024-11-30",
+        -51.484692
+      ],
+      [
+        "2024-12-31",
+        -78.45273099999999
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_crossborder:C",
+    "display_name": "境内银行代客对外付款:当月值",
+    "module": "3.涉外收付",
+    "wind_indicator": "境内银行代客对外付款:当月值",
+    "frequency": "月",
+    "unit": "7700.424167",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        5644.979807
+      ],
+      [
+        "2026-03-31",
+        8559.427753
+      ],
+      [
+        "2026-04-30",
+        7700.424167
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_crossborder:D",
+    "display_name": "境内银行代客涉外收入:当月值",
+    "module": "3.涉外收付",
+    "wind_indicator": "境内银行代客涉外收入:当月值",
+    "frequency": "月",
+    "unit": "8319.87078",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        6001.009613
+      ],
+      [
+        "2026-03-31",
+        8238.738748
+      ],
+      [
+        "2026-04-30",
+        8319.87078
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_crossborder:E",
+    "display_name": "境内银行代客涉外收付款顺差:当月值",
+    "module": "3.涉外收付",
+    "wind_indicator": "境内银行代客涉外收付款顺差:当月值",
+    "frequency": "月",
+    "unit": "619.446613",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        356.029805
+      ],
+      [
+        "2026-03-31",
+        -320.689005
+      ],
+      [
+        "2026-04-30",
+        619.446613
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_crossborder:F",
+    "display_name": "银行代客涉外收付款:收入币种:美元",
+    "module": "3.涉外收付",
+    "wind_indicator": "银行代客涉外收付款:收入币种:美元",
+    "frequency": "月",
+    "unit": "3844.666368",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        2766.476538
+      ],
+      [
+        "2026-03-31",
+        3447.952634
+      ],
+      [
+        "2026-04-30",
+        3844.666368
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_crossborder:G",
+    "display_name": "银行代客涉外收付款:收入币种:人民币",
+    "module": "3.涉外收付",
+    "wind_indicator": "银行代客涉外收付款:收入币种:人民币",
+    "frequency": "月",
+    "unit": "4175.388321",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        2997.301968
+      ],
+      [
+        "2026-03-31",
+        4520.410502
+      ],
+      [
+        "2026-04-30",
+        4175.388321
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_crossborder:H",
+    "display_name": "银行代客涉外收付款:支出币种:美元",
+    "module": "3.涉外收付",
+    "wind_indicator": "银行代客涉外收付款:支出币种:美元",
+    "frequency": "月",
+    "unit": "3143.898932",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        2133.77818
+      ],
+      [
+        "2026-03-31",
+        3237.290265
+      ],
+      [
+        "2026-04-30",
+        3143.898932
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_crossborder:I",
+    "display_name": "银行代客涉外收付款:支出币种:人民币",
+    "module": "3.涉外收付",
+    "wind_indicator": "银行代客涉外收付款:支出币种:人民币",
+    "frequency": "月",
+    "unit": "4222.087976",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        3242.951266
+      ],
+      [
+        "2026-03-31",
+        4948.118627
+      ],
+      [
+        "2026-04-30",
+        4222.087976
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_crossborder:J",
+    "display_name": "境内银行代客涉外收入:经常项目:当月值",
+    "module": "3.涉外收付",
+    "wind_indicator": "境内银行代客涉外收入:经常项目:当月值",
+    "frequency": "月",
+    "unit": "4215.054688",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        3242.571552
+      ],
+      [
+        "2026-03-31",
+        4151.586257
+      ],
+      [
+        "2026-04-30",
+        4215.054688
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_crossborder:K",
+    "display_name": "境内银行代客涉外支出:经常项目:当月值",
+    "module": "3.涉外收付",
+    "wind_indicator": "境内银行代客涉外支出:经常项目:当月值",
+    "frequency": "月",
+    "unit": "3699.970071",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        2697.008551
+      ],
+      [
+        "2026-03-31",
+        3848.152208
+      ],
+      [
+        "2026-04-30",
+        3699.970071
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_crossborder:L",
+    "display_name": "境内银行代客涉外收入:货物贸易:当月值",
+    "module": "3.涉外收付",
+    "wind_indicator": "境内银行代客涉外收入:货物贸易:当月值",
+    "frequency": "月",
+    "unit": "3737.735704",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        2900.931025
+      ],
+      [
+        "2026-03-31",
+        3716.585907
+      ],
+      [
+        "2026-04-30",
+        3737.735704
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_crossborder:M",
+    "display_name": "境内银行代客涉外支出:货物贸易:当月值",
+    "module": "3.涉外收付",
+    "wind_indicator": "境内银行代客涉外支出:货物贸易:当月值",
+    "frequency": "月",
+    "unit": "2993.996869",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        2223.426441
+      ],
+      [
+        "2026-03-31",
+        3209.95716
+      ],
+      [
+        "2026-04-30",
+        2993.996869
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_crossborder:N",
+    "display_name": "境内银行代客涉外收入:服务贸易:当月值",
+    "module": "3.涉外收付",
+    "wind_indicator": "境内银行代客涉外收入:服务贸易:当月值",
+    "frequency": "月",
+    "unit": "396.824376",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        290.015484
+      ],
+      [
+        "2026-03-31",
+        359.633733
+      ],
+      [
+        "2026-04-30",
+        396.824376
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_crossborder:O",
+    "display_name": "境内银行代客涉外支出:服务贸易:当月值",
+    "module": "3.涉外收付",
+    "wind_indicator": "境内银行代客涉外支出:服务贸易:当月值",
+    "frequency": "月",
+    "unit": "444.481976",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        371.137281
+      ],
+      [
+        "2026-03-31",
+        454.446567
+      ],
+      [
+        "2026-04-30",
+        444.481976
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_crossborder:P",
+    "display_name": "境内银行代客涉外收入:资本与金融项目:当月值",
+    "module": "3.涉外收付",
+    "wind_indicator": "境内银行代客涉外收入:资本与金融项目:当月值",
+    "frequency": "月",
+    "unit": "4073.439979",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        2728.503713
+      ],
+      [
+        "2026-03-31",
+        4060.335374
+      ],
+      [
+        "2026-04-30",
+        4073.439979
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_crossborder:Q",
+    "display_name": "境内银行代客涉外支出:资本与金融项目:当月值",
+    "module": "3.涉外收付",
+    "wind_indicator": "境内银行代客涉外支出:资本与金融项目:当月值",
+    "frequency": "月",
+    "unit": "3977.651218",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        2926.812587
+      ],
+      [
+        "2026-03-31",
+        4686.223083
+      ],
+      [
+        "2026-04-30",
+        3977.651218
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_crossborder:R",
+    "display_name": "境内银行代客涉外收入:证券投资:当月值",
+    "module": "3.涉外收付",
+    "wind_indicator": "境内银行代客涉外收入:证券投资:当月值",
+    "frequency": "月",
+    "unit": "3433.175855",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        2283.298117
+      ],
+      [
+        "2026-03-31",
+        3292.870743
+      ],
+      [
+        "2026-04-30",
+        3433.175855
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_crossborder:S",
+    "display_name": "境内银行代客涉外支出:证券投资:当月值",
+    "module": "3.涉外收付",
+    "wind_indicator": "境内银行代客涉外支出:证券投资:当月值",
+    "frequency": "月",
+    "unit": "3297.195814",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        2392.836224
+      ],
+      [
+        "2026-03-31",
+        3825.047752
+      ],
+      [
+        "2026-04-30",
+        3297.195814
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_crossborder:T",
+    "display_name": "境内银行代客涉外收入:直接投资:当月值",
+    "module": "3.涉外收付",
+    "wind_indicator": "境内银行代客涉外收入:直接投资:当月值",
+    "frequency": "月",
+    "unit": "596.50557",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        413.832531
+      ],
+      [
+        "2026-03-31",
+        700.215608
+      ],
+      [
+        "2026-04-30",
+        596.50557
+      ]
+    ]
+  },
+  {
+    "series_id": "fx_crossborder:U",
+    "display_name": "境内银行代客涉外支出:直接投资:当月值",
+    "module": "3.涉外收付",
+    "wind_indicator": "境内银行代客涉外支出:直接投资:当月值",
+    "frequency": "月",
+    "unit": "644.12439",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        502.116152
+      ],
+      [
+        "2026-03-31",
+        804.62553
+      ],
+      [
+        "2026-04-30",
+        644.12439
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_eq:B",
+    "display_name": "即期汇率:美元兑人民币",
+    "module": "3.证券EQ",
+    "wind_indicator": "即期汇率:美元兑人民币",
+    "frequency": "6.78",
+    "unit": "6.781699999999999",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-05-26",
+        6.787
+      ],
+      [
+        "2026-05-27",
+        6.781699999999999
+      ],
+      [
+        "2026-05-28",
+        6.78
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_eq:C",
+    "display_name": "巨潮人民币名义有效汇率指数",
+    "module": "3.证券EQ",
+    "wind_indicator": "巨潮人民币名义有效汇率指数",
+    "frequency": "daily",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-05-26",
+        0.0
+      ],
+      [
+        "2026-05-27",
+        0.0
+      ],
+      [
+        "2026-05-28",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_eq:D",
+    "display_name": "Wind人民币汇率预估指数",
+    "module": "3.证券EQ",
+    "wind_indicator": "Wind人民币汇率预估指数",
+    "frequency": "99.833",
+    "unit": "99.8024",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-05-26",
+        99.7471
+      ],
+      [
+        "2026-05-27",
+        99.8024
+      ],
+      [
+        "2026-05-28",
+        99.833
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_eq:E",
+    "display_name": "沪深300指数",
+    "module": "3.证券EQ",
+    "wind_indicator": "沪深300指数",
+    "frequency": "4914.2133",
+    "unit": "4908.1714",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-05-26",
+        4947.8493
+      ],
+      [
+        "2026-05-27",
+        4908.1714
+      ],
+      [
+        "2026-05-28",
+        4914.2133
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_eq:F",
+    "display_name": "恒生指数",
+    "module": "3.证券EQ",
+    "wind_indicator": "恒生指数",
+    "frequency": "25006.16",
+    "unit": "25328.23",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-05-26",
+        25599.45
+      ],
+      [
+        "2026-05-27",
+        25328.23
+      ],
+      [
+        "2026-05-28",
+        25006.16
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_eq:H",
+    "display_name": "港股通:当日买入成交净额(人民币)",
+    "module": "3.证券EQ",
+    "wind_indicator": "港股通:当日买入成交净额(人民币)",
+    "frequency": "日",
+    "unit": "65.8859",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-05-25",
+        -8.3643
+      ],
+      [
+        "2026-05-26",
+        -66.7699
+      ],
+      [
+        "2026-05-27",
+        65.8859
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_eq:I",
+    "display_name": "港股通:累计买入成交净额(人民币)",
+    "module": "3.证券EQ",
+    "wind_indicator": "港股通:累计买入成交净额(人民币)",
+    "frequency": "日",
+    "unit": "47944.9512",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-05-25",
+        47945.8352
+      ],
+      [
+        "2026-05-26",
+        47879.0653
+      ],
+      [
+        "2026-05-27",
+        47944.9512
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_eq:J",
+    "display_name": "陆股通:当日买入成交净额(人民币)",
+    "module": "3.证券EQ",
+    "wind_indicator": "陆股通:当日买入成交净额(人民币)",
+    "frequency": "日",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-05-25",
+        0.0
+      ],
+      [
+        "2026-05-26",
+        0.0
+      ],
+      [
+        "2026-05-27",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_eq:K",
+    "display_name": "陆股通:累计买入成交净额(人民币)",
+    "module": "3.证券EQ",
+    "wind_indicator": "陆股通:累计买入成交净额(人民币)",
+    "frequency": "日",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-05-25",
+        0.0
+      ],
+      [
+        "2026-05-26",
+        0.0
+      ],
+      [
+        "2026-05-27",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:AA",
+    "display_name": "上清所:债券托管量:其他公司信用类债券:人民银行批准的境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "上清所:债券托管量:其他公司信用类债券:人民银行批准的境外机构",
+    "frequency": "月",
+    "unit": "30.9545",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        30.86
+      ],
+      [
+        "2026-03-31",
+        30.950000000000003
+      ],
+      [
+        "2026-04-30",
+        30.9545
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:AB",
+    "display_name": "上清所:债券托管量:熊猫债:人民银行批准的境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "上清所:债券托管量:熊猫债:人民银行批准的境外机构",
+    "frequency": "月",
+    "unit": "637.4621",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        553.31
+      ],
+      [
+        "2026-03-31",
+        635.43
+      ],
+      [
+        "2026-04-30",
+        637.4621
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:AC",
+    "display_name": "上清所:债券托管量:其他债券:人民银行批准的境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "上清所:债券托管量:其他债券:人民银行批准的境外机构",
+    "frequency": "月",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        0.0
+      ],
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:AD",
+    "display_name": "上清所:债券托管量:标准化票据:人民银行批准的境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "上清所:债券托管量:标准化票据:人民银行批准的境外机构",
+    "frequency": "月",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        0.0
+      ],
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:AE",
+    "display_name": "上清所:债券托管量:资产支持证券:人民银行批准的境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "上清所:债券托管量:资产支持证券:人民银行批准的境外机构",
+    "frequency": "月",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        0.0
+      ],
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:AF",
+    "display_name": "境外投资者专项统计:债券托管量",
+    "module": "3.证券FI",
+    "wind_indicator": "境外投资者专项统计:债券托管量",
+    "frequency": "月",
+    "unit": "26842.6164",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        27797.590699999997
+      ],
+      [
+        "2026-03-31",
+        27096.146299999997
+      ],
+      [
+        "2026-04-30",
+        26842.6164
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:B",
+    "display_name": "中债:债券托管量:国债:境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "中债:债券托管量:国债:境外机构",
+    "frequency": "月",
+    "unit": "19424.9326",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        20049.3657
+      ],
+      [
+        "2026-03-31",
+        19523.275100000003
+      ],
+      [
+        "2026-04-30",
+        19424.9326
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:BE",
+    "display_name": "中债-境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "",
+    "frequency": "中债-境外机构",
+    "unit": "8960.22",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        9366.26
+      ],
+      [
+        "2026-03-31",
+        9213.32
+      ],
+      [
+        "2026-04-30",
+        8960.22
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:BF",
+    "display_name": "上清-境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "",
+    "frequency": "上清-境外机构",
+    "unit": "1650.3106",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        1706.2569
+      ],
+      [
+        "2026-03-31",
+        1843.2619
+      ],
+      [
+        "2026-04-30",
+        1650.3106
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:BH",
+    "display_name": "中债国债到期收益率:10年:月",
+    "module": "3.证券FI",
+    "wind_indicator": "中债国债到期收益率:10年:月",
+    "frequency": "月",
+    "unit": "1.782038095238095",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        1.80535625
+      ],
+      [
+        "2026-03-31",
+        1.809440909090909
+      ],
+      [
+        "2026-04-30",
+        1.782038095238095
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:BI",
+    "display_name": "美国:国债收益率:10年:月",
+    "module": "3.证券FI",
+    "wind_indicator": "美国:国债收益率:10年:月",
+    "frequency": "月",
+    "unit": "4.319090909090909",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        4.125789473684211
+      ],
+      [
+        "2026-03-31",
+        4.245909090909091
+      ],
+      [
+        "2026-04-30",
+        4.319090909090909
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:C",
+    "display_name": "中债:债券托管量:国家开发银行债:境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "中债:债券托管量:国家开发银行债:境外机构",
+    "frequency": "月",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        0.0
+      ],
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:D",
+    "display_name": "中债:债券托管量:中国进出口银行债:境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "中债:债券托管量:中国进出口银行债:境外机构",
+    "frequency": "月",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        0.0
+      ],
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:E",
+    "display_name": "中债:债券托管量:中国农业发展银行债:境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "中债:债券托管量:中国农业发展银行债:境外机构",
+    "frequency": "月",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        0.0
+      ],
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:F",
+    "display_name": "中债:债券托管量:商业银行普通债:境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "中债:债券托管量:商业银行普通债:境外机构",
+    "frequency": "月",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        0.0
+      ],
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:G",
+    "display_name": "中债:债券托管量:商业银行次级债:境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "中债:债券托管量:商业银行次级债:境外机构",
+    "frequency": "月",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        0.0
+      ],
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:H",
+    "display_name": "中债:债券托管量:商业银行混合资本债:境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "中债:债券托管量:商业银行混合资本债:境外机构",
+    "frequency": "月",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        0.0
+      ],
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:I",
+    "display_name": "中债:债券托管量:二级资本工具:境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "中债:债券托管量:二级资本工具:境外机构",
+    "frequency": "月",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        0.0
+      ],
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:J",
+    "display_name": "中债:债券托管量:企业债:境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "中债:债券托管量:企业债:境外机构",
+    "frequency": "月",
+    "unit": "5.859",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        6.159
+      ],
+      [
+        "2026-03-31",
+        6.159
+      ],
+      [
+        "2026-04-30",
+        5.859
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:K",
+    "display_name": "中债:债券托管量:中期票据:境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "中债:债券托管量:中期票据:境外机构",
+    "frequency": "月",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        0.0
+      ],
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:L",
+    "display_name": "全市场:债券托管量:中期票据:人民银行批准的境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "全市场:债券托管量:中期票据:人民银行批准的境外机构",
+    "frequency": "月",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        0.0
+      ],
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:M",
+    "display_name": "上清所:债券托管量:短期融资券:人民银行批准的境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "上清所:债券托管量:短期融资券:人民银行批准的境外机构",
+    "frequency": "月",
+    "unit": "11.312",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        13.41
+      ],
+      [
+        "2026-03-31",
+        13.41
+      ],
+      [
+        "2026-04-30",
+        11.312
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:N",
+    "display_name": "上清所:债券托管量:超短期融资券:人民银行批准的境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "上清所:债券托管量:超短期融资券:人民银行批准的境外机构",
+    "frequency": "月",
+    "unit": "21.552",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        18.35
+      ],
+      [
+        "2026-03-31",
+        18.15
+      ],
+      [
+        "2026-04-30",
+        21.552
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:O",
+    "display_name": "上清所:债券托管量:中期票据:人民银行批准的境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "上清所:债券托管量:中期票据:人民银行批准的境外机构",
+    "frequency": "月",
+    "unit": "249.946",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        263.48
+      ],
+      [
+        "2026-03-31",
+        243.02999999999997
+      ],
+      [
+        "2026-04-30",
+        249.946
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:P",
+    "display_name": "上清所:债券托管量:同业存单:人民银行批准的境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "上清所:债券托管量:同业存单:人民银行批准的境外机构",
+    "frequency": "月",
+    "unit": "2906.3050000000003",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        4035.8399999999997
+      ],
+      [
+        "2026-03-31",
+        3307.5400000000004
+      ],
+      [
+        "2026-04-30",
+        2906.3050000000003
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:Q",
+    "display_name": "上清所:债券托管量:区域集优中小企业集合票据:人民银行批准的境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "上清所:债券托管量:区域集优中小企业集合票据:人民银行批准的境外机构",
+    "frequency": "月",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        0.0
+      ],
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:R",
+    "display_name": "上清所:债券托管量:金融企业短期融资券:人民银行批准的境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "上清所:债券托管量:金融企业短期融资券:人民银行批准的境外机构",
+    "frequency": "月",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        0.0
+      ],
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:S",
+    "display_name": "上清所:债券托管量:信贷资产支持证券:人民银行批准的境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "上清所:债券托管量:信贷资产支持证券:人民银行批准的境外机构",
+    "frequency": "月",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        0.0
+      ],
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:T",
+    "display_name": "上清所:债券托管量:资产管理公司金融债:人民银行批准的境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "上清所:债券托管量:资产管理公司金融债:人民银行批准的境外机构",
+    "frequency": "月",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        0.0
+      ],
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:U",
+    "display_name": "上清所:债券托管量:政府支持机构债券:人民银行批准的境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "上清所:债券托管量:政府支持机构债券:人民银行批准的境外机构",
+    "frequency": "月",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        0.0
+      ],
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:V",
+    "display_name": "上清所:债券托管量:绿色债务融资工具:人民银行批准的境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "上清所:债券托管量:绿色债务融资工具:人民银行批准的境外机构",
+    "frequency": "月",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        0.0
+      ],
+      [
+        "2026-03-31",
+        0.0
+      ],
+      [
+        "2026-04-30",
+        0.0
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:W",
+    "display_name": "中债:债券托管量:政策性银行债:境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "中债:债券托管量:政策性银行债:境外机构",
+    "frequency": "月",
+    "unit": "7075.282499999999",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        7432.8841999999995
+      ],
+      [
+        "2026-03-31",
+        7284.5764
+      ],
+      [
+        "2026-04-30",
+        7075.282499999999
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:X",
+    "display_name": "中债:债券托管量:商业银行债券:境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "中债:债券托管量:商业银行债券:境外机构",
+    "frequency": "月",
+    "unit": "59.01",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        98.7
+      ],
+      [
+        "2026-03-31",
+        61.059999999999995
+      ],
+      [
+        "2026-04-30",
+        59.01
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:Y",
+    "display_name": "上清所:债券托管量:金融债券:人民银行批准的境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "上清所:债券托管量:金融债券:人民银行批准的境外机构",
+    "frequency": "月",
+    "unit": "515.9588",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        516.75
+      ],
+      [
+        "2026-03-31",
+        541.38
+      ],
+      [
+        "2026-04-30",
+        515.9588
+      ]
+    ]
+  },
+  {
+    "series_id": "sec_fi:Z",
+    "display_name": "上清所:债券托管量:非公开定向债务融资工具:人民银行批准的境外机构",
+    "module": "3.证券FI",
+    "wind_indicator": "上清所:债券托管量:非公开定向债务融资工具:人民银行批准的境外机构",
+    "frequency": "月",
+    "unit": "16.461",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        11.91
+      ],
+      [
+        "2026-03-31",
+        13.91
+      ],
+      [
+        "2026-04-30",
+        16.461
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_goods:AF",
+    "display_name": "Column_AF",
+    "module": "3.货物贸易",
+    "wind_indicator": "",
+    "frequency": "monthly",
+    "unit": "顺差",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-01-31",
+        3.0
+      ],
+      [
+        "2026-02-28",
+        2.0
+      ],
+      [
+        "2026-03-31",
+        1.0
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_goods:AY",
+    "display_name": "Column_AY",
+    "module": "3.货物贸易",
+    "wind_indicator": "",
+    "frequency": "monthly",
+    "unit": "",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2024-10-31",
+        277.6638353333333
+      ],
+      [
+        "2024-11-30",
+        187.2575866666667
+      ],
+      [
+        "2024-12-31",
+        354.07539400000013
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_goods:B",
+    "display_name": "出口金额:当月值",
+    "module": "3.货物贸易",
+    "wind_indicator": "出口金额:当月值",
+    "frequency": "月",
+    "unit": "3594.421362",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        2998.194255
+      ],
+      [
+        "2026-03-31",
+        3210.451793
+      ],
+      [
+        "2026-04-30",
+        3594.421362
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_goods:C",
+    "display_name": "境内银行代客涉外收入:货物贸易:当月值",
+    "module": "3.货物贸易",
+    "wind_indicator": "境内银行代客涉外收入:货物贸易:当月值",
+    "frequency": "月",
+    "unit": "3737.735704",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        2900.931025
+      ],
+      [
+        "2026-03-31",
+        3716.585907
+      ],
+      [
+        "2026-04-30",
+        3737.735704
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_goods:D",
+    "display_name": "银行代客结汇:货物贸易:当月值",
+    "module": "3.货物贸易",
+    "wind_indicator": "银行代客结汇:货物贸易:当月值",
+    "frequency": "月",
+    "unit": "1801.685",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        1518.1965
+      ],
+      [
+        "2026-03-31",
+        2018.5956
+      ],
+      [
+        "2026-04-30",
+        1801.685
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_goods:E",
+    "display_name": "进口金额:当月值",
+    "module": "3.货物贸易",
+    "wind_indicator": "进口金额:当月值",
+    "frequency": "月",
+    "unit": "2746.182116",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        2093.356067
+      ],
+      [
+        "2026-03-31",
+        2704.801627
+      ],
+      [
+        "2026-04-30",
+        2746.182116
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_goods:F",
+    "display_name": "境内银行代客涉外支出:货物贸易:当月值",
+    "module": "3.货物贸易",
+    "wind_indicator": "境内银行代客涉外支出:货物贸易:当月值",
+    "frequency": "月",
+    "unit": "2993.996869",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        2223.426441
+      ],
+      [
+        "2026-03-31",
+        3209.95716
+      ],
+      [
+        "2026-04-30",
+        2993.996869
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_goods:G",
+    "display_name": "银行代客售汇:货物贸易:当月值",
+    "module": "3.货物贸易",
+    "wind_indicator": "银行代客售汇:货物贸易:当月值",
+    "frequency": "月",
+    "unit": "1325.0503",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        918.4495
+      ],
+      [
+        "2026-03-31",
+        1419.3361
+      ],
+      [
+        "2026-04-30",
+        1325.0503
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_goods:H",
+    "display_name": "中国:银行代客远期结汇签约:当月值",
+    "module": "3.货物贸易",
+    "wind_indicator": "中国:银行代客远期结汇签约:当月值",
+    "frequency": "月",
+    "unit": "482.919",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        382.8575
+      ],
+      [
+        "2026-03-31",
+        530.2224
+      ],
+      [
+        "2026-04-30",
+        482.919
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_goods:I",
+    "display_name": "中国:银行代客远期售汇签约:当月值",
+    "module": "3.货物贸易",
+    "wind_indicator": "中国:银行代客远期售汇签约:当月值",
+    "frequency": "月",
+    "unit": "414.0625",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        66.8417
+      ],
+      [
+        "2026-03-31",
+        352.3675
+      ],
+      [
+        "2026-04-30",
+        414.0625
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_goods:J",
+    "display_name": "中国:银行代客远期净结汇:当月值",
+    "module": "3.货物贸易",
+    "wind_indicator": "中国:银行代客远期净结汇:当月值",
+    "frequency": "月",
+    "unit": "68.8565",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        316.0158
+      ],
+      [
+        "2026-03-31",
+        177.8549
+      ],
+      [
+        "2026-04-30",
+        68.8565
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_goods:N",
+    "display_name": "即期汇率:美元兑人民币:月:平均值",
+    "module": "3.货物贸易",
+    "wind_indicator": "即期汇率:美元兑人民币:月:平均值",
+    "frequency": "monthly",
+    "unit": "6.795347058823529",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        6.895809090909091
+      ],
+      [
+        "2026-03-31",
+        6.836952380952381
+      ],
+      [
+        "2026-04-30",
+        6.795347058823529
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_merchant:AA",
+    "display_name": "PMI",
+    "module": "3.贸易商",
+    "wind_indicator": "PMI",
+    "frequency": "%",
+    "unit": "50.3",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        49.0
+      ],
+      [
+        "2026-03-31",
+        50.4
+      ],
+      [
+        "2026-04-30",
+        50.3
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_merchant:AB",
+    "display_name": "PMI:小型企业",
+    "module": "3.贸易商",
+    "wind_indicator": "PMI:小型企业",
+    "frequency": "%",
+    "unit": "50.1",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        44.8
+      ],
+      [
+        "2026-03-31",
+        49.3
+      ],
+      [
+        "2026-04-30",
+        50.1
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_merchant:AC",
+    "display_name": "中债国债到期收益率:10年:月:平均值",
+    "module": "3.贸易商",
+    "wind_indicator": "中债国债到期收益率:10年:月:平均值",
+    "frequency": "%",
+    "unit": "1.782038095238095",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        1.80535625
+      ],
+      [
+        "2026-03-31",
+        1.809440909090909
+      ],
+      [
+        "2026-04-30",
+        1.782038095238095
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_merchant:AD",
+    "display_name": "美国:国债收益率:10年:月:平均值",
+    "module": "3.贸易商",
+    "wind_indicator": "美国:国债收益率:10年:月:平均值",
+    "frequency": "%",
+    "unit": "4.319090909090909",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        4.125789473684211
+      ],
+      [
+        "2026-03-31",
+        4.245909090909091
+      ],
+      [
+        "2026-04-30",
+        4.319090909090909
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_merchant:B",
+    "display_name": "出口金额:当月值",
+    "module": "3.贸易商",
+    "wind_indicator": "出口金额:当月值",
+    "frequency": "月",
+    "unit": "3594.421362",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        2998.194255
+      ],
+      [
+        "2026-03-31",
+        3210.451793
+      ],
+      [
+        "2026-04-30",
+        3594.421362
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_merchant:C",
+    "display_name": "境内银行代客涉外收入:货物贸易:当月值",
+    "module": "3.贸易商",
+    "wind_indicator": "境内银行代客涉外收入:货物贸易:当月值",
+    "frequency": "月",
+    "unit": "3737.735704",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        2900.931025
+      ],
+      [
+        "2026-03-31",
+        3716.585907
+      ],
+      [
+        "2026-04-30",
+        3737.735704
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_merchant:D",
+    "display_name": "银行代客结汇:货物贸易:当月值",
+    "module": "3.贸易商",
+    "wind_indicator": "银行代客结汇:货物贸易:当月值",
+    "frequency": "月",
+    "unit": "1801.685",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        1518.1965
+      ],
+      [
+        "2026-03-31",
+        2018.5956
+      ],
+      [
+        "2026-04-30",
+        1801.685
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_merchant:E",
+    "display_name": "进口金额:当月值",
+    "module": "3.贸易商",
+    "wind_indicator": "进口金额:当月值",
+    "frequency": "月",
+    "unit": "2746.182116",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        2093.356067
+      ],
+      [
+        "2026-03-31",
+        2704.801627
+      ],
+      [
+        "2026-04-30",
+        2746.182116
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_merchant:F",
+    "display_name": "境内银行代客涉外支出:货物贸易:当月值",
+    "module": "3.贸易商",
+    "wind_indicator": "境内银行代客涉外支出:货物贸易:当月值",
+    "frequency": "月",
+    "unit": "2993.996869",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        2223.426441
+      ],
+      [
+        "2026-03-31",
+        3209.95716
+      ],
+      [
+        "2026-04-30",
+        2993.996869
+      ]
+    ]
+  },
+  {
+    "series_id": "trade_merchant:G",
+    "display_name": "银行代客售汇:货物贸易:当月值",
+    "module": "3.贸易商",
+    "wind_indicator": "银行代客售汇:货物贸易:当月值",
+    "frequency": "月",
+    "unit": "1325.0503",
+    "status": "mapping_pending",
+    "last_dates": [
+      [
+        "2026-02-28",
+        918.4495
+      ],
+      [
+        "2026-03-31",
+        1419.3361
+      ],
+      [
+        "2026-04-30",
+        1325.0503
+      ]
+    ]
+  }
+]
