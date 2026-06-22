@@ -20,7 +20,24 @@
         "2026-05-31",
         -360.242138
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 1,
+      "max_diff_pct": 53307252811.8631,
+      "max_abs_diff": 184099999654.6436,
+      "transform": [],
+      "samples": [
+        [
+          "2026-03-31",
+          "-345.3564",
+          "-184100000000.0000"
+        ]
+      ],
+      "edb_indicator": "资本和金融账户:金融账户:差额",
+      "edb_unit": "美元",
+      "index_id": "M004053895"
+    },
+    "verified_at": "2026-06-22T13:36:47.927357"
   },
   {
     "series_id": "fdi:AR",
@@ -43,7 +60,24 @@
         "2026-05-31",
         -0.501556
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 1,
+      "max_diff_pct": 121419857131.1192,
+      "max_abs_diff": 184100000151.6227,
+      "transform": [],
+      "samples": [
+        [
+          "2026-03-31",
+          "151.6226",
+          "-184100000000.0000"
+        ]
+      ],
+      "edb_indicator": "资本和金融账户:金融账户:差额",
+      "edb_unit": "美元",
+      "index_id": "M004053895"
+    },
+    "verified_at": "2026-06-22T13:36:55.602295"
   },
   {
     "series_id": "fdi:AS",
@@ -66,7 +100,24 @@
         "2026-05-31",
         -359.740582
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 1,
+      "max_diff_pct": 37043816640.3793,
+      "max_abs_diff": 184099999503.021,
+      "transform": [],
+      "samples": [
+        [
+          "2026-03-31",
+          "-496.9790",
+          "-184100000000.0000"
+        ]
+      ],
+      "edb_indicator": "资本和金融账户:金融账户:差额",
+      "edb_unit": "美元",
+      "index_id": "M004053895"
+    },
+    "verified_at": "2026-06-22T13:37:07.582322"
   },
   {
     "series_id": "fdi:AT",
@@ -75,7 +126,7 @@
     "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:股权:当季值",
     "frequency": "季",
     "unit": "382",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-03-31",
@@ -89,7 +140,8 @@
         "2026-05-31",
         52.060553
       ]
-    ]
+    ],
+    "verify_note": "EDB returned no data rows"
   },
   {
     "series_id": "fdi:AU",
@@ -112,7 +164,24 @@
         "2026-05-31",
         -52.562109
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 1,
+      "max_diff_pct": 5554692104.4638,
+      "max_abs_diff": 3899999929.7891,
+      "transform": [],
+      "samples": [
+        [
+          "2026-03-31",
+          "-70.2109",
+          "-3900000000.0000"
+        ]
+      ],
+      "edb_indicator": "资本和金融账户:金融账户:非储备:直接投资:负债:关联企业债务:差额",
+      "edb_unit": "美元",
+      "index_id": "M004053907"
+    },
+    "verified_at": "2026-06-22T13:37:20.609929"
   },
   {
     "series_id": "fdi:AV",
@@ -1064,7 +1133,7 @@
     "wind_indicator": "银行自身结售汇差额:当月值",
     "frequency": "月",
     "unit": "-19.4681",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1078,7 +1147,28 @@
         "2026-04-30",
         -19.4681
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_1e8"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.05,
+      "avg_diff_pct": 0.03,
+      "unit_factor": 100000000.0,
+      "edb_indicator": "银行代客结售汇:以美元计价:差额:银行自身",
+      "edb_unit": "美元",
+      "index_id": "M004461344",
+      "samples": [
+        [
+          "2026-03-31",
+          "-194.8619",
+          "-194.8619"
+        ]
+      ]
+    },
+    "verified_at": "2026-06-22T13:41:15.002980",
+    "verify_note": "Unit: 元→亿(÷1e8). Perfect match"
   },
   {
     "series_id": "fx_fwd:E",
@@ -2996,7 +3086,7 @@
     "wind_indicator": "出口金额:当月值",
     "frequency": "月",
     "unit": "3594.421362",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -3010,7 +3100,28 @@
         "2026-04-30",
         3594.421362
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_1e8"
+    ],
+    "verify_details": {
+      "overlap_points": 5,
+      "max_diff_pct": 0.13,
+      "avg_diff_pct": 0.07,
+      "unit_factor": 100000000.0,
+      "edb_indicator": "出口总值(美元计价):当月值",
+      "edb_unit": "美元",
+      "index_id": "M001626021",
+      "samples": [
+        [
+          "2026-04-30",
+          "3594.4214",
+          "3591.8848"
+        ]
+      ]
+    },
+    "verified_at": "2026-06-22T13:41:15.002760",
+    "verify_note": "Unit: 元→亿(÷1e8). Excellent match (<0.1%)"
   },
   {
     "series_id": "trade_goods:C",
