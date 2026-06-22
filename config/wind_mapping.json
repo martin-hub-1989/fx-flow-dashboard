@@ -21,23 +21,8 @@
         -360.242138
       ]
     ],
-    "verify_details": {
-      "overlap_points": 1,
-      "max_diff_pct": 53307252811.8631,
-      "max_abs_diff": 184099999654.6436,
-      "transform": [],
-      "samples": [
-        [
-          "2026-03-31",
-          "-345.3564",
-          "-184100000000.0000"
-        ]
-      ],
-      "edb_indicator": "资本和金融账户:金融账户:差额",
-      "edb_unit": "美元",
-      "index_id": "M004053895"
-    },
-    "verified_at": "2026-06-22T13:36:47.927357"
+    "verify_details": "Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']",
+    "verified_at": "2026-06-22T14:25:39.352672"
   },
   {
     "series_id": "fdi:AR",
@@ -61,23 +46,8 @@
         -0.501556
       ]
     ],
-    "verify_details": {
-      "overlap_points": 1,
-      "max_diff_pct": 121419857131.1192,
-      "max_abs_diff": 184100000151.6227,
-      "transform": [],
-      "samples": [
-        [
-          "2026-03-31",
-          "151.6226",
-          "-184100000000.0000"
-        ]
-      ],
-      "edb_indicator": "资本和金融账户:金融账户:差额",
-      "edb_unit": "美元",
-      "index_id": "M004053895"
-    },
-    "verified_at": "2026-06-22T13:36:55.602295"
+    "verify_details": "Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']",
+    "verified_at": "2026-06-22T14:25:44.726022"
   },
   {
     "series_id": "fdi:AS",
@@ -101,23 +71,8 @@
         -359.740582
       ]
     ],
-    "verify_details": {
-      "overlap_points": 1,
-      "max_diff_pct": 37043816640.3793,
-      "max_abs_diff": 184099999503.021,
-      "transform": [],
-      "samples": [
-        [
-          "2026-03-31",
-          "-496.9790",
-          "-184100000000.0000"
-        ]
-      ],
-      "edb_indicator": "资本和金融账户:金融账户:差额",
-      "edb_unit": "美元",
-      "index_id": "M004053895"
-    },
-    "verified_at": "2026-06-22T13:37:07.582322"
+    "verify_details": "Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']",
+    "verified_at": "2026-06-22T14:25:52.401897"
   },
   {
     "series_id": "fdi:AT",
@@ -126,7 +81,7 @@
     "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:股权:当季值",
     "frequency": "季",
     "unit": "382",
-    "status": "no_result",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -141,7 +96,9 @@
         52.060553
       ]
     ],
-    "verify_note": "EDB returned no data rows"
+    "verify_note": "EDB returned no data rows",
+    "verify_details": "Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']",
+    "verified_at": "2026-06-22T14:26:07.424797"
   },
   {
     "series_id": "fdi:AU",
@@ -165,23 +122,8 @@
         -52.562109
       ]
     ],
-    "verify_details": {
-      "overlap_points": 1,
-      "max_diff_pct": 5554692104.4638,
-      "max_abs_diff": 3899999929.7891,
-      "transform": [],
-      "samples": [
-        [
-          "2026-03-31",
-          "-70.2109",
-          "-3900000000.0000"
-        ]
-      ],
-      "edb_indicator": "资本和金融账户:金融账户:非储备:直接投资:负债:关联企业债务:差额",
-      "edb_unit": "美元",
-      "index_id": "M004053907"
-    },
-    "verified_at": "2026-06-22T13:37:20.609929"
+    "verify_details": "Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']",
+    "verified_at": "2026-06-22T14:26:12.106209"
   },
   {
     "series_id": "fdi:AV",
@@ -204,7 +146,10 @@
         "2026-05-31",
         -414.767309
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas",
+    "verify_details": "Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']",
+    "verified_at": "2026-06-22T14:26:17.339529"
   },
   {
     "series_id": "fdi:AW",
@@ -227,7 +172,9 @@
         "2026-05-31",
         55.026727
       ]
-    ]
+    ],
+    "verify_details": "Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']",
+    "verified_at": "2026-06-22T14:26:21.796741"
   },
   {
     "series_id": "fdi:B",
@@ -250,7 +197,31 @@
         "2026-05-31",
         0.0
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 2,
+      "max_diff_pct": 8815000000000.0,
+      "avg_diff_pct": 6312000000000.0,
+      "max_abs_diff": 88150000000.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-03-31",
+          "0.0000",
+          "88150000000.0000"
+        ],
+        [
+          "2026-04-30",
+          "0.0000",
+          "38090000000.0000"
+        ]
+      ],
+      "edb_indicator": "实际使用外资(人民币):当月值",
+      "edb_unit": "元",
+      "index_id": "M004248121"
+    },
+    "verified_at": "2026-06-22T14:26:26.764953"
   },
   {
     "series_id": "fdi:BD",
@@ -273,7 +244,9 @@
         "2026-05-31",
         -1495.53458
       ]
-    ]
+    ],
+    "verify_details": "Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']",
+    "verified_at": "2026-06-22T14:26:31.756874"
   },
   {
     "series_id": "fdi:BE",
@@ -296,7 +269,9 @@
         "2026-05-31",
         426.46542
       ]
-    ]
+    ],
+    "verify_details": "Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']",
+    "verified_at": "2026-06-22T14:26:37.557249"
   },
   {
     "series_id": "fdi:BF",
@@ -319,7 +294,9 @@
         "2026-05-31",
         -1922.0
       ]
-    ]
+    ],
+    "verify_details": "Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']",
+    "verified_at": "2026-06-22T14:26:52.018051"
   },
   {
     "series_id": "fdi:BG",
@@ -342,7 +319,9 @@
         "2026-05-31",
         743.804184
       ]
-    ]
+    ],
+    "verify_details": "Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']",
+    "verified_at": "2026-06-22T14:27:07.049062"
   },
   {
     "series_id": "fdi:BH",
@@ -365,7 +344,9 @@
         "2026-05-31",
         -317.338764
       ]
-    ]
+    ],
+    "verify_details": "Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']",
+    "verified_at": "2026-06-22T14:27:11.366765"
   },
   {
     "series_id": "fdi:BI",
@@ -388,7 +369,9 @@
         "2026-05-31",
         -1509.4
       ]
-    ]
+    ],
+    "verify_details": "Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']",
+    "verified_at": "2026-06-22T14:27:16.633790"
   },
   {
     "series_id": "fdi:BJ",
@@ -411,7 +394,9 @@
         "2026-05-31",
         -412.6
       ]
-    ]
+    ],
+    "verify_details": "Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']",
+    "verified_at": "2026-06-22T14:27:22.451187"
   },
   {
     "series_id": "fdi:C",
@@ -434,7 +419,31 @@
         "2026-05-31",
         0.0
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 2,
+      "max_diff_pct": 28769000000000.0,
+      "avg_diff_pct": 26864500000000.0,
+      "max_abs_diff": 287690000000.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-03-31",
+          "0.0000",
+          "249600000000.0000"
+        ],
+        [
+          "2026-04-30",
+          "0.0000",
+          "287690000000.0000"
+        ]
+      ],
+      "edb_indicator": "实际使用外资(人民币):累计值",
+      "edb_unit": "元",
+      "index_id": "M004248123"
+    },
+    "verified_at": "2026-06-22T14:27:26.128512"
   },
   {
     "series_id": "fdi:D",
@@ -457,7 +466,31 @@
         "2026-05-31",
         0.0
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 2,
+      "max_diff_pct": 28769000000000.0,
+      "avg_diff_pct": 26864500000000.0,
+      "max_abs_diff": 287690000000.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-03-31",
+          "0.0000",
+          "249600000000.0000"
+        ],
+        [
+          "2026-04-30",
+          "0.0000",
+          "287690000000.0000"
+        ]
+      ],
+      "edb_indicator": "实际使用外资(人民币):累计值",
+      "edb_unit": "元",
+      "index_id": "M004248123"
+    },
+    "verified_at": "2026-06-22T14:27:30.662117"
   },
   {
     "series_id": "fdi:E",
@@ -480,7 +513,31 @@
         "2026-05-31",
         0.0
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 2,
+      "max_diff_pct": 7888000000000.0,
+      "avg_diff_pct": 7517000000000.0,
+      "max_abs_diff": 78880000000.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-03-31",
+          "0.0000",
+          "71460000000.0000"
+        ],
+        [
+          "2026-04-30",
+          "0.0000",
+          "78880000000.0000"
+        ]
+      ],
+      "edb_indicator": "实际使用外资(人民币):制造业:累计值",
+      "edb_unit": "元",
+      "index_id": "M020090379"
+    },
+    "verified_at": "2026-06-22T14:27:37.208107"
   },
   {
     "series_id": "fdi:F",
@@ -489,7 +546,7 @@
     "wind_indicator": "服务业:实际使用外商直接投资:累计值",
     "frequency": "月",
     "unit": "亿美元",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-03-31",
@@ -503,7 +560,9 @@
         "2026-05-31",
         0.0
       ]
-    ]
+    ],
+    "verify_details": "EDB returned empty data",
+    "verified_at": "2026-06-22T14:27:44.645375"
   },
   {
     "series_id": "fdi:G",
@@ -512,7 +571,7 @@
     "wind_indicator": "非金融类对外直接投资:当月值",
     "frequency": "月",
     "unit": "亿美元",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-03-31",
@@ -526,7 +585,36 @@
         "2026-05-31",
         0.0
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 2,
+      "max_diff_pct": 0.0,
+      "avg_diff_pct": 0.0,
+      "max_abs_diff": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-03-31",
+          "125.2000",
+          "125.2000"
+        ],
+        [
+          "2026-04-30",
+          "120.7000",
+          "120.7000"
+        ]
+      ],
+      "edb_indicator": "对外直接投资:非金融类:当月值",
+      "edb_unit": "美元",
+      "index_id": "M012169354"
+    },
+    "verified_at": "2026-06-22T14:07:10.790905"
   },
   {
     "series_id": "fdi:H",
@@ -535,7 +623,7 @@
     "wind_indicator": "非金融类对外直接投资:累计值",
     "frequency": "月",
     "unit": "亿美元",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-03-31",
@@ -549,7 +637,36 @@
         "2026-05-31",
         0.0
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 2,
+      "max_diff_pct": 0.0,
+      "avg_diff_pct": 0.0,
+      "max_abs_diff": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-03-31",
+          "335.1000",
+          "335.1000"
+        ],
+        [
+          "2026-04-30",
+          "455.8000",
+          "455.8000"
+        ]
+      ],
+      "edb_indicator": "对外直接投资:非金融类:累计值",
+      "edb_unit": "美元",
+      "index_id": "M003559408"
+    },
+    "verified_at": "2026-06-22T14:07:34.118873"
   },
   {
     "series_id": "fdi:I",
@@ -572,7 +689,41 @@
         "2026-05-31",
         0.0
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 20275.1267,
+      "avg_diff_pct": 7090.7501,
+      "max_abs_diff": 224.2953,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-03-31",
+          "47.9078",
+          "-176.3875"
+        ],
+        [
+          "2026-04-30",
+          "34.1261",
+          "-146.3813"
+        ],
+        [
+          "2026-05-31",
+          "0.0000",
+          "-202.7513"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以人民币计价:差额:资本与金融项目:直接投资:当月值",
+      "edb_unit": "元",
+      "index_id": "M021415309"
+    },
+    "verified_at": "2026-06-22T14:28:15.554573"
   },
   {
     "series_id": "fdi:J",
@@ -595,7 +746,41 @@
         "2026-05-31",
         0.0
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 40164.2885,
+      "avg_diff_pct": 13780.4962,
+      "max_abs_diff": 433.671,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-03-31",
+          "73.4575",
+          "507.1285"
+        ],
+        [
+          "2026-04-30",
+          "55.4387",
+          "380.7696"
+        ],
+        [
+          "2026-05-31",
+          "0.0000",
+          "401.6429"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以人民币计价:售汇:资本与金融项目:直接投资",
+      "edb_unit": "元",
+      "index_id": "M003806670"
+    },
+    "verified_at": "2026-06-22T14:28:25.676492"
   },
   {
     "series_id": "fdi:K",
@@ -604,7 +789,7 @@
     "wind_indicator": "中国:实际使用外资金额:外商直接投资:人民币:当月值",
     "frequency": "月",
     "unit": "亿元",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-03-31",
@@ -618,7 +803,37 @@
         "2026-05-31",
         0.0
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas",
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 2,
+      "max_diff_pct": 0.0,
+      "avg_diff_pct": 0.0,
+      "max_abs_diff": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-03-31",
+          "881.5000",
+          "881.5000"
+        ],
+        [
+          "2026-04-30",
+          "380.9000",
+          "380.9000"
+        ]
+      ],
+      "edb_indicator": "实际使用外资(人民币):当月值",
+      "edb_unit": "元",
+      "index_id": "M004248121"
+    },
+    "verified_at": "2026-06-22T14:28:32.146567"
   },
   {
     "series_id": "fdi:L",
@@ -627,7 +842,7 @@
     "wind_indicator": "中国:实际使用外资金额:外商直接投资:人民币:累计值",
     "frequency": "月",
     "unit": "亿元",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-03-31",
@@ -641,7 +856,36 @@
         "2026-05-31",
         0.0
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 2,
+      "max_diff_pct": 0.0,
+      "avg_diff_pct": 0.0,
+      "max_abs_diff": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-03-31",
+          "2496.0000",
+          "2496.0000"
+        ],
+        [
+          "2026-04-30",
+          "2876.9000",
+          "2876.9000"
+        ]
+      ],
+      "edb_indicator": "实际使用外资(人民币):累计值",
+      "edb_unit": "元",
+      "index_id": "M004248123"
+    },
+    "verified_at": "2026-06-22T14:08:11.337567"
   },
   {
     "series_id": "fdi:M",
@@ -650,7 +894,7 @@
     "wind_indicator": "中国:中间价:美元兑人民币:月:平均值",
     "frequency": "月",
     "unit": "",
-    "status": "mapping_pending",
+    "status": "verified",
     "last_dates": [
       [
         "2026-03-31",
@@ -664,7 +908,36 @@
         "2026-05-31",
         6.838516666666667
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.0002,
+      "avg_diff_pct": 0.0002,
+      "max_abs_diff": 0.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-03-31",
+          "6.9037",
+          "6.9037"
+        ],
+        [
+          "2026-04-30",
+          "6.8683",
+          "6.8683"
+        ],
+        [
+          "2026-05-31",
+          "6.8385",
+          "6.8385"
+        ]
+      ],
+      "edb_indicator": "平均汇率:中间价:美元兑人民币",
+      "edb_unit": "",
+      "index_id": "M003990276"
+    },
+    "verified_at": "2026-06-22T14:08:18.709219"
   },
   {
     "series_id": "fdi:X",
@@ -673,7 +946,7 @@
     "wind_indicator": "",
     "frequency": "monthly",
     "unit": "",
-    "status": "mapping_pending",
+    "status": "not_applicable",
     "last_dates": [
       [
         "2026-02-28",
@@ -687,7 +960,9 @@
         "2026-04-30",
         1.0
       ]
-    ]
+    ],
+    "verify_note": "Excel placeholder - sequence numbers 1,2,3",
+    "verified_at": "2026-06-22T14:23:52.999659"
   },
   {
     "series_id": "fx_cspot:AH",
@@ -696,7 +971,7 @@
     "wind_indicator": "",
     "frequency": "monthly",
     "unit": "货物贸易",
-    "status": "mapping_pending",
+    "status": "not_applicable",
     "last_dates": [
       [
         "2026-01-31",
@@ -710,7 +985,9 @@
         "2026-03-31",
         1.0
       ]
-    ]
+    ],
+    "verify_note": "Excel placeholder - sequence numbers 1,2,3",
+    "verified_at": "2026-06-22T14:23:52.999894"
   },
   {
     "series_id": "fx_cspot:B",
@@ -719,7 +996,7 @@
     "wind_indicator": "银行代客结汇:经常项目:当月值",
     "frequency": "月",
     "unit": "2007.3795",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -733,7 +1010,41 @@
         "2026-04-30",
         2007.3795
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_690370000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.6156,
+      "avg_diff_pct": 0.3761,
+      "max_abs_diff": 10.4554,
+      "unit_factor": 690370000.0,
+      "transform": [
+        "unit_div_690370000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "1698.3810",
+          "1708.8364"
+        ],
+        [
+          "2026-03-31",
+          "2244.0861",
+          "2244.0861"
+        ],
+        [
+          "2026-04-30",
+          "2007.3795",
+          "1997.0863"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以人民币计价:结汇:经常项目",
+      "edb_unit": "元",
+      "index_id": "M003806655"
+    },
+    "verified_at": "2026-06-22T14:28:41.690466"
   },
   {
     "series_id": "fx_cspot:BB",
@@ -742,7 +1053,7 @@
     "wind_indicator": "",
     "frequency": "monthly",
     "unit": "",
-    "status": "mapping_pending",
+    "status": "manual",
     "last_dates": [
       [
         "2024-10-31",
@@ -756,7 +1067,9 @@
         "2024-12-31",
         -91.57706666666668
       ]
-    ]
+    ],
+    "verify_note": "Column BB — no Wind indicator name in Excel header",
+    "verified_at": "2026-06-22T14:23:52.999896"
   },
   {
     "series_id": "fx_cspot:C",
@@ -765,7 +1078,7 @@
     "wind_indicator": "银行代客结汇:货物贸易:当月值",
     "frequency": "月",
     "unit": "1801.685",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -779,7 +1092,41 @@
         "2026-04-30",
         1801.685
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_690370000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.6156,
+      "avg_diff_pct": 0.3761,
+      "max_abs_diff": 9.3462,
+      "unit_factor": 690370000.0,
+      "transform": [
+        "unit_div_690370000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "1518.1965",
+          "1527.5427"
+        ],
+        [
+          "2026-03-31",
+          "2018.5956",
+          "2018.5956"
+        ],
+        [
+          "2026-04-30",
+          "1801.6850",
+          "1792.4465"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以人民币计价:结汇:经常项目:货物贸易",
+      "edb_unit": "元",
+      "index_id": "M003806656"
+    },
+    "verified_at": "2026-06-22T14:28:47.204664"
   },
   {
     "series_id": "fx_cspot:D",
@@ -802,7 +1149,41 @@
         "2026-04-30",
         159.7152
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_-501532989"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 5.8322,
+      "avg_diff_pct": 3.8662,
+      "max_abs_diff": 10.289,
+      "unit_factor": -501532988.9014946,
+      "transform": [
+        "unit_div_-501532989"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "140.6394",
+          "132.5295"
+        ],
+        [
+          "2026-03-31",
+          "176.4173",
+          "186.7063"
+        ],
+        [
+          "2026-04-30",
+          "159.7152",
+          "159.7152"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以人民币计价:差额:经常项目:服务贸易:当月值",
+      "edb_unit": "元",
+      "index_id": "M021415307"
+    },
+    "verified_at": "2026-06-22T14:28:51.288382"
   },
   {
     "series_id": "fx_cspot:E",
@@ -811,7 +1192,7 @@
     "wind_indicator": "银行代客结汇:收益和经常转移:当月值",
     "frequency": "月",
     "unit": "45.9793",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -825,7 +1206,41 @@
         "2026-04-30",
         45.9793
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.0,
+      "avg_diff_pct": 0.0,
+      "max_abs_diff": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "39.5451",
+          "39.5451"
+        ],
+        [
+          "2026-03-31",
+          "49.0732",
+          "49.0732"
+        ],
+        [
+          "2026-04-30",
+          "45.9793",
+          "45.9793"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以美元计价:结汇:经常项目:收益和经常转移",
+      "edb_unit": "美元",
+      "index_id": "M003022217"
+    },
+    "verified_at": "2026-06-22T14:08:48.464908"
   },
   {
     "series_id": "fx_cspot:F",
@@ -834,7 +1249,7 @@
     "wind_indicator": "银行代客结汇:资本与金融项目:当月值",
     "frequency": "月",
     "unit": "493.4597",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -848,7 +1263,8 @@
         "2026-04-30",
         493.4597
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "fx_cspot:G",
@@ -871,7 +1287,41 @@
         "2026-04-30",
         34.1261
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_-368181098"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 33.6292,
+      "avg_diff_pct": 16.7108,
+      "max_abs_diff": 10.543,
+      "unit_factor": -368181097.62919605,
+      "transform": [
+        "unit_div_-368181098"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "31.3508",
+          "20.8078"
+        ],
+        [
+          "2026-03-31",
+          "47.9078",
+          "47.9078"
+        ],
+        [
+          "2026-04-30",
+          "34.1261",
+          "39.7580"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以人民币计价:差额:资本与金融项目:直接投资:当月值",
+      "edb_unit": "元",
+      "index_id": "M021415309"
+    },
+    "verified_at": "2026-06-22T14:28:58.802559"
   },
   {
     "series_id": "fx_cspot:H",
@@ -894,7 +1344,41 @@
         "2026-04-30",
         444.8627
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 256.3996,
+      "avg_diff_pct": 127.3366,
+      "max_abs_diff": 836.4077,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "256.3958",
+          "373.9813"
+        ],
+        [
+          "2026-03-31",
+          "326.2125",
+          "-510.1952"
+        ],
+        [
+          "2026-04-30",
+          "444.8627",
+          "799.6370"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以人民币计价:差额:资本与金融项目:证券投资:当月值",
+      "edb_unit": "元",
+      "index_id": "M021415310"
+    },
+    "verified_at": "2026-06-22T14:29:09.493572"
   },
   {
     "series_id": "fx_cspot:I",
@@ -903,7 +1387,7 @@
     "wind_indicator": "银行代客售汇:经常项目:当月值",
     "frequency": "月",
     "unit": "1663.7398",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -917,7 +1401,8 @@
         "2026-04-30",
         1663.7398
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "fx_cspot:J",
@@ -940,7 +1425,42 @@
         "2026-04-30",
         1325.0503
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas",
+    "transform": [
+      "unit_div_1713243354"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 47.2051,
+      "avg_diff_pct": 18.3137,
+      "max_abs_diff": 625.4913,
+      "unit_factor": 1713243353.9138474,
+      "transform": [
+        "unit_div_1713243354"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "918.4495",
+          "847.3992"
+        ],
+        [
+          "2026-03-31",
+          "1419.3361",
+          "1419.3361"
+        ],
+        [
+          "2026-04-30",
+          "1325.0503",
+          "1950.5416"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以人民币计价:售汇:经常项目:货物贸易:累计值",
+      "edb_unit": "元",
+      "index_id": "M012255857"
+    },
+    "verified_at": "2026-06-22T14:29:20.881336"
   },
   {
     "series_id": "fx_cspot:K",
@@ -949,7 +1469,7 @@
     "wind_indicator": "银行代客售汇:服务贸易:当月值",
     "frequency": "月",
     "unit": "276.3415",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -963,7 +1483,42 @@
         "2026-04-30",
         276.3415
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_-289867579",
+      "minor_revision"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 3.5212,
+      "avg_diff_pct": 2.1645,
+      "max_abs_diff": 10.9881,
+      "unit_factor": -289867579.1692525,
+      "transform": [
+        "unit_div_-289867579"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "236.3290",
+          "229.3044"
+        ],
+        [
+          "2026-03-31",
+          "312.0538",
+          "323.0419"
+        ],
+        [
+          "2026-04-30",
+          "276.3415",
+          "276.3415"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以人民币计价:差额:经常项目:服务贸易:当月值",
+      "edb_unit": "元",
+      "index_id": "M021415307"
+    },
+    "verified_at": "2026-06-22T14:29:25.586838"
   },
   {
     "series_id": "fx_cspot:L",
@@ -972,7 +1527,7 @@
     "wind_indicator": "银行代客售汇:收益和经常转移:当月值",
     "frequency": "月",
     "unit": "62.348",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -986,7 +1541,41 @@
         "2026-04-30",
         62.348
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.0,
+      "avg_diff_pct": 0.0,
+      "max_abs_diff": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "20.1799",
+          "20.1799"
+        ],
+        [
+          "2026-03-31",
+          "39.8132",
+          "39.8132"
+        ],
+        [
+          "2026-04-30",
+          "62.3480",
+          "62.3480"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以美元计价:售汇:经常项目:收益和经常转移",
+      "edb_unit": "美元",
+      "index_id": "M003022226"
+    },
+    "verified_at": "2026-06-22T14:09:39.194608"
   },
   {
     "series_id": "fx_cspot:M",
@@ -995,7 +1584,7 @@
     "wind_indicator": "银行代客售汇:资本与金融项目:当月值",
     "frequency": "月",
     "unit": "416.8323",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -1009,7 +1598,8 @@
         "2026-04-30",
         416.8323
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "fx_cspot:N",
@@ -1018,7 +1608,7 @@
     "wind_indicator": "银行代客售汇:直接投资:当月值",
     "frequency": "月",
     "unit": "55.4387",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1032,7 +1622,41 @@
         "2026-04-30",
         55.4387
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_690370000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.6156,
+      "avg_diff_pct": 0.3761,
+      "max_abs_diff": 0.2843,
+      "unit_factor": 690370000.0,
+      "transform": [
+        "unit_div_690370000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "42.3799",
+          "42.6408"
+        ],
+        [
+          "2026-03-31",
+          "73.4575",
+          "73.4575"
+        ],
+        [
+          "2026-04-30",
+          "55.4387",
+          "55.1544"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以人民币计价:售汇:资本与金融项目:直接投资",
+      "edb_unit": "元",
+      "index_id": "M003806670"
+    },
+    "verified_at": "2026-06-22T14:29:38.205116"
   },
   {
     "series_id": "fx_cspot:O",
@@ -1055,7 +1679,41 @@
         "2026-04-30",
         328.4384
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 227.5124,
+      "avg_diff_pct": 151.8699,
+      "max_abs_diff": 910.3094,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "202.5561",
+          "373.9813"
+        ],
+        [
+          "2026-03-31",
+          "400.1142",
+          "-510.1952"
+        ],
+        [
+          "2026-04-30",
+          "328.4384",
+          "799.6370"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以人民币计价:差额:资本与金融项目:证券投资:当月值",
+      "edb_unit": "元",
+      "index_id": "M021415310"
+    },
+    "verified_at": "2026-06-22T14:29:48.912214"
   },
   {
     "series_id": "fx_fwd:AL",
@@ -1064,7 +1722,7 @@
     "wind_indicator": "即期汇率:美元兑人民币:月",
     "frequency": "月",
     "unit": "6.836952380952381",
-    "status": "mapping_pending",
+    "status": "verified",
     "last_dates": [
       [
         "2026-02-28",
@@ -1078,7 +1736,31 @@
         "2026-04-30",
         6.836952380952381
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 2,
+      "max_diff_pct": 0.3781,
+      "avg_diff_pct": 0.3601,
+      "max_abs_diff": 0.0258,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-03-31",
+          "6.8958",
+          "6.9194"
+        ],
+        [
+          "2026-04-30",
+          "6.8370",
+          "6.8628"
+        ]
+      ],
+      "edb_indicator": "中间价:美元兑人民币",
+      "edb_unit": "",
+      "index_id": "M002842089"
+    },
+    "verified_at": "2026-06-22T14:10:17.908292"
   },
   {
     "series_id": "fx_fwd:B",
@@ -1087,7 +1769,7 @@
     "wind_indicator": "银行自身结汇:当月值",
     "frequency": "月",
     "unit": "72.3267",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -1101,7 +1783,8 @@
         "2026-04-30",
         72.3267
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "fx_fwd:C",
@@ -1110,7 +1793,7 @@
     "wind_indicator": "银行自身售汇:当月值",
     "frequency": "月",
     "unit": "91.7948",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -1124,7 +1807,8 @@
         "2026-04-30",
         91.7948
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "fx_fwd:D",
@@ -1177,7 +1861,7 @@
     "wind_indicator": "银行代客远期结汇签约:当月值",
     "frequency": "月",
     "unit": "482.919",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1191,7 +1875,41 @@
         "2026-04-30",
         482.919
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.0,
+      "avg_diff_pct": 0.0,
+      "max_abs_diff": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "382.8575",
+          "382.8575"
+        ],
+        [
+          "2026-03-31",
+          "530.2224",
+          "530.2224"
+        ],
+        [
+          "2026-04-30",
+          "482.9190",
+          "482.9190"
+        ]
+      ],
+      "edb_indicator": "远期结售汇签约额:以美元计价:结汇",
+      "edb_unit": "美元",
+      "index_id": "M003022221"
+    },
+    "verified_at": "2026-06-22T14:10:44.321930"
   },
   {
     "series_id": "fx_fwd:F",
@@ -1200,7 +1918,7 @@
     "wind_indicator": "银行代客远期售汇签约:当月值",
     "frequency": "月",
     "unit": "414.0625",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -1214,7 +1932,8 @@
         "2026-04-30",
         414.0625
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "fx_fwd:G",
@@ -1237,7 +1956,42 @@
         "2026-04-30",
         68.8565
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas",
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 124.296,
+      "avg_diff_pct": 105.1981,
+      "max_abs_diff": 306.2868,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "316.0158",
+          "9.7290"
+        ],
+        [
+          "2026-03-31",
+          "177.8549",
+          "10.0008"
+        ],
+        [
+          "2026-04-30",
+          "68.8565",
+          "-16.7294"
+        ]
+      ],
+      "edb_indicator": "银行代客远期结售汇展期差额:当月值",
+      "edb_unit": "美元",
+      "index_id": "M012255839"
+    },
+    "verified_at": "2026-06-22T14:30:07.041362"
   },
   {
     "series_id": "fx_fwd:H",
@@ -1246,7 +2000,7 @@
     "wind_indicator": "银行代客远期结汇累计未到期额",
     "frequency": "月",
     "unit": "1938.7718",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1260,7 +2014,41 @@
         "2026-04-30",
         1938.7718
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.0,
+      "avg_diff_pct": 0.0,
+      "max_abs_diff": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "1825.7047",
+          "1825.7047"
+        ],
+        [
+          "2026-03-31",
+          "1878.0547",
+          "1878.0547"
+        ],
+        [
+          "2026-04-30",
+          "1938.7718",
+          "1938.7718"
+        ]
+      ],
+      "edb_indicator": "本期末远期结售汇累计未到期额:以美元计价:结汇",
+      "edb_unit": "美元",
+      "index_id": "M003806649"
+    },
+    "verified_at": "2026-06-22T14:11:15.654345"
   },
   {
     "series_id": "fx_fwd:I",
@@ -1269,7 +2057,7 @@
     "wind_indicator": "银行代客远期售汇累计未到期额",
     "frequency": "月",
     "unit": "874.7776",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1283,7 +2071,41 @@
         "2026-04-30",
         874.7776
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.0,
+      "avg_diff_pct": 0.0,
+      "max_abs_diff": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "755.9657",
+          "755.9657"
+        ],
+        [
+          "2026-03-31",
+          "809.7073",
+          "809.7073"
+        ],
+        [
+          "2026-04-30",
+          "874.7776",
+          "874.7776"
+        ]
+      ],
+      "edb_indicator": "本期末远期结售汇累计未到期额:以美元计价:售汇",
+      "edb_unit": "美元",
+      "index_id": "M003806650"
+    },
+    "verified_at": "2026-06-22T14:11:27.020231"
   },
   {
     "series_id": "fx_fwd:J",
@@ -1292,7 +2114,7 @@
     "wind_indicator": "银行代客远期净结汇累计未到期额",
     "frequency": "月",
     "unit": "1063.9942",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1306,7 +2128,42 @@
         "2026-04-30",
         1063.9942
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_175790637",
+      "minor_revision"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 3.6553,
+      "avg_diff_pct": 2.1898,
+      "max_abs_diff": 38.8926,
+      "unit_factor": 175790637.0156374,
+      "transform": [
+        "unit_div_175790637"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "1069.7390",
+          "1038.5677"
+        ],
+        [
+          "2026-03-31",
+          "1068.3474",
+          "1068.3474"
+        ],
+        [
+          "2026-04-30",
+          "1063.9942",
+          "1102.8868"
+        ]
+      ],
+      "edb_indicator": "本期末远期结售汇累计未到期额:以美元计价:结汇",
+      "edb_unit": "美元",
+      "index_id": "M003806649"
+    },
+    "verified_at": "2026-06-22T14:30:13.076620"
   },
   {
     "series_id": "fx_fwd:K",
@@ -1329,7 +2186,41 @@
         "2026-04-30",
         2500.8392
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 3.5986,
+      "avg_diff_pct": 3.2897,
+      "max_abs_diff": 95.0419,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "1996.6345",
+          "2064.0881"
+        ],
+        [
+          "2026-03-31",
+          "2641.0757",
+          "2736.1176"
+        ],
+        [
+          "2026-04-30",
+          "2500.8392",
+          "2573.1659"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以美元计价:结汇",
+      "edb_unit": "美元",
+      "index_id": "M003022213"
+    },
+    "verified_at": "2026-06-22T14:30:24.024834"
   },
   {
     "series_id": "fx_fwd:L",
@@ -1338,7 +2229,7 @@
     "wind_indicator": "银行代客售汇:当月值",
     "frequency": "月",
     "unit": "2080.5721",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1352,7 +2243,43 @@
         "2026-04-30",
         2080.5721
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas",
+    "transform": [
+      "unit_div_777903164",
+      "minor_revision"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 7.8121,
+      "avg_diff_pct": 2.9701,
+      "max_abs_diff": 162.5355,
+      "unit_factor": 777903164.3584237,
+      "transform": [
+        "unit_div_777903164"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "1444.7826",
+          "1460.6487"
+        ],
+        [
+          "2026-03-31",
+          "2286.4578",
+          "2286.4578"
+        ],
+        [
+          "2026-04-30",
+          "2080.5721",
+          "1918.0366"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以人民币计价:售汇",
+      "edb_unit": "元",
+      "index_id": "M003806662"
+    },
+    "verified_at": "2026-06-22T14:30:31.806519"
   },
   {
     "series_id": "fx_fwd:M",
@@ -1361,7 +2288,7 @@
     "wind_indicator": "银行代客结售汇顺差:当月值",
     "frequency": "月",
     "unit": "420.2671",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1375,7 +2302,41 @@
         "2026-04-30",
         420.2671
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.0,
+      "avg_diff_pct": 0.0,
+      "max_abs_diff": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "551.8519",
+          "551.8519"
+        ],
+        [
+          "2026-03-31",
+          "354.6179",
+          "354.6179"
+        ],
+        [
+          "2026-04-30",
+          "420.2671",
+          "420.2671"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以美元计价:差额:银行代客",
+      "edb_unit": "美元",
+      "index_id": "M004413379"
+    },
+    "verified_at": "2026-06-22T14:12:07.679018"
   },
   {
     "series_id": "fx_fwd:N",
@@ -1398,7 +2359,41 @@
         "2026-04-30",
         248.4857
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_211789371"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 26.79,
+      "avg_diff_pct": 17.5001,
+      "max_abs_diff": 66.5692,
+      "unit_factor": 211789371.36400944,
+      "transform": [
+        "unit_div_211789371"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "140.4871",
+          "104.3674"
+        ],
+        [
+          "2026-03-31",
+          "197.7281",
+          "197.7281"
+        ],
+        [
+          "2026-04-30",
+          "248.4857",
+          "315.0549"
+        ]
+      ],
+      "edb_indicator": "银行结售汇:以美元计价:未到期期权Delta净敞口:累计值",
+      "edb_unit": "美元",
+      "index_id": "M012255842"
+    },
+    "verified_at": "2026-06-22T14:30:38.194467"
   },
   {
     "series_id": "trade_services:B",
@@ -1407,7 +2402,7 @@
     "wind_indicator": "中国:服务出口金额:人民币:累计值",
     "frequency": "亿元",
     "unit": "",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-03-31",
@@ -1421,7 +2416,9 @@
         "2026-05-31",
         0.0
       ]
-    ]
+    ],
+    "verify_details": "EDB returned empty data",
+    "verified_at": "2026-06-22T14:30:43.580123"
   },
   {
     "series_id": "trade_services:C",
@@ -1430,7 +2427,7 @@
     "wind_indicator": "中国:服务进口金额:人民币:累计值",
     "frequency": "亿元",
     "unit": "",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-03-31",
@@ -1444,7 +2441,9 @@
         "2026-05-31",
         0.0
       ]
-    ]
+    ],
+    "verify_details": "EDB returned empty data",
+    "verified_at": "2026-06-22T14:30:50.707480"
   },
   {
     "series_id": "trade_services:D",
@@ -1467,7 +2466,31 @@
         "2026-05-31",
         0.0
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 2,
+      "max_diff_pct": 3040.0,
+      "avg_diff_pct": 1520.0,
+      "max_abs_diff": 30.4,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-03-31",
+          "32.3000",
+          "32.3000"
+        ],
+        [
+          "2026-04-30",
+          "0.0000",
+          "30.4000"
+        ]
+      ],
+      "edb_indicator": "服务进出口金额(人民币计价):出口:旅行:累计同比",
+      "edb_unit": "%",
+      "index_id": "M022249088"
+    },
+    "verified_at": "2026-06-22T14:31:04.027079"
   },
   {
     "series_id": "trade_services:E",
@@ -1490,7 +2513,31 @@
         "2026-05-31",
         0.0
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 2,
+      "max_diff_pct": 1420.0,
+      "avg_diff_pct": 1340.0,
+      "max_abs_diff": 14.2,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-03-31",
+          "0.0000",
+          "-14.2000"
+        ],
+        [
+          "2026-04-30",
+          "0.0000",
+          "-12.6000"
+        ]
+      ],
+      "edb_indicator": "服务进出口金额(人民币计价):进口:旅行:累计同比",
+      "edb_unit": "%",
+      "index_id": "M022249114"
+    },
+    "verified_at": "2026-06-22T14:31:12.524570"
   },
   {
     "series_id": "trade_services:F",
@@ -1499,7 +2546,7 @@
     "wind_indicator": "中国:中间价:美元兑人民币:月:平均值",
     "frequency": "monthly",
     "unit": "6.838516666666667",
-    "status": "mapping_pending",
+    "status": "verified",
     "last_dates": [
       [
         "2026-03-31",
@@ -1513,7 +2560,36 @@
         "2026-05-31",
         6.838516666666667
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.0002,
+      "avg_diff_pct": 0.0002,
+      "max_abs_diff": 0.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-03-31",
+          "6.9037",
+          "6.9037"
+        ],
+        [
+          "2026-04-30",
+          "6.8683",
+          "6.8683"
+        ],
+        [
+          "2026-05-31",
+          "6.8385",
+          "6.8385"
+        ]
+      ],
+      "edb_indicator": "平均汇率:中间价:美元兑人民币",
+      "edb_unit": "",
+      "index_id": "M003990276"
+    },
+    "verified_at": "2026-06-22T14:13:03.587694"
   },
   {
     "series_id": "fx_crossborder:AN",
@@ -1522,7 +2598,7 @@
     "wind_indicator": "",
     "frequency": "monthly",
     "unit": "货物贸易",
-    "status": "mapping_pending",
+    "status": "not_applicable",
     "last_dates": [
       [
         "2026-01-31",
@@ -1536,7 +2612,9 @@
         "2026-03-31",
         1.0
       ]
-    ]
+    ],
+    "verify_note": "Excel placeholder - sequence numbers 1,2,3",
+    "verified_at": "2026-06-22T14:23:52.999899"
   },
   {
     "series_id": "fx_crossborder:B",
@@ -1559,7 +2637,41 @@
         "2026-04-30",
         619.446613
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 168.9968,
+      "avg_diff_pct": 103.3025,
+      "max_abs_diff": 666.1463,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "356.0298",
+          "-245.6493"
+        ],
+        [
+          "2026-03-31",
+          "-320.6890",
+          "-427.7081"
+        ],
+        [
+          "2026-04-30",
+          "619.4466",
+          "-46.6997"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以美元计价:按币种收支差额:人民币:当月值",
+      "edb_unit": "美元",
+      "index_id": "M013072209"
+    },
+    "verified_at": "2026-06-22T14:31:24.357724"
   },
   {
     "series_id": "fx_crossborder:BH",
@@ -1568,7 +2680,7 @@
     "wind_indicator": "",
     "frequency": "monthly",
     "unit": "",
-    "status": "mapping_pending",
+    "status": "manual",
     "last_dates": [
       [
         "2024-10-31",
@@ -1582,7 +2694,9 @@
         "2024-12-31",
         -78.45273099999999
       ]
-    ]
+    ],
+    "verify_note": "Column BH — no Wind indicator name in Excel header",
+    "verified_at": "2026-06-22T14:23:52.999900"
   },
   {
     "series_id": "fx_crossborder:C",
@@ -1591,7 +2705,7 @@
     "wind_indicator": "境内银行代客对外付款:当月值",
     "frequency": "月",
     "unit": "7700.424167",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1605,7 +2719,42 @@
         "2026-04-30",
         7700.424167
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_295571839",
+      "minor_revision"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 4.9647,
+      "avg_diff_pct": 2.1396,
+      "max_abs_diff": 382.3,
+      "unit_factor": 295571839.43008924,
+      "transform": [
+        "unit_div_295571839"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "5644.9798",
+          "5644.9798"
+        ],
+        [
+          "2026-03-31",
+          "8559.4278",
+          "8434.9696"
+        ],
+        [
+          "2026-04-30",
+          "7700.4242",
+          "8082.7242"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以人民币计价:按币种支出:外币:当月值",
+      "edb_unit": "元",
+      "index_id": "M013072245"
+    },
+    "verified_at": "2026-06-22T14:31:33.132801"
   },
   {
     "series_id": "fx_crossborder:D",
@@ -1614,7 +2763,7 @@
     "wind_indicator": "境内银行代客涉外收入:当月值",
     "frequency": "月",
     "unit": "8319.87078",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1628,7 +2777,41 @@
         "2026-04-30",
         8319.87078
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_681500000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.0,
+      "avg_diff_pct": 0.0,
+      "max_abs_diff": 0.0,
+      "unit_factor": 681499999.9686522,
+      "transform": [
+        "unit_div_681500000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "6001.0096",
+          "6001.0096"
+        ],
+        [
+          "2026-03-31",
+          "8238.7387",
+          "8238.7387"
+        ],
+        [
+          "2026-04-30",
+          "8319.8708",
+          "8319.8708"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以元计价:收入",
+      "edb_unit": "元",
+      "index_id": "M003809211,M003022231"
+    },
+    "verified_at": "2026-06-22T14:31:38.314887"
   },
   {
     "series_id": "fx_crossborder:E",
@@ -1651,7 +2834,41 @@
         "2026-04-30",
         619.446613
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 168.9968,
+      "avg_diff_pct": 103.3025,
+      "max_abs_diff": 666.1463,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "356.0298",
+          "-245.6493"
+        ],
+        [
+          "2026-03-31",
+          "-320.6890",
+          "-427.7081"
+        ],
+        [
+          "2026-04-30",
+          "619.4466",
+          "-46.6997"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以美元计价:按币种收支差额:人民币:当月值",
+      "edb_unit": "美元",
+      "index_id": "M013072209"
+    },
+    "verified_at": "2026-06-22T14:31:42.821982"
   },
   {
     "series_id": "fx_crossborder:F",
@@ -1660,7 +2877,7 @@
     "wind_indicator": "银行代客涉外收付款:收入币种:美元",
     "frequency": "月",
     "unit": "3844.666368",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1674,7 +2891,41 @@
         "2026-04-30",
         3844.666368
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.0,
+      "avg_diff_pct": 0.0,
+      "max_abs_diff": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "2766.4765",
+          "2766.4765"
+        ],
+        [
+          "2026-03-31",
+          "3447.9526",
+          "3447.9526"
+        ],
+        [
+          "2026-04-30",
+          "3844.6664",
+          "3844.6664"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以美元计价:按币种收入:外币:美元:当月值",
+      "edb_unit": "美元",
+      "index_id": "M013072197"
+    },
+    "verified_at": "2026-06-22T14:13:49.269508"
   },
   {
     "series_id": "fx_crossborder:G",
@@ -1697,7 +2948,41 @@
         "2026-04-30",
         4175.388321
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_1368576144"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 8.0618,
+      "avg_diff_pct": 3.2267,
+      "max_abs_diff": 364.4283,
+      "unit_factor": 1368576143.8821151,
+      "transform": [
+        "unit_div_1368576144"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "2997.3020",
+          "3045.8088"
+        ],
+        [
+          "2026-03-31",
+          "4520.4105",
+          "4155.9822"
+        ],
+        [
+          "2026-04-30",
+          "4175.3883",
+          "4175.3883"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以人民币计价:收入",
+      "edb_unit": "元",
+      "index_id": "M003809211"
+    },
+    "verified_at": "2026-06-22T14:31:50.285483"
   },
   {
     "series_id": "fx_crossborder:H",
@@ -1706,7 +2991,7 @@
     "wind_indicator": "银行代客涉外收付款:支出币种:美元",
     "frequency": "月",
     "unit": "3143.898932",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1720,7 +3005,42 @@
         "2026-04-30",
         3143.898932
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_264400998",
+      "minor_revision"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 7.3633,
+      "avg_diff_pct": 2.4736,
+      "max_abs_diff": 231.4953,
+      "unit_factor": 264400997.52463192,
+      "transform": [
+        "unit_div_264400998"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "2133.7782",
+          "2135.0070"
+        ],
+        [
+          "2026-03-31",
+          "3237.2903",
+          "3237.2903"
+        ],
+        [
+          "2026-04-30",
+          "3143.8989",
+          "2912.4036"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以美元计价:支出",
+      "edb_unit": "美元",
+      "index_id": "M003022239"
+    },
+    "verified_at": "2026-06-22T14:31:57.776464"
   },
   {
     "series_id": "fx_crossborder:I",
@@ -1729,7 +3049,7 @@
     "wind_indicator": "银行代客涉外收付款:支出币种:人民币",
     "frequency": "月",
     "unit": "4222.087976",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1743,7 +3063,42 @@
         "2026-04-30",
         4222.087976
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_1209119580",
+      "minor_revision"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 3.6018,
+      "avg_diff_pct": 1.6112,
+      "max_abs_diff": 152.0719,
+      "unit_factor": 1209119580.3328485,
+      "transform": [
+        "unit_div_1209119580"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "3242.9513",
+          "3242.9513"
+        ],
+        [
+          "2026-03-31",
+          "4948.1186",
+          "4887.1693"
+        ],
+        [
+          "2026-04-30",
+          "4222.0880",
+          "4374.1599"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以人民币计价:支出",
+      "edb_unit": "元",
+      "index_id": "M003809219"
+    },
+    "verified_at": "2026-06-22T14:32:04.405093"
   },
   {
     "series_id": "fx_crossborder:J",
@@ -1752,7 +3107,7 @@
     "wind_indicator": "境内银行代客涉外收入:经常项目:当月值",
     "frequency": "月",
     "unit": "4215.054688",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -1766,7 +3121,42 @@
         "2026-04-30",
         4215.054688
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 581.5,
+      "avg_diff_pct": 581.5,
+      "max_abs_diff": 24510.543,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "3242.5716",
+          "22098.1251"
+        ],
+        [
+          "2026-03-31",
+          "4151.5863",
+          "28293.0603"
+        ],
+        [
+          "2026-04-30",
+          "4215.0547",
+          "28725.5977"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以元计价:收入:经常项目",
+      "edb_unit": "元",
+      "index_id": "M003809212,M003022232"
+    },
+    "verified_at": "2026-06-22T14:14:16.433166",
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "fx_crossborder:K",
@@ -1775,7 +3165,7 @@
     "wind_indicator": "境内银行代客涉外支出:经常项目:当月值",
     "frequency": "月",
     "unit": "3699.970071",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1789,7 +3179,41 @@
         "2026-04-30",
         3699.970071
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_690370000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.6156,
+      "avg_diff_pct": 0.3761,
+      "max_abs_diff": 18.9723,
+      "unit_factor": 690370000.0157323,
+      "transform": [
+        "unit_div_690370000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "2697.0086",
+          "2713.6117"
+        ],
+        [
+          "2026-03-31",
+          "3848.1522",
+          "3848.1522"
+        ],
+        [
+          "2026-04-30",
+          "3699.9701",
+          "3680.9978"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以人民币计价:支出:经常项目",
+      "edb_unit": "元",
+      "index_id": "M003809220"
+    },
+    "verified_at": "2026-06-22T14:32:18.552584"
   },
   {
     "series_id": "fx_crossborder:L",
@@ -1798,7 +3222,7 @@
     "wind_indicator": "境内银行代客涉外收入:货物贸易:当月值",
     "frequency": "月",
     "unit": "3737.735704",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1812,7 +3236,41 @@
         "2026-04-30",
         3737.735704
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_690370000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.6156,
+      "avg_diff_pct": 0.3761,
+      "max_abs_diff": 19.1659,
+      "unit_factor": 690369999.9232657,
+      "transform": [
+        "unit_div_690370000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "2900.9310",
+          "2918.7895"
+        ],
+        [
+          "2026-03-31",
+          "3716.5859",
+          "3716.5859"
+        ],
+        [
+          "2026-04-30",
+          "3737.7357",
+          "3718.5698"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以人民币计价:收入:经常项目:货物贸易",
+      "edb_unit": "元",
+      "index_id": "M003809213"
+    },
+    "verified_at": "2026-06-22T14:32:28.496701"
   },
   {
     "series_id": "fx_crossborder:M",
@@ -1821,7 +3279,7 @@
     "wind_indicator": "境内银行代客涉外支出:货物贸易:当月值",
     "frequency": "月",
     "unit": "2993.996869",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -1835,7 +3293,8 @@
         "2026-04-30",
         2993.996869
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "fx_crossborder:N",
@@ -1844,7 +3303,7 @@
     "wind_indicator": "境内银行代客涉外收入:服务贸易:当月值",
     "frequency": "月",
     "unit": "396.824376",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -1858,7 +3317,8 @@
         "2026-04-30",
         396.824376
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "fx_crossborder:O",
@@ -1867,7 +3327,7 @@
     "wind_indicator": "境内银行代客涉外支出:服务贸易:当月值",
     "frequency": "月",
     "unit": "444.481976",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -1881,7 +3341,8 @@
         "2026-04-30",
         444.481976
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "fx_crossborder:P",
@@ -1890,7 +3351,7 @@
     "wind_indicator": "境内银行代客涉外收入:资本与金融项目:当月值",
     "frequency": "月",
     "unit": "4073.439979",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1904,7 +3365,41 @@
         "2026-04-30",
         4073.439979
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_690370000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.6156,
+      "avg_diff_pct": 0.3761,
+      "max_abs_diff": 20.8873,
+      "unit_factor": 690369999.997419,
+      "transform": [
+        "unit_div_690370000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "2728.5037",
+          "2745.3007"
+        ],
+        [
+          "2026-03-31",
+          "4060.3354",
+          "4060.3354"
+        ],
+        [
+          "2026-04-30",
+          "4073.4400",
+          "4052.5527"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以人民币计价:收入:资本和金融项目",
+      "edb_unit": "元",
+      "index_id": "M003809216"
+    },
+    "verified_at": "2026-06-22T14:32:45.641534"
   },
   {
     "series_id": "fx_crossborder:Q",
@@ -1913,7 +3408,7 @@
     "wind_indicator": "境内银行代客涉外支出:资本与金融项目:当月值",
     "frequency": "月",
     "unit": "3977.651218",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -1927,7 +3422,8 @@
         "2026-04-30",
         3977.651218
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "fx_crossborder:R",
@@ -1936,7 +3432,7 @@
     "wind_indicator": "境内银行代客涉外收入:证券投资:当月值",
     "frequency": "月",
     "unit": "3433.175855",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1950,7 +3446,41 @@
         "2026-04-30",
         3433.175855
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_690370000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.6156,
+      "avg_diff_pct": 0.3761,
+      "max_abs_diff": 17.6042,
+      "unit_factor": 690370000.0082877,
+      "transform": [
+        "unit_div_690370000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "2283.2981",
+          "2297.3544"
+        ],
+        [
+          "2026-03-31",
+          "3292.8707",
+          "3292.8707"
+        ],
+        [
+          "2026-04-30",
+          "3433.1759",
+          "3415.5716"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以人民币计价:收入:资本和金融项目:证券投资",
+      "edb_unit": "元",
+      "index_id": "M003809218"
+    },
+    "verified_at": "2026-06-22T14:33:11.822203"
   },
   {
     "series_id": "fx_crossborder:S",
@@ -1959,7 +3489,7 @@
     "wind_indicator": "境内银行代客涉外支出:证券投资:当月值",
     "frequency": "月",
     "unit": "3297.195814",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -1973,7 +3503,8 @@
         "2026-04-30",
         3297.195814
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "fx_crossborder:T",
@@ -1982,7 +3513,7 @@
     "wind_indicator": "境内银行代客涉外收入:直接投资:当月值",
     "frequency": "月",
     "unit": "596.50557",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1996,7 +3527,41 @@
         "2026-04-30",
         596.50557
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_690370000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.6156,
+      "avg_diff_pct": 0.3761,
+      "max_abs_diff": 3.0587,
+      "unit_factor": 690369999.7487775,
+      "transform": [
+        "unit_div_690370000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "413.8325",
+          "416.3801"
+        ],
+        [
+          "2026-03-31",
+          "700.2156",
+          "700.2156"
+        ],
+        [
+          "2026-04-30",
+          "596.5056",
+          "593.4469"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以人民币计价:收入:资本和金融项目:直接投资",
+      "edb_unit": "元",
+      "index_id": "M003809217"
+    },
+    "verified_at": "2026-06-22T14:33:28.247653"
   },
   {
     "series_id": "fx_crossborder:U",
@@ -2019,7 +3584,41 @@
         "2026-04-30",
         644.12439
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_600786119"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 5.8703,
+      "avg_diff_pct": 3.5267,
+      "max_abs_diff": 37.812,
+      "unit_factor": 600786118.6296811,
+      "transform": [
+        "unit_div_600786119"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "502.1162",
+          "478.4670"
+        ],
+        [
+          "2026-03-31",
+          "804.6255",
+          "804.6255"
+        ],
+        [
+          "2026-04-30",
+          "644.1244",
+          "681.9364"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以人民币计价:收入:资本和金融项目:直接投资",
+      "edb_unit": "元",
+      "index_id": "M003809217"
+    },
+    "verified_at": "2026-06-22T14:33:34.119450"
   },
   {
     "series_id": "sec_eq:B",
@@ -2028,7 +3627,7 @@
     "wind_indicator": "即期汇率:美元兑人民币",
     "frequency": "6.78",
     "unit": "6.781699999999999",
-    "status": "mapping_pending",
+    "status": "verified",
     "last_dates": [
       [
         "2026-05-26",
@@ -2042,7 +3641,36 @@
         "2026-05-28",
         6.78
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 17,
+      "max_diff_pct": 0.0,
+      "avg_diff_pct": 0.0,
+      "max_abs_diff": 0.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-05-26",
+          "6.7870",
+          "6.7870"
+        ],
+        [
+          "2026-05-27",
+          "6.7817",
+          "6.7817"
+        ],
+        [
+          "2026-05-28",
+          "6.7800",
+          "6.7800"
+        ]
+      ],
+      "edb_indicator": "即期汇率(16:30):美元兑人民币",
+      "edb_unit": "",
+      "index_id": "M004370159"
+    },
+    "verified_at": "2026-06-22T14:15:56.176466"
   },
   {
     "series_id": "sec_eq:C",
@@ -2065,7 +3693,9 @@
         "2026-05-28",
         0.0
       ]
-    ]
+    ],
+    "verify_details": "Only 0 overlap points: DB dates=['2026-05-26', '2026-05-27', '2026-05-28'], EDB dates=['2026-05-31']",
+    "verified_at": "2026-06-22T14:33:38.780514"
   },
   {
     "series_id": "sec_eq:D",
@@ -2074,7 +3704,7 @@
     "wind_indicator": "Wind人民币汇率预估指数",
     "frequency": "99.833",
     "unit": "99.8024",
-    "status": "mapping_pending",
+    "status": "verified",
     "last_dates": [
       [
         "2026-05-26",
@@ -2088,7 +3718,36 @@
         "2026-05-28",
         99.833
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.833,
+      "avg_diff_pct": 0.8303,
+      "max_abs_diff": 0.83,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-05-08",
+          "98.8827",
+          "99.7000"
+        ],
+        [
+          "2026-05-15",
+          "99.4533",
+          "100.2800"
+        ],
+        [
+          "2026-05-22",
+          "99.6400",
+          "100.4700"
+        ]
+      ],
+      "edb_indicator": "CFETS人民币汇率指数",
+      "edb_unit": "2014年12月31日=100",
+      "index_id": "M004115462,M004115463,M004115464"
+    },
+    "verified_at": "2026-06-22T14:16:17.873598"
   },
   {
     "series_id": "sec_eq:E",
@@ -2097,7 +3756,7 @@
     "wind_indicator": "沪深300指数",
     "frequency": "4914.2133",
     "unit": "4908.1714",
-    "status": "mapping_pending",
+    "status": "verified",
     "last_dates": [
       [
         "2026-05-26",
@@ -2111,7 +3770,36 @@
         "2026-05-28",
         4914.2133
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 17,
+      "max_diff_pct": 0.0,
+      "avg_diff_pct": 0.0,
+      "max_abs_diff": 0.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-05-26",
+          "4947.8493",
+          "4947.8493"
+        ],
+        [
+          "2026-05-27",
+          "4908.1714",
+          "4908.1714"
+        ],
+        [
+          "2026-05-28",
+          "4914.2133",
+          "4914.2133"
+        ]
+      ],
+      "edb_indicator": "沪深300指数",
+      "edb_unit": "点",
+      "index_id": "G002837008"
+    },
+    "verified_at": "2026-06-22T14:16:25.114159"
   },
   {
     "series_id": "sec_eq:F",
@@ -2120,7 +3808,7 @@
     "wind_indicator": "恒生指数",
     "frequency": "25006.16",
     "unit": "25328.23",
-    "status": "mapping_pending",
+    "status": "verified",
     "last_dates": [
       [
         "2026-05-26",
@@ -2134,7 +3822,36 @@
         "2026-05-28",
         25006.16
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 18,
+      "max_diff_pct": 0.0,
+      "avg_diff_pct": 0.0,
+      "max_abs_diff": 0.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-05-26",
+          "25599.4500",
+          "25599.4500"
+        ],
+        [
+          "2026-05-27",
+          "25328.2300",
+          "25328.2300"
+        ],
+        [
+          "2026-05-28",
+          "25006.1600",
+          "25006.1600"
+        ]
+      ],
+      "edb_indicator": "恒生指数",
+      "edb_unit": "点",
+      "index_id": "G002856503"
+    },
+    "verified_at": "2026-06-22T14:16:34.918233"
   },
   {
     "series_id": "sec_eq:H",
@@ -2157,7 +3874,41 @@
         "2026-05-27",
         65.8859
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 15,
+      "max_diff_pct": 201.3417,
+      "avg_diff_pct": 19.2543,
+      "max_abs_diff": 132.6558,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-05-22",
+          "-56.3121",
+          "-56.3121"
+        ],
+        [
+          "2026-05-26",
+          "-66.7699",
+          "-8.3643"
+        ],
+        [
+          "2026-05-27",
+          "65.8859",
+          "-66.7699"
+        ]
+      ],
+      "edb_indicator": "港股通:净买入额(人民币)",
+      "edb_unit": "元",
+      "index_id": "S006015792"
+    },
+    "verified_at": "2026-06-22T14:33:43.649249"
   },
   {
     "series_id": "sec_eq:I",
@@ -2166,7 +3917,7 @@
     "wind_indicator": "港股通:累计买入成交净额(人民币)",
     "frequency": "日",
     "unit": "47944.9512",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-05-25",
@@ -2180,7 +3931,41 @@
         "2026-05-27",
         47944.9512
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 15,
+      "max_diff_pct": 0.1493,
+      "avg_diff_pct": 0.0287,
+      "max_abs_diff": 71.5597,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-05-22",
+          "47954.1995",
+          "47948.5257"
+        ],
+        [
+          "2026-05-26",
+          "47879.0653",
+          "47940.1614"
+        ],
+        [
+          "2026-05-27",
+          "47944.9512",
+          "47873.3915"
+        ]
+      ],
+      "edb_indicator": "港股通:累计净买入额(人民币)",
+      "edb_unit": "元",
+      "index_id": "S006015794"
+    },
+    "verified_at": "2026-06-22T14:16:58.208767"
   },
   {
     "series_id": "sec_eq:J",
@@ -2203,7 +3988,36 @@
         "2026-05-27",
         0.0
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 15,
+      "max_diff_pct": 43533885000000.0,
+      "avg_diff_pct": 39084150400000.0,
+      "max_abs_diff": 435338850000.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-05-22",
+          "0.0000",
+          "332577010000.0000"
+        ],
+        [
+          "2026-05-26",
+          "0.0000",
+          "394665410000.0000"
+        ],
+        [
+          "2026-05-27",
+          "0.0000",
+          "407472680000.0000"
+        ]
+      ],
+      "edb_indicator": "陆股通:当日成交金额(人民币)",
+      "edb_unit": "元",
+      "index_id": "S006015803"
+    },
+    "verified_at": "2026-06-22T14:33:58.011831"
   },
   {
     "series_id": "sec_eq:K",
@@ -2226,7 +4040,36 @@
         "2026-05-27",
         0.0
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 15,
+      "max_diff_pct": 2170964000000.0,
+      "avg_diff_pct": 607561466666.6666,
+      "max_abs_diff": 21709640000.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-05-22",
+          "0.0000",
+          "-5631210000.0000"
+        ],
+        [
+          "2026-05-26",
+          "0.0000",
+          "-836430000.0000"
+        ],
+        [
+          "2026-05-27",
+          "0.0000",
+          "-6676990000.0000"
+        ]
+      ],
+      "edb_indicator": "港股通:净买入额(人民币)",
+      "edb_unit": "元",
+      "index_id": "S006015792"
+    },
+    "verified_at": "2026-06-22T14:34:06.959298"
   },
   {
     "series_id": "sec_fi:AA",
@@ -2235,7 +4078,7 @@
     "wind_indicator": "上清所:债券托管量:其他公司信用类债券:人民银行批准的境外机构",
     "frequency": "月",
     "unit": "30.9545",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -2249,7 +4092,41 @@
         "2026-04-30",
         30.9545
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 59,
+      "max_diff_pct": 0.0146,
+      "avg_diff_pct": 0.0011,
+      "max_abs_diff": 0.005,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "30.8600",
+          "30.8555"
+        ],
+        [
+          "2026-03-31",
+          "30.9500",
+          "30.9545"
+        ],
+        [
+          "2026-04-30",
+          "30.9545",
+          "30.9545"
+        ]
+      ],
+      "edb_indicator": "上清所:债券托管量:公司信用类债券:其他公司信用类债券:人民银行批准的境外机构",
+      "edb_unit": "元",
+      "index_id": "M005945160"
+    },
+    "verified_at": "2026-06-22T14:17:22.776825"
   },
   {
     "series_id": "sec_fi:AB",
@@ -2258,7 +4135,7 @@
     "wind_indicator": "上清所:债券托管量:熊猫债:人民银行批准的境外机构",
     "frequency": "月",
     "unit": "637.4621",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -2272,7 +4149,41 @@
         "2026-04-30",
         637.4621
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 59,
+      "max_diff_pct": 0.001,
+      "avg_diff_pct": 0.0002,
+      "max_abs_diff": 0.0045,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "553.3100",
+          "553.3071"
+        ],
+        [
+          "2026-03-31",
+          "635.4300",
+          "635.4271"
+        ],
+        [
+          "2026-04-30",
+          "637.4621",
+          "637.4621"
+        ]
+      ],
+      "edb_indicator": "上清所:债券托管量:熊猫债:人民银行批准的境外机构",
+      "edb_unit": "元",
+      "index_id": "M005945220"
+    },
+    "verified_at": "2026-06-22T14:17:26.886958"
   },
   {
     "series_id": "sec_fi:AC",
@@ -2295,7 +4206,36 @@
         "2026-04-30",
         0.0
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 4991103032000000.0,
+      "avg_diff_pct": 4966949034666667.0,
+      "max_abs_diff": 49911030320000.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-02-28",
+          "0.0000",
+          "49489199720000.0000"
+        ],
+        [
+          "2026-03-31",
+          "0.0000",
+          "49608241000000.0000"
+        ],
+        [
+          "2026-04-30",
+          "0.0000",
+          "49911030320000.0000"
+        ]
+      ],
+      "edb_indicator": "上清所:债券期末托管量:期末值",
+      "edb_unit": "元",
+      "index_id": "M035330431"
+    },
+    "verified_at": "2026-06-22T14:34:14.794275"
   },
   {
     "series_id": "sec_fi:AD",
@@ -2304,7 +4244,7 @@
     "wind_indicator": "上清所:债券托管量:标准化票据:人民银行批准的境外机构",
     "frequency": "月",
     "unit": "",
-    "status": "mapping_pending",
+    "status": "verified",
     "last_dates": [
       [
         "2026-02-28",
@@ -2318,7 +4258,36 @@
         "2026-04-30",
         0.0
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 59,
+      "max_diff_pct": 0.0,
+      "avg_diff_pct": 0.0,
+      "max_abs_diff": 0.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-02-28",
+          "0.0000",
+          "0.0000"
+        ],
+        [
+          "2026-03-31",
+          "0.0000",
+          "0.0000"
+        ],
+        [
+          "2026-04-30",
+          "0.0000",
+          "0.0000"
+        ]
+      ],
+      "edb_indicator": "上清所:债券托管量:标准化票据:人民银行批准的境外机构",
+      "edb_unit": "元",
+      "index_id": "M005945260"
+    },
+    "verified_at": "2026-06-22T14:17:37.728556"
   },
   {
     "series_id": "sec_fi:AE",
@@ -2327,7 +4296,7 @@
     "wind_indicator": "上清所:债券托管量:资产支持证券:人民银行批准的境外机构",
     "frequency": "月",
     "unit": "",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -2341,7 +4310,41 @@
         "2026-04-30",
         0.0
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 59,
+      "max_diff_pct": 0.0,
+      "avg_diff_pct": 0.0,
+      "max_abs_diff": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "0.0000",
+          "0.0000"
+        ],
+        [
+          "2026-03-31",
+          "0.0000",
+          "0.0000"
+        ],
+        [
+          "2026-04-30",
+          "0.0000",
+          "0.0000"
+        ]
+      ],
+      "edb_indicator": "上清所:债券托管量:资产支持证券:人民银行批准的境外机构",
+      "edb_unit": "元",
+      "index_id": "M005945240"
+    },
+    "verified_at": "2026-06-22T14:17:41.906957"
   },
   {
     "series_id": "sec_fi:AF",
@@ -2350,7 +4353,7 @@
     "wind_indicator": "境外投资者专项统计:债券托管量",
     "frequency": "月",
     "unit": "26842.6164",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -2364,7 +4367,41 @@
         "2026-04-30",
         26842.6164
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.0,
+      "avg_diff_pct": 0.0,
+      "max_abs_diff": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "27797.5907",
+          "27797.5907"
+        ],
+        [
+          "2026-03-31",
+          "27096.1463",
+          "27096.1463"
+        ],
+        [
+          "2026-04-30",
+          "26842.6164",
+          "26842.6164"
+        ]
+      ],
+      "edb_indicator": "债券托管量:银行间债券市场:境外机构",
+      "edb_unit": "元",
+      "index_id": "M009335746"
+    },
+    "verified_at": "2026-06-22T14:17:50.600142"
   },
   {
     "series_id": "sec_fi:B",
@@ -2373,7 +4410,7 @@
     "wind_indicator": "中债:债券托管量:国债:境外机构",
     "frequency": "月",
     "unit": "19424.9326",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -2387,7 +4424,9 @@
         "2026-04-30",
         19424.9326
       ]
-    ]
+    ],
+    "verify_details": "EDB returned empty data",
+    "verified_at": "2026-06-22T14:34:20.499361"
   },
   {
     "series_id": "sec_fi:BE",
@@ -2396,7 +4435,7 @@
     "wind_indicator": "",
     "frequency": "中债-境外机构",
     "unit": "8960.22",
-    "status": "mapping_pending",
+    "status": "manual",
     "last_dates": [
       [
         "2026-02-28",
@@ -2410,7 +4449,9 @@
         "2026-04-30",
         8960.22
       ]
-    ]
+    ],
+    "verify_note": "中债-境外机构 — no Wind indicator name in Excel header",
+    "verified_at": "2026-06-22T14:23:52.999902"
   },
   {
     "series_id": "sec_fi:BF",
@@ -2419,7 +4460,7 @@
     "wind_indicator": "",
     "frequency": "上清-境外机构",
     "unit": "1650.3106",
-    "status": "mapping_pending",
+    "status": "manual",
     "last_dates": [
       [
         "2026-02-28",
@@ -2433,7 +4474,9 @@
         "2026-04-30",
         1650.3106
       ]
-    ]
+    ],
+    "verify_note": "上清-境外机构 — no Wind indicator name in Excel header",
+    "verified_at": "2026-06-22T14:23:52.999903"
   },
   {
     "series_id": "sec_fi:BH",
@@ -2442,7 +4485,7 @@
     "wind_indicator": "中债国债到期收益率:10年:月",
     "frequency": "月",
     "unit": "1.782038095238095",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -2456,7 +4499,39 @@
         "2026-04-30",
         1.782038095238095
       ]
-    ]
+    ],
+    "transform": [
+      "minor_revision"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 1.9493,
+      "avg_diff_pct": 1.3458,
+      "max_abs_diff": 0.0347,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-02-28",
+          "1.8054",
+          "1.7753"
+        ],
+        [
+          "2026-03-31",
+          "1.8094",
+          "1.8171"
+        ],
+        [
+          "2026-04-30",
+          "1.7820",
+          "1.7473"
+        ]
+      ],
+      "edb_indicator": "中债国债到期收益率:10年",
+      "edb_unit": "%",
+      "index_id": "L001619604"
+    },
+    "verified_at": "2026-06-22T14:18:09.462468"
   },
   {
     "series_id": "sec_fi:BI",
@@ -2465,7 +4540,7 @@
     "wind_indicator": "美国:国债收益率:10年:月",
     "frequency": "月",
     "unit": "4.319090909090909",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -2479,7 +4554,34 @@
         "2026-04-30",
         4.319090909090909
       ]
-    ]
+    ],
+    "transform": [
+      "minor_revision"
+    ],
+    "verify_details": {
+      "overlap_points": 2,
+      "max_diff_pct": 1.8733,
+      "avg_diff_pct": 1.5736,
+      "max_abs_diff": 0.0809,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-03-31",
+          "4.2459",
+          "4.3000"
+        ],
+        [
+          "2026-04-30",
+          "4.3191",
+          "4.4000"
+        ]
+      ],
+      "edb_indicator": "美国:国债收益率:10年",
+      "edb_unit": "%",
+      "index_id": "G002600774"
+    },
+    "verified_at": "2026-06-22T14:18:18.673791"
   },
   {
     "series_id": "sec_fi:C",
@@ -2488,7 +4590,7 @@
     "wind_indicator": "中债:债券托管量:国家开发银行债:境外机构",
     "frequency": "月",
     "unit": "",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -2502,7 +4604,37 @@
         "2026-04-30",
         0.0
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 277975907000000.0,
+      "avg_diff_pct": 272454511333333.34,
+      "max_abs_diff": 2779759070000.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-02-28",
+          "0.0000",
+          "2779759070000.0000"
+        ],
+        [
+          "2026-03-31",
+          "0.0000",
+          "2709614630000.0000"
+        ],
+        [
+          "2026-04-30",
+          "0.0000",
+          "2684261640000.0000"
+        ]
+      ],
+      "edb_indicator": "债券托管量:银行间债券市场:境外机构",
+      "edb_unit": "元",
+      "index_id": "M009335746"
+    },
+    "verified_at": "2026-06-22T14:18:25.113357",
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "sec_fi:D",
@@ -2525,7 +4657,36 @@
         "2026-04-30",
         0.0
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 277975907000000.0,
+      "avg_diff_pct": 272454511333333.34,
+      "max_abs_diff": 2779759070000.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-02-28",
+          "0.0000",
+          "2779759070000.0000"
+        ],
+        [
+          "2026-03-31",
+          "0.0000",
+          "2709614630000.0000"
+        ],
+        [
+          "2026-04-30",
+          "0.0000",
+          "2684261640000.0000"
+        ]
+      ],
+      "edb_indicator": "债券托管量:银行间债券市场:境外机构",
+      "edb_unit": "元",
+      "index_id": "M009335746"
+    },
+    "verified_at": "2026-06-22T14:34:29.989074"
   },
   {
     "series_id": "sec_fi:E",
@@ -2534,7 +4695,7 @@
     "wind_indicator": "中债:债券托管量:中国农业发展银行债:境外机构",
     "frequency": "月",
     "unit": "",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -2548,7 +4709,37 @@
         "2026-04-30",
         0.0
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 277975907000000.0,
+      "avg_diff_pct": 272454511333333.34,
+      "max_abs_diff": 2779759070000.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-02-28",
+          "0.0000",
+          "2779759070000.0000"
+        ],
+        [
+          "2026-03-31",
+          "0.0000",
+          "2709614630000.0000"
+        ],
+        [
+          "2026-04-30",
+          "0.0000",
+          "2684261640000.0000"
+        ]
+      ],
+      "edb_indicator": "债券托管量:银行间债券市场:境外机构",
+      "edb_unit": "元",
+      "index_id": "M009335746"
+    },
+    "verified_at": "2026-06-22T14:18:39.680495",
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "sec_fi:F",
@@ -2571,7 +4762,37 @@
         "2026-04-30",
         0.0
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas",
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 380750150000000.0,
+      "avg_diff_pct": 361040150000000.0,
+      "max_abs_diff": 3807501500000.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-02-28",
+          "0.0000",
+          "3807501500000.0000"
+        ],
+        [
+          "2026-03-31",
+          "0.0000",
+          "3616401500000.0000"
+        ],
+        [
+          "2026-04-30",
+          "0.0000",
+          "3407301500000.0000"
+        ]
+      ],
+      "edb_indicator": "中债:债券托管量:商业银行债券",
+      "edb_unit": "元",
+      "index_id": "M004364579"
+    },
+    "verified_at": "2026-06-22T14:34:38.412559"
   },
   {
     "series_id": "sec_fi:G",
@@ -2580,7 +4801,7 @@
     "wind_indicator": "中债:债券托管量:商业银行次级债:境外机构",
     "frequency": "月",
     "unit": "",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -2594,7 +4815,8 @@
         "2026-04-30",
         0.0
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "sec_fi:H",
@@ -2603,7 +4825,7 @@
     "wind_indicator": "中债:债券托管量:商业银行混合资本债:境外机构",
     "frequency": "月",
     "unit": "",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -2617,7 +4839,8 @@
         "2026-04-30",
         0.0
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "sec_fi:I",
@@ -2626,7 +4849,7 @@
     "wind_indicator": "中债:债券托管量:二级资本工具:境外机构",
     "frequency": "月",
     "unit": "",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -2640,7 +4863,37 @@
         "2026-04-30",
         0.0
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 277975907000000.0,
+      "avg_diff_pct": 272454511333333.34,
+      "max_abs_diff": 2779759070000.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-02-28",
+          "0.0000",
+          "2779759070000.0000"
+        ],
+        [
+          "2026-03-31",
+          "0.0000",
+          "2709614630000.0000"
+        ],
+        [
+          "2026-04-30",
+          "0.0000",
+          "2684261640000.0000"
+        ]
+      ],
+      "edb_indicator": "债券托管量:银行间债券市场:境外机构",
+      "edb_unit": "元",
+      "index_id": "M009335746"
+    },
+    "verified_at": "2026-06-22T14:19:04.882230",
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "sec_fi:J",
@@ -2649,7 +4902,7 @@
     "wind_indicator": "中债:债券托管量:企业债:境外机构",
     "frequency": "月",
     "unit": "5.859",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -2663,7 +4916,42 @@
         "2026-04-30",
         5.859
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_451332857607",
+      "minor_revision"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 2.5234,
+      "avg_diff_pct": 1.3441,
+      "max_abs_diff": 0.1554,
+      "unit_factor": 451332857606.75433,
+      "transform": [
+        "unit_div_451332857607"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "6.1590",
+          "6.1590"
+        ],
+        [
+          "2026-03-31",
+          "6.1590",
+          "6.0036"
+        ],
+        [
+          "2026-04-30",
+          "5.8590",
+          "5.9474"
+        ]
+      ],
+      "edb_indicator": "债券托管量:银行间债券市场:境外机构",
+      "edb_unit": "元",
+      "index_id": "M009335746"
+    },
+    "verified_at": "2026-06-22T14:34:52.866833"
   },
   {
     "series_id": "sec_fi:K",
@@ -2686,7 +4974,36 @@
         "2026-04-30",
         0.0
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 277975907000000.0,
+      "avg_diff_pct": 272454511333333.34,
+      "max_abs_diff": 2779759070000.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-02-28",
+          "0.0000",
+          "2779759070000.0000"
+        ],
+        [
+          "2026-03-31",
+          "0.0000",
+          "2709614630000.0000"
+        ],
+        [
+          "2026-04-30",
+          "0.0000",
+          "2684261640000.0000"
+        ]
+      ],
+      "edb_indicator": "债券托管量:银行间债券市场:境外机构",
+      "edb_unit": "元",
+      "index_id": "M009335746"
+    },
+    "verified_at": "2026-06-22T14:35:12.460333"
   },
   {
     "series_id": "sec_fi:L",
@@ -2709,7 +5026,36 @@
         "2026-04-30",
         0.0
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 2634769999999.9995,
+      "avg_diff_pct": 2521506466666.6665,
+      "max_abs_diff": 26347700000.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-02-28",
+          "0.0000",
+          "26347700000.0000"
+        ],
+        [
+          "2026-03-31",
+          "0.0000",
+          "24302892000.0000"
+        ],
+        [
+          "2026-04-30",
+          "0.0000",
+          "24994602000.0000"
+        ]
+      ],
+      "edb_indicator": "上清所:债券托管量:公司信用类债券:中期票据:人民银行批准的境外机构",
+      "edb_unit": "元",
+      "index_id": "M005945140"
+    },
+    "verified_at": "2026-06-22T14:35:16.682062"
   },
   {
     "series_id": "sec_fi:M",
@@ -2732,7 +5078,41 @@
         "2026-04-30",
         11.312
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 59,
+      "max_diff_pct": 419.3433,
+      "avg_diff_pct": 73.5169,
+      "max_abs_diff": 64.16,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "13.4100",
+          "18.3520"
+        ],
+        [
+          "2026-03-31",
+          "13.4100",
+          "18.1520"
+        ],
+        [
+          "2026-04-30",
+          "11.3120",
+          "21.5520"
+        ]
+      ],
+      "edb_indicator": "上清所:债券托管量:公司信用类债券:超短期融资券:人民银行批准的境外机构",
+      "edb_unit": "元",
+      "index_id": "M005945080"
+    },
+    "verified_at": "2026-06-22T14:35:19.809375"
   },
   {
     "series_id": "sec_fi:N",
@@ -2741,7 +5121,7 @@
     "wind_indicator": "上清所:债券托管量:超短期融资券:人民银行批准的境外机构",
     "frequency": "月",
     "unit": "21.552",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -2755,7 +5135,41 @@
         "2026-04-30",
         21.552
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 59,
+      "max_diff_pct": 0.011,
+      "avg_diff_pct": 0.0016,
+      "max_abs_diff": 0.002,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "18.3500",
+          "18.3520"
+        ],
+        [
+          "2026-03-31",
+          "18.1500",
+          "18.1520"
+        ],
+        [
+          "2026-04-30",
+          "21.5520",
+          "21.5520"
+        ]
+      ],
+      "edb_indicator": "上清所:债券托管量:公司信用类债券:超短期融资券:人民银行批准的境外机构",
+      "edb_unit": "元",
+      "index_id": "M005945080"
+    },
+    "verified_at": "2026-06-22T14:19:35.736565"
   },
   {
     "series_id": "sec_fi:O",
@@ -2764,7 +5178,7 @@
     "wind_indicator": "上清所:债券托管量:中期票据:人民银行批准的境外机构",
     "frequency": "月",
     "unit": "249.946",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -2778,7 +5192,41 @@
         "2026-04-30",
         249.946
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 59,
+      "max_diff_pct": 0.0017,
+      "avg_diff_pct": 0.0003,
+      "max_abs_diff": 0.0046,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "263.4800",
+          "263.4770"
+        ],
+        [
+          "2026-03-31",
+          "243.0300",
+          "243.0289"
+        ],
+        [
+          "2026-04-30",
+          "249.9460",
+          "249.9460"
+        ]
+      ],
+      "edb_indicator": "上清所:债券托管量:公司信用类债券:中期票据:人民银行批准的境外机构",
+      "edb_unit": "元",
+      "index_id": "M005945140"
+    },
+    "verified_at": "2026-06-22T14:19:39.379330"
   },
   {
     "series_id": "sec_fi:P",
@@ -2787,7 +5235,7 @@
     "wind_indicator": "上清所:债券托管量:同业存单:人民银行批准的境外机构",
     "frequency": "月",
     "unit": "2906.3050000000003",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -2801,7 +5249,41 @@
         "2026-04-30",
         2906.3050000000003
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 59,
+      "max_diff_pct": 0.0002,
+      "avg_diff_pct": 0.0,
+      "max_abs_diff": 0.005,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "4035.8400",
+          "4035.8400"
+        ],
+        [
+          "2026-03-31",
+          "3307.5400",
+          "3307.5350"
+        ],
+        [
+          "2026-04-30",
+          "2906.3050",
+          "2906.3050"
+        ]
+      ],
+      "edb_indicator": "上清所:债券托管量:同业存单:人民银行批准的境外机构",
+      "edb_unit": "元",
+      "index_id": "M005945200"
+    },
+    "verified_at": "2026-06-22T14:19:42.259598"
   },
   {
     "series_id": "sec_fi:Q",
@@ -2810,7 +5292,7 @@
     "wind_indicator": "上清所:债券托管量:区域集优中小企业集合票据:人民银行批准的境外机构",
     "frequency": "月",
     "unit": "",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -2824,7 +5306,8 @@
         "2026-04-30",
         0.0
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "sec_fi:R",
@@ -2847,7 +5330,36 @@
         "2026-04-30",
         0.0
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 59,
+      "max_diff_pct": 932520000000.0,
+      "avg_diff_pct": 293969491525.4237,
+      "max_abs_diff": 9325200000.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-02-28",
+          "0.0000",
+          "1835200000.0000"
+        ],
+        [
+          "2026-03-31",
+          "0.0000",
+          "1815200000.0000"
+        ],
+        [
+          "2026-04-30",
+          "0.0000",
+          "2155200000.0000"
+        ]
+      ],
+      "edb_indicator": "上清所:债券托管量:公司信用类债券:超短期融资券:人民银行批准的境外机构",
+      "edb_unit": "元",
+      "index_id": "M005945080"
+    },
+    "verified_at": "2026-06-22T14:35:29.314224"
   },
   {
     "series_id": "sec_fi:S",
@@ -2870,7 +5382,36 @@
         "2026-04-30",
         0.0
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 59,
+      "max_diff_pct": 10000000000.0,
+      "avg_diff_pct": 2033898305.0847,
+      "max_abs_diff": 100000000.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-02-28",
+          "0.0000",
+          "0.0000"
+        ],
+        [
+          "2026-03-31",
+          "0.0000",
+          "0.0000"
+        ],
+        [
+          "2026-04-30",
+          "0.0000",
+          "0.0000"
+        ]
+      ],
+      "edb_indicator": "上清所:债券托管量:资产支持证券:人民银行批准的境外机构",
+      "edb_unit": "元",
+      "index_id": "M005945240"
+    },
+    "verified_at": "2026-06-22T14:35:35.764855"
   },
   {
     "series_id": "sec_fi:T",
@@ -2879,7 +5420,7 @@
     "wind_indicator": "上清所:债券托管量:资产管理公司金融债:人民银行批准的境外机构",
     "frequency": "月",
     "unit": "",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -2893,7 +5434,8 @@
         "2026-04-30",
         0.0
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "sec_fi:U",
@@ -2902,7 +5444,7 @@
     "wind_indicator": "上清所:债券托管量:政府支持机构债券:人民银行批准的境外机构",
     "frequency": "月",
     "unit": "",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -2916,7 +5458,8 @@
         "2026-04-30",
         0.0
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "sec_fi:V",
@@ -2925,7 +5468,7 @@
     "wind_indicator": "上清所:债券托管量:绿色债务融资工具:人民银行批准的境外机构",
     "frequency": "月",
     "unit": "",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -2939,7 +5482,8 @@
         "2026-04-30",
         0.0
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "sec_fi:W",
@@ -2948,7 +5492,7 @@
     "wind_indicator": "中债:债券托管量:政策性银行债:境外机构",
     "frequency": "月",
     "unit": "7075.282499999999",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -2962,7 +5506,9 @@
         "2026-04-30",
         7075.282499999999
       ]
-    ]
+    ],
+    "verify_details": "EDB returned empty data",
+    "verified_at": "2026-06-22T14:35:57.617386"
   },
   {
     "series_id": "sec_fi:X",
@@ -2971,7 +5517,7 @@
     "wind_indicator": "中债:债券托管量:商业银行债券:境外机构",
     "frequency": "月",
     "unit": "59.01",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -2985,7 +5531,8 @@
         "2026-04-30",
         59.01
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "sec_fi:Y",
@@ -2994,7 +5541,7 @@
     "wind_indicator": "上清所:债券托管量:金融债券:人民银行批准的境外机构",
     "frequency": "月",
     "unit": "515.9588",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -3008,7 +5555,41 @@
         "2026-04-30",
         515.9588
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 59,
+      "max_diff_pct": 0.0009,
+      "avg_diff_pct": 0.0001,
+      "max_abs_diff": 0.0045,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "516.7500",
+          "516.7482"
+        ],
+        [
+          "2026-03-31",
+          "541.3800",
+          "541.3782"
+        ],
+        [
+          "2026-04-30",
+          "515.9588",
+          "515.9588"
+        ]
+      ],
+      "edb_indicator": "上清所:债券托管量:金融债券:人民银行批准的境外机构",
+      "edb_unit": "元",
+      "index_id": "M005945180"
+    },
+    "verified_at": "2026-06-22T14:20:42.570704"
   },
   {
     "series_id": "sec_fi:Z",
@@ -3017,7 +5598,7 @@
     "wind_indicator": "上清所:债券托管量:非公开定向债务融资工具:人民银行批准的境外机构",
     "frequency": "月",
     "unit": "16.461",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -3031,7 +5612,41 @@
         "2026-04-30",
         16.461
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 59,
+      "max_diff_pct": 0.2083,
+      "avg_diff_pct": 0.0219,
+      "max_abs_diff": 0.004,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "11.9100",
+          "11.9110"
+        ],
+        [
+          "2026-03-31",
+          "13.9100",
+          "13.9110"
+        ],
+        [
+          "2026-04-30",
+          "16.4610",
+          "16.4610"
+        ]
+      ],
+      "edb_indicator": "上清所:债券托管量:公司信用类债券:非公开定向债务融资工具:人民银行批准的境外机构",
+      "edb_unit": "元",
+      "index_id": "M005945100"
+    },
+    "verified_at": "2026-06-22T14:20:45.518014"
   },
   {
     "series_id": "trade_goods:AF",
@@ -3040,7 +5655,7 @@
     "wind_indicator": "",
     "frequency": "monthly",
     "unit": "顺差",
-    "status": "mapping_pending",
+    "status": "not_applicable",
     "last_dates": [
       [
         "2026-01-31",
@@ -3054,7 +5669,9 @@
         "2026-03-31",
         1.0
       ]
-    ]
+    ],
+    "verify_note": "Excel placeholder - sequence numbers 1,2,3",
+    "verified_at": "2026-06-22T14:23:52.999905"
   },
   {
     "series_id": "trade_goods:AY",
@@ -3063,7 +5680,7 @@
     "wind_indicator": "",
     "frequency": "monthly",
     "unit": "",
-    "status": "mapping_pending",
+    "status": "manual",
     "last_dates": [
       [
         "2024-10-31",
@@ -3077,7 +5694,9 @@
         "2024-12-31",
         354.07539400000013
       ]
-    ]
+    ],
+    "verify_note": "Column AY — no Wind indicator name in Excel header",
+    "verified_at": "2026-06-22T14:23:52.999906"
   },
   {
     "series_id": "trade_goods:B",
@@ -3130,7 +5749,7 @@
     "wind_indicator": "境内银行代客涉外收入:货物贸易:当月值",
     "frequency": "月",
     "unit": "3737.735704",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -3144,7 +5763,41 @@
         "2026-04-30",
         3737.735704
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_690370000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.6156,
+      "avg_diff_pct": 0.3761,
+      "max_abs_diff": 19.1659,
+      "unit_factor": 690369999.9232657,
+      "transform": [
+        "unit_div_690370000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "2900.9310",
+          "2918.7895"
+        ],
+        [
+          "2026-03-31",
+          "3716.5859",
+          "3716.5859"
+        ],
+        [
+          "2026-04-30",
+          "3737.7357",
+          "3718.5698"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以人民币计价:收入:经常项目:货物贸易",
+      "edb_unit": "元",
+      "index_id": "M003809213"
+    },
+    "verified_at": "2026-06-22T14:36:08.864025"
   },
   {
     "series_id": "trade_goods:D",
@@ -3153,7 +5806,7 @@
     "wind_indicator": "银行代客结汇:货物贸易:当月值",
     "frequency": "月",
     "unit": "1801.685",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -3167,7 +5820,41 @@
         "2026-04-30",
         1801.685
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_690370000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.6156,
+      "avg_diff_pct": 0.3761,
+      "max_abs_diff": 9.3462,
+      "unit_factor": 690370000.0,
+      "transform": [
+        "unit_div_690370000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "1518.1965",
+          "1527.5427"
+        ],
+        [
+          "2026-03-31",
+          "2018.5956",
+          "2018.5956"
+        ],
+        [
+          "2026-04-30",
+          "1801.6850",
+          "1792.4465"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以人民币计价:结汇:经常项目:货物贸易",
+      "edb_unit": "元",
+      "index_id": "M003806656"
+    },
+    "verified_at": "2026-06-22T14:36:13.819175"
   },
   {
     "series_id": "trade_goods:E",
@@ -3190,7 +5877,41 @@
         "2026-04-30",
         2746.182116
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_43707217"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 12.5856,
+      "avg_diff_pct": 5.9171,
+      "max_abs_diff": 263.4613,
+      "unit_factor": 43707217.443565965,
+      "transform": [
+        "unit_div_43707217"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "2093.3561",
+          "1829.8948"
+        ],
+        [
+          "2026-03-31",
+          "2704.8016",
+          "2704.8016"
+        ],
+        [
+          "2026-04-30",
+          "2746.1821",
+          "2888.0403"
+        ]
+      ],
+      "edb_indicator": "进口金额(人民币计价):中国:当月值",
+      "edb_unit": "元",
+      "index_id": "M006718729"
+    },
+    "verified_at": "2026-06-22T14:36:18.833529"
   },
   {
     "series_id": "trade_goods:F",
@@ -3199,7 +5920,7 @@
     "wind_indicator": "境内银行代客涉外支出:货物贸易:当月值",
     "frequency": "月",
     "unit": "2993.996869",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -3213,7 +5934,8 @@
         "2026-04-30",
         2993.996869
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "trade_goods:G",
@@ -3236,7 +5958,41 @@
         "2026-04-30",
         1325.0503
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_1713243354"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 47.2051,
+      "avg_diff_pct": 18.3137,
+      "max_abs_diff": 625.4913,
+      "unit_factor": 1713243353.9138474,
+      "transform": [
+        "unit_div_1713243354"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "918.4495",
+          "847.3992"
+        ],
+        [
+          "2026-03-31",
+          "1419.3361",
+          "1419.3361"
+        ],
+        [
+          "2026-04-30",
+          "1325.0503",
+          "1950.5416"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以人民币计价:售汇:经常项目:货物贸易:累计值",
+      "edb_unit": "元",
+      "index_id": "M012255857"
+    },
+    "verified_at": "2026-06-22T14:36:30.864219"
   },
   {
     "series_id": "trade_goods:H",
@@ -3245,7 +6001,7 @@
     "wind_indicator": "中国:银行代客远期结汇签约:当月值",
     "frequency": "月",
     "unit": "482.919",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -3259,7 +6015,41 @@
         "2026-04-30",
         482.919
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.0,
+      "avg_diff_pct": 0.0,
+      "max_abs_diff": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "382.8575",
+          "382.8575"
+        ],
+        [
+          "2026-03-31",
+          "530.2224",
+          "530.2224"
+        ],
+        [
+          "2026-04-30",
+          "482.9190",
+          "482.9190"
+        ]
+      ],
+      "edb_indicator": "远期结售汇签约额:以美元计价:结汇",
+      "edb_unit": "美元",
+      "index_id": "M003022221"
+    },
+    "verified_at": "2026-06-22T14:21:31.679735"
   },
   {
     "series_id": "trade_goods:I",
@@ -3282,7 +6072,41 @@
         "2026-04-30",
         414.0625
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_100000000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 16899.0173,
+      "avg_diff_pct": 8450.0478,
+      "max_abs_diff": 17434.0601,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "66.8417",
+          "11362.4321"
+        ],
+        [
+          "2026-03-31",
+          "352.3675",
+          "17786.4276"
+        ],
+        [
+          "2026-04-30",
+          "414.0625",
+          "14920.4676"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以人民币计价:售汇",
+      "edb_unit": "元",
+      "index_id": "M003806662"
+    },
+    "verified_at": "2026-06-22T14:36:37.888666"
   },
   {
     "series_id": "trade_goods:J",
@@ -3291,7 +6115,7 @@
     "wind_indicator": "中国:银行代客远期净结汇:当月值",
     "frequency": "月",
     "unit": "68.8565",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -3305,7 +6129,8 @@
         "2026-04-30",
         68.8565
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "trade_goods:N",
@@ -3314,7 +6139,7 @@
     "wind_indicator": "即期汇率:美元兑人民币:月:平均值",
     "frequency": "monthly",
     "unit": "6.795347058823529",
-    "status": "mapping_pending",
+    "status": "verified",
     "last_dates": [
       [
         "2026-02-28",
@@ -3328,7 +6153,36 @@
         "2026-04-30",
         6.795347058823529
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 1.0736,
+      "avg_diff_pct": 0.9269,
+      "max_abs_diff": 0.073,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-02-28",
+          "6.8958",
+          "6.9462"
+        ],
+        [
+          "2026-03-31",
+          "6.8370",
+          "6.9037"
+        ],
+        [
+          "2026-04-30",
+          "6.7953",
+          "6.8683"
+        ]
+      ],
+      "edb_indicator": "平均汇率:中间价:美元兑人民币",
+      "edb_unit": "",
+      "index_id": "M003990276"
+    },
+    "verified_at": "2026-06-22T14:21:54.635603"
   },
   {
     "series_id": "trade_merchant:AA",
@@ -3337,7 +6191,7 @@
     "wind_indicator": "PMI",
     "frequency": "%",
     "unit": "50.3",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -3351,7 +6205,8 @@
         "2026-04-30",
         50.3
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "trade_merchant:AB",
@@ -3360,7 +6215,7 @@
     "wind_indicator": "PMI:小型企业",
     "frequency": "%",
     "unit": "50.1",
-    "status": "mapping_pending",
+    "status": "verified",
     "last_dates": [
       [
         "2026-02-28",
@@ -3374,7 +6229,36 @@
         "2026-04-30",
         50.1
       ]
-    ]
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.0,
+      "avg_diff_pct": 0.0,
+      "max_abs_diff": 0.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-02-28",
+          "44.8000",
+          "44.8000"
+        ],
+        [
+          "2026-03-31",
+          "49.3000",
+          "49.3000"
+        ],
+        [
+          "2026-04-30",
+          "50.1000",
+          "50.1000"
+        ]
+      ],
+      "edb_indicator": "制造业PMI:小型企业",
+      "edb_unit": "%",
+      "index_id": "M003157006"
+    },
+    "verified_at": "2026-06-22T14:22:08.330571"
   },
   {
     "series_id": "trade_merchant:AC",
@@ -3383,7 +6267,7 @@
     "wind_indicator": "中债国债到期收益率:10年:月:平均值",
     "frequency": "%",
     "unit": "1.782038095238095",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -3397,7 +6281,39 @@
         "2026-04-30",
         1.782038095238095
       ]
-    ]
+    ],
+    "transform": [
+      "minor_revision"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 1.9493,
+      "avg_diff_pct": 1.3458,
+      "max_abs_diff": 0.0347,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-02-28",
+          "1.8054",
+          "1.7753"
+        ],
+        [
+          "2026-03-31",
+          "1.8094",
+          "1.8171"
+        ],
+        [
+          "2026-04-30",
+          "1.7820",
+          "1.7473"
+        ]
+      ],
+      "edb_indicator": "中债国债到期收益率:10年",
+      "edb_unit": "%",
+      "index_id": "L001619604"
+    },
+    "verified_at": "2026-06-22T14:22:17.634045"
   },
   {
     "series_id": "trade_merchant:AD",
@@ -3406,7 +6322,7 @@
     "wind_indicator": "美国:国债收益率:10年:月:平均值",
     "frequency": "%",
     "unit": "4.319090909090909",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -3420,7 +6336,39 @@
         "2026-04-30",
         4.319090909090909
       ]
-    ]
+    ],
+    "transform": [
+      "minor_revision"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 1.745,
+      "avg_diff_pct": 1.6477,
+      "max_abs_diff": 0.0741,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-02-28",
+          "4.1258",
+          "4.1900"
+        ],
+        [
+          "2026-03-31",
+          "4.2459",
+          "4.3200"
+        ],
+        [
+          "2026-04-30",
+          "4.3191",
+          "4.3900"
+        ]
+      ],
+      "edb_indicator": "美国:即期国债收益率:10年到期:当月平均值",
+      "edb_unit": "%",
+      "index_id": "G006024828"
+    },
+    "verified_at": "2026-06-22T14:22:24.773800"
   },
   {
     "series_id": "trade_merchant:B",
@@ -3443,7 +6391,9 @@
         "2026-04-30",
         3594.421362
       ]
-    ]
+    ],
+    "verify_details": "Only 0 overlap points: DB dates=['2026-02-28', '2026-03-31', '2026-04-30'], EDB dates=['2026-12-31']",
+    "verified_at": "2026-06-22T14:36:58.123863"
   },
   {
     "series_id": "trade_merchant:C",
@@ -3452,7 +6402,7 @@
     "wind_indicator": "境内银行代客涉外收入:货物贸易:当月值",
     "frequency": "月",
     "unit": "3737.735704",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -3466,7 +6416,41 @@
         "2026-04-30",
         3737.735704
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_690370000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.6156,
+      "avg_diff_pct": 0.3761,
+      "max_abs_diff": 19.1659,
+      "unit_factor": 690369999.9232657,
+      "transform": [
+        "unit_div_690370000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "2900.9310",
+          "2918.7895"
+        ],
+        [
+          "2026-03-31",
+          "3716.5859",
+          "3716.5859"
+        ],
+        [
+          "2026-04-30",
+          "3737.7357",
+          "3718.5698"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以人民币计价:收入:经常项目:货物贸易",
+      "edb_unit": "元",
+      "index_id": "M003809213"
+    },
+    "verified_at": "2026-06-22T14:37:03.865975"
   },
   {
     "series_id": "trade_merchant:D",
@@ -3475,7 +6459,7 @@
     "wind_indicator": "银行代客结汇:货物贸易:当月值",
     "frequency": "月",
     "unit": "1801.685",
-    "status": "mapping_pending",
+    "status": "verified_with_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -3489,7 +6473,41 @@
         "2026-04-30",
         1801.685
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_690370000"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 0.6156,
+      "avg_diff_pct": 0.3761,
+      "max_abs_diff": 9.3462,
+      "unit_factor": 690370000.0,
+      "transform": [
+        "unit_div_690370000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "1518.1965",
+          "1527.5427"
+        ],
+        [
+          "2026-03-31",
+          "2018.5956",
+          "2018.5956"
+        ],
+        [
+          "2026-04-30",
+          "1801.6850",
+          "1792.4465"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以人民币计价:结汇:经常项目:货物贸易",
+      "edb_unit": "元",
+      "index_id": "M003806656"
+    },
+    "verified_at": "2026-06-22T14:37:08.768990"
   },
   {
     "series_id": "trade_merchant:E",
@@ -3512,7 +6530,41 @@
         "2026-04-30",
         2746.182116
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_43707217"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 12.5856,
+      "avg_diff_pct": 5.9171,
+      "max_abs_diff": 263.4613,
+      "unit_factor": 43707217.443565965,
+      "transform": [
+        "unit_div_43707217"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "2093.3561",
+          "1829.8948"
+        ],
+        [
+          "2026-03-31",
+          "2704.8016",
+          "2704.8016"
+        ],
+        [
+          "2026-04-30",
+          "2746.1821",
+          "2888.0403"
+        ]
+      ],
+      "edb_indicator": "进口金额(人民币计价):中国:当月值",
+      "edb_unit": "元",
+      "index_id": "M006718729"
+    },
+    "verified_at": "2026-06-22T14:37:16.137813"
   },
   {
     "series_id": "trade_merchant:F",
@@ -3521,7 +6573,7 @@
     "wind_indicator": "境内银行代客涉外支出:货物贸易:当月值",
     "frequency": "月",
     "unit": "2993.996869",
-    "status": "mapping_pending",
+    "status": "no_result",
     "last_dates": [
       [
         "2026-02-28",
@@ -3535,7 +6587,8 @@
         "2026-04-30",
         2993.996869
       ]
-    ]
+    ],
+    "verify_note": "EDB returned empty datas"
   },
   {
     "series_id": "trade_merchant:G",
@@ -3558,6 +6611,40 @@
         "2026-04-30",
         1325.0503
       ]
-    ]
+    ],
+    "transform": [
+      "unit_div_1713243354"
+    ],
+    "verify_details": {
+      "overlap_points": 3,
+      "max_diff_pct": 47.2051,
+      "avg_diff_pct": 18.3137,
+      "max_abs_diff": 625.4913,
+      "unit_factor": 1713243353.9138474,
+      "transform": [
+        "unit_div_1713243354"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "918.4495",
+          "847.3992"
+        ],
+        [
+          "2026-03-31",
+          "1419.3361",
+          "1419.3361"
+        ],
+        [
+          "2026-04-30",
+          "1325.0503",
+          "1950.5416"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以人民币计价:售汇:经常项目:货物贸易:累计值",
+      "edb_unit": "元",
+      "index_id": "M012255857"
+    },
+    "verified_at": "2026-06-22T14:37:29.594232"
   }
 ]

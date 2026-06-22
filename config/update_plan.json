@@ -1,0 +1,44 @@
+[
+  {
+    "series_id": "fx_fwd:D",
+    "display_name": "银行自身结售汇差额:当月值",
+    "wind_indicator": "银行自身结售汇差额:当月值",
+    "module": "3.即远期",
+    "last_date": "2026-04-30",
+    "next_start_date": "2026-05-30",
+    "fetch_start_date": "2026-02-28",
+    "validation_dates": [
+      "2026-02-28",
+      "2026-04-30"
+    ],
+    "wind_method": "wsd",
+    "query": "银行自身结售汇差额:当月值",
+    "frequency": "月",
+    "unit": "-19.4681",
+    "transform": [
+      "unit_div_1e8"
+    ],
+    "tolerance": 1e-06
+  },
+  {
+    "series_id": "trade_goods:B",
+    "display_name": "出口金额:当月值",
+    "wind_indicator": "出口金额:当月值",
+    "module": "3.货物贸易",
+    "last_date": "2026-04-30",
+    "next_start_date": "2026-05-30",
+    "fetch_start_date": "2026-02-28",
+    "validation_dates": [
+      "2026-02-28",
+      "2026-04-30"
+    ],
+    "wind_method": "wsd",
+    "query": "出口金额:当月值",
+    "frequency": "月",
+    "unit": "3594.421362",
+    "transform": [
+      "unit_div_1e8"
+    ],
+    "tolerance": 1e-06
+  }
+]

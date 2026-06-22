@@ -84,14 +84,18 @@ def detect_unit_factor(edb_map, db_map):
     - 1e4: 元 → 万
     - 1:   同单位
     - 100: 百分比单位
+    - ~6.3-7.3: EDB returns 人民币, DB stores 美元
+    - ~0.14-0.16: EDB returns 美元, DB stores 人民币 (CNY/USD inverse)
     """
     candidates = [1, 1e4, 1e8, 100, 10000, 1/100, 1/1e4, 1/1e8]
-    best_factor = 1
-    best_error = float('inf')
 
     overlap_dates = set(edb_map.keys()) & set(db_map.keys())
     if len(overlap_dates) < 2:
         return 1, float('inf')
+
+    # First pass: test static candidates
+    best_factor = 1
+    best_error = float('inf')
 
     for factor in candidates:
         errors = []
@@ -106,6 +110,65 @@ def detect_unit_factor(edb_map, db_map):
             if avg_err < best_error:
                 best_error = avg_err
                 best_factor = factor
+
+    # Second pass: if static candidates all fail (>10% error), try
+    # currency conversion factors (USD/CNY ~6.3-7.3 range)
+    if best_error > 10:
+        # EDB returns CNY, DB stores USD → factor ~6.3-7.3
+        for fx_rate in [6.3, 6.5, 6.7, 6.9, 7.0, 7.1, 7.3]:
+            errors = []
+            for d in overlap_dates:
+                edb_adj = edb_map[d] / fx_rate
+                db_val = db_map[d]
+                if abs(db_val) > 1e-9:
+                    pct = abs(edb_adj - db_val) / abs(db_val) * 100
+                    errors.append(pct)
+            if errors:
+                avg_err = sum(errors) / len(errors)
+                if avg_err < best_error:
+                    best_error = avg_err
+                    best_factor = fx_rate
+
+        # EDB returns USD, DB stores CNY → factor ~0.14-0.16
+        for fx_rate_inv in [0.14, 0.145, 0.15, 0.155, 0.16]:
+            errors = []
+            for d in overlap_dates:
+                edb_adj = edb_map[d] / fx_rate_inv
+                db_val = db_map[d]
+                if abs(db_val) > 1e-9:
+                    pct = abs(edb_adj - db_val) / abs(db_val) * 100
+                    errors.append(pct)
+            if errors:
+                avg_err = sum(errors) / len(errors)
+                if avg_err < best_error:
+                    best_error = avg_err
+                    best_factor = fx_rate_inv
+
+    # Third pass: auto-detect factor from data ratio
+    if best_error > 10:
+        ratios = []
+        for d in overlap_dates:
+            if abs(db_map[d]) > 1e-9:
+                ratios.append(edb_map[d] / db_map[d])
+        if ratios:
+            median_ratio = sorted(ratios)[len(ratios) // 2]
+            # Check if this ratio is consistent (coefficient of variation < 50%)
+            if len(ratios) >= 3:
+                import statistics
+                cv = statistics.stdev(ratios) / abs(statistics.mean(ratios)) if abs(statistics.mean(ratios)) > 1e-9 else 999
+                if cv < 0.5:
+                    errors = []
+                    for d in overlap_dates:
+                        edb_adj = edb_map[d] / median_ratio
+                        db_val = db_map[d]
+                        if abs(db_val) > 1e-9:
+                            pct = abs(edb_adj - db_val) / abs(db_val) * 100
+                            errors.append(pct)
+                    if errors:
+                        avg_err = sum(errors) / len(errors)
+                        if avg_err < best_error:
+                            best_error = avg_err
+                            best_factor = median_ratio
 
     return best_factor, best_error
 
