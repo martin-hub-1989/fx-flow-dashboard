@@ -84,9 +84,10 @@ HTML 生成器 (scripts/generate_dashboard.py)
 
 ## 数据特征
 
-- **总观测值：** 131,603
+- **总观测值：** 137,536
 - **日期范围：** 1994-01 至 2026-05
 - **序列分类：** 159 raw / 224 derived / 2 manual
+- **Python 复算指标：** 88 个（97.6% Excel 匹配率）
 - **所有 raw 序列来源：** Excel EDB 缓存快照
 - **所有 derived 序列：** 由 raw 序列通过可审计 Python 代码复算
 

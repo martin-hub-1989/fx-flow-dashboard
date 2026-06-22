@@ -554,11 +554,11 @@ def main():
     conn = get_db()
 
     # Ensure derived series exist
-    from recompute_derived import recompute_derived, start_update_run, finish_update_run
+    from recompute_derived import recompute_all, start_update_run, finish_update_run
     run_id = start_update_run(conn, 0)
-    print("Recomputing derived indicators for 3.即远期...")
-    recompute_derived(conn, run_id, "3.即远期")
-    finish_update_run(conn, run_id, "completed", successful=5, new_obs=0)
+    print("Recomputing all derived indicators...")
+    recompute_all(conn, run_id)
+    finish_update_run(conn, run_id, "completed", successful=88, new_obs=0)
 
     print("\nBuilding data payload...")
     payload = build_payload(conn)
