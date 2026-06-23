@@ -4,11 +4,11 @@
     "display_name": "银行代客结汇:证券投资:当月值",
     "wind_indicator": "银行代客结售汇:以美元计价:结汇:证券投资:当月值",
     "module": "3.代客即期",
-    "last_date": "2026-04-30",
-    "fetch_start_date": "2026-03-31",
+    "last_date": "2026-05-31",
+    "fetch_start_date": "2026-04-30",
     "validation_dates": [
-      "2026-03-31",
-      "2026-04-30"
+      "2026-04-30",
+      "2026-05-31"
     ],
     "wind_method": "economic_data.get_economic_data",
     "query": "银行代客结售汇:以美元计价:结汇:证券投资:当月值",
@@ -27,11 +27,11 @@
     "display_name": "银行代客售汇:证券投资:当月值",
     "wind_indicator": "银行代客结售汇:以美元计价:售汇:证券投资:当月值",
     "module": "3.代客即期",
-    "last_date": "2026-04-30",
-    "fetch_start_date": "2026-03-31",
+    "last_date": "2026-05-31",
+    "fetch_start_date": "2026-04-30",
     "validation_dates": [
-      "2026-03-31",
-      "2026-04-30"
+      "2026-04-30",
+      "2026-05-31"
     ],
     "wind_method": "economic_data.get_economic_data",
     "query": "银行代客结售汇:以美元计价:售汇:证券投资:当月值",
@@ -50,11 +50,11 @@
     "display_name": "银行自身结汇:当月值",
     "wind_indicator": "银行自身结汇:当月值",
     "module": "3.即远期",
-    "last_date": "2026-04-30",
-    "fetch_start_date": "2026-03-31",
+    "last_date": "2026-05-31",
+    "fetch_start_date": "2026-04-30",
     "validation_dates": [
-      "2026-03-31",
-      "2026-04-30"
+      "2026-04-30",
+      "2026-05-31"
     ],
     "wind_method": "economic_data.get_economic_data",
     "query": "银行自身结汇:当月值",
@@ -73,11 +73,11 @@
     "display_name": "银行自身售汇:当月值",
     "wind_indicator": "银行自身售汇:当月值",
     "module": "3.即远期",
-    "last_date": "2026-04-30",
-    "fetch_start_date": "2026-03-31",
+    "last_date": "2026-05-31",
+    "fetch_start_date": "2026-04-30",
     "validation_dates": [
-      "2026-03-31",
-      "2026-04-30"
+      "2026-04-30",
+      "2026-05-31"
     ],
     "wind_method": "economic_data.get_economic_data",
     "query": "银行自身售汇:当月值",

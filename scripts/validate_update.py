@@ -278,6 +278,19 @@ def main():
         print(f"  Revised observations: {results['total_revised_observations']}")
         print(f"  Validation events: {results['validation_events']}")
 
+        # Rebuild update plan so validation_dates reflect the newly-written
+        # observations (otherwise plan stays stale relative to DB).
+        if results["total_new_observations"] > 0:
+            try:
+                from build_update_plan import build_plan
+                new_plan = build_plan(conn)
+                import json as _json
+                _json.dump(new_plan, open("config/update_plan.json", "w", encoding="utf-8"),
+                           ensure_ascii=False, indent=2)
+                print(f"  Update plan rebuilt: {len(new_plan)} entries (post-write)")
+            except Exception as e:
+                print(f"  ⚠️ plan rebuild skipped: {e}")
+
     conn.close()
 
 
