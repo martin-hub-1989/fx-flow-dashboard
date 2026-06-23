@@ -14,6 +14,7 @@ from lib import (
     get_db, init_db, start_update_run, finish_update_run,
     insert_observations_batch, upsert_series
 )
+from safe_write import safe_write, ensure_revision_table
 
 
 def load_fetched_data(staging_path):
@@ -110,65 +111,54 @@ def apply_update(conn, run_id, plan_entry, new_data):
     """
     Apply an incremental update for a single series.
     Uses a SAVEPOINT for per-series rollback capability.
-    Returns: (success, message, event_count)
+    Safe write: new=INSERT, unchanged=skip, revision=audit (no overwrite).
+    Returns: (success, message, stats_dict)
     """
     series_id = plan_entry["series_id"]
     tolerance = plan_entry.get("tolerance", 1e-6)
+    sp = f"sp_{series_id.replace(':', '_').replace('.', '_')}"
 
-    # Create savepoint for this series
-    conn.execute(f"SAVEPOINT sp_{series_id.replace(':', '_')}")
-
+    conn.execute(f"SAVEPOINT {sp}")
     try:
-        # 1. Validate overlap
+        # 1. Validate overlap (>=2 points enforced inside).
         passed, issues = validate_overlap(conn, series_id, new_data, tolerance)
 
-        # 2. Record validation events
+        # 2. Record validation events.
         for issue in issues:
             conn.execute("""
-                INSERT OR REPLACE INTO validation_events
+                INSERT INTO validation_events
                 (run_id, series_id, date, database_value, fetched_value,
                  difference, tolerance, status, message)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
-                run_id, series_id, issue["date"],
-                issue["database_value"], issue["fetched_value"],
-                issue["difference"], tolerance,
-                issue["status"], issue.get("message", "")
+                run_id, series_id, issue.get("date"),
+                issue.get("database_value"), issue.get("fetched_value"),
+                issue.get("difference"), tolerance,
+                issue.get("status"), issue.get("message", "")
             ))
 
         if not passed:
-            conn.execute(f"ROLLBACK TO sp_{series_id.replace(':', '_')}")
-            fail_details = [i for i in issues if i["status"] == "fail"]
-            return False, f"Overlap validation failed: {fail_details[0].get('message', 'unknown')}", len(issues)
+            conn.execute(f"ROLLBACK TO {sp}")
+            fail = [i for i in issues if i.get("status") == "fail"]
+            msg = fail[0].get("message", "overlap validation failed") if fail else "overlap validation failed"
+            return False, msg, {"new": 0, "unchanged": 0, "revision": 0}
 
-        # 3. Write new observations (INSERT OR REPLACE is idempotent)
-        new_obs = []
-        for d, v in new_data.items():
-            new_obs.append((series_id, d, v, "wind_mcp"))
+        # 3. Safe write (counts computed before write inside safe_write).
+        stats = safe_write(conn, series_id, new_data, run_id=run_id, source="wind_mcp")
 
-        insert_observations_batch(conn, new_obs, run_id)
-
-        # 4. Update series metadata
-        sorted_new = sorted(new_data.keys())
-        if sorted_new:
-            last_date = sorted_new[-1]
-            conn.execute(
-                "UPDATE series SET last_date=?, update_status='updated' WHERE series_id=?",
-                (last_date, series_id)
-            )
-
-        conn.execute(f"RELEASE sp_{series_id.replace(':', '_')}")
-        return True, f"Updated {len(new_data)} points", len(issues)
+        conn.execute(f"RELEASE {sp}")
+        return True, f"new={stats['new']} unchanged={stats['unchanged']} revision={stats['revision']}", stats
 
     except Exception as e:
-        conn.execute(f"ROLLBACK TO sp_{series_id.replace(':', '_')}")
-        return False, f"Exception: {str(e)}", 0
+        conn.execute(f"ROLLBACK TO {sp}")
+        return False, f"Exception: {str(e)}", {"new": 0, "unchanged": 0, "revision": 0}
 
 
 def process_update(conn, run_id, plan_entries, fetched_data_by_series):
     """
     Process a batch of updates. Each series updates independently.
     One series failing does not block others.
+    new/revised counts come from safe_write (computed before write).
     """
     results = {
         "successful": [],
@@ -180,39 +170,20 @@ def process_update(conn, run_id, plan_entries, fetched_data_by_series):
 
     for entry in plan_entries:
         sid = entry["series_id"]
-
         if sid not in fetched_data_by_series:
-            results["failed"].append({
-                "series_id": sid,
-                "reason": "No fetched data available"
-            })
+            results["failed"].append({"series_id": sid, "reason": "No fetched data available"})
             continue
-
         new_data = fetched_data_by_series[sid]
         if not new_data:
             continue
 
-        success, message, events = apply_update(conn, run_id, entry, new_data)
-
+        success, message, stats = apply_update(conn, run_id, entry, new_data)
         if success:
             results["successful"].append(sid)
-            # Count new vs revised
-            for d in new_data:
-                exists = conn.execute(
-                    "SELECT 1 FROM observations WHERE series_id=? AND date=?",
-                    (sid, d)
-                ).fetchone()
-                if exists:
-                    results["total_revised_observations"] += 1
-                else:
-                    results["total_new_observations"] += 1
+            results["total_new_observations"] += stats.get("new", 0)
+            results["total_revised_observations"] += stats.get("revision", 0)
         else:
-            results["failed"].append({
-                "series_id": sid,
-                "reason": message
-            })
-
-        results["validation_events"] += events
+            results["failed"].append({"series_id": sid, "reason": message})
 
     return results
 
@@ -235,6 +206,7 @@ def main():
 
     conn = get_db()
     init_db(conn)
+    ensure_revision_table(conn)
 
     # Load data
     fetched = load_fetched_data(staging_path)
