@@ -28,6 +28,9 @@ node_modules/
 # Large data files (kept locally, not in repo)
 FX Chartbook - Flow 0515.xlsx
 待处理数据.xlsx
+# Excel temp/lock files
+.~*.xlsx
+~$*.xlsx
 
 # Inspection outputs (large JSON)
 .inspection/deep_inventory.json
