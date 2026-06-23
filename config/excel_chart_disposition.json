@@ -1,0 +1,523 @@
+{
+  "_meta": {
+    "total_original_charts": 66,
+    "generated": "2026-06-23",
+    "source": "CHART_MIGRATION_PLAN.md + chart_inventory.json"
+  },
+  "dispositions": [
+    {
+      "excel_chart_id": "3.FDI#01",
+      "status": "retained",
+      "target_chart_ids": [
+        "fdi_seasonality"
+      ],
+      "reason": "历史区间band+均值+当年,主保留"
+    },
+    {
+      "excel_chart_id": "3.FDI#02",
+      "status": "retained",
+      "target_chart_ids": [
+        "fdi_flow"
+      ],
+      "reason": "FDI/ODI分组柱+净流入线,主保留"
+    },
+    {
+      "excel_chart_id": "3.FDI#03",
+      "status": "retained",
+      "target_chart_ids": [
+        "fdi_fx_settlement"
+      ],
+      "reason": "结汇/购汇柱+差额3MMA线,主保留"
+    },
+    {
+      "excel_chart_id": "3.FDI#04",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "fdi_flow"
+      ],
+      "reason": "FDI流入流出差额,并入统一Flow图"
+    },
+    {
+      "excel_chart_id": "3.FDI#05",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "fdi_flow"
+      ],
+      "reason": "FDI流入流出差额,并入统一Flow图"
+    },
+    {
+      "excel_chart_id": "3.FDI#06",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "fdi_flow"
+      ],
+      "reason": "FDI流入流出差额,并入统一Flow图"
+    },
+    {
+      "excel_chart_id": "3.FDI#07",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "fdi_flow"
+      ],
+      "reason": "流入股权/债权结构,并入FDI构成"
+    },
+    {
+      "excel_chart_id": "3.FDI#08",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "fdi_flow"
+      ],
+      "reason": "流出股权/债权结构,并入FDI构成"
+    },
+    {
+      "excel_chart_id": "3.FDI#09",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "fdi_flow"
+      ],
+      "reason": "流入股权/债权年度,并入FDI构成"
+    },
+    {
+      "excel_chart_id": "3.代客即期#01",
+      "status": "retained",
+      "target_chart_ids": [
+        "fx_cspot_current_financial"
+      ],
+      "reason": "经常/金融月度柱+6MMA,主保留"
+    },
+    {
+      "excel_chart_id": "3.代客即期#02",
+      "status": "retained",
+      "target_chart_ids": [
+        "fx_cspot_full_decomp"
+      ],
+      "reason": "六类堆叠柱,主保留"
+    },
+    {
+      "excel_chart_id": "3.代客即期#03",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "fx_cspot_full_decomp"
+      ],
+      "reason": "经常账户分解,并入完整分解图"
+    },
+    {
+      "excel_chart_id": "3.代客即期#04",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "fx_cspot_full_decomp"
+      ],
+      "reason": "金融账户分解,并入完整分解图"
+    },
+    {
+      "excel_chart_id": "3.代客即期#05",
+      "status": "retained",
+      "target_chart_ids": [
+        "fx_cspot_current_financial"
+      ],
+      "reason": "经常/金融+总量线,主保留"
+    },
+    {
+      "excel_chart_id": "3.代客即期#06",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "fx_cspot_seasonality"
+      ],
+      "reason": "货物贸易季节性,并入季节性选择器"
+    },
+    {
+      "excel_chart_id": "3.代客即期#07",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "fx_cspot_seasonality"
+      ],
+      "reason": "服务贸易季节性,并入选择器"
+    },
+    {
+      "excel_chart_id": "3.代客即期#08",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "fx_cspot_seasonality"
+      ],
+      "reason": "收益转移季节性,并入选择器"
+    },
+    {
+      "excel_chart_id": "3.代客即期#09",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "fx_cspot_seasonality"
+      ],
+      "reason": "直接投资季节性,并入选择器"
+    },
+    {
+      "excel_chart_id": "3.代客即期#10",
+      "status": "deleted_with_reason",
+      "target_chart_ids": [],
+      "reason": "与#02重复"
+    },
+    {
+      "excel_chart_id": "3.即远期#01",
+      "status": "retained",
+      "target_chart_ids": [
+        "fx_fwd_total_supply"
+      ],
+      "reason": "总供求柱+12MMA线,主保留"
+    },
+    {
+      "excel_chart_id": "3.即远期#02",
+      "status": "retained",
+      "target_chart_ids": [
+        "fx_fwd_bank_own"
+      ],
+      "reason": "两类贡献堆叠柱+总量线"
+    },
+    {
+      "excel_chart_id": "3.即远期#03",
+      "status": "deleted_with_reason",
+      "target_chart_ids": [],
+      "reason": "与#04/#01高度重复"
+    },
+    {
+      "excel_chart_id": "3.即远期#04",
+      "status": "retained",
+      "target_chart_ids": [
+        "fx_fwd_total_supply"
+      ],
+      "reason": "银行发生额+衍生品签约,主保留"
+    },
+    {
+      "excel_chart_id": "3.即远期#05",
+      "status": "retained",
+      "target_chart_ids": [
+        "fx_fwd_spot_breakdown"
+      ],
+      "reason": "桥接式分解柱,主保留"
+    },
+    {
+      "excel_chart_id": "3.即远期#06",
+      "status": "retained",
+      "target_chart_ids": [
+        "fx_fwd_deriv_components"
+      ],
+      "reason": "远期+期权三项贡献柱,主保留"
+    },
+    {
+      "excel_chart_id": "3.即远期#07",
+      "status": "retained",
+      "target_chart_ids": [
+        "fx_fwd_deriv_vs_usdcny"
+      ],
+      "reason": "双轴Flow+USDCNY,次保留"
+    },
+    {
+      "excel_chart_id": "3.涉外收付#01",
+      "status": "retained",
+      "target_chart_ids": [
+        "fx_cross_full_decomp"
+      ],
+      "reason": "六类堆叠柱,主保留"
+    },
+    {
+      "excel_chart_id": "3.涉外收付#02",
+      "status": "retained",
+      "target_chart_ids": [
+        "fx_cross_currency_decomp"
+      ],
+      "reason": "币种堆叠柱,主保留"
+    },
+    {
+      "excel_chart_id": "3.涉外收付#03",
+      "status": "retained",
+      "target_chart_ids": [
+        "fx_cross_full_decomp"
+      ],
+      "reason": "经常/金融双线突出零轴"
+    },
+    {
+      "excel_chart_id": "3.涉外收付#04",
+      "status": "retained",
+      "target_chart_ids": [
+        "fx_cross_cny_usd_share"
+      ],
+      "reason": "占比线0-100%轴,主保留"
+    },
+    {
+      "excel_chart_id": "3.涉外收付#05",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "fx_cross_seasonality"
+      ],
+      "reason": "货物贸易季节性,并入选择器"
+    },
+    {
+      "excel_chart_id": "3.涉外收付#06",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "fx_cross_seasonality"
+      ],
+      "reason": "服务贸易季节性,并入选择器"
+    },
+    {
+      "excel_chart_id": "3.涉外收付#07",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "fx_cross_seasonality"
+      ],
+      "reason": "收益转移季节性,并入选择器"
+    },
+    {
+      "excel_chart_id": "3.涉外收付#08",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "fx_cross_seasonality"
+      ],
+      "reason": "直接投资季节性,并入选择器"
+    },
+    {
+      "excel_chart_id": "3.涉外收付#09",
+      "status": "deleted_with_reason",
+      "target_chart_ids": [],
+      "reason": "与#03重复"
+    },
+    {
+      "excel_chart_id": "3.涉外收付#10",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "fx_cross_full_decomp"
+      ],
+      "reason": "金融账户分解,并入完整分解图"
+    },
+    {
+      "excel_chart_id": "3.涉外收付#11",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "fx_cross_full_decomp"
+      ],
+      "reason": "经常账户分解,并入完整分解图"
+    },
+    {
+      "excel_chart_id": "3.证券EQ#01",
+      "status": "retained",
+      "target_chart_ids": [
+        "sec_eq_north_south"
+      ],
+      "reason": "北上/南下柱+合计线,主保留"
+    },
+    {
+      "excel_chart_id": "3.证券EQ#02",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "sec_eq_flow_vs_fx_scatter"
+      ],
+      "reason": "净Flow与CNYX,并入统一散点"
+    },
+    {
+      "excel_chart_id": "3.证券EQ#03",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "sec_eq_flow_vs_fx_scatter"
+      ],
+      "reason": "净Flow与USDCNY,并入统一散点"
+    },
+    {
+      "excel_chart_id": "3.证券EQ#04",
+      "status": "retained",
+      "target_chart_ids": [
+        "sec_eq_vs_csi300"
+      ],
+      "reason": "北上与沪深300双轴,主保留"
+    },
+    {
+      "excel_chart_id": "3.证券EQ#05",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "sec_eq_flow_vs_fx_scatter"
+      ],
+      "reason": "2018以来散点,并入统一散点"
+    },
+    {
+      "excel_chart_id": "3.证券EQ#06",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "sec_eq_flow_vs_fx_scatter"
+      ],
+      "reason": "过去一年半散点,并入统一散点"
+    },
+    {
+      "excel_chart_id": "3.证券EQ#07",
+      "status": "retained",
+      "target_chart_ids": [
+        "sec_eq_north_south"
+      ],
+      "reason": "港股通/陆股通累计净额,次保留"
+    },
+    {
+      "excel_chart_id": "3.证券FI#01",
+      "status": "retained",
+      "target_chart_ids": [
+        "sec_fi_bond_flows"
+      ],
+      "reason": "资产类别堆叠柱+总流入线,主保留"
+    },
+    {
+      "excel_chart_id": "3.证券FI#02",
+      "status": "retained",
+      "target_chart_ids": [
+        "sec_fi_ratebond_vs_spread_scatter"
+      ],
+      "reason": "利率债流入与中美利差散点,次保留"
+    },
+    {
+      "excel_chart_id": "3.货物贸易#01",
+      "status": "rebuilt_as",
+      "target_chart_ids": [
+        "trade_goods_unsettled_position"
+      ],
+      "reason": "浮动区间条+当前点,重做"
+    },
+    {
+      "excel_chart_id": "3.货物贸易#02",
+      "status": "retained",
+      "target_chart_ids": [
+        "trade_goods_ttm_panel"
+      ],
+      "reason": "多序列TTM线,先修TTM为rolling sum"
+    },
+    {
+      "excel_chart_id": "3.货物贸易#03",
+      "status": "retained",
+      "target_chart_ids": [
+        "trade_goods_percentile"
+      ],
+      "reason": "两条percentile线0-100%,次保留"
+    },
+    {
+      "excel_chart_id": "3.货物贸易#04",
+      "status": "retained",
+      "target_chart_ids": [
+        "trade_goods_unsettled_position"
+      ],
+      "reason": "两条余额线+零轴,主保留"
+    },
+    {
+      "excel_chart_id": "3.货物贸易#05",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "trade_goods_seasonality"
+      ],
+      "reason": "贸易顺差季节性,并入选择器"
+    },
+    {
+      "excel_chart_id": "3.货物贸易#06",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "trade_goods_seasonality"
+      ],
+      "reason": "涉外收付顺差季节性,并入选择器"
+    },
+    {
+      "excel_chart_id": "3.货物贸易#07",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "trade_goods_seasonality"
+      ],
+      "reason": "即期结售汇季节性,并入选择器"
+    },
+    {
+      "excel_chart_id": "3.货物贸易#08",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "trade_goods_seasonality"
+      ],
+      "reason": "即远期结售汇季节性,并入选择器"
+    },
+    {
+      "excel_chart_id": "3.货物贸易#09",
+      "status": "retained",
+      "target_chart_ids": [
+        "trade_goods_ttm_panel"
+      ],
+      "reason": "出口增速3MMA与USDCNY双轴,次保留"
+    },
+    {
+      "excel_chart_id": "3.货物贸易#10",
+      "status": "deleted_with_reason",
+      "target_chart_ids": [],
+      "reason": "无标题横向数据序列,指标和横轴定义不清"
+    },
+    {
+      "excel_chart_id": "3.贸易商#01",
+      "status": "retained",
+      "target_chart_ids": [
+        "trade_merchant_settlement_ratio"
+      ],
+      "reason": "结汇/出口结汇率双线,主保留"
+    },
+    {
+      "excel_chart_id": "3.贸易商#02",
+      "status": "retained",
+      "target_chart_ids": [
+        "trade_merchant_willingness_pmi"
+      ],
+      "reason": "意愿双线+PMI右轴,主保留"
+    },
+    {
+      "excel_chart_id": "3.贸易商#03",
+      "status": "deleted_with_reason",
+      "target_chart_ids": [],
+      "reason": "无标题无系列名双线,缺可审计定义"
+    },
+    {
+      "excel_chart_id": "3.贸易商#04",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "trade_merchant_settlement_ratio"
+      ],
+      "reason": "单独结汇/收入,并入结汇率图"
+    },
+    {
+      "excel_chart_id": "3.贸易商#05",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "trade_merchant_settlement_ratio"
+      ],
+      "reason": "单独购汇/支出,并入结汇率图"
+    },
+    {
+      "excel_chart_id": "3.贸易商#06",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "trade_merchant_zscore"
+      ],
+      "reason": "收汇结汇率Z-score,并入双Z图"
+    },
+    {
+      "excel_chart_id": "3.贸易商#07",
+      "status": "merged_into",
+      "target_chart_ids": [
+        "trade_merchant_zscore"
+      ],
+      "reason": "付汇购汇率Z-score,并入双Z图"
+    },
+    {
+      "excel_chart_id": "3.贸易商#08",
+      "status": "deleted_with_reason",
+      "target_chart_ids": [],
+      "reason": "与#02主题重复,保留指标供tooltip"
+    },
+    {
+      "excel_chart_id": "3.贸易商#09",
+      "status": "retained",
+      "target_chart_ids": [
+        "trade_merchant_settlement_ratio"
+      ],
+      "reason": "意愿双线+利差右轴,次保留"
+    },
+    {
+      "excel_chart_id": "3.贸易商#10",
+      "status": "deleted_with_reason",
+      "target_chart_ids": [],
+      "reason": "无标题错位双线,横轴值区间不一致"
+    }
+  ]
+}
