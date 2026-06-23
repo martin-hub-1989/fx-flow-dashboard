@@ -1,5 +1,83 @@
 # Review Handoff — Final
 
+# NEXT_PHASE v1 最终状态 (2026-06-23, 由 gen_status_docs.py 生成)
+
+## 完成的 Loop
+
+- ✅ Loop 0: 基线快照
+- ✅ Loop 1-3: 生产更新门禁 (mapping合同 / transform合同 / 两点重叠验证)
+- ✅ Loop 4-6: 安全写入+revision审计 / derived依赖图 / 真实Wind闭环 (Phase 1 Gate)
+- ✅ Loop 7-9: 图表关键derived迁移 / 元数据统一 / trailing zeros清理 (Phase 2 Gate)
+- ✅ Loop 10-13: seasonality band / 轴单位摘要 / 窄屏浏览器验证 / 66图处置表 (Phase 3 Gate)
+- ✅ Loop 14: 生产测试门禁重构 (56 pytest + 84 self-test)
+- ✅ Loop 15: 状态文档自动生成
+
+## 真实数据快照
+
+| 维度 | 值 |
+|------|-----|
+| series | 383 (raw 157 / derived 224 / manual 2) |
+| observations | 137,626 |
+| metric_definitions | 224 |
+| Python复算观测 | 6,792 |
+| Wind MCP写入观测 | 4 (2026-05-31新增, source=wind_mcp) |
+| Wind verified序列 | 5/148 (fx_fwd:B/C/F, fx_cspot:H/O) |
+| 生产update_plan | 5条 (仅wind_verified) |
+| 正式图表 | 29 (20 primary + 9 drilldown) |
+| 散点图 | 2 (含OLS回归+R²) |
+| 季节性图 | 4 (1-12月band) |
+| chart-critical Excel缓存 | 0 |
+| 66图处置 | 66/66 (retained 28/merged 30/rebuilt 1/deleted 7) |
+| update_runs | 28 completed + 1 cancelled (无running) |
+| revision审计 | 0 (本次Wind写入0修订) |
+
+## 浏览器验证结果 (puppeteer + chrome-headless-shell)
+
+- 1280×720 桌面: 无横向溢出, 5图渲染, 0 console错误
+- 390×844 移动: 无横向溢出, 0错误
+- 9模块切换全部无溢出
+- PNG导出 ✅ / CSV导出(含数据) ✅
+
+## 测试
+
+- `python3 -m pytest tests/` : 56 passed
+- `python3 scripts/test_all.py` : 84 passed
+- `python3 scripts/validate_all.py` : 8/8 checks passed
+
+## 真实限制与待用户决定
+
+1. **Wind verified 仅 5 条**: 其余 143 条映射来自 iFind 历史验证(mapping_pending/no_result)。若需更多 Wind 闭环,需逐条用精确指标名查询(参考 wind_closure.py)。
+2. **fx_fwd:F 限流**: Wind MCP 间歇限流导致该序列 fetch 不全,下次重试可补。
+3. **80条mapping_pending**: iFind已验证但未用Wind重新确认;历史数据匹配可用,但未达wind_verified生产门禁。
+4. **71条DB-only序列**: Excel中间计算列(非业务展示),保留在DB但不在catalog展示主表。
+
+## 关键脚本
+
+```bash
+# 生产更新闭环
+python3 scripts/build_update_plan.py     # 生成计划(仅wind_verified)
+python3 scripts/fetch_wind.py             # 真实Wind拉取+transform+staging
+python3 scripts/validate_update.py        # 两点重叠验证+安全写入+revision审计
+python3 scripts/wind_closure.py          # 新序列Wind验证闭环
+
+# 图表与数据
+python3 scripts/build_chart_catalog.py
+python3 scripts/build_chart_disposition.py
+python3 scripts/generate_dashboard.py
+python3 scripts/gen_status_docs.py       # 重新生成状态文档
+
+# 验证
+python3 -m pytest tests/ -q
+python3 scripts/test_all.py
+python3 scripts/validate_all.py
+node tests/browser_check.js               # 浏览器溢出检查
+node tests/test_loop14_export_check.js    # PNG/CSV导出检查
+```
+
+---
+
+> 以下为历史执行记录 (阶段A/B + NEXT_PHASE Loop 0-15 过程)
+
 > 执行完成：2026-06-23 CST  
 > 范围：EXECUTION_AGENT_TASK.md 阶段 A + 阶段 B 全部完成
 

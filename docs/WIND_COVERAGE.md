@@ -1,65 +1,18 @@
-# Wind EDB Coverage
+# Wind 覆盖率
 
-> 最后更新：2026-06-22 14:37 CST
-> 数据源：同花顺 iFind EDB MCP (hexin-ifind-ds-edb-mcp)
+> 自动生成：2026-06-23 20:38
 
-## 总体覆盖
+## 映射状态
 
-| 状态 | 数量 | 占比 |
-|------|------|------|
-| `verified` | 10 | 6.7% |
-| `verified_with_transform` | 48 | 32.0% |
-| `no_result` | 31 | 20.7% |
-| `mapping_pending` | 52 | 34.7% |
-| **总计** | **150** | **100%** |
+{
+  "mapping_pending": 80,
+  "verified_unit_transform": 44,
+  "not_applicable": 7,
+  "no_data_in_db": 8,
+  "verified_exact": 1,
+  "no_result": 8
+}
 
-## 按模块覆盖
+## Wind verified 序列（5 条）
 
-| 模块 | Verified | Transform | No Result | Pending | 总计 |
-|------|----------|-----------|-----------|---------|------|
-| 3.FDI | 1 | 4 | 1 | 20 | 27 |
-| 3.代客即期 | 0 | 6 | 3 | 5 | 16 |
-| 3.即远期 | 1 | 7 | 3 | 3 | 14 |
-| 3.服务贸易 | 1 | 0 | 2 | 2 | 5 |
-| 3.涉外收付 | 0 | 10 | 6 | 4 | 22 |
-| 3.证券EQ | 4 | 1 | 0 | 4 | 9 |
-| 3.证券FI | 1 | 12 | 12 | 8 | 35 |
-| 3.货物贸易 | 1 | 4 | 2 | 3 | 12 |
-| 3.贸易商 | 1 | 4 | 2 | 3 | 10 |
-
-## 常见单位变换
-
-| 变换 | 说明 |
-|------|------|
-| `unit_div_1e8` | EDB 返回**元**，DB 存储**亿**（÷100,000,000） |
-| `unit_div_1e4` | EDB 返回**元**，DB 存储**万**（÷10,000） |
-| `sign_flip` | EDB 与 Excel 符号约定相反（如购汇/售汇方向） |
-
-## 已验证指标样例
-
-| Series | Excel 指标名 | EDB 指标名 | 匹配 | 变换 |
-|--------|-------------|-----------|------|------|
-| trade_goods:B | 出口金额:当月值 | 出口总值(美元计价):当月值 | ~0.07% | unit_div_1e8 |
-| fx_fwd:D | 银行自身结售汇差额:当月值 | 银行代客结售汇:以美元计价:差额:银行自身 | ~0.05% | unit_div_1e8 |
-
-## 已知问题
-
-1. **FDI 模块**：Excel 使用完整的 Wind 层级路径名（如 `中国:金融账户:...:当季值`），EDB 模糊匹配可能返回不同粒度的指标
-2. **单位差异**：EDB 默认返回**元**，部分 Excel 列使用**亿美元**或**亿人民币**
-3. **名称差异**：EDB 指标名可能与 Excel 中的「指标名称」不完全一致（如差额 vs 净额）
-4. **频率差异**：FDI 部分序列为季度数据（当季值），需注意与月度序列的日期对齐
-
-## 使用方法
-
-```bash
-# 验证全部映射（需要有效 MCP 会话）
-python3 scripts/verify_wind_mappings.py
-
-# 验证特定模块
-python3 scripts/verify_wind_mappings.py --module 3.即远期
-
-# 限制数量 + 调整容差
-python3 scripts/verify_wind_mappings.py --limit 20 --tolerance 0.5
-
-# MCP 会话过期时，token 会自动从 ~/.claude/mcp.json 读取
-```
+真实 Wind MCP 闭环完成的序列，含精确 EDB code，可进入生产更新。
