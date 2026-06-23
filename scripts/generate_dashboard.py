@@ -36,6 +36,22 @@ def load_chart_catalog():
 
 def build_modules():
     cat = load_chart_catalog()
+    # Preload series units from DB for axis titles
+    conn = get_db()
+    # Map English enum units to Chinese display units
+    UNIT_DISPLAY = {
+        "monthly_amount": "亿美元", "net_flow": "亿美元", "flow": "亿美元",
+        "balance": "亿美元", "cumulative_amount": "亿美元",
+        "custody_amount": "亿元", "moving_average": "亿美元",
+        "ttm": "亿美元", "index": "指数点", "ratio": "%",
+        "yield_pct": "%", "pct_change": "%", "unknown": "",
+        "亿美元": "亿美元", "亿元": "亿元", "CNY/USD": "CNY/USD",
+        "变化率": "变化率", "分位(0-100)": "分位",
+        "exchange_rate": "CNY/USD", "cumulative": "亿美元",
+    }
+    raw_units = {r[0]: r[1] for r in conn.execute("SELECT series_id, unit FROM series")}
+    unit_map = {sid: UNIT_DISPLAY.get(u or "", u or "") for sid, u in raw_units.items()}
+    conn.close()
     mods = []
     for sheet in ["3.即远期","3.代客即期","3.涉外收付","3.货物贸易",
                   "3.贸易商","3.服务贸易","3.FDI","3.证券EQ","3.证券FI"]:
@@ -43,12 +59,23 @@ def build_modules():
         charts_out = []
         for ch in md.get("charts", []):
             series_out = []
+            left_unit = ""
+            right_unit = ""
             for ds in ch.get("datasets", []):
+                sid = ds["series_id"]
+                u = unit_map.get(sid, "") or ""
+                if ds.get("axis") == "right":
+                    if not right_unit:
+                        right_unit = u
+                else:
+                    if not left_unit:
+                        left_unit = u
                 series_out.append({
-                    "id": ds["series_id"], "label": ds["label"],
+                    "id": sid, "label": ds["label"],
                     "color": ds.get("color","blue"), "type": ds.get("type","line"),
-                    "axis": ds.get("axis","left"),
+                    "axis": ds.get("axis","left"), "unit": u,
                 })
+            chart_unit = left_unit or ""
             charts_out.append({
                 "id": ch["chart_id"], "title": ch["title"],
                 "subtitle": ch.get("subtitle",""), "type": ch["chart_type"],
@@ -60,6 +87,7 @@ def build_modules():
                 "scatter": ch.get("scatter", False),
                 "scatter_x": ch.get("scatter_x"), "scatter_y": ch.get("scatter_y"),
                 "scatter_x_alt": ch.get("scatter_x_alt"),
+                "unit": chart_unit, "right_unit": right_unit,
             })
         mods.append({
             "id": MODULE_SHEET_MAP.get(sheet,sheet),
@@ -462,7 +490,7 @@ function buildChartConfig(ch, obs) {{
                       ticks: {{ maxTicksLimit: 10, maxRotation: 0, autoSkip: true, font: {{ size: 10 }},
                                 callback: function(val, i) {{ const l = this.getLabelForValue(val); return l ? l.slice(0,7) : l; }} }} }},
                 y: {{ grid: {{ color: 'rgba(0,0,0,0.05)' }},
-                      title: {{ display: true, text: '亿美元', font: {{ size: 11 }} }} }},
+                      title: {{ display: true, text: ch.unit || '', font: {{ size: 11 }} }} }},
             }},
         }},
     }};
@@ -473,10 +501,17 @@ function buildChartConfig(ch, obs) {{
     }}
 
     if (hasRightAxis) {{
+        // Right axis: bind title + color to the right-axis series.
+        const rightSeries = ch.series.find(s => s.axis === 'right');
+        const rightTitle = (rightSeries ? (rightSeries.label + (ch.right_unit ? ' (' + ch.right_unit + ')' : '')) : (ch.right_unit || ''));
         config.options.scales.y1 = {{
             position: 'right', grid: {{ drawOnChartArea: false }},
-            title: {{ display: true, text: '右轴', font: {{ size: 11 }} }},
+            title: {{ display: true, text: rightTitle, font: {{ size: 11 }} }},
+            ticks: {{ color: rightSeries ? (rightSeries.color || '#c0392b') : '#666' }},
         }};
+        // Mark right-axis line dataset color matches axis
+        const rightDs = config.data.datasets.find(d => d.yAxisID === 'y1');
+        if (rightDs && rightSeries) config.options.scales.y1.title.color = rightSeries.color || '#c0392b';
     }}
 
     if (ch.y_min !== undefined && ch.y_min !== null) config.options.scales.y.min = ch.y_min;
@@ -527,16 +562,44 @@ function renderModule(id, modEl) {{
         html += '</div>';
     }}
 
-    // Summary table — top 8 raw series
-    const keySeries = modData.series.filter(s => s.type === 'raw' && obs[s.id] && obs[s.id].length > 1).slice(0, 10);
-    if (keySeries.length) {{
-        html += '<div class="summary-section"><h3>核心指标摘要</h3><table class="data-table"><thead><tr><th>指标</th><th>最新值</th><th>前值</th><th>变化</th><th>日期</th></tr></thead><tbody>';
-        keySeries.forEach(s => {{
-            const d = obs[s.id]; if (!d || d.length < 2) return;
+    // Summary table — driven by catalog (primary charts' headline series),
+    // NOT auto-picked raw columns. Shows signed-flow summary: latest / prev /
+    // change (absolute) / 3MMA / historical percentile. No red/green for "good/bad".
+    const summarySeries = [];
+    const seen = new Set();
+    charts.filter(ch => ch.priority === 'primary').forEach(ch => {{
+        // headline = first series (or the total/合计 line if present)
+        const totalDs = ch.series && ch.series.length ? ch.series.find(d => d.label.includes('合计') || d.label.includes('总')) : null;
+        const ds = totalDs || (ch.series && ch.series[0]);
+        if (ds && !seen.has(ds.id)) {{
+            seen.add(ds.id);
+            summarySeries.push({{id: ds.id, label: ds.label, unit: ch.unit || ds.unit || ''}});
+        }}
+    }});
+    if (summarySeries.length) {{
+        html += '<div class="summary-section"><h3>核心指标摘要</h3><table class="data-table"><thead><tr><th>指标</th><th>最新值</th><th>前值</th><th>变化额</th><th>3MMA</th><th>历史分位</th><th>日期</th></tr></thead><tbody>';
+        summarySeries.forEach(s => {{
+            const d = (obs[s.id] || []).filter(p => p[1] !== null && p[1] !== undefined);
+            if (d.length < 2) return;
             const latest = d[d.length-1], prev = d[d.length-2];
-            const chg = prev[1] !== 0 ? ((latest[1]-prev[1])/Math.abs(prev[1])*100) : 0;
-            const arrow = chg > 0 ? '↑' : chg < 0 ? '↓' : '→';
-            html += '<tr><td>' + s.name + '</td><td><b>' + latest[1].toLocaleString(undefined, {{maximumFractionDigits:1}}) + '</b></td><td>' + prev[1].toLocaleString(undefined, {{maximumFractionDigits:1}}) + '</td><td style="color:' + (chg>0?'#e74c3c':chg<0?'#27ae60':'#999') + '">' + arrow + ' ' + Math.abs(chg).toFixed(1) + '%</td><td>' + latest[0] + '</td></tr>';
+            const chg = latest[1] - prev[1];
+            // 3MMA = avg of last 3
+            const last3 = d.slice(-3).map(p => p[1]);
+            const mma = last3.length === 3 ? (last3.reduce((a,b)=>a+b,0)/3) : null;
+            // historical percentile of latest vs all-time
+            const allVals = d.map(p => p[1]).sort((a,b)=>a-b);
+            let below = 0;
+            for (const v of allVals) {{ if (v < latest[1]) below++; else break; }}
+            const pct = allVals.length ? Math.round(below / allVals.length * 100) : null;
+            const arrow = chg > 0 ? '▲' : chg < 0 ? '▼' : '→';
+            const u = s.unit ? ' ' + s.unit : '';
+            html += '<tr><td>' + s.label + '</td>'
+                + '<td><b>' + latest[1].toLocaleString(undefined, {{maximumFractionDigits:1}}) + u + '</b></td>'
+                + '<td>' + prev[1].toLocaleString(undefined, {{maximumFractionDigits:1}}) + u + '</td>'
+                + '<td>' + arrow + ' ' + Math.abs(chg).toLocaleString(undefined, {{maximumFractionDigits:1}}) + u + '</td>'
+                + '<td>' + (mma !== null ? mma.toLocaleString(undefined, {{maximumFractionDigits:1}}) + u : '—') + '</td>'
+                + '<td>' + (pct !== null ? pct + '%' : '—') + '</td>'
+                + '<td>' + latest[0] + '</td></tr>';
         }});
         html += '</tbody></table></div>';
     }}
