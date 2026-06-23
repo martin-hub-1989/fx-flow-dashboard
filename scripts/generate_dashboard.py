@@ -91,6 +91,42 @@ function hexToRgba(hex, alpha) {
 }
 """
 
+# ── seasonality computation (Loop 10) ────────────────────────
+def compute_seasonality(points, history_start_year, history_end_year, current_year):
+    """Build 1-12 month seasonality from [[date_str, value], ...].
+
+    Returns list of 12 dicts: {month, min, max, mean, current}.
+    History = years in [history_start_year, history_end_year] (excl current).
+    current = the value for current_year in that month, or None if unpublished.
+    """
+    from collections import defaultdict
+    by_month_hist = defaultdict(list)
+    current = {}
+    for d, v in points:
+        if v is None:
+            continue
+        try:
+            y = int(d[:4]); m = int(d[5:7])
+        except (ValueError, IndexError):
+            continue
+        if y == current_year:
+            current[m] = v
+        elif history_start_year <= y <= history_end_year:
+            by_month_hist[m].append(v)
+
+    out = []
+    for month in range(1, 13):
+        hist = by_month_hist.get(month, [])
+        out.append({
+            "month": month,
+            "min": min(hist) if hist else None,
+            "max": max(hist) if hist else None,
+            "mean": (sum(hist) / len(hist)) if hist else None,
+            "current": current.get(month),
+        })
+    return out
+
+
 # ── generate ────────────────────────────────────────────────
 def generate_html(output_path):
     chart_js = (TEMPLATES_DIR / "chart.min.js").read_text()
@@ -157,6 +193,10 @@ body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang S
 .chart-actions{{display:flex;gap:8px;margin-top:8px}}
 .chart-actions button{{padding:4px 10px;border:1px solid #ddd;border-radius:4px;background:white;cursor:pointer;font-size:11px;color:#666}}
 .chart-actions button:hover{{background:#f5f5f5}}
+.season-selector{{display:flex;flex-wrap:wrap;gap:4px;margin:6px 0 4px}}
+.season-sel-btn{{padding:3px 9px;border:1px solid #ddd;border-radius:12px;background:white;cursor:pointer;font-size:11px;color:#666;white-space:nowrap}}
+.season-sel-btn:hover{{background:#eef}}
+.season-sel-btn.active{{background:#1a3a5c;color:white;border-color:#1a3a5c}}
 .placeholder{{text-align:center;padding:40px;color:#bbb}}
 .placeholder .icon{{font-size:40px;margin-bottom:8px}}
 .range-bar{{display:flex;gap:4px;padding:0 24px 12px}}
@@ -286,6 +326,78 @@ function buildScatterConfig(ch, obs) {{
     }};
 }}
 
+function buildSeasonalityConfig(ch, obs, selectorIdx) {{
+    // selectorIdx: which dataset in ch.series to show (default 0)
+    const sIdx = (selectorIdx === undefined) ? 0 : selectorIdx;
+    const s = ch.series[sIdx];
+    if (!s) return null;
+    const data = obs[s.id] || [];
+    if (!data.length) return null;
+
+    // Determine current year = max year in data
+    let maxYear = 0;
+    data.forEach(p => {{ const y = parseInt(p[0].slice(0,4)); if (y > maxYear) maxYear = y; }});
+    if (!maxYear) return null;
+    const histStart = 2010;  // history range
+
+    // Group by month: history (excl current year) + current year
+    const hist = Array.from({{length:12}}, () => []);
+    const cur = Array(12).fill(null);
+    data.forEach(p => {{
+        if (p[1] === null || p[1] === undefined || p[1] === 0) return;
+        const y = parseInt(p[0].slice(0,4));
+        const m = parseInt(p[0].slice(5,7));
+        if (m < 1 || m > 12) return;
+        if (y === maxYear) cur[m-1] = p[1];
+        else if (y >= histStart && y < maxYear) hist[m-1].push(p[1]);
+    }});
+
+    const months = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+    const minData = hist.map(h => h.length ? Math.min(...h) : null);
+    const maxData = hist.map(h => h.length ? Math.max(...h) : null);
+    const meanData = hist.map(h => h.length ? h.reduce((a,b)=>a+b,0)/h.length : null);
+    // band = [min, max] for fillBetween via two datasets
+    const config = {{
+        type: 'line',
+        data: {{
+            labels: months,
+            datasets: [
+                {{ label: '历史上限', data: maxData, borderColor: 'rgba(127,140,141,0.3)',
+                   backgroundColor: 'rgba(127,140,141,0.12)', borderWidth: 1, fill: false,
+                   pointRadius: 0, tension: 0.3, order: 3 }},
+                {{ label: '历史下限', data: minData, borderColor: 'rgba(127,140,141,0.3)',
+                   backgroundColor: 'rgba(127,140,141,0.12)', borderWidth: 1,
+                   fill: '-1',  // fill to previous dataset (upper) -> band
+                   pointRadius: 0, tension: 0.3, order: 3 }},
+                {{ label: '历史均值', data: meanData, borderColor: '#7f8c8d',
+                   borderWidth: 1.5, borderDash: [4,3], fill: false,
+                   pointRadius: 0, tension: 0.3, order: 2 }},
+                {{ label: s.label + ' 当年(' + maxYear + ')', data: cur,
+                   borderColor: s.color || '#1a3a5c', backgroundColor: hexToRgba(s.color||'#1a3a5c', 0.1),
+                   borderWidth: 2.5, fill: false, pointRadius: 3, pointHoverRadius: 5,
+                   tension: 0.2, order: 1 }},
+            ]
+        }},
+        options: {{
+            responsive: true, maintainAspectRatio: false,
+            animation: {{ duration: 300 }},
+            interaction: {{ mode: 'index', intersect: false }},
+            plugins: {{
+                legend: {{ position: 'top', labels: {{ usePointStyle: true, padding: 10, font: {{ size: 11 }} }} }},
+                tooltip: {{ callbacks: {{ label: ctx => ctx.dataset.label + ': ' +
+                    (ctx.parsed.y==null ? '未发布' : ctx.parsed.y.toLocaleString(undefined, {{maximumFractionDigits:2}})) }} }},
+                datalabels: {{ display: false }},
+            }},
+            scales: {{
+                x: {{ type: 'category', grid: {{ color: 'rgba(0,0,0,0.05)' }},
+                      ticks: {{ font: {{ size: 11 }} }} }},
+                y: {{ grid: {{ color: 'rgba(0,0,0,0.05)' }} }},
+            }},
+        }},
+    }};
+    return config;
+}}
+
 function buildChartConfig(ch, obs) {{
     const datasets = [];
     let hasRightAxis = false;
@@ -398,6 +510,14 @@ function renderModule(id, modEl) {{
             html += '<div class="chart-card">';
             html += '<h3>' + ch.title + '</h3>';
             if (ch.subtitle) html += '<div class="chart-subtitle">' + ch.subtitle + '</div>';
+            // Seasonality selector (switch indicator)
+            if (ch.type === 'seasonality_band' && ch.series.length > 1) {{
+                html += '<div class="season-selector" data-chart-cid="' + cid + '">';
+                ch.series.forEach((s, i) => {{
+                    html += '<button class="season-sel-btn' + (i===0 ? ' active' : '') + '" data-chart-cid="' + cid + '" data-idx="' + i + '">' + s.label + '</button>';
+                }});
+                html += '</div>';
+            }}
             html += '<div class="chart-wrap"><canvas id="' + cid + '"></canvas></div>';
             html += '<div class="chart-actions">';
             html += '<button data-export="png" data-chart-id="' + cid + '" data-chart-title="' + ch.title.replace(/"/g, '&quot;') + '">📷 导出图片</button>';
@@ -435,6 +555,10 @@ function renderModule(id, modEl) {{
                 if (!sc) return;
                 config = sc.config;
                 subtitleOverride = sc.subtitle;
+            }} else if (ch.type === 'seasonality_band') {{
+                config = buildSeasonalityConfig(ch, obs, 0);
+                if (!config) return;
+                canvas._seasonalityChart = ch;  // for selector switching
             }} else {{
                 config = buildChartConfig(ch, obs);
             }}
@@ -447,7 +571,6 @@ function renderModule(id, modEl) {{
             }} else {{
                 canvas._chartData = {{ labels: config.data.labels, datasets: config.data.datasets.map(ds => ({{ label: ds.label, data: ds.data }})) }};
             }}
-            // Update subtitle for scatter (shows n, r, R²)
             if (subtitleOverride) {{
                 const card = canvas.closest('.chart-card');
                 if (card) {{
@@ -539,6 +662,29 @@ document.addEventListener('click', e => {{
             renderModule(mod.id.replace('module-', ''), mod);
         }});
     }}
+}});
+
+// Seasonality selector — switch indicator without re-rendering whole module
+document.addEventListener('click', e => {{
+    const btn = e.target.closest('.season-sel-btn');
+    if (!btn) return;
+    const cid = btn.dataset.chartCid, idx = parseInt(btn.dataset.idx);
+    const canvas = document.getElementById(cid);
+    if (!canvas || !canvas._seasonalityChart) return;
+    // toggle active state within this selector group
+    btn.parentElement.querySelectorAll('.season-sel-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    // find the module's obs
+    const modEl = canvas.closest('.module');
+    const modId = modEl ? modEl.id.replace('module-','') : null;
+    if (!modId) return;
+    const obs = DATA.modules[modId].observations;
+    const ch = canvas._seasonalityChart;
+    const cfg = buildSeasonalityConfig(ch, obs, idx);
+    if (!cfg) return;
+    if (canvas._chartInstance) canvas._chartInstance.destroy();
+    canvas._chartInstance = new Chart(canvas, cfg);
+    canvas._chartData = {{ labels: cfg.data.labels, datasets: cfg.data.datasets.map(ds => ({{ label: ds.label, data: ds.data }})) }};
 }});
 
 // Init
