@@ -1234,7 +1234,7 @@
     "wind_indicator": "",
     "frequency": "monthly",
     "unit": "",
-    "status": "manual",
+    "status": "not_applicable",
     "last_dates": [
       [
         "2024-10-31",
@@ -1249,11 +1249,12 @@
         -91.57706666666668
       ]
     ],
-    "verify_note": "Column BB — no Wind indicator name in Excel header",
+    "verify_note": "季节性图辅助区间列(均值/MIN/区间/MAX旁的延伸列),非独立业务序列,内容由季节性组件用主序列生成",
     "verified_at": "2026-06-22T14:23:52.999896",
     "wind_verified": false,
     "transform": [],
-    "transform_standardized": true
+    "transform_standardized": true,
+    "external_source": null
   },
   {
     "series_id": "fx_cspot:C",
@@ -3220,7 +3221,7 @@
     "wind_indicator": "",
     "frequency": "monthly",
     "unit": "",
-    "status": "manual",
+    "status": "not_applicable",
     "last_dates": [
       [
         "2024-10-31",
@@ -3235,11 +3236,12 @@
         -78.45273099999999
       ]
     ],
-    "verify_note": "Column BH — no Wind indicator name in Excel header",
+    "verify_note": "季节性图辅助区间列(均值/MIN/区间/MAX旁的延伸列),非独立业务序列,内容由季节性组件用主序列生成",
     "verified_at": "2026-06-22T14:23:52.999900",
     "wind_verified": false,
     "transform": [],
-    "transform_standardized": true
+    "transform_standardized": true,
+    "external_source": null
   },
   {
     "series_id": "fx_crossborder:C",
@@ -5390,62 +5392,6 @@
     "_old_status": "verified_with_transform"
   },
   {
-    "series_id": "sec_fi:BE",
-    "display_name": "中债-境外机构",
-    "module": "3.证券FI",
-    "wind_indicator": "",
-    "frequency": "monthly",
-    "unit": "8960.22",
-    "status": "manual",
-    "last_dates": [
-      [
-        "2026-02-28",
-        9366.26
-      ],
-      [
-        "2026-03-31",
-        9213.32
-      ],
-      [
-        "2026-04-30",
-        8960.22
-      ]
-    ],
-    "verify_note": "中债-境外机构 — no Wind indicator name in Excel header",
-    "verified_at": "2026-06-22T14:23:52.999902",
-    "wind_verified": false,
-    "transform": [],
-    "transform_standardized": true
-  },
-  {
-    "series_id": "sec_fi:BF",
-    "display_name": "上清-境外机构",
-    "module": "3.证券FI",
-    "wind_indicator": "",
-    "frequency": "monthly",
-    "unit": "1650.3106",
-    "status": "manual",
-    "last_dates": [
-      [
-        "2026-02-28",
-        1706.2569
-      ],
-      [
-        "2026-03-31",
-        1843.2619
-      ],
-      [
-        "2026-04-30",
-        1650.3106
-      ]
-    ],
-    "verify_note": "上清-境外机构 — no Wind indicator name in Excel header",
-    "verified_at": "2026-06-22T14:23:52.999903",
-    "wind_verified": false,
-    "transform": [],
-    "transform_standardized": true
-  },
-  {
     "series_id": "sec_fi:BH",
     "display_name": "中债国债到期收益率:10年:月",
     "module": "3.证券FI",
@@ -6832,7 +6778,7 @@
     "wind_indicator": "",
     "frequency": "monthly",
     "unit": "",
-    "status": "manual",
+    "status": "not_applicable",
     "last_dates": [
       [
         "2024-10-31",
@@ -6847,11 +6793,12 @@
         354.07539400000013
       ]
     ],
-    "verify_note": "Column AY — no Wind indicator name in Excel header",
+    "verify_note": "季节性图辅助区间列(均值/MIN/区间/MAX旁的延伸列),非独立业务序列,内容由季节性组件用主序列生成",
     "verified_at": "2026-06-22T14:23:52.999906",
     "wind_verified": false,
     "transform": [],
-    "transform_standardized": true
+    "transform_standardized": true,
+    "external_source": null
   },
   {
     "series_id": "trade_goods:B",
