@@ -20,7 +20,7 @@
   },
   {
     "series_id": "fx_fwd:B",
-    "display_name": "Column_B",
+    "display_name": "银行自身结汇:当月值",
     "module": "3.即远期",
     "series_type": "raw",
     "frequency": "monthly",
@@ -60,7 +60,7 @@
   },
   {
     "series_id": "fx_fwd:C",
-    "display_name": "Column_C",
+    "display_name": "银行自身售汇:当月值",
     "module": "3.即远期",
     "series_type": "raw",
     "frequency": "monthly",
@@ -100,7 +100,7 @@
   },
   {
     "series_id": "fx_fwd:D",
-    "display_name": "Column_D",
+    "display_name": "银行自身结售汇差额:当月值",
     "module": "3.即远期",
     "series_type": "raw",
     "frequency": "monthly",
@@ -140,7 +140,7 @@
   },
   {
     "series_id": "fx_fwd:E",
-    "display_name": "Column_E",
+    "display_name": "银行代客远期结汇签约:当月值",
     "module": "3.即远期",
     "series_type": "raw",
     "frequency": "monthly",
@@ -180,7 +180,7 @@
   },
   {
     "series_id": "fx_fwd:F",
-    "display_name": "Column_F",
+    "display_name": "银行代客远期售汇签约:当月值",
     "module": "3.即远期",
     "series_type": "raw",
     "frequency": "monthly",
@@ -220,7 +220,7 @@
   },
   {
     "series_id": "fx_fwd:G",
-    "display_name": "Column_G",
+    "display_name": "银行代客远期净结汇:当月值",
     "module": "3.即远期",
     "series_type": "raw",
     "frequency": "monthly",
@@ -260,7 +260,7 @@
   },
   {
     "series_id": "fx_fwd:H",
-    "display_name": "Column_H",
+    "display_name": "银行代客远期结汇累计未到期额",
     "module": "3.即远期",
     "series_type": "raw",
     "frequency": "monthly",
@@ -300,7 +300,7 @@
   },
   {
     "series_id": "fx_fwd:I",
-    "display_name": "Column_I",
+    "display_name": "银行代客远期售汇累计未到期额",
     "module": "3.即远期",
     "series_type": "raw",
     "frequency": "monthly",
@@ -340,7 +340,7 @@
   },
   {
     "series_id": "fx_fwd:J",
-    "display_name": "Column_J",
+    "display_name": "银行代客远期净结汇累计未到期额",
     "module": "3.即远期",
     "series_type": "raw",
     "frequency": "monthly",
@@ -380,7 +380,7 @@
   },
   {
     "series_id": "fx_fwd:K",
-    "display_name": "Column_K",
+    "display_name": "银行代客结汇:当月值",
     "module": "3.即远期",
     "series_type": "raw",
     "frequency": "monthly",
@@ -420,7 +420,7 @@
   },
   {
     "series_id": "fx_fwd:L",
-    "display_name": "Column_L",
+    "display_name": "银行代客售汇:当月值",
     "module": "3.即远期",
     "series_type": "raw",
     "frequency": "monthly",
@@ -460,7 +460,7 @@
   },
   {
     "series_id": "fx_fwd:M",
-    "display_name": "Column_M",
+    "display_name": "银行代客结售汇顺差:当月值",
     "module": "3.即远期",
     "series_type": "raw",
     "frequency": "monthly",
@@ -500,7 +500,7 @@
   },
   {
     "series_id": "fx_fwd:N",
-    "display_name": "Column_N",
+    "display_name": "银行结售汇:未到期期权Delta净敞口",
     "module": "3.即远期",
     "series_type": "raw",
     "frequency": "monthly",
@@ -555,7 +555,9 @@
     "observation_count": 231,
     "formula_count": 231,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "fx_fwd:Q",
@@ -759,7 +761,7 @@
   },
   {
     "series_id": "fx_fwd:V",
-    "display_name": "Column_V",
+    "display_name": "即远期结售汇合计6MMA",
     "module": "3.即远期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -799,7 +801,7 @@
   },
   {
     "series_id": "fx_fwd:W",
-    "display_name": "Column_W",
+    "display_name": "即远期结售汇合计12MMA",
     "module": "3.即远期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -1239,7 +1241,7 @@
   },
   {
     "series_id": "fx_fwd:AH",
-    "display_name": "Column_AH",
+    "display_name": "远期结汇签约",
     "module": "3.即远期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -1279,7 +1281,7 @@
   },
   {
     "series_id": "fx_fwd:AI",
-    "display_name": "Column_AI",
+    "display_name": "远期购汇签约",
     "module": "3.即远期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -1319,7 +1321,7 @@
   },
   {
     "series_id": "fx_fwd:AJ",
-    "display_name": "Column_AJ",
+    "display_name": "期权Delta净变动",
     "module": "3.即远期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -1374,11 +1376,13 @@
     "observation_count": 544,
     "formula_count": 0,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "fx_fwd:AL",
-    "display_name": "Column_AL",
+    "display_name": "即期汇率:美元兑人民币:月",
     "module": "3.即远期",
     "series_type": "raw",
     "frequency": "monthly",
@@ -1433,11 +1437,13 @@
     "observation_count": 513,
     "formula_count": 513,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "fx_fwd:AN",
-    "display_name": "Column_AN",
+    "display_name": "USDCNY",
     "module": "3.即远期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -1477,7 +1483,7 @@
   },
   {
     "series_id": "fx_fwd:AO",
-    "display_name": "Column_AO",
+    "display_name": "代客衍生品签约",
     "module": "3.即远期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -1517,7 +1523,7 @@
   },
   {
     "series_id": "fx_fwd:AP",
-    "display_name": "Column_AP",
+    "display_name": "代客衍生品签约3MMA",
     "module": "3.即远期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -1557,7 +1563,7 @@
   },
   {
     "series_id": "fx_fwd:AQ",
-    "display_name": "Column_AQ",
+    "display_name": "外汇市场供求",
     "module": "3.即远期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -2191,11 +2197,13 @@
     "observation_count": 273,
     "formula_count": 273,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "fx_cspot:R",
-    "display_name": "Column_R",
+    "display_name": "货物贸易结售汇差额",
     "module": "3.代客即期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -2235,7 +2243,7 @@
   },
   {
     "series_id": "fx_cspot:S",
-    "display_name": "Column_S",
+    "display_name": "服务贸易结售汇差额",
     "module": "3.代客即期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -2275,7 +2283,7 @@
   },
   {
     "series_id": "fx_cspot:T",
-    "display_name": "Column_T",
+    "display_name": "收益和经常转移结售汇差额",
     "module": "3.代客即期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -2315,7 +2323,7 @@
   },
   {
     "series_id": "fx_cspot:U",
-    "display_name": "Column_U",
+    "display_name": "直接投资结售汇差额",
     "module": "3.代客即期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -2355,7 +2363,7 @@
   },
   {
     "series_id": "fx_cspot:V",
-    "display_name": "Column_V",
+    "display_name": "证券投资结售汇差额",
     "module": "3.代客即期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -2395,7 +2403,7 @@
   },
   {
     "series_id": "fx_cspot:W",
-    "display_name": "Column_W",
+    "display_name": "其他金融项目结售汇差额",
     "module": "3.代客即期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -2435,7 +2443,7 @@
   },
   {
     "series_id": "fx_cspot:X",
-    "display_name": "Column_X",
+    "display_name": "经常账户结售汇差额",
     "module": "3.代客即期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -2475,7 +2483,7 @@
   },
   {
     "series_id": "fx_cspot:Y",
-    "display_name": "Column_Y",
+    "display_name": "金融账户结售汇差额",
     "module": "3.代客即期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -2515,7 +2523,7 @@
   },
   {
     "series_id": "fx_cspot:Z",
-    "display_name": "Column_Z",
+    "display_name": "代客即期结售汇差额",
     "module": "3.代客即期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -2570,11 +2578,13 @@
     "observation_count": 273,
     "formula_count": 273,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "fx_cspot:AC",
-    "display_name": "Column_AC",
+    "display_name": "经常账户结售汇6MMA",
     "module": "3.代客即期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -2614,7 +2624,7 @@
   },
   {
     "series_id": "fx_cspot:AD",
-    "display_name": "Column_AD",
+    "display_name": "金融账户结售汇6MMA",
     "module": "3.代客即期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -2654,7 +2664,7 @@
   },
   {
     "series_id": "fx_cspot:AE",
-    "display_name": "Column_AE",
+    "display_name": "结售汇差额6MMA合计",
     "module": "3.代客即期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -2694,7 +2704,7 @@
   },
   {
     "series_id": "fx_cspot:AF",
-    "display_name": "Column_AF",
+    "display_name": "货物贸易/TOTAL",
     "module": "3.代客即期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -3269,7 +3279,9 @@
     "observation_count": 48,
     "formula_count": 0,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "fx_cspot:AW",
@@ -3313,7 +3325,7 @@
   },
   {
     "series_id": "fx_cspot:AX",
-    "display_name": "Column_AX",
+    "display_name": "不含2022年",
     "module": "3.代客即期",
     "series_type": "derived",
     "frequency": "monthly",
@@ -4347,7 +4359,9 @@
     "observation_count": 273,
     "formula_count": 273,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "fx_crossborder:W",
@@ -5486,7 +5500,9 @@
     "observation_count": 48,
     "formula_count": 0,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "fx_crossborder:BC",
@@ -5530,7 +5546,7 @@
   },
   {
     "series_id": "fx_crossborder:BD",
-    "display_name": "Column_BD",
+    "display_name": "过去5年",
     "module": "3.涉外收付",
     "series_type": "derived",
     "frequency": "monthly",
@@ -5749,7 +5765,7 @@
   },
   {
     "series_id": "trade_goods:B",
-    "display_name": "Column_B",
+    "display_name": "出口金额:当月值",
     "module": "3.货物贸易",
     "series_type": "raw",
     "frequency": "monthly",
@@ -5789,7 +5805,7 @@
   },
   {
     "series_id": "trade_goods:C",
-    "display_name": "Column_C",
+    "display_name": "境内银行代客涉外收入:货物贸易:当月值",
     "module": "3.货物贸易",
     "series_type": "raw",
     "frequency": "monthly",
@@ -5829,7 +5845,7 @@
   },
   {
     "series_id": "trade_goods:D",
-    "display_name": "Column_D",
+    "display_name": "银行代客结汇:货物贸易:当月值",
     "module": "3.货物贸易",
     "series_type": "raw",
     "frequency": "monthly",
@@ -5869,7 +5885,7 @@
   },
   {
     "series_id": "trade_goods:E",
-    "display_name": "Column_E",
+    "display_name": "进口金额:当月值",
     "module": "3.货物贸易",
     "series_type": "raw",
     "frequency": "monthly",
@@ -5909,7 +5925,7 @@
   },
   {
     "series_id": "trade_goods:F",
-    "display_name": "Column_F",
+    "display_name": "境内银行代客涉外支出:货物贸易:当月值",
     "module": "3.货物贸易",
     "series_type": "raw",
     "frequency": "monthly",
@@ -5949,7 +5965,7 @@
   },
   {
     "series_id": "trade_goods:G",
-    "display_name": "Column_G",
+    "display_name": "银行代客售汇:货物贸易:当月值",
     "module": "3.货物贸易",
     "series_type": "raw",
     "frequency": "monthly",
@@ -5989,7 +6005,7 @@
   },
   {
     "series_id": "trade_goods:H",
-    "display_name": "Column_H",
+    "display_name": "中国:银行代客远期结汇签约:当月值",
     "module": "3.货物贸易",
     "series_type": "raw",
     "frequency": "monthly",
@@ -6029,7 +6045,7 @@
   },
   {
     "series_id": "trade_goods:I",
-    "display_name": "Column_I",
+    "display_name": "中国:银行代客远期售汇签约:当月值",
     "module": "3.货物贸易",
     "series_type": "raw",
     "frequency": "monthly",
@@ -6069,7 +6085,7 @@
   },
   {
     "series_id": "trade_goods:J",
-    "display_name": "Column_J",
+    "display_name": "中国:银行代客远期净结汇:当月值",
     "module": "3.货物贸易",
     "series_type": "raw",
     "frequency": "monthly",
@@ -6109,7 +6125,7 @@
   },
   {
     "series_id": "trade_goods:K",
-    "display_name": "Column_K",
+    "display_name": "出口增速",
     "module": "3.货物贸易",
     "series_type": "derived",
     "frequency": "monthly",
@@ -6149,7 +6165,7 @@
   },
   {
     "series_id": "trade_goods:L",
-    "display_name": "Column_L",
+    "display_name": "出口增速3MMA",
     "module": "3.货物贸易",
     "series_type": "derived",
     "frequency": "monthly",
@@ -6204,11 +6220,13 @@
     "observation_count": 312,
     "formula_count": 0,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "trade_goods:N",
-    "display_name": "Column_N",
+    "display_name": "即期汇率:美元兑人民币:月:平均值",
     "module": "3.货物贸易",
     "series_type": "raw",
     "frequency": "monthly",
@@ -6343,7 +6361,9 @@
     "observation_count": 254,
     "formula_count": 254,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "trade_goods:R",
@@ -6507,7 +6527,7 @@
   },
   {
     "series_id": "trade_goods:V",
-    "display_name": "Column_V",
+    "display_name": "顺差TTM",
     "module": "3.货物贸易",
     "series_type": "derived",
     "frequency": "monthly",
@@ -6547,7 +6567,7 @@
   },
   {
     "series_id": "trade_goods:W",
-    "display_name": "Column_W",
+    "display_name": "流入TTM",
     "module": "3.货物贸易",
     "series_type": "derived",
     "frequency": "monthly",
@@ -6587,7 +6607,7 @@
   },
   {
     "series_id": "trade_goods:X",
-    "display_name": "Column_X",
+    "display_name": "即期结汇TTM",
     "module": "3.货物贸易",
     "series_type": "derived",
     "frequency": "monthly",
@@ -6627,7 +6647,7 @@
   },
   {
     "series_id": "trade_goods:Y",
-    "display_name": "Column_Y",
+    "display_name": "假定75%为贸易商贡献",
     "module": "3.货物贸易",
     "series_type": "derived",
     "frequency": "monthly",
@@ -6667,7 +6687,7 @@
   },
   {
     "series_id": "trade_goods:Z",
-    "display_name": "Column_Z",
+    "display_name": "总结汇TTM",
     "module": "3.货物贸易",
     "series_type": "derived",
     "frequency": "monthly",
@@ -6707,7 +6727,7 @@
   },
   {
     "series_id": "trade_goods:AA",
-    "display_name": "Column_AA",
+    "display_name": "滚动12个月 跨境-结汇(TTM)",
     "module": "3.货物贸易",
     "series_type": "derived",
     "frequency": "monthly",
@@ -6747,7 +6767,7 @@
   },
   {
     "series_id": "trade_goods:AB",
-    "display_name": "Column_AB",
+    "display_name": "滚动12个月 顺差-结汇(TTM)",
     "module": "3.货物贸易",
     "series_type": "derived",
     "frequency": "monthly",
@@ -6787,7 +6807,7 @@
   },
   {
     "series_id": "trade_goods:AC",
-    "display_name": "Column_AC",
+    "display_name": "已跨境未结汇头寸-滚动分位置",
     "module": "3.货物贸易",
     "series_type": "derived",
     "frequency": "monthly",
@@ -6827,7 +6847,7 @@
   },
   {
     "series_id": "trade_goods:AD",
-    "display_name": "Column_AD",
+    "display_name": "顺差未结汇头寸-滚动分位置",
     "module": "3.货物贸易",
     "series_type": "derived",
     "frequency": "monthly",
@@ -7362,7 +7382,9 @@
     "observation_count": 48,
     "formula_count": 0,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "trade_goods:AT",
@@ -7625,7 +7647,7 @@
   },
   {
     "series_id": "trade_merchant:B",
-    "display_name": "Column_B",
+    "display_name": "出口金额:当月值",
     "module": "3.贸易商",
     "series_type": "raw",
     "frequency": "monthly",
@@ -7665,7 +7687,7 @@
   },
   {
     "series_id": "trade_merchant:C",
-    "display_name": "Column_C",
+    "display_name": "境内银行代客涉外收入:货物贸易:当月值",
     "module": "3.贸易商",
     "series_type": "raw",
     "frequency": "monthly",
@@ -7705,7 +7727,7 @@
   },
   {
     "series_id": "trade_merchant:D",
-    "display_name": "Column_D",
+    "display_name": "银行代客结汇:货物贸易:当月值",
     "module": "3.贸易商",
     "series_type": "raw",
     "frequency": "monthly",
@@ -7745,7 +7767,7 @@
   },
   {
     "series_id": "trade_merchant:E",
-    "display_name": "Column_E",
+    "display_name": "进口金额:当月值",
     "module": "3.贸易商",
     "series_type": "raw",
     "frequency": "monthly",
@@ -7785,7 +7807,7 @@
   },
   {
     "series_id": "trade_merchant:F",
-    "display_name": "Column_F",
+    "display_name": "境内银行代客涉外支出:货物贸易:当月值",
     "module": "3.贸易商",
     "series_type": "raw",
     "frequency": "monthly",
@@ -7825,7 +7847,7 @@
   },
   {
     "series_id": "trade_merchant:G",
-    "display_name": "Column_G",
+    "display_name": "银行代客售汇:货物贸易:当月值",
     "module": "3.贸易商",
     "series_type": "raw",
     "frequency": "monthly",
@@ -7865,7 +7887,7 @@
   },
   {
     "series_id": "trade_merchant:H",
-    "display_name": "Column_H",
+    "display_name": "顺差",
     "module": "3.贸易商",
     "series_type": "derived",
     "frequency": "monthly",
@@ -7920,7 +7942,9 @@
     "observation_count": 186,
     "formula_count": 186,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "trade_merchant:K",
@@ -8004,7 +8028,7 @@
   },
   {
     "series_id": "trade_merchant:M",
-    "display_name": "Column_M",
+    "display_name": "收入/出口",
     "module": "3.贸易商",
     "series_type": "derived",
     "frequency": "monthly",
@@ -8124,7 +8148,7 @@
   },
   {
     "series_id": "trade_merchant:P",
-    "display_name": "Column_P",
+    "display_name": "支出/进口",
     "module": "3.贸易商",
     "series_type": "derived",
     "frequency": "monthly",
@@ -8164,7 +8188,7 @@
   },
   {
     "series_id": "trade_merchant:Q",
-    "display_name": "Column_Q",
+    "display_name": "货物贸易收汇结汇率 Z-Score",
     "module": "3.贸易商",
     "series_type": "derived",
     "frequency": "monthly",
@@ -8204,7 +8228,7 @@
   },
   {
     "series_id": "trade_merchant:R",
-    "display_name": "Column_R",
+    "display_name": "货物贸易付汇购汇率 Z-Score",
     "module": "3.贸易商",
     "series_type": "derived",
     "frequency": "monthly",
@@ -8244,7 +8268,7 @@
   },
   {
     "series_id": "trade_merchant:T",
-    "display_name": "Column_T",
+    "display_name": "贸易顺差净结汇意愿 3M",
     "module": "3.贸易商",
     "series_type": "derived",
     "frequency": "monthly",
@@ -8284,7 +8308,7 @@
   },
   {
     "series_id": "trade_merchant:U",
-    "display_name": "Column_U",
+    "display_name": "收付顺差结汇意愿 3M",
     "module": "3.贸易商",
     "series_type": "derived",
     "frequency": "monthly",
@@ -8324,7 +8348,7 @@
   },
   {
     "series_id": "trade_merchant:V",
-    "display_name": "Column_V",
+    "display_name": "购汇/进口 3M",
     "module": "3.贸易商",
     "series_type": "derived",
     "frequency": "monthly",
@@ -8364,7 +8388,7 @@
   },
   {
     "series_id": "trade_merchant:W",
-    "display_name": "Column_W",
+    "display_name": "购汇/支出 3M",
     "module": "3.贸易商",
     "series_type": "derived",
     "frequency": "monthly",
@@ -8404,7 +8428,7 @@
   },
   {
     "series_id": "trade_merchant:X",
-    "display_name": "Column_X",
+    "display_name": "收付顺差净结汇意愿",
     "module": "3.贸易商",
     "series_type": "derived",
     "frequency": "monthly",
@@ -8444,7 +8468,7 @@
   },
   {
     "series_id": "trade_merchant:Y",
-    "display_name": "Column_Y",
+    "display_name": "贸易顺差净结汇意愿",
     "module": "3.贸易商",
     "series_type": "derived",
     "frequency": "monthly",
@@ -8499,11 +8523,13 @@
     "observation_count": 877,
     "formula_count": 0,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "trade_merchant:AA",
-    "display_name": "Column_AA",
+    "display_name": "PMI",
     "module": "3.贸易商",
     "series_type": "raw",
     "frequency": "monthly",
@@ -8543,7 +8569,7 @@
   },
   {
     "series_id": "trade_merchant:AB",
-    "display_name": "Column_AB",
+    "display_name": "PMI:小型企业",
     "module": "3.贸易商",
     "series_type": "raw",
     "frequency": "monthly",
@@ -8583,7 +8609,7 @@
   },
   {
     "series_id": "trade_merchant:AC",
-    "display_name": "Column_AC",
+    "display_name": "中债国债到期收益率:10年:月:平均值",
     "module": "3.贸易商",
     "series_type": "raw",
     "frequency": "monthly",
@@ -8623,7 +8649,7 @@
   },
   {
     "series_id": "trade_merchant:AD",
-    "display_name": "Column_AD",
+    "display_name": "美国:国债收益率:10年:月:平均值",
     "module": "3.贸易商",
     "series_type": "raw",
     "frequency": "monthly",
@@ -8878,11 +8904,13 @@
     "observation_count": 254,
     "formula_count": 254,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "trade_merchant:AL",
-    "display_name": "Column_AL",
+    "display_name": "进出口差额",
     "module": "3.贸易商",
     "series_type": "derived",
     "frequency": "monthly",
@@ -8922,7 +8950,7 @@
   },
   {
     "series_id": "trade_merchant:AM",
-    "display_name": "Column_AM",
+    "display_name": "涉外收付差额",
     "module": "3.贸易商",
     "series_type": "derived",
     "frequency": "monthly",
@@ -8962,7 +8990,7 @@
   },
   {
     "series_id": "trade_merchant:AN",
-    "display_name": "Column_AN",
+    "display_name": "结售汇差额",
     "module": "3.贸易商",
     "series_type": "derived",
     "frequency": "monthly",
@@ -9137,7 +9165,9 @@
     "observation_count": 254,
     "formula_count": 254,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "trade_merchant:AS",
@@ -9221,7 +9251,7 @@
   },
   {
     "series_id": "trade_merchant:AU",
-    "display_name": "Column_AU",
+    "display_name": "结售汇差额3MMA",
     "module": "3.贸易商",
     "series_type": "derived",
     "frequency": "monthly",
@@ -9261,7 +9291,7 @@
   },
   {
     "series_id": "trade_merchant:AV",
-    "display_name": "Column_AV",
+    "display_name": "进出口差额3MMA",
     "module": "3.贸易商",
     "series_type": "derived",
     "frequency": "monthly",
@@ -9301,7 +9331,7 @@
   },
   {
     "series_id": "trade_merchant:AW",
-    "display_name": "Column_AW",
+    "display_name": "涉外收付差额3MMA",
     "module": "3.贸易商",
     "series_type": "derived",
     "frequency": "monthly",
@@ -9341,7 +9371,7 @@
   },
   {
     "series_id": "trade_merchant:AX",
-    "display_name": "Column_AX",
+    "display_name": "滚动3个月净结汇比例",
     "module": "3.贸易商",
     "series_type": "derived",
     "frequency": "monthly",
@@ -9381,7 +9411,7 @@
   },
   {
     "series_id": "trade_merchant:AY",
-    "display_name": "Column_AY",
+    "display_name": "当月净结汇比例",
     "module": "3.贸易商",
     "series_type": "derived",
     "frequency": "monthly",
@@ -10234,11 +10264,13 @@
     "observation_count": 244,
     "formula_count": 244,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "fdi:P",
-    "display_name": "Column_P",
+    "display_name": "实际使用外资",
     "module": "3.FDI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -10278,7 +10310,7 @@
   },
   {
     "series_id": "fdi:Q",
-    "display_name": "Column_Q",
+    "display_name": "对外直接投资",
     "module": "3.FDI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -10318,7 +10350,7 @@
   },
   {
     "series_id": "fdi:R",
-    "display_name": "Column_R",
+    "display_name": "FDI-ODI差额",
     "module": "3.FDI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -10358,7 +10390,7 @@
   },
   {
     "series_id": "fdi:S",
-    "display_name": "Column_S",
+    "display_name": "FDI结售汇差额3MMA",
     "module": "3.FDI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -10398,7 +10430,7 @@
   },
   {
     "series_id": "fdi:T",
-    "display_name": "Column_T",
+    "display_name": "FDI结汇3MMA",
     "module": "3.FDI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -10438,7 +10470,7 @@
   },
   {
     "series_id": "fdi:U",
-    "display_name": "Column_U",
+    "display_name": "FDI购汇3MMA",
     "module": "3.FDI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -11133,7 +11165,9 @@
     "observation_count": 111,
     "formula_count": 0,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "fdi:AQ",
@@ -11432,7 +11466,9 @@
     "observation_count": 101,
     "formula_count": 101,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "fdi:AY",
@@ -11571,7 +11607,9 @@
     "observation_count": 27,
     "formula_count": 0,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "fdi:BD",
@@ -11870,7 +11908,9 @@
     "observation_count": 24,
     "formula_count": 24,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "fdi:BL",
@@ -11994,7 +12034,7 @@
   },
   {
     "series_id": "sec_eq:A",
-    "display_name": "Column_A",
+    "display_name": "指标名称",
     "module": "3.证券EQ",
     "series_type": "derived",
     "frequency": "daily",
@@ -12013,7 +12053,7 @@
   },
   {
     "series_id": "sec_eq:B",
-    "display_name": "Column_B",
+    "display_name": "即期汇率:美元兑人民币",
     "module": "3.证券EQ",
     "series_type": "raw",
     "frequency": "daily",
@@ -12053,7 +12093,7 @@
   },
   {
     "series_id": "sec_eq:C",
-    "display_name": "Column_C",
+    "display_name": "巨潮人民币名义有效汇率指数",
     "module": "3.证券EQ",
     "series_type": "raw",
     "frequency": "daily",
@@ -12093,7 +12133,7 @@
   },
   {
     "series_id": "sec_eq:D",
-    "display_name": "Column_D",
+    "display_name": "Wind人民币汇率预估指数",
     "module": "3.证券EQ",
     "series_type": "raw",
     "frequency": "daily",
@@ -12133,7 +12173,7 @@
   },
   {
     "series_id": "sec_eq:E",
-    "display_name": "Column_E",
+    "display_name": "沪深300指数",
     "module": "3.证券EQ",
     "series_type": "raw",
     "frequency": "daily",
@@ -12173,7 +12213,7 @@
   },
   {
     "series_id": "sec_eq:F",
-    "display_name": "Column_F",
+    "display_name": "恒生指数",
     "module": "3.证券EQ",
     "series_type": "raw",
     "frequency": "daily",
@@ -12228,11 +12268,13 @@
     "observation_count": 2715,
     "formula_count": 1,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "sec_eq:H",
-    "display_name": "Column_H",
+    "display_name": "港股通:当日买入成交净额(人民币)",
     "module": "3.证券EQ",
     "series_type": "raw",
     "frequency": "daily",
@@ -12272,7 +12314,7 @@
   },
   {
     "series_id": "sec_eq:I",
-    "display_name": "Column_I",
+    "display_name": "港股通:累计买入成交净额(人民币)",
     "module": "3.证券EQ",
     "series_type": "raw",
     "frequency": "daily",
@@ -12312,7 +12354,7 @@
   },
   {
     "series_id": "sec_eq:J",
-    "display_name": "Column_J",
+    "display_name": "陆股通:当日买入成交净额(人民币)",
     "module": "3.证券EQ",
     "series_type": "raw",
     "frequency": "daily",
@@ -12352,7 +12394,7 @@
   },
   {
     "series_id": "sec_eq:K",
-    "display_name": "Column_K",
+    "display_name": "陆股通:累计买入成交净额(人民币)",
     "module": "3.证券EQ",
     "series_type": "raw",
     "frequency": "daily",
@@ -12407,7 +12449,9 @@
     "observation_count": 1912,
     "formula_count": 1909,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "sec_eq:N",
@@ -12531,7 +12575,7 @@
   },
   {
     "series_id": "sec_eq:Q",
-    "display_name": "Column_Q",
+    "display_name": "沪深300指数",
     "module": "3.证券EQ",
     "series_type": "derived",
     "frequency": "daily",
@@ -12571,7 +12615,7 @@
   },
   {
     "series_id": "sec_eq:R",
-    "display_name": "Column_R",
+    "display_name": "恒生指数",
     "module": "3.证券EQ",
     "series_type": "derived",
     "frequency": "daily",
@@ -12626,11 +12670,13 @@
     "observation_count": 1705,
     "formula_count": 1705,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "sec_eq:U",
-    "display_name": "Column_U",
+    "display_name": "南下资金滚动20日净流入",
     "module": "3.证券EQ",
     "series_type": "derived",
     "frequency": "daily",
@@ -12670,7 +12716,7 @@
   },
   {
     "series_id": "sec_eq:V",
-    "display_name": "Column_V",
+    "display_name": "北上资金滚动20日净流入",
     "module": "3.证券EQ",
     "series_type": "derived",
     "frequency": "daily",
@@ -12710,7 +12756,7 @@
   },
   {
     "series_id": "sec_eq:W",
-    "display_name": "Column_W",
+    "display_name": "陆港通滚动20日净流入",
     "module": "3.证券EQ",
     "series_type": "derived",
     "frequency": "daily",
@@ -12750,7 +12796,7 @@
   },
   {
     "series_id": "sec_eq:X",
-    "display_name": "Column_X",
+    "display_name": "沪深300滚动20日涨跌幅",
     "module": "3.证券EQ",
     "series_type": "derived",
     "frequency": "daily",
@@ -12885,11 +12931,13 @@
     "observation_count": 1705,
     "formula_count": 1705,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "sec_eq:AB",
-    "display_name": "Column_AB",
+    "display_name": "USDCNY",
     "module": "3.证券EQ",
     "series_type": "derived",
     "frequency": "daily",
@@ -12929,7 +12977,7 @@
   },
   {
     "series_id": "sec_eq:AC",
-    "display_name": "Column_AC",
+    "display_name": "CNYX",
     "module": "3.证券EQ",
     "series_type": "derived",
     "frequency": "daily",
@@ -12969,7 +13017,7 @@
   },
   {
     "series_id": "sec_eq:AD",
-    "display_name": "Column_AD",
+    "display_name": "南下3M",
     "module": "3.证券EQ",
     "series_type": "derived",
     "frequency": "daily",
@@ -13009,7 +13057,7 @@
   },
   {
     "series_id": "sec_eq:AE",
-    "display_name": "Column_AE",
+    "display_name": "北上3M",
     "module": "3.证券EQ",
     "series_type": "derived",
     "frequency": "daily",
@@ -13049,7 +13097,7 @@
   },
   {
     "series_id": "sec_eq:AF",
-    "display_name": "Column_AF",
+    "display_name": "Net Equity Flow（3MMA）",
     "module": "3.证券EQ",
     "series_type": "derived",
     "frequency": "daily",
@@ -13089,7 +13137,7 @@
   },
   {
     "series_id": "sec_eq:AG",
-    "display_name": "Column_AG",
+    "display_name": "CNYX 3M Change（%）Lagging 2M",
     "module": "3.证券EQ",
     "series_type": "derived",
     "frequency": "daily",
@@ -13129,7 +13177,7 @@
   },
   {
     "series_id": "sec_eq:AH",
-    "display_name": "Column_AH",
+    "display_name": "CNYX 3M Change（%）",
     "module": "3.证券EQ",
     "series_type": "derived",
     "frequency": "daily",
@@ -13169,7 +13217,7 @@
   },
   {
     "series_id": "sec_eq:AI",
-    "display_name": "Column_AI",
+    "display_name": "USDCNY 3M Change（%）Lagging 2M",
     "module": "3.证券EQ",
     "series_type": "derived",
     "frequency": "daily",
@@ -13209,7 +13257,7 @@
   },
   {
     "series_id": "sec_eq:AJ",
-    "display_name": "Column_AJ",
+    "display_name": "USDCNY 3M Change（%）",
     "module": "3.证券EQ",
     "series_type": "derived",
     "frequency": "daily",
@@ -13268,7 +13316,7 @@
   },
   {
     "series_id": "sec_fi:B",
-    "display_name": "Column_B",
+    "display_name": "中债:债券托管量:国债:境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -13308,7 +13356,7 @@
   },
   {
     "series_id": "sec_fi:C",
-    "display_name": "Column_C",
+    "display_name": "中债:债券托管量:国家开发银行债:境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -13348,7 +13396,7 @@
   },
   {
     "series_id": "sec_fi:D",
-    "display_name": "Column_D",
+    "display_name": "中债:债券托管量:中国进出口银行债:境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -13388,7 +13436,7 @@
   },
   {
     "series_id": "sec_fi:E",
-    "display_name": "Column_E",
+    "display_name": "中债:债券托管量:中国农业发展银行债:境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -13428,7 +13476,7 @@
   },
   {
     "series_id": "sec_fi:F",
-    "display_name": "Column_F",
+    "display_name": "中债:债券托管量:商业银行普通债:境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -13468,7 +13516,7 @@
   },
   {
     "series_id": "sec_fi:G",
-    "display_name": "Column_G",
+    "display_name": "中债:债券托管量:商业银行次级债:境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -13508,7 +13556,7 @@
   },
   {
     "series_id": "sec_fi:H",
-    "display_name": "Column_H",
+    "display_name": "中债:债券托管量:商业银行混合资本债:境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -13548,7 +13596,7 @@
   },
   {
     "series_id": "sec_fi:I",
-    "display_name": "Column_I",
+    "display_name": "中债:债券托管量:二级资本工具:境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -13588,7 +13636,7 @@
   },
   {
     "series_id": "sec_fi:J",
-    "display_name": "Column_J",
+    "display_name": "中债:债券托管量:企业债:境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -13628,7 +13676,7 @@
   },
   {
     "series_id": "sec_fi:K",
-    "display_name": "Column_K",
+    "display_name": "中债:债券托管量:中期票据:境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -13668,7 +13716,7 @@
   },
   {
     "series_id": "sec_fi:L",
-    "display_name": "Column_L",
+    "display_name": "全市场:债券托管量:中期票据:人民银行批准的境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -13708,7 +13756,7 @@
   },
   {
     "series_id": "sec_fi:M",
-    "display_name": "Column_M",
+    "display_name": "上清所:债券托管量:短期融资券:人民银行批准的境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -13748,7 +13796,7 @@
   },
   {
     "series_id": "sec_fi:N",
-    "display_name": "Column_N",
+    "display_name": "上清所:债券托管量:超短期融资券:人民银行批准的境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -13788,7 +13836,7 @@
   },
   {
     "series_id": "sec_fi:O",
-    "display_name": "Column_O",
+    "display_name": "上清所:债券托管量:中期票据:人民银行批准的境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -13828,7 +13876,7 @@
   },
   {
     "series_id": "sec_fi:P",
-    "display_name": "Column_P",
+    "display_name": "上清所:债券托管量:同业存单:人民银行批准的境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -13868,7 +13916,7 @@
   },
   {
     "series_id": "sec_fi:Q",
-    "display_name": "Column_Q",
+    "display_name": "上清所:债券托管量:区域集优中小企业集合票据:人民银行批准的境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -13908,7 +13956,7 @@
   },
   {
     "series_id": "sec_fi:R",
-    "display_name": "Column_R",
+    "display_name": "上清所:债券托管量:金融企业短期融资券:人民银行批准的境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -13948,7 +13996,7 @@
   },
   {
     "series_id": "sec_fi:S",
-    "display_name": "Column_S",
+    "display_name": "上清所:债券托管量:信贷资产支持证券:人民银行批准的境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -13988,7 +14036,7 @@
   },
   {
     "series_id": "sec_fi:T",
-    "display_name": "Column_T",
+    "display_name": "上清所:债券托管量:资产管理公司金融债:人民银行批准的境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -14028,7 +14076,7 @@
   },
   {
     "series_id": "sec_fi:U",
-    "display_name": "Column_U",
+    "display_name": "上清所:债券托管量:政府支持机构债券:人民银行批准的境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -14068,7 +14116,7 @@
   },
   {
     "series_id": "sec_fi:V",
-    "display_name": "Column_V",
+    "display_name": "上清所:债券托管量:绿色债务融资工具:人民银行批准的境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -14108,7 +14156,7 @@
   },
   {
     "series_id": "sec_fi:W",
-    "display_name": "Column_W",
+    "display_name": "中债:债券托管量:政策性银行债:境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -14148,7 +14196,7 @@
   },
   {
     "series_id": "sec_fi:X",
-    "display_name": "Column_X",
+    "display_name": "中债:债券托管量:商业银行债券:境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -14188,7 +14236,7 @@
   },
   {
     "series_id": "sec_fi:Y",
-    "display_name": "Column_Y",
+    "display_name": "上清所:债券托管量:金融债券:人民银行批准的境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -14228,7 +14276,7 @@
   },
   {
     "series_id": "sec_fi:Z",
-    "display_name": "Column_Z",
+    "display_name": "上清所:债券托管量:非公开定向债务融资工具:人民银行批准的境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -14268,7 +14316,7 @@
   },
   {
     "series_id": "sec_fi:AA",
-    "display_name": "Column_AA",
+    "display_name": "上清所:债券托管量:其他公司信用类债券:人民银行批准的境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -14308,7 +14356,7 @@
   },
   {
     "series_id": "sec_fi:AB",
-    "display_name": "Column_AB",
+    "display_name": "上清所:债券托管量:熊猫债:人民银行批准的境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -14348,7 +14396,7 @@
   },
   {
     "series_id": "sec_fi:AC",
-    "display_name": "Column_AC",
+    "display_name": "上清所:债券托管量:其他债券:人民银行批准的境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -14388,7 +14436,7 @@
   },
   {
     "series_id": "sec_fi:AD",
-    "display_name": "Column_AD",
+    "display_name": "上清所:债券托管量:标准化票据:人民银行批准的境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -14428,7 +14476,7 @@
   },
   {
     "series_id": "sec_fi:AE",
-    "display_name": "Column_AE",
+    "display_name": "上清所:债券托管量:资产支持证券:人民银行批准的境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -14468,7 +14516,7 @@
   },
   {
     "series_id": "sec_fi:AF",
-    "display_name": "Column_AF",
+    "display_name": "境外投资者专项统计:债券托管量",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -14508,7 +14556,7 @@
   },
   {
     "series_id": "sec_fi:AG",
-    "display_name": "Column_AG",
+    "display_name": "上清所合计",
     "module": "3.证券FI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -14548,7 +14596,7 @@
   },
   {
     "series_id": "sec_fi:AH",
-    "display_name": "Column_AH",
+    "display_name": "国债持仓",
     "module": "3.证券FI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -14588,7 +14636,7 @@
   },
   {
     "series_id": "sec_fi:AI",
-    "display_name": "Column_AI",
+    "display_name": "政金债持仓",
     "module": "3.证券FI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -14628,7 +14676,7 @@
   },
   {
     "series_id": "sec_fi:AJ",
-    "display_name": "Column_AJ",
+    "display_name": "同业存单持仓",
     "module": "3.证券FI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -14668,7 +14716,7 @@
   },
   {
     "series_id": "sec_fi:AK",
-    "display_name": "Column_AK",
+    "display_name": "其他债券",
     "module": "3.证券FI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -14708,7 +14756,7 @@
   },
   {
     "series_id": "sec_fi:AL",
-    "display_name": "Column_AL",
+    "display_name": "合计",
     "module": "3.证券FI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -14748,7 +14796,7 @@
   },
   {
     "series_id": "sec_fi:AM",
-    "display_name": "Column_AM",
+    "display_name": "合计-含估算",
     "module": "3.证券FI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -14788,7 +14836,7 @@
   },
   {
     "series_id": "sec_fi:AN",
-    "display_name": "Column_AN",
+    "display_name": "合计-含估算(美元）",
     "module": "3.证券FI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -14828,7 +14876,7 @@
   },
   {
     "series_id": "sec_fi:AO",
-    "display_name": "Column_AO",
+    "display_name": "中债-境外机构",
     "module": "3.证券FI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -14868,7 +14916,7 @@
   },
   {
     "series_id": "sec_fi:AP",
-    "display_name": "Column_AP",
+    "display_name": "上清-境外机构",
     "module": "3.证券FI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -14923,7 +14971,9 @@
     "observation_count": 109,
     "formula_count": 109,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "sec_fi:AS",
@@ -14967,7 +15017,7 @@
   },
   {
     "series_id": "sec_fi:AT",
-    "display_name": "Column_AT",
+    "display_name": "政金债持仓变动",
     "module": "3.证券FI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -15007,7 +15057,7 @@
   },
   {
     "series_id": "sec_fi:AU",
-    "display_name": "Column_AU",
+    "display_name": "同业存单持仓变动",
     "module": "3.证券FI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -15047,7 +15097,7 @@
   },
   {
     "series_id": "sec_fi:AV",
-    "display_name": "Column_AV",
+    "display_name": "其他债券",
     "module": "3.证券FI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -15087,7 +15137,7 @@
   },
   {
     "series_id": "sec_fi:AW",
-    "display_name": "Column_AW",
+    "display_name": "-11088.832300000002",
     "module": "3.证券FI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -15167,7 +15217,7 @@
   },
   {
     "series_id": "sec_fi:BA",
-    "display_name": "Column_BA",
+    "display_name": "利率债合计变动",
     "module": "3.证券FI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -15207,7 +15257,7 @@
   },
   {
     "series_id": "sec_fi:BB",
-    "display_name": "Column_BB",
+    "display_name": "国债+政金债变动3MMA",
     "module": "3.证券FI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -15262,11 +15312,13 @@
     "observation_count": 48,
     "formula_count": 0,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "sec_fi:BE",
-    "display_name": "Column_BE",
+    "display_name": "中债-境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -15306,7 +15358,7 @@
   },
   {
     "series_id": "sec_fi:BF",
-    "display_name": "Column_BF",
+    "display_name": "上清-境外机构",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -15361,11 +15413,13 @@
     "observation_count": 877,
     "formula_count": 0,
     "values_sample": [],
-    "has_edb_ref": false
+    "has_edb_ref": false,
+    "_not_imported": true,
+    "_note": " Not imported to DB (empty column or skipped)."
   },
   {
     "series_id": "sec_fi:BH",
-    "display_name": "Column_BH",
+    "display_name": "中债国债到期收益率:10年:月",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -15405,7 +15459,7 @@
   },
   {
     "series_id": "sec_fi:BI",
-    "display_name": "Column_BI",
+    "display_name": "美国:国债收益率:10年:月",
     "module": "3.证券FI",
     "series_type": "raw",
     "frequency": "monthly",
@@ -15445,7 +15499,7 @@
   },
   {
     "series_id": "sec_fi:BJ",
-    "display_name": "Column_BJ",
+    "display_name": "中美利差",
     "module": "3.证券FI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -15485,7 +15539,7 @@
   },
   {
     "series_id": "sec_fi:BK",
-    "display_name": "Column_BK",
+    "display_name": "利率债inflow",
     "module": "3.证券FI",
     "series_type": "derived",
     "frequency": "monthly",
@@ -15522,5 +15576,55 @@
       }
     ],
     "has_edb_ref": false
+  },
+  {
+    "series_id": "fx_fwd:deriv_flow",
+    "display_name": "衍生品当月净签约（远期+期权）",
+    "module": "3.即远期",
+    "series_type": "derived",
+    "frequency": "monthly",
+    "unit": "net_flow",
+    "source": "recomputed",
+    "notes": "Auto-added from DB — not in original catalog"
+  },
+  {
+    "series_id": "fx_fwd:spot_flow",
+    "display_name": "即期结售汇发生额（银行自身+代客）",
+    "module": "3.即远期",
+    "series_type": "derived",
+    "frequency": "monthly",
+    "unit": "net_flow",
+    "source": "recomputed",
+    "notes": "Auto-added from DB — not in original catalog"
+  },
+  {
+    "series_id": "fx_fwd:supply_demand",
+    "display_name": "外汇市场即远期总供求",
+    "module": "3.即远期",
+    "series_type": "derived",
+    "frequency": "monthly",
+    "unit": "net_flow",
+    "source": "recomputed",
+    "notes": "Auto-added from DB — not in original catalog"
+  },
+  {
+    "series_id": "fx_fwd:supply_demand_12mma",
+    "display_name": "外汇市场即远期总供求（12MMA）",
+    "module": "3.即远期",
+    "series_type": "derived",
+    "frequency": "monthly",
+    "unit": "moving_average",
+    "source": "recomputed",
+    "notes": "Auto-added from DB — not in original catalog"
+  },
+  {
+    "series_id": "fx_fwd:supply_demand_3mma",
+    "display_name": "外汇市场即远期总供求（3MMA）",
+    "module": "3.即远期",
+    "series_type": "derived",
+    "frequency": "monthly",
+    "unit": "moving_average",
+    "source": "recomputed",
+    "notes": "Auto-added from DB — not in original catalog"
   }
 ]

@@ -1,0 +1,67 @@
+charts=66 output=.inspection/chart_inventory.json
+3.即远期#01	LineChart	(untitled)	2	即远期结售汇合计12MMA | 即远期合计（不含履约）
+3.即远期#02	BarChart+LineChart	外汇市场供求=银行净结汇（代客+自身）+衍生品结汇	3	银行结售汇（Headline） | 代客衍生品 | 即远期合计（不含履约）
+3.即远期#03	BarChart+LineChart	(untitled)	4	银行净结汇当月发生 | 代客衍生品签约 | 即远期合计（不含履约） | 即远期结售汇合计6MMA
+3.即远期#04	BarChart+LineChart	外汇市场供求=银行净结汇当月发生额+衍生品当月签约额	3	银行净结汇当月发生 | 代客衍生品签约 | 即远期合计（不含履约）
+3.即远期#05	BarChart+LineChart	即期结售汇发生额=银行净结汇-远期履约平仓额	3	远期履约/平仓 | 银行结售汇（Headline） | 银行净结汇当月发生
+3.即远期#06	BarChart+LineChart	衍生品当月签约=远期结汇签约-远期购汇签约+期权Delta变动	4	远期结汇签约 | 远期购汇签约 | 期权Delta净变动 | 代客衍生品签约
+3.即远期#07	AreaChart+LineChart	(untitled)	2	=Y6 | USDCNY
+3.代客即期#01	AreaChart+LineChart	(untitled)	3	经常账户结售汇 | 金融账户结售汇 | 结售汇差额6mma
+3.代客即期#02	BarChart+LineChart	(untitled)	8	货物贸易 | 服务贸易 | 转移 | 直接投资
+3.代客即期#03	BarChart+LineChart	(untitled)	4	货物贸易 | 服务贸易 | 转移 | 经常账户结售汇
+3.代客即期#04	BarChart+LineChart	(untitled)	4	直接投资 | 证券投资 | 其他金融项目 | 金融账户结售汇
+3.代客即期#05	BarChart+LineChart	(untitled)	3	经常账户结售汇 | 金融账户结售汇 | 代客即期结售汇
+3.代客即期#06	AreaChart+LineChart	货物贸易	4	MIN | 区间 | 均值 | 当年
+3.代客即期#07	AreaChart+LineChart	服务贸易	5	MIN | 区间 | 均值 | 当年
+3.代客即期#08	AreaChart+LineChart	收入转移-差额	4	MIN | 区间 | 均值 | 当年
+3.代客即期#09	AreaChart+LineChart	直接投资	5	MIN | 区间 | 均值 | 当年
+3.代客即期#10	BarChart+LineChart	银行代客即期结售汇	8	货物贸易 | 服务贸易 | 转移 | 直接投资
+3.涉外收付#01	BarChart+LineChart	(untitled)	8	货物贸易 | 服务贸易 | 转移 | 直接投资
+3.涉外收付#02	BarChart+LineChart	(untitled)	4	美元净流入 | 其他货币 | 人民币净流入 | 合计
+3.涉外收付#03	LineChart	(untitled)	2	金融账户 | 经常账户
+3.涉外收付#04	LineChart	(untitled)	2	美元跨境收付占比 | 人民币跨境收付占比
+3.涉外收付#05	AreaChart+LineChart	货物贸易	4	MIN | 区间 | 均值 | 当年
+3.涉外收付#06	AreaChart+LineChart	服务贸易	5	MIN | 区间 | 均值 | 当年
+3.涉外收付#07	AreaChart+LineChart	收入转移-差额	4	MIN | 区间 | 均值 | 当年
+3.涉外收付#08	AreaChart+LineChart	直接投资	5	MIN | 区间 | 均值 | 当年
+3.涉外收付#09	BarChart	(untitled)	2	金融账户 | 经常账户
+3.涉外收付#10	BarChart+LineChart	(untitled)	4	直接投资 | 证券投资 | 其他金融账目 | 金融账户
+3.涉外收付#11	BarChart+LineChart	(untitled)	4	货物贸易 | 服务贸易 | 转移 | 经常账户
+3.货物贸易#01	BarChart+LineChart	贸易商结售汇情况	5	18个月最小 | 区间 | =A8 | =A9
+3.货物贸易#02	BarChart+LineChart	(untitled)	5	即期结汇TTM | 远期结汇TTM | 顺差TTM | 流入TTM
+3.货物贸易#03	LineChart	(untitled)	2	已跨境未结汇头寸-滚动分位置 | 顺差未结汇头寸-滚动分位置
+3.货物贸易#04	LineChart	(untitled)	2	滚动12个月 跨境-结汇 | 滚动12个月 顺差-结汇
+3.货物贸易#05	AreaChart+LineChart	货物贸易顺差	4	MIN | 区间 | 均值 | 当年
+3.货物贸易#06	AreaChart+LineChart	货物贸易涉外收付顺差	4	MIN | 区间 | 均值 | 当年
+3.货物贸易#07	AreaChart+LineChart	货物贸易即期结售汇顺差	4	MIN | 区间 | 均值 | 当年
+3.货物贸易#08	AreaChart+LineChart	货物贸易即远期结售汇顺差（估算）	4	MIN | 区间 | 均值 | 当年
+3.货物贸易#09	LineChart	(untitled)	3	出口增速 | 出口增速3MMA | USDCNY
+3.货物贸易#10	LineChart	(untitled)	1	'3.货物贸易'!$AH$5:$AQ$5
+3.贸易商#01	LineChart	(untitled)	2	结汇/出口 | 结汇/收入
+3.贸易商#02	LineChart	(untitled)	3	收付顺差净结汇意愿 | 贸易顺差净结汇意愿 | PMI 3MMA
+3.贸易商#03	LineChart	(untitled)	2	'3.贸易商'!$BF$2 | '3.贸易商'!$BD$2
+3.贸易商#04	LineChart	(untitled)	1	结汇/收入
+3.贸易商#05	LineChart	(untitled)	1	购汇/支出
+3.贸易商#06	LineChart	(untitled)	1	货物贸易收汇结汇率 Z-Score
+3.贸易商#07	LineChart	(untitled)	1	货物贸易付汇购汇率 Z-Score
+3.贸易商#08	LineChart	(untitled)	2	PMI 3MMA | 滚动3个月净结汇比例
+3.贸易商#09	LineChart	(untitled)	3	收付顺差净结汇意愿 | 贸易顺差净结汇意愿 | 中美利差3MMA
+3.贸易商#10	LineChart	(untitled)	2	'3.贸易商'!$AS$4:$AS$257 | '3.贸易商'!$AT$10:$AT$263
+3.FDI#01	AreaChart+LineChart	商务部实际利用外资	4	'3.FDI'!$AL$6 | 区间 | 今年 | 均值
+3.FDI#02	BarChart+LineChart	(untitled)	4	FDI-ODI | FDI 结售汇差额 3MMA | 实际使用外资 | 对外直接投资
+3.FDI#03	AreaChart+LineChart	(untitled)	3	FDI 结售汇差额 3MMA | FDI结汇 3MMA | FDI购汇 3MMA
+3.FDI#04	BarChart+LineChart	(untitled)	3	FDI流入 | FDI流出 | FDI差额
+3.FDI#05	BarChart+LineChart	(untitled)	3	FDI流入 | FDI流出 | FDI差额
+3.FDI#06	BarChart+LineChart	(untitled)	3	FDI流入 | FDI流出 | FDI差额
+3.FDI#07	BarChart+LineChart	(untitled)	3	FDI流入-股权 | FDI流入-债权 | FDI流入
+3.FDI#08	BarChart+LineChart	(untitled)	3	FDI流出-股权 | FDI流出-债权 | FDI流出
+3.FDI#09	BarChart+LineChart	(untitled)	3	FDI流入-股权 | FDI流入-债权 | FDI流入
+3.证券EQ#01	BarChart+LineChart	(untitled)	3	北上资金滚动20日净流入 | 南下资金滚动20日净流入 | 陆港通滚动20日净流入
+3.证券EQ#02	LineChart	(untitled)	2	Net Equity Flow（3MMA） | CNYX 3M Change（%）Lagging 2M 
+3.证券EQ#03	LineChart	(untitled)	2	Net Equity Flow（3MMA） | USDCNY 3M Change（%）
+3.证券EQ#04	LineChart	(untitled)	2	北上资金滚动20日净流入 | 沪深300滚动20日涨跌幅
+3.证券EQ#05	ScatterChart	2018年以来	1	'3.证券EQ'!$V$13:$V$1365
+3.证券EQ#06	ScatterChart	过去一年半	1	'3.证券EQ'!$V$13:$V$750
+3.证券EQ#07	LineChart	(untitled)	3	港股通累计买入成交净额 | 陆股通累计买入成交净额 | 陆港通净流入
+3.证券FI#01	BarChart+LineChart	(untitled)	5	国债 | 政金债 | 同业存单 | 其他债券
+3.证券FI#02	ScatterChart	(untitled)	2	'3.证券FI'!$BK$4:$BK$64 | '3.证券FI'!$BK$76:$BK$113

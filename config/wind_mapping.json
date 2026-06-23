@@ -1,12 +1,25 @@
 [
   {
+    "_metadata": {
+      "data_source_protocol": {
+        "primary_target": "Wind MCP (economic_data.get_economic_data)",
+        "historical_verification": "iFind EDB (hexin-ifind-ds-edb-mcp) — external_candidate only",
+        "wind_mcp_status": "available — tested 2026-06-22",
+        "wind_mcp_capability": "EDB macro indicators via economic_data.get_economic_data",
+        "note": "All verified entries currently marked wind_verified=false; need Wind MCP re-verification (Loop A4)"
+      },
+      "updated_at": "2026-06-22T23:47:00.810815",
+      "update_reason": "Loop A1: establish Wind MCP source contract"
+    }
+  },
+  {
     "series_id": "fdi:AQ",
     "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:差额:当季值",
     "module": "3.FDI",
     "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:差额:当季值",
-    "frequency": "季",
+    "frequency": "quarterly",
     "unit": "",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -22,18 +35,25 @@
       ]
     ],
     "verify_details": {
-      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']"
+      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31'] [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:25:39.352672"
+    "verified_at": "2026-06-22T14:25:39.352672",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (0 points) — needs Wind MCP re-verification"
   },
   {
     "series_id": "fdi:AR",
     "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:当季值",
     "module": "3.FDI",
     "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:当季值",
-    "frequency": "季",
+    "frequency": "quarterly",
     "unit": "343",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -49,18 +69,25 @@
       ]
     ],
     "verify_details": {
-      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']"
+      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31'] [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:25:44.726022"
+    "verified_at": "2026-06-22T14:25:44.726022",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (0 points) — needs Wind MCP re-verification"
   },
   {
     "series_id": "fdi:AS",
     "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:当季值",
     "module": "3.FDI",
     "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:当季值",
-    "frequency": "季",
+    "frequency": "quarterly",
     "unit": "-444",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -76,18 +103,25 @@
       ]
     ],
     "verify_details": {
-      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']"
+      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31'] [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:25:52.401897"
+    "verified_at": "2026-06-22T14:25:52.401897",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (0 points) — needs Wind MCP re-verification"
   },
   {
     "series_id": "fdi:AT",
     "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:股权:当季值",
     "module": "3.FDI",
     "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:股权:当季值",
-    "frequency": "季",
+    "frequency": "quarterly",
     "unit": "382",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -104,18 +138,25 @@
     ],
     "verify_note": "EDB returned no data rows",
     "verify_details": {
-      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']"
+      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31'] [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:26:07.424797"
+    "verified_at": "2026-06-22T14:26:07.424797",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (0 points) — needs Wind MCP re-verification"
   },
   {
     "series_id": "fdi:AU",
     "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:关联企业债务:当季值",
     "module": "3.FDI",
     "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:关联企业债务:当季值",
-    "frequency": "季",
+    "frequency": "quarterly",
     "unit": "-39",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -131,18 +172,25 @@
       ]
     ],
     "verify_details": {
-      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']"
+      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31'] [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:26:12.106209"
+    "verified_at": "2026-06-22T14:26:12.106209",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (0 points) — needs Wind MCP re-verification"
   },
   {
     "series_id": "fdi:AV",
     "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:股权:当季值",
     "module": "3.FDI",
     "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:股权:当季值",
-    "frequency": "季",
+    "frequency": "quarterly",
     "unit": "-365",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -159,18 +207,25 @@
     ],
     "verify_note": "EDB returned empty datas",
     "verify_details": {
-      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']"
+      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31'] [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:26:17.339529"
+    "verified_at": "2026-06-22T14:26:17.339529",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (0 points) — needs Wind MCP re-verification"
   },
   {
     "series_id": "fdi:AW",
     "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:关联企业债务:当季值",
     "module": "3.FDI",
     "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:关联企业债务:当季值",
-    "frequency": "季",
+    "frequency": "quarterly",
     "unit": "-79",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -186,18 +241,25 @@
       ]
     ],
     "verify_details": {
-      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']"
+      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31'] [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:26:21.796741"
+    "verified_at": "2026-06-22T14:26:21.796741",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (0 points) — needs Wind MCP re-verification"
   },
   {
     "series_id": "fdi:B",
     "display_name": "实际使用外资金额:外商直接投资:当月值",
     "module": "3.FDI",
     "wind_indicator": "实际使用外资金额:外商直接投资:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "亿美元",
-    "status": "no_data_in_db",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-03-31",
@@ -213,39 +275,55 @@
       ]
     ],
     "verify_details": {
-      "overlap_points": 2,
-      "max_diff_pct": 8815000000000.0,
-      "avg_diff_pct": 6312000000000.0,
-      "max_abs_diff": 88150000000.0,
-      "unit_factor": 1,
-      "transform": [],
+      "overlap_points": 111,
+      "avg_diff_pct": 3.89,
+      "unit_factor": 658230958.2309581,
+      "transform": [
+        "unit_div_658230958"
+      ],
       "samples": [
         [
-          "2026-03-31",
-          "0.0000",
-          "88150000000.0000"
+          "2023-01-31",
+          "190.2000",
+          "193.9897"
         ],
         [
-          "2026-04-30",
-          "0.0000",
-          "38090000000.0000"
+          "2023-02-28",
+          "206.9000",
+          "213.8307"
+        ],
+        [
+          "2023-05-31",
+          "108.5000",
+          "114.4735"
         ]
       ],
       "edb_indicator": "实际使用外资(人民币):当月值",
       "edb_unit": "元",
-      "index_id": "M004248121"
+      "index_id": "M004248121",
+      "note": "Fixed by re-test with strategy: original — query=\"实际使用外资金额:外商直接投资:当月值\" [via iFind EDB]",
+      "retest_fix": true
     },
-    "verified_at": "2026-06-22T14:26:26.764953",
-    "verify_note": "DB has 0 for all recent months (trailing zeros). EDB indicator matches concept."
+    "verified_at": "2026-06-22T15:03:29.927073",
+    "verify_note": "Re-test fix: original → 实际使用外资(人民币):当月值",
+    "transform": [
+      "divide_1e8",
+      "currency_conversion_by_date"
+    ],
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fdi:BD",
     "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:差额:当季值:年度:合计值",
     "module": "3.FDI",
     "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:差额:当季值:年度:合计值",
-    "frequency": "年",
+    "frequency": "annual",
     "unit": "",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -261,18 +339,25 @@
       ]
     ],
     "verify_details": {
-      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']"
+      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31'] [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:26:31.756874"
+    "verified_at": "2026-06-22T14:26:31.756874",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (0 points) — needs Wind MCP re-verification"
   },
   {
     "series_id": "fdi:BE",
     "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:当季值:年度:合计值",
     "module": "3.FDI",
     "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:当季值:年度:合计值",
-    "frequency": "年",
+    "frequency": "annual",
     "unit": "343",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -288,18 +373,25 @@
       ]
     ],
     "verify_details": {
-      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']"
+      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31'] [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:26:37.557249"
+    "verified_at": "2026-06-22T14:26:37.557249",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (0 points) — needs Wind MCP re-verification"
   },
   {
     "series_id": "fdi:BF",
     "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:当季值:年度:合计值",
     "module": "3.FDI",
     "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:当季值:年度:合计值",
-    "frequency": "年",
+    "frequency": "annual",
     "unit": "-444",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -315,18 +407,25 @@
       ]
     ],
     "verify_details": {
-      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']"
+      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31'] [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:26:52.018051"
+    "verified_at": "2026-06-22T14:26:52.018051",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (0 points) — needs Wind MCP re-verification"
   },
   {
     "series_id": "fdi:BG",
     "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:股权:当季值:年度:合计值",
     "module": "3.FDI",
     "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:股权:当季值:年度:合计值",
-    "frequency": "年",
+    "frequency": "annual",
     "unit": "382",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -342,18 +441,25 @@
       ]
     ],
     "verify_details": {
-      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']"
+      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31'] [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:27:07.049062"
+    "verified_at": "2026-06-22T14:27:07.049062",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (0 points) — needs Wind MCP re-verification"
   },
   {
     "series_id": "fdi:BH",
     "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:关联企业债务:当季值:年度:合计值",
     "module": "3.FDI",
     "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:负债净产生:关联企业债务:当季值:年度:合计值",
-    "frequency": "年",
+    "frequency": "annual",
     "unit": "-39",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -369,18 +475,25 @@
       ]
     ],
     "verify_details": {
-      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']"
+      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31'] [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:27:11.366765"
+    "verified_at": "2026-06-22T14:27:11.366765",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (0 points) — needs Wind MCP re-verification"
   },
   {
     "series_id": "fdi:BI",
     "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:股权:当季值:年度:合计值",
     "module": "3.FDI",
     "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:股权:当季值:年度:合计值",
-    "frequency": "年",
+    "frequency": "annual",
     "unit": "-365",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -396,18 +509,25 @@
       ]
     ],
     "verify_details": {
-      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']"
+      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31'] [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:27:16.633790"
+    "verified_at": "2026-06-22T14:27:16.633790",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (0 points) — needs Wind MCP re-verification"
   },
   {
     "series_id": "fdi:BJ",
     "display_name": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:关联企业债务:当季值:年度:合计值",
     "module": "3.FDI",
     "wind_indicator": "中国:金融账户:非储备性质的金融账户:直接投资:资产净获得:关联企业债务:当季值:年度:合计值",
-    "frequency": "年",
+    "frequency": "annual",
     "unit": "-79",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -423,18 +543,25 @@
       ]
     ],
     "verify_details": {
-      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31']"
+      "note": "Quarterly indicator - limited overlap. Only 1 overlap points: DB dates=['2026-03-31', '2026-04-30', '2026-05-31'], EDB dates=['2026-03-31'] [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:27:22.451187"
+    "verified_at": "2026-06-22T14:27:22.451187",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (0 points) — needs Wind MCP re-verification"
   },
   {
     "series_id": "fdi:C",
     "display_name": "实际使用外资金额:合计:累计值",
     "module": "3.FDI",
     "wind_indicator": "实际使用外资金额:合计:累计值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "亿美元",
-    "status": "verified_with_transform",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-03-31",
@@ -454,18 +581,24 @@
       "avg_diff_pct": 0.4071,
       "unit_factor": 676854309.2610701,
       "edb_indicator": "实际使用外资(人民币):累计值",
-      "note": "Re-verified w/ older dates (trailing zeros in recent months)"
+      "note": "Re-verified w/ older dates (trailing zeros in recent months) [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:27:26.128512"
+    "verified_at": "2026-06-22T14:27:26.128512",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fdi:D",
     "display_name": "实际使用外资金额:外商直接投资:累计值",
     "module": "3.FDI",
     "wind_indicator": "实际使用外资金额:外商直接投资:累计值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "亿美元",
-    "status": "verified_with_transform",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-03-31",
@@ -485,18 +618,24 @@
       "avg_diff_pct": 0.0,
       "unit_factor": 100000000.0,
       "edb_indicator": "实际利用外资:外商直接投资:累计值",
-      "note": "Re-verified w/ older dates (trailing zeros in recent months)"
+      "note": "Re-verified w/ older dates (trailing zeros in recent months) [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:27:30.662117"
+    "verified_at": "2026-06-22T14:27:30.662117",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fdi:E",
     "display_name": "制造业:实际使用外商直接投资:累计值",
     "module": "3.FDI",
     "wind_indicator": "制造业:实际使用外商直接投资:累计值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "亿美元",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -516,18 +655,25 @@
       "avg_diff_pct": 0.2249,
       "unit_factor": 679703864.2109065,
       "edb_indicator": "实际使用外资(人民币):制造业:累计值",
-      "note": "Re-verified w/ older dates (trailing zeros in recent months)"
+      "note": "Re-verified w/ older dates (trailing zeros in recent months) [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:27:37.208107"
+    "verified_at": "2026-06-22T14:27:37.208107",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "fdi:F",
     "display_name": "服务业:实际使用外商直接投资:累计值",
     "module": "3.FDI",
     "wind_indicator": "服务业:实际使用外商直接投资:累计值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "亿美元",
-    "status": "no_result",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -542,17 +688,57 @@
         0.0
       ]
     ],
-    "verify_details": "EDB returned empty data",
-    "verified_at": "2026-06-22T14:27:44.645375"
+    "verify_details": {
+      "overlap_points": 8,
+      "avg_diff_pct": 0.69,
+      "unit_factor": 669989047.0974807,
+      "transform": [
+        "unit_div_669989047"
+      ],
+      "samples": [
+        [
+          "2019-02-28",
+          "146.0000",
+          "147.2412"
+        ],
+        [
+          "2019-07-31",
+          "549.9000",
+          "554.5912"
+        ],
+        [
+          "2019-09-30",
+          "718.8000",
+          "730.9373"
+        ]
+      ],
+      "edb_indicator": "实际使用外资(人民币):服务业:累计值",
+      "edb_unit": "元",
+      "index_id": "M020090385",
+      "note": "Fixed by re-test with strategy: original — query=\"服务业:实际使用外商直接投资:累计值\" [via iFind EDB]",
+      "retest_fix": true
+    },
+    "verified_at": "2026-06-22T15:03:40.515055",
+    "transform": [
+      "divide_1e8",
+      "currency_conversion_by_date"
+    ],
+    "verify_note": "Re-test fix: original → 实际使用外资(人民币):服务业:累计值",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (8 pts < 12 for monthly)"
   },
   {
     "series_id": "fdi:G",
     "display_name": "非金融类对外直接投资:当月值",
     "module": "3.FDI",
     "wind_indicator": "非金融类对外直接投资:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "亿美元",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -568,7 +754,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 2,
@@ -595,16 +781,22 @@
       "edb_unit": "美元",
       "index_id": "M012169354"
     },
-    "verified_at": "2026-06-22T14:07:10.790905"
+    "verified_at": "2026-06-22T14:07:10.790905",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (2 points) — needs Wind MCP re-verification"
   },
   {
     "series_id": "fdi:H",
     "display_name": "非金融类对外直接投资:累计值",
     "module": "3.FDI",
     "wind_indicator": "非金融类对外直接投资:累计值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "亿美元",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -620,7 +812,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 2,
@@ -647,16 +839,22 @@
       "edb_unit": "美元",
       "index_id": "M003559408"
     },
-    "verified_at": "2026-06-22T14:07:34.118873"
+    "verified_at": "2026-06-22T14:07:34.118873",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (2 points) — needs Wind MCP re-verification"
   },
   {
     "series_id": "fdi:I",
     "display_name": "银行代客结汇:直接投资:当月值",
     "module": "3.FDI",
     "wind_indicator": "银行代客结售汇:以美元计价:结汇:直接投资:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "亿美元",
-    "status": "verified_with_transform",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-03-31",
@@ -672,7 +870,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "avg_diff_pct": 0.0,
@@ -682,18 +880,23 @@
       "transform": [
         "unit_div_1e8"
       ],
-      "note": "Fixed by alternative query: 银行代客结售汇:以美元计价:结汇:直接投资:当月值"
+      "note": "Fixed by alternative query: 银行代客结售汇:以美元计价:结汇:直接投资:当月值 [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:28:15.554573"
+    "verified_at": "2026-06-22T14:28:15.554573",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fdi:J",
     "display_name": "银行代客售汇:直接投资:当月值",
     "module": "3.FDI",
     "wind_indicator": "银行代客结售汇:以美元计价:售汇:直接投资:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "亿美元",
-    "status": "verified_with_transform",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-03-31",
@@ -709,7 +912,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "avg_diff_pct": 0.0,
@@ -719,18 +922,23 @@
       "transform": [
         "unit_div_1e8"
       ],
-      "note": "Fixed by alternative query: 银行代客结售汇:以美元计价:售汇:直接投资:当月值"
+      "note": "Fixed by alternative query: 银行代客结售汇:以美元计价:售汇:直接投资:当月值 [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:28:25.676492"
+    "verified_at": "2026-06-22T14:28:25.676492",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fdi:K",
     "display_name": "中国:实际使用外资金额:外商直接投资:人民币:当月值",
     "module": "3.FDI",
     "wind_indicator": "中国:实际使用外资金额:外商直接投资:人民币:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "亿元",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -747,7 +955,7 @@
     ],
     "verify_note": "EDB returned empty datas",
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 2,
@@ -774,16 +982,22 @@
       "edb_unit": "元",
       "index_id": "M004248121"
     },
-    "verified_at": "2026-06-22T14:28:32.146567"
+    "verified_at": "2026-06-22T14:28:32.146567",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (2 points) — needs Wind MCP re-verification"
   },
   {
     "series_id": "fdi:L",
     "display_name": "中国:实际使用外资金额:外商直接投资:人民币:累计值",
     "module": "3.FDI",
     "wind_indicator": "中国:实际使用外资金额:外商直接投资:人民币:累计值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "亿元",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -799,7 +1013,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 2,
@@ -826,16 +1040,22 @@
       "edb_unit": "元",
       "index_id": "M004248123"
     },
-    "verified_at": "2026-06-22T14:08:11.337567"
+    "verified_at": "2026-06-22T14:08:11.337567",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (2 points) — needs Wind MCP re-verification"
   },
   {
     "series_id": "fdi:M",
     "display_name": "中国:中间价:美元兑人民币:月:平均值",
     "module": "3.FDI",
     "wind_indicator": "中国:中间价:美元兑人民币:月:平均值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "",
-    "status": "verified",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -878,7 +1098,14 @@
       "edb_unit": "",
       "index_id": "M003990276"
     },
-    "verified_at": "2026-06-22T14:08:18.709219"
+    "verified_at": "2026-06-22T14:08:18.709219",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_exact",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "fdi:X",
@@ -903,7 +1130,10 @@
       ]
     ],
     "verify_note": "Excel placeholder - sequence numbers 1,2,3",
-    "verified_at": "2026-06-22T14:23:52.999659"
+    "verified_at": "2026-06-22T14:23:52.999659",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "fx_cspot:AH",
@@ -928,16 +1158,19 @@
       ]
     ],
     "verify_note": "Excel placeholder - sequence numbers 1,2,3",
-    "verified_at": "2026-06-22T14:23:52.999894"
+    "verified_at": "2026-06-22T14:23:52.999894",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "fx_cspot:B",
     "display_name": "银行代客结汇:经常项目:当月值",
     "module": "3.代客即期",
     "wind_indicator": "银行代客结汇:经常项目:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "2007.3795",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -953,7 +1186,8 @@
       ]
     ],
     "transform": [
-      "unit_div_690370000"
+      "divide_1e8",
+      "currency_conversion_by_date"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -985,7 +1219,13 @@
       "edb_unit": "元",
       "index_id": "M003806655"
     },
-    "verified_at": "2026-06-22T14:28:41.690466"
+    "verified_at": "2026-06-22T14:28:41.690466",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "fx_cspot:BB",
@@ -1010,16 +1250,19 @@
       ]
     ],
     "verify_note": "Column BB — no Wind indicator name in Excel header",
-    "verified_at": "2026-06-22T14:23:52.999896"
+    "verified_at": "2026-06-22T14:23:52.999896",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "fx_cspot:C",
     "display_name": "银行代客结汇:货物贸易:当月值",
     "module": "3.代客即期",
     "wind_indicator": "银行代客结汇:货物贸易:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "1801.685",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -1035,7 +1278,8 @@
       ]
     ],
     "transform": [
-      "unit_div_690370000"
+      "divide_1e8",
+      "currency_conversion_by_date"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -1067,16 +1311,22 @@
       "edb_unit": "元",
       "index_id": "M003806656"
     },
-    "verified_at": "2026-06-22T14:28:47.204664"
+    "verified_at": "2026-06-22T14:28:47.204664",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "fx_cspot:D",
     "display_name": "银行代客结汇:服务贸易:当月值",
     "module": "3.代客即期",
     "wind_indicator": "银行代客结汇:服务贸易:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "159.7152",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -1092,7 +1342,7 @@
       ]
     ],
     "transform": [
-      "unit_div_-501532989"
+      "verify_factor_-501532989"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -1123,19 +1373,25 @@
       "edb_indicator": "银行代客结售汇:以人民币计价:差额:经常项目:服务贸易:当月值",
       "edb_unit": "元",
       "index_id": "M021415307",
-      "note": "Close match (likely data revision within ±5%)",
+      "note": "Close match (likely data revision within ±5%) [via iFind EDB]",
       "tolerance": "extended_5pct"
     },
-    "verified_at": "2026-06-22T14:28:51.288382"
+    "verified_at": "2026-06-22T14:28:51.288382",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": false,
+    "_pending_reason": "Has non-standard transform factor — needs Wind MCP re-verification",
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_cspot:E",
     "display_name": "银行代客结汇:收益和经常转移:当月值",
     "module": "3.代客即期",
     "wind_indicator": "银行代客结汇:收益和经常转移:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "45.9793",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -1151,7 +1407,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -1183,16 +1439,22 @@
       "edb_unit": "美元",
       "index_id": "M003022217"
     },
-    "verified_at": "2026-06-22T14:08:48.464908"
+    "verified_at": "2026-06-22T14:08:48.464908",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "fx_cspot:F",
     "display_name": "银行代客结汇:资本与金融项目:当月值",
     "module": "3.代客即期",
     "wind_indicator": "银行代客结汇:资本与金融项目:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "493.4597",
-    "status": "no_result",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1207,16 +1469,55 @@
         493.4597
       ]
     ],
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "Re-test fix: original → 银行代客结售汇:以美元计价:结汇:资本与金融项目",
+    "transform": [
+      "divide_1e8"
+    ],
+    "verify_details": {
+      "overlap_points": 196,
+      "avg_diff_pct": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "298.2535",
+          "298.2535"
+        ],
+        [
+          "2026-03-31",
+          "396.9896",
+          "396.9896"
+        ],
+        [
+          "2026-04-30",
+          "493.4597",
+          "493.4597"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以美元计价:结汇:资本与金融项目",
+      "edb_unit": "美元",
+      "index_id": "M003022218",
+      "note": "Fixed by re-test with strategy: original — query=\"银行代客结汇:资本与金融项目:当月值\" [via iFind EDB]",
+      "retest_fix": true
+    },
+    "verified_at": "2026-06-22T15:03:51.821572",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_cspot:G",
     "display_name": "银行代客结汇:直接投资:当月值",
     "module": "3.代客即期",
     "wind_indicator": "银行代客结售汇:以美元计价:结汇:直接投资:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "34.1261",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -1232,7 +1533,7 @@
       ]
     ],
     "transform": [
-      "unit_div_-368181098"
+      "verify_factor_-368181098"
     ],
     "verify_details": {
       "avg_diff_pct": 0.0,
@@ -1242,18 +1543,24 @@
       "transform": [
         "unit_div_1e8"
       ],
-      "note": "Fixed by alternative query: 银行代客结售汇:以美元计价:结汇:直接投资:当月值"
+      "note": "Fixed by alternative query: 银行代客结售汇:以美元计价:结汇:直接投资:当月值 [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:28:58.802559"
+    "verified_at": "2026-06-22T14:28:58.802559",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": false,
+    "_pending_reason": "Has non-standard transform factor — needs Wind MCP re-verification",
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_cspot:H",
     "display_name": "银行代客结汇:证券投资:当月值",
     "module": "3.代客即期",
     "wind_indicator": "银行代客结售汇:以美元计价:结汇:证券投资:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "444.8627",
-    "status": "verified_with_transform",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1269,7 +1576,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "avg_diff_pct": 0.0,
@@ -1279,18 +1586,23 @@
       "transform": [
         "unit_div_1e8"
       ],
-      "note": "Fixed by alternative query: 银行代客结售汇:以美元计价:结汇:证券投资:当月值"
+      "note": "Fixed by alternative query: 银行代客结售汇:以美元计价:结汇:证券投资:当月值 [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:29:09.493572"
+    "verified_at": "2026-06-22T14:29:09.493572",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_cspot:I",
     "display_name": "银行代客售汇:经常项目:当月值",
     "module": "3.代客即期",
     "wind_indicator": "银行代客售汇:经常项目:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "1663.7398",
-    "status": "no_result",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1305,16 +1617,56 @@
         1663.7398
       ]
     ],
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "Re-test fix: fx_cny_shouhui → 银行代客结售汇:以人民币计价:售汇:经常项目",
+    "transform": [
+      "divide_1e8",
+      "currency_conversion_by_date"
+    ],
+    "verify_details": {
+      "overlap_points": 196,
+      "avg_diff_pct": 4.24,
+      "unit_factor": 667317500.0,
+      "transform": [
+        "unit_div_667317500"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "1174.9584",
+          "1223.0304"
+        ],
+        [
+          "2026-03-31",
+          "1771.2031",
+          "1832.3894"
+        ],
+        [
+          "2026-04-30",
+          "1663.7398",
+          "1712.3879"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以人民币计价:售汇:经常项目",
+      "edb_unit": "元",
+      "index_id": "M003806665",
+      "note": "Fixed by re-test with strategy: fx_cny_shouhui — query=\"银行代客结售汇:以人民币计价:售汇:经常项目:当月值\" [via iFind EDB]",
+      "retest_fix": true
+    },
+    "verified_at": "2026-06-22T15:04:22.367975",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_cspot:J",
     "display_name": "银行代客售汇:货物贸易:当月值",
     "module": "3.代客即期",
     "wind_indicator": "银行代客结售汇:以美元计价:售汇:货物贸易:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "1325.0503",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -1331,7 +1683,7 @@
     ],
     "verify_note": "EDB returned empty datas",
     "transform": [
-      "unit_div_1713243354"
+      "verify_factor_1713243354"
     ],
     "verify_details": {
       "avg_diff_pct": 0.0,
@@ -1341,18 +1693,24 @@
       "transform": [
         "unit_div_1e8"
       ],
-      "note": "Fixed by alternative query: 银行代客结售汇:以美元计价:售汇:货物贸易:当月值"
+      "note": "Fixed by alternative query: 银行代客结售汇:以美元计价:售汇:货物贸易:当月值 [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:29:20.881336"
+    "verified_at": "2026-06-22T14:29:20.881336",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": false,
+    "_pending_reason": "Has non-standard transform factor — needs Wind MCP re-verification",
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_cspot:K",
     "display_name": "银行代客售汇:服务贸易:当月值",
     "module": "3.代客即期",
     "wind_indicator": "银行代客售汇:服务贸易:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "276.3415",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -1368,8 +1726,7 @@
       ]
     ],
     "transform": [
-      "unit_div_-289867579",
-      "minor_revision"
+      "verify_factor_-289867579"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -1401,16 +1758,22 @@
       "edb_unit": "元",
       "index_id": "M021415307"
     },
-    "verified_at": "2026-06-22T14:29:25.586838"
+    "verified_at": "2026-06-22T14:29:25.586838",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": false,
+    "_pending_reason": "Has non-standard transform factor — needs Wind MCP re-verification",
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_cspot:L",
     "display_name": "银行代客售汇:收益和经常转移:当月值",
     "module": "3.代客即期",
     "wind_indicator": "银行代客售汇:收益和经常转移:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "62.348",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -1426,7 +1789,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -1458,16 +1821,22 @@
       "edb_unit": "美元",
       "index_id": "M003022226"
     },
-    "verified_at": "2026-06-22T14:09:39.194608"
+    "verified_at": "2026-06-22T14:09:39.194608",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "fx_cspot:M",
     "display_name": "银行代客售汇:资本与金融项目:当月值",
     "module": "3.代客即期",
     "wind_indicator": "银行代客售汇:资本与金融项目:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "416.8323",
-    "status": "no_result",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1482,16 +1851,55 @@
         416.8323
       ]
     ],
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "Re-test fix: original → 银行代客结售汇:以美元计价:售汇:资本与金融项目",
+    "transform": [
+      "divide_1e8"
+    ],
+    "verify_details": {
+      "overlap_points": 196,
+      "avg_diff_pct": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "269.8242",
+          "269.8242"
+        ],
+        [
+          "2026-03-31",
+          "515.2547",
+          "515.2547"
+        ],
+        [
+          "2026-04-30",
+          "416.8323",
+          "416.8323"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以美元计价:售汇:资本与金融项目",
+      "edb_unit": "美元",
+      "index_id": "M003022227",
+      "note": "Fixed by re-test with strategy: original — query=\"银行代客售汇:资本与金融项目:当月值\" [via iFind EDB]",
+      "retest_fix": true
+    },
+    "verified_at": "2026-06-22T15:04:28.497500",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_cspot:N",
     "display_name": "银行代客售汇:直接投资:当月值",
     "module": "3.代客即期",
     "wind_indicator": "银行代客售汇:直接投资:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "55.4387",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -1507,7 +1915,8 @@
       ]
     ],
     "transform": [
-      "unit_div_690370000"
+      "divide_1e8",
+      "currency_conversion_by_date"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -1539,16 +1948,22 @@
       "edb_unit": "元",
       "index_id": "M003806670"
     },
-    "verified_at": "2026-06-22T14:29:38.205116"
+    "verified_at": "2026-06-22T14:29:38.205116",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "fx_cspot:O",
     "display_name": "银行代客售汇:证券投资:当月值",
     "module": "3.代客即期",
     "wind_indicator": "银行代客结售汇:以美元计价:售汇:证券投资:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "328.4384",
-    "status": "verified_with_transform",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1564,7 +1979,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "avg_diff_pct": 0.0,
@@ -1574,18 +1989,23 @@
       "transform": [
         "unit_div_1e8"
       ],
-      "note": "Fixed by alternative query: 银行代客结售汇:以美元计价:售汇:证券投资:当月值"
+      "note": "Fixed by alternative query: 银行代客结售汇:以美元计价:售汇:证券投资:当月值 [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:29:48.912214"
+    "verified_at": "2026-06-22T14:29:48.912214",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_fwd:AL",
     "display_name": "即期汇率:美元兑人民币:月",
     "module": "3.即远期",
     "wind_indicator": "即期汇率:美元兑人民币:月",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "6.836952380952381",
-    "status": "verified",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -1623,16 +2043,23 @@
       "edb_unit": "",
       "index_id": "M002842089"
     },
-    "verified_at": "2026-06-22T14:10:17.908292"
+    "verified_at": "2026-06-22T14:10:17.908292",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_exact",
+    "_pending_reason": "Insufficient overlap (2 points) — needs Wind MCP re-verification"
   },
   {
     "series_id": "fx_fwd:B",
     "display_name": "银行自身结汇:当月值",
     "module": "3.即远期",
     "wind_indicator": "银行自身结汇:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "72.3267",
-    "status": "no_result",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1647,16 +2074,54 @@
         72.3267
       ]
     ],
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "Exact path: 银行代客结售汇:以美元计价:结汇:银行自身",
+    "transform": [
+      "divide_1e8"
+    ],
+    "verify_details": {
+      "overlap_points": 59,
+      "avg_diff_pct": 0.0,
+      "max_diff_pct": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "67.4536",
+          "67.4536"
+        ],
+        [
+          "2026-03-31",
+          "95.0419",
+          "95.0419"
+        ],
+        [
+          "2026-04-30",
+          "72.3267",
+          "72.3267"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以美元计价:结汇:银行自身",
+      "index_id": "M003806644",
+      "note": "Exact EDB path lookup [via iFind EDB]"
+    },
+    "verified_at": "2026-06-22T17:11:50.661678",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_fwd:C",
     "display_name": "银行自身售汇:当月值",
     "module": "3.即远期",
     "wind_indicator": "银行自身售汇:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "91.7948",
-    "status": "no_result",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1671,16 +2136,54 @@
         91.7948
       ]
     ],
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "Exact path: 银行代客结售汇:以美元计价:售汇:银行自身",
+    "transform": [
+      "divide_1e8"
+    ],
+    "verify_details": {
+      "overlap_points": 59,
+      "avg_diff_pct": 0.0,
+      "max_diff_pct": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "190.9941",
+          "190.9941"
+        ],
+        [
+          "2026-03-31",
+          "289.9038",
+          "289.9038"
+        ],
+        [
+          "2026-04-30",
+          "91.7948",
+          "91.7948"
+        ]
+      ],
+      "edb_indicator": "银行代客结售汇:以美元计价:售汇:银行自身",
+      "index_id": "M003806646",
+      "note": "Exact EDB path lookup [via iFind EDB]"
+    },
+    "verified_at": "2026-06-22T17:11:53.458088",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_fwd:D",
     "display_name": "银行自身结售汇差额:当月值",
     "module": "3.即远期",
     "wind_indicator": "银行自身结售汇差额:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "-19.4681",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -1696,7 +2199,7 @@
       ]
     ],
     "transform": [
-      "unit_div_1e8"
+      "verify_factor_100000000"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -1715,16 +2218,22 @@
       ]
     },
     "verified_at": "2026-06-22T13:41:15.002980",
-    "verify_note": "Unit: 元→亿(÷1e8). Perfect match"
+    "verify_note": "Unit: 元→亿(÷1e8). Perfect match",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": false,
+    "_pending_reason": "Has non-standard transform factor — needs Wind MCP re-verification",
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_fwd:E",
     "display_name": "银行代客远期结汇签约:当月值",
     "module": "3.即远期",
     "wind_indicator": "银行代客远期结汇签约:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "482.919",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -1740,7 +2249,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -1772,16 +2281,22 @@
       "edb_unit": "美元",
       "index_id": "M003022221"
     },
-    "verified_at": "2026-06-22T14:10:44.321930"
+    "verified_at": "2026-06-22T14:10:44.321930",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "fx_fwd:F",
     "display_name": "银行代客远期售汇签约:当月值",
     "module": "3.即远期",
     "wind_indicator": "银行代客远期售汇签约:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "414.0625",
-    "status": "no_result",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1796,16 +2311,55 @@
         414.0625
       ]
     ],
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "Re-test fix: fwd_sell → 远期结售汇签约额:以美元计价:售汇",
+    "transform": [
+      "divide_1e8"
+    ],
+    "verify_details": {
+      "overlap_points": 196,
+      "avg_diff_pct": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "66.8417",
+          "66.8417"
+        ],
+        [
+          "2026-03-31",
+          "352.3675",
+          "352.3675"
+        ],
+        [
+          "2026-04-30",
+          "414.0625",
+          "414.0625"
+        ]
+      ],
+      "edb_indicator": "远期结售汇签约额:以美元计价:售汇",
+      "edb_unit": "美元",
+      "index_id": "M003022230",
+      "note": "Fixed by re-test with strategy: fwd_sell — query=\"远期结售汇签约额:以美元计价:售汇\" [via iFind EDB]",
+      "retest_fix": true
+    },
+    "verified_at": "2026-06-22T15:05:56.870609",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_fwd:G",
     "display_name": "银行代客远期净结汇:当月值",
     "module": "3.即远期",
     "wind_indicator": "银行代客远期净结汇:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "68.8565",
-    "status": "edb_no_exact_match",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -1820,15 +2374,14 @@
         68.8565
       ]
     ],
-    "verify_note": "EDB returns 远期结售汇展期差额/平仓差额, not 远期净结汇. Different economic concept.",
+    "verify_note": "Exact path: 远期结售汇签约额:以美元计价:差额",
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
-      "overlap_points": 3,
-      "max_diff_pct": 124.296,
-      "avg_diff_pct": 105.1981,
-      "max_abs_diff": 306.2868,
+      "overlap_points": 196,
+      "avg_diff_pct": 0.0,
+      "max_diff_pct": 0.0,
       "unit_factor": 100000000.0,
       "transform": [
         "unit_div_100000000"
@@ -1837,33 +2390,38 @@
         [
           "2026-02-28",
           "316.0158",
-          "9.7290"
+          "316.0158"
         ],
         [
           "2026-03-31",
           "177.8549",
-          "10.0008"
+          "177.8549"
         ],
         [
           "2026-04-30",
           "68.8565",
-          "-16.7294"
+          "68.8565"
         ]
       ],
-      "edb_indicator": "银行代客远期结售汇展期差额:当月值",
-      "edb_unit": "美元",
-      "index_id": "M012255839"
+      "edb_indicator": "远期结售汇签约额:以美元计价:差额",
+      "index_id": "M003806648",
+      "note": "Exact EDB path lookup [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:30:07.041362"
+    "verified_at": "2026-06-22T17:11:59.744483",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_fwd:H",
     "display_name": "银行代客远期结汇累计未到期额",
     "module": "3.即远期",
     "wind_indicator": "银行代客远期结汇累计未到期额",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "1938.7718",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -1879,7 +2437,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -1911,16 +2469,22 @@
       "edb_unit": "美元",
       "index_id": "M003806649"
     },
-    "verified_at": "2026-06-22T14:11:15.654345"
+    "verified_at": "2026-06-22T14:11:15.654345",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "fx_fwd:I",
     "display_name": "银行代客远期售汇累计未到期额",
     "module": "3.即远期",
     "wind_indicator": "银行代客远期售汇累计未到期额",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "874.7776",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -1936,7 +2500,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -1968,16 +2532,22 @@
       "edb_unit": "美元",
       "index_id": "M003806650"
     },
-    "verified_at": "2026-06-22T14:11:27.020231"
+    "verified_at": "2026-06-22T14:11:27.020231",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "fx_fwd:J",
     "display_name": "银行代客远期净结汇累计未到期额",
     "module": "3.即远期",
     "wind_indicator": "银行代客远期净结汇累计未到期额",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "1063.9942",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -1993,8 +2563,7 @@
       ]
     ],
     "transform": [
-      "unit_div_175790637",
-      "minor_revision"
+      "verify_factor_175790637"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -2026,16 +2595,22 @@
       "edb_unit": "美元",
       "index_id": "M003806649"
     },
-    "verified_at": "2026-06-22T14:30:13.076620"
+    "verified_at": "2026-06-22T14:30:13.076620",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": false,
+    "_pending_reason": "Has non-standard transform factor — needs Wind MCP re-verification",
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_fwd:K",
     "display_name": "银行代客结汇:当月值",
     "module": "3.即远期",
     "wind_indicator": "银行代客结汇:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "2500.8392",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -2051,7 +2626,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -2082,19 +2657,25 @@
       "edb_indicator": "银行代客结售汇:以美元计价:结汇",
       "edb_unit": "美元",
       "index_id": "M003022213",
-      "note": "Close match (likely data revision within ±5%)",
+      "note": "Close match (likely data revision within ±5%) [via iFind EDB]",
       "tolerance": "extended_5pct"
     },
-    "verified_at": "2026-06-22T14:30:24.024834"
+    "verified_at": "2026-06-22T14:30:24.024834",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "fx_fwd:L",
     "display_name": "银行代客售汇:当月值",
     "module": "3.即远期",
     "wind_indicator": "银行代客售汇:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "2080.5721",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -2111,8 +2692,7 @@
     ],
     "verify_note": "EDB returned empty datas",
     "transform": [
-      "unit_div_777903164",
-      "minor_revision"
+      "verify_factor_777903164"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -2144,16 +2724,22 @@
       "edb_unit": "元",
       "index_id": "M003806662"
     },
-    "verified_at": "2026-06-22T14:30:31.806519"
+    "verified_at": "2026-06-22T14:30:31.806519",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": false,
+    "_pending_reason": "Has non-standard transform factor — needs Wind MCP re-verification",
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_fwd:M",
     "display_name": "银行代客结售汇顺差:当月值",
     "module": "3.即远期",
     "wind_indicator": "银行代客结售汇顺差:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "420.2671",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -2169,7 +2755,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -2201,16 +2787,22 @@
       "edb_unit": "美元",
       "index_id": "M004413379"
     },
-    "verified_at": "2026-06-22T14:12:07.679018"
+    "verified_at": "2026-06-22T14:12:07.679018",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "fx_fwd:N",
     "display_name": "银行结售汇:未到期期权Delta净敞口",
     "module": "3.即远期",
     "wind_indicator": "银行结售汇:以美元计价:未到期期权Delta净敞口:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "248.4857",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -2226,7 +2818,7 @@
       ]
     ],
     "transform": [
-      "unit_div_211789371"
+      "verify_factor_211789371"
     ],
     "verify_details": {
       "avg_diff_pct": 0.0,
@@ -2236,18 +2828,24 @@
       "transform": [
         "unit_div_1e8"
       ],
-      "note": "Fixed by alternative query: 银行结售汇:以美元计价:未到期期权Delta净敞口:当月值"
+      "note": "Fixed by alternative query: 银行结售汇:以美元计价:未到期期权Delta净敞口:当月值 [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:30:38.194467"
+    "verified_at": "2026-06-22T14:30:38.194467",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": false,
+    "_pending_reason": "Has non-standard transform factor — needs Wind MCP re-verification",
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "trade_services:B",
     "display_name": "中国:服务出口金额:人民币:累计值",
     "module": "3.服务贸易",
     "wind_indicator": "中国:服务出口金额:人民币:累计值",
-    "frequency": "亿元",
+    "frequency": "monthly",
     "unit": "",
-    "status": "no_result",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -2262,17 +2860,56 @@
         0.0
       ]
     ],
-    "verify_details": "EDB returned empty data",
-    "verified_at": "2026-06-22T14:30:43.580123"
+    "verify_details": {
+      "overlap_points": 6,
+      "avg_diff_pct": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2023-12-31",
+          "26856.6000",
+          "26856.6000"
+        ],
+        [
+          "2024-12-31",
+          "31755.6000",
+          "31755.6000"
+        ],
+        [
+          "2025-12-31",
+          "36267.9000",
+          "36267.9000"
+        ]
+      ],
+      "edb_indicator": "服务出口金额(人民币计价):总计",
+      "edb_unit": "元",
+      "index_id": "M007513013",
+      "note": "Fixed by re-test with strategy: original — query=\"中国:服务出口金额:人民币:累计值\" [via iFind EDB]",
+      "retest_fix": true
+    },
+    "verified_at": "2026-06-22T15:06:19.067097",
+    "transform": [
+      "divide_1e8"
+    ],
+    "verify_note": "Re-test fix: original → 服务出口金额(人民币计价):总计",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (6 pts < 12 for 亿元)"
   },
   {
     "series_id": "trade_services:C",
     "display_name": "中国:服务进口金额:人民币:累计值",
     "module": "3.服务贸易",
     "wind_indicator": "中国:服务进口金额:人民币:累计值",
-    "frequency": "亿元",
+    "frequency": "monthly",
     "unit": "",
-    "status": "no_result",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -2287,17 +2924,56 @@
         0.0
       ]
     ],
-    "verify_details": "EDB returned empty data",
-    "verified_at": "2026-06-22T14:30:50.707480"
+    "verify_details": {
+      "overlap_points": 6,
+      "avg_diff_pct": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2023-12-31",
+          "38897.7000",
+          "38897.7000"
+        ],
+        [
+          "2024-12-31",
+          "43482.4000",
+          "43482.3000"
+        ],
+        [
+          "2025-12-31",
+          "44555.1000",
+          "44555.1000"
+        ]
+      ],
+      "edb_indicator": "服务进口金额(人民币计价):总计",
+      "edb_unit": "元",
+      "index_id": "M007513014",
+      "note": "Fixed by re-test with strategy: strip_中国 — query=\"服务进口金额:人民币:累计值\" [via iFind EDB]",
+      "retest_fix": true
+    },
+    "verified_at": "2026-06-22T15:06:38.601741",
+    "transform": [
+      "divide_1e8"
+    ],
+    "verify_note": "Re-test fix: strip_中国 → 服务进口金额(人民币计价):总计",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (6 pts < 12 for 亿元)"
   },
   {
     "series_id": "trade_services:D",
     "display_name": "中国:旅行服务出口金额:人民币:累计同比",
     "module": "3.服务贸易",
     "wind_indicator": "中国:旅行服务出口金额:人民币:累计同比",
-    "frequency": "%",
+    "frequency": "monthly",
     "unit": "",
-    "status": "edb_no_exact_match",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-03-31",
@@ -2313,39 +2989,50 @@
       ]
     ],
     "verify_details": {
-      "overlap_points": 2,
-      "max_diff_pct": 3040.0,
-      "avg_diff_pct": 1520.0,
-      "max_abs_diff": 30.4,
+      "overlap_points": 43,
+      "avg_diff_pct": 0.0,
       "unit_factor": 1,
       "transform": [],
       "samples": [
         [
+          "2025-12-31",
+          "49.5000",
+          "49.5000"
+        ],
+        [
+          "2026-02-28",
+          "22.5000",
+          "22.5000"
+        ],
+        [
           "2026-03-31",
           "32.3000",
           "32.3000"
-        ],
-        [
-          "2026-04-30",
-          "0.0000",
-          "30.4000"
         ]
       ],
       "edb_indicator": "服务进出口金额(人民币计价):出口:旅行:累计同比",
       "edb_unit": "%",
-      "index_id": "M022249088"
+      "index_id": "M022249088",
+      "note": "Fixed by re-test with strategy: original — query=\"中国:旅行服务出口金额:人民币:累计同比\" [via iFind EDB]",
+      "retest_fix": true
     },
-    "verified_at": "2026-06-22T14:31:04.027079",
-    "verify_note": "EDB returns 服务进出口(出口), not 旅行服务出口. Different granularity."
+    "verified_at": "2026-06-22T15:06:43.983627",
+    "verify_note": "Re-test fix: original → 服务进出口金额(人民币计价):出口:旅行:累计同比",
+    "transform": [],
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "trade_services:E",
     "display_name": "中国:旅行服务进口金额:人民币:累计同比",
     "module": "3.服务贸易",
     "wind_indicator": "中国:旅行服务进口金额:人民币:累计同比",
-    "frequency": "%",
+    "frequency": "monthly",
     "unit": "",
-    "status": "edb_no_exact_match",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-03-31",
@@ -2361,30 +3048,41 @@
       ]
     ],
     "verify_details": {
-      "overlap_points": 2,
-      "max_diff_pct": 1420.0,
-      "avg_diff_pct": 1340.0,
-      "max_abs_diff": 14.2,
+      "overlap_points": 42,
+      "avg_diff_pct": 0.0,
       "unit_factor": 1,
       "transform": [],
       "samples": [
         [
-          "2026-03-31",
-          "0.0000",
-          "-14.2000"
+          "2025-11-30",
+          "1.9000",
+          "1.9000"
         ],
         [
-          "2026-04-30",
-          "0.0000",
-          "-12.6000"
+          "2025-12-31",
+          "1.4000",
+          "1.4000"
+        ],
+        [
+          "2026-02-28",
+          "-16.5000",
+          "-16.5000"
         ]
       ],
       "edb_indicator": "服务进出口金额(人民币计价):进口:旅行:累计同比",
       "edb_unit": "%",
-      "index_id": "M022249114"
+      "index_id": "M022249114",
+      "note": "Fixed by re-test with strategy: strip_中国 — query=\"旅行服务进口金额:人民币:累计同比\" [via iFind EDB]",
+      "retest_fix": true
     },
-    "verified_at": "2026-06-22T14:31:12.524570",
-    "verify_note": "EDB returns 服务进出口(进口), not 旅行服务进口. Different granularity."
+    "verified_at": "2026-06-22T15:06:56.468412",
+    "verify_note": "Re-test fix: strip_中国 → 服务进出口金额(人民币计价):进口:旅行:累计同比",
+    "transform": [],
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "trade_services:F",
@@ -2393,7 +3091,7 @@
     "wind_indicator": "中国:中间价:美元兑人民币:月:平均值",
     "frequency": "monthly",
     "unit": "6.838516666666667",
-    "status": "verified",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-03-31",
@@ -2436,7 +3134,14 @@
       "edb_unit": "",
       "index_id": "M003990276"
     },
-    "verified_at": "2026-06-22T14:13:03.587694"
+    "verified_at": "2026-06-22T14:13:03.587694",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_exact",
+    "_pending_reason": "Insufficient overlap (<12 monthly points) — needs more data or alternative query"
   },
   {
     "series_id": "fx_crossborder:AN",
@@ -2461,16 +3166,19 @@
       ]
     ],
     "verify_note": "Excel placeholder - sequence numbers 1,2,3",
-    "verified_at": "2026-06-22T14:23:52.999899"
+    "verified_at": "2026-06-22T14:23:52.999899",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "fx_crossborder:B",
     "display_name": "境内银行代客涉外收付款顺差:当月值",
     "module": "3.涉外收付",
     "wind_indicator": "境内银行代客涉外收付款:以美元计价:差额:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "619.446613",
-    "status": "verified_with_transform",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -2486,7 +3194,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "avg_diff_pct": 0.0,
@@ -2496,9 +3204,14 @@
       "transform": [
         "unit_div_1e8"
       ],
-      "note": "Fixed by alternative query: 境内银行代客涉外收付款:以美元计价:差额:当月值"
+      "note": "Fixed by alternative query: 境内银行代客涉外收付款:以美元计价:差额:当月值 [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:31:24.357724"
+    "verified_at": "2026-06-22T14:31:24.357724",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_crossborder:BH",
@@ -2523,16 +3236,19 @@
       ]
     ],
     "verify_note": "Column BH — no Wind indicator name in Excel header",
-    "verified_at": "2026-06-22T14:23:52.999900"
+    "verified_at": "2026-06-22T14:23:52.999900",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "fx_crossborder:C",
     "display_name": "境内银行代客对外付款:当月值",
     "module": "3.涉外收付",
     "wind_indicator": "境内银行代客对外付款:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "7700.424167",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -2548,8 +3264,7 @@
       ]
     ],
     "transform": [
-      "unit_div_295571839",
-      "minor_revision"
+      "verify_factor_295571839"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -2581,16 +3296,22 @@
       "edb_unit": "元",
       "index_id": "M013072245"
     },
-    "verified_at": "2026-06-22T14:31:33.132801"
+    "verified_at": "2026-06-22T14:31:33.132801",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": false,
+    "_pending_reason": "Has non-standard transform factor — needs Wind MCP re-verification",
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_crossborder:D",
     "display_name": "境内银行代客涉外收入:当月值",
     "module": "3.涉外收付",
     "wind_indicator": "境内银行代客涉外收入:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "8319.87078",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -2606,7 +3327,8 @@
       ]
     ],
     "transform": [
-      "unit_div_681500000"
+      "divide_1e8",
+      "currency_conversion_by_date"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -2638,16 +3360,22 @@
       "edb_unit": "元",
       "index_id": "M003809211,M003022231"
     },
-    "verified_at": "2026-06-22T14:31:38.314887"
+    "verified_at": "2026-06-22T14:31:38.314887",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "fx_crossborder:E",
     "display_name": "境内银行代客涉外收付款顺差:当月值",
     "module": "3.涉外收付",
     "wind_indicator": "境内银行代客涉外收付款:以美元计价:差额:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "619.446613",
-    "status": "verified_with_transform",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -2663,25 +3391,30 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "avg_diff_pct": 0.0,
       "unit_factor": 100000000.0,
       "overlap_points": 196,
       "edb_indicator": "银行代客涉外收付款:以美元计价:收支差额",
-      "note": "Fixed: alternative query"
+      "note": "Fixed: alternative query [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:31:42.821982"
+    "verified_at": "2026-06-22T14:31:42.821982",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_crossborder:F",
     "display_name": "银行代客涉外收付款:收入币种:美元",
     "module": "3.涉外收付",
     "wind_indicator": "银行代客涉外收付款:收入币种:美元",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "3844.666368",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -2697,7 +3430,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -2729,16 +3462,22 @@
       "edb_unit": "美元",
       "index_id": "M013072197"
     },
-    "verified_at": "2026-06-22T14:13:49.269508"
+    "verified_at": "2026-06-22T14:13:49.269508",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "fx_crossborder:G",
     "display_name": "银行代客涉外收付款:收入币种:人民币",
     "module": "3.涉外收付",
     "wind_indicator": "银行代客涉外收付款:收入币种:人民币",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "4175.388321",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -2754,7 +3493,7 @@
       ]
     ],
     "transform": [
-      "unit_div_1368576144"
+      "verify_factor_1368576144"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -2785,19 +3524,25 @@
       "edb_indicator": "银行代客涉外收付款:以人民币计价:收入",
       "edb_unit": "元",
       "index_id": "M003809211",
-      "note": "Close match (likely data revision within ±5%)",
+      "note": "Close match (likely data revision within ±5%) [via iFind EDB]",
       "tolerance": "extended_5pct"
     },
-    "verified_at": "2026-06-22T14:31:50.285483"
+    "verified_at": "2026-06-22T14:31:50.285483",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": false,
+    "_pending_reason": "Has non-standard transform factor — needs Wind MCP re-verification",
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_crossborder:H",
     "display_name": "银行代客涉外收付款:支出币种:美元",
     "module": "3.涉外收付",
     "wind_indicator": "银行代客涉外收付款:支出币种:美元",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "3143.898932",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -2813,8 +3558,7 @@
       ]
     ],
     "transform": [
-      "unit_div_264400998",
-      "minor_revision"
+      "verify_factor_264400998"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -2846,16 +3590,22 @@
       "edb_unit": "美元",
       "index_id": "M003022239"
     },
-    "verified_at": "2026-06-22T14:31:57.776464"
+    "verified_at": "2026-06-22T14:31:57.776464",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": false,
+    "_pending_reason": "Has non-standard transform factor — needs Wind MCP re-verification",
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_crossborder:I",
     "display_name": "银行代客涉外收付款:支出币种:人民币",
     "module": "3.涉外收付",
     "wind_indicator": "银行代客涉外收付款:支出币种:人民币",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "4222.087976",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -2871,8 +3621,7 @@
       ]
     ],
     "transform": [
-      "unit_div_1209119580",
-      "minor_revision"
+      "verify_factor_1209119580"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -2904,16 +3653,22 @@
       "edb_unit": "元",
       "index_id": "M003809219"
     },
-    "verified_at": "2026-06-22T14:32:04.405093"
+    "verified_at": "2026-06-22T14:32:04.405093",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": false,
+    "_pending_reason": "Has non-standard transform factor — needs Wind MCP re-verification",
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_crossborder:J",
     "display_name": "境内银行代客涉外收入:经常项目:当月值",
     "module": "3.涉外收付",
     "wind_indicator": "境内银行代客涉外收入:经常项目:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "4215.054688",
-    "status": "no_result",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -2929,49 +3684,55 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8",
+      "currency_conversion_by_date"
     ],
     "verify_details": {
-      "overlap_points": 3,
-      "max_diff_pct": 581.5,
-      "avg_diff_pct": 581.5,
-      "max_abs_diff": 24510.543,
-      "unit_factor": 100000000.0,
+      "overlap_points": 196,
+      "avg_diff_pct": 4.24,
+      "unit_factor": 667317500.0826969,
       "transform": [
-        "unit_div_100000000"
+        "unit_div_667317500"
       ],
       "samples": [
         [
           "2026-02-28",
           "3242.5716",
-          "22098.1251"
+          "3375.2375"
         ],
         [
           "2026-03-31",
           "4151.5863",
-          "28293.0603"
+          "4295.0029"
         ],
         [
           "2026-04-30",
           "4215.0547",
-          "28725.5977"
+          "4338.3037"
         ]
       ],
-      "edb_indicator": "银行代客涉外收付款:以元计价:收入:经常项目",
+      "edb_indicator": "银行代客涉外收付款:以人民币计价:收入:经常项目",
       "edb_unit": "元",
-      "index_id": "M003809212,M003022232"
+      "index_id": "M003809212",
+      "note": "Fixed by re-test with strategy: original — query=\"境内银行代客涉外收入:经常项目:当月值\" [via iFind EDB]",
+      "retest_fix": true
     },
-    "verified_at": "2026-06-22T14:14:16.433166",
-    "verify_note": "EDB returned empty datas"
+    "verified_at": "2026-06-22T15:07:02.621325",
+    "verify_note": "Re-test fix: original → 银行代客涉外收付款:以人民币计价:收入:经常项目",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_crossborder:K",
     "display_name": "境内银行代客涉外支出:经常项目:当月值",
     "module": "3.涉外收付",
     "wind_indicator": "境内银行代客涉外支出:经常项目:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "3699.970071",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -2987,7 +3748,8 @@
       ]
     ],
     "transform": [
-      "unit_div_690370000"
+      "divide_1e8",
+      "currency_conversion_by_date"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -3019,16 +3781,22 @@
       "edb_unit": "元",
       "index_id": "M003809220"
     },
-    "verified_at": "2026-06-22T14:32:18.552584"
+    "verified_at": "2026-06-22T14:32:18.552584",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "fx_crossborder:L",
     "display_name": "境内银行代客涉外收入:货物贸易:当月值",
     "module": "3.涉外收付",
     "wind_indicator": "境内银行代客涉外收入:货物贸易:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "3737.735704",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -3044,7 +3812,8 @@
       ]
     ],
     "transform": [
-      "unit_div_690370000"
+      "divide_1e8",
+      "currency_conversion_by_date"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -3076,16 +3845,22 @@
       "edb_unit": "元",
       "index_id": "M003809213"
     },
-    "verified_at": "2026-06-22T14:32:28.496701"
+    "verified_at": "2026-06-22T14:32:28.496701",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "fx_crossborder:M",
     "display_name": "境内银行代客涉外支出:货物贸易:当月值",
     "module": "3.涉外收付",
     "wind_indicator": "境内银行代客涉外支出:货物贸易:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "2993.996869",
-    "status": "no_result",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -3100,16 +3875,56 @@
         2993.996869
       ]
     ],
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "Re-test fix: original → 银行代客涉外收付款:以人民币计价:支出:经常项目:货物贸易",
+    "transform": [
+      "divide_1e8",
+      "currency_conversion_by_date"
+    ],
+    "verify_details": {
+      "overlap_points": 196,
+      "avg_diff_pct": 4.24,
+      "unit_factor": 667317499.7086754,
+      "transform": [
+        "unit_div_667317500"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "2223.4264",
+          "2314.3953"
+        ],
+        [
+          "2026-03-31",
+          "3209.9572",
+          "3320.8452"
+        ],
+        [
+          "2026-04-30",
+          "2993.9969",
+          "3081.5420"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以人民币计价:支出:经常项目:货物贸易",
+      "edb_unit": "元",
+      "index_id": "M003809221",
+      "note": "Fixed by re-test with strategy: original — query=\"境内银行代客涉外支出:货物贸易:当月值\" [via iFind EDB]",
+      "retest_fix": true
+    },
+    "verified_at": "2026-06-22T15:07:12.553756",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_crossborder:N",
     "display_name": "境内银行代客涉外收入:服务贸易:当月值",
     "module": "3.涉外收付",
     "wind_indicator": "境内银行代客涉外收入:服务贸易:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "396.824376",
-    "status": "no_result",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -3124,16 +3939,56 @@
         396.824376
       ]
     ],
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "Re-test fix: original → 银行代客涉外收付款:以人民币计价:收入:经常项目:服务",
+    "transform": [
+      "divide_1e8",
+      "currency_conversion_by_date"
+    ],
+    "verify_details": {
+      "overlap_points": 196,
+      "avg_diff_pct": 4.24,
+      "unit_factor": 667317500.3763021,
+      "transform": [
+        "unit_div_667317500"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "290.0155",
+          "301.8811"
+        ],
+        [
+          "2026-03-31",
+          "359.6337",
+          "372.0573"
+        ],
+        [
+          "2026-04-30",
+          "396.8244",
+          "408.4276"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以人民币计价:收入:经常项目:服务",
+      "edb_unit": "元",
+      "index_id": "M003809214",
+      "note": "Fixed by re-test with strategy: original — query=\"境内银行代客涉外收入:服务贸易:当月值\" [via iFind EDB]",
+      "retest_fix": true
+    },
+    "verified_at": "2026-06-22T15:07:26.303967",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_crossborder:O",
     "display_name": "境内银行代客涉外支出:服务贸易:当月值",
     "module": "3.涉外收付",
     "wind_indicator": "境内银行代客涉外支出:服务贸易:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "444.481976",
-    "status": "no_result",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -3148,16 +4003,56 @@
         444.481976
       ]
     ],
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "Re-test fix: to_cumulative → 银行代客涉外收付款:以人民币计价:支出:经常项目:服务",
+    "transform": [
+      "divide_1e8",
+      "currency_conversion_by_date"
+    ],
+    "verify_details": {
+      "overlap_points": 196,
+      "avg_diff_pct": 4.24,
+      "unit_factor": 667317499.3468405,
+      "transform": [
+        "unit_div_667317499"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "371.1373",
+          "386.3219"
+        ],
+        [
+          "2026-03-31",
+          "454.4466",
+          "470.1454"
+        ],
+        [
+          "2026-04-30",
+          "444.4820",
+          "457.4787"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以人民币计价:支出:经常项目:服务",
+      "edb_unit": "元",
+      "index_id": "M003809222",
+      "note": "Fixed by re-test with strategy: to_cumulative — query=\"境内银行代客涉外支出:服务贸易:累计值\" [via iFind EDB]",
+      "retest_fix": true
+    },
+    "verified_at": "2026-06-22T15:07:47.262286",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_crossborder:P",
     "display_name": "境内银行代客涉外收入:资本与金融项目:当月值",
     "module": "3.涉外收付",
     "wind_indicator": "境内银行代客涉外收入:资本与金融项目:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "4073.439979",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -3173,7 +4068,8 @@
       ]
     ],
     "transform": [
-      "unit_div_690370000"
+      "divide_1e8",
+      "currency_conversion_by_date"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -3205,16 +4101,22 @@
       "edb_unit": "元",
       "index_id": "M003809216"
     },
-    "verified_at": "2026-06-22T14:32:45.641534"
+    "verified_at": "2026-06-22T14:32:45.641534",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "fx_crossborder:Q",
     "display_name": "境内银行代客涉外支出:资本与金融项目:当月值",
     "module": "3.涉外收付",
     "wind_indicator": "境内银行代客涉外支出:资本与金融项目:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "3977.651218",
-    "status": "no_result",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -3229,16 +4131,55 @@
         3977.651218
       ]
     ],
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "Re-test fix: fx_expense → 银行代客涉外收付款:以美元计价:支出:资本和金融项目",
+    "transform": [
+      "divide_1e8"
+    ],
+    "verify_details": {
+      "overlap_points": 196,
+      "avg_diff_pct": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "2926.8126",
+          "2926.8126"
+        ],
+        [
+          "2026-03-31",
+          "4686.2231",
+          "4686.2231"
+        ],
+        [
+          "2026-04-30",
+          "3977.6512",
+          "3977.6512"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以美元计价:支出:资本和金融项目",
+      "edb_unit": "美元",
+      "index_id": "M003022244",
+      "note": "Fixed by re-test with strategy: fx_expense — query=\"银行代客涉外收付款:以美元计价:支出:资本与金融项目:当月值\" [via iFind EDB]",
+      "retest_fix": true
+    },
+    "verified_at": "2026-06-22T15:08:15.943932",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_crossborder:R",
     "display_name": "境内银行代客涉外收入:证券投资:当月值",
     "module": "3.涉外收付",
     "wind_indicator": "境内银行代客涉外收入:证券投资:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "3433.175855",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -3254,7 +4195,8 @@
       ]
     ],
     "transform": [
-      "unit_div_690370000"
+      "divide_1e8",
+      "currency_conversion_by_date"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -3286,16 +4228,22 @@
       "edb_unit": "元",
       "index_id": "M003809218"
     },
-    "verified_at": "2026-06-22T14:33:11.822203"
+    "verified_at": "2026-06-22T14:33:11.822203",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "fx_crossborder:S",
     "display_name": "境内银行代客涉外支出:证券投资:当月值",
     "module": "3.涉外收付",
     "wind_indicator": "境内银行代客涉外支出:证券投资:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "3297.195814",
-    "status": "no_result",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -3310,16 +4258,54 @@
         3297.195814
       ]
     ],
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "Exact path: 银行代客涉外收付款:以美元计价:支出:资本和金融项目:证券投资",
+    "transform": [
+      "divide_1e8"
+    ],
+    "verify_details": {
+      "overlap_points": 196,
+      "avg_diff_pct": 0.0,
+      "max_diff_pct": 0.0,
+      "unit_factor": 100000000.00541282,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "2392.8362",
+          "2392.8362"
+        ],
+        [
+          "2026-03-31",
+          "3825.0478",
+          "3825.0478"
+        ],
+        [
+          "2026-04-30",
+          "3297.1958",
+          "3297.1958"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以美元计价:支出:资本和金融项目:证券投资",
+      "index_id": "M003022246",
+      "note": "Exact EDB path lookup [via iFind EDB]"
+    },
+    "verified_at": "2026-06-22T17:12:23.783370",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "fx_crossborder:T",
     "display_name": "境内银行代客涉外收入:直接投资:当月值",
     "module": "3.涉外收付",
     "wind_indicator": "境内银行代客涉外收入:直接投资:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "596.50557",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -3335,7 +4321,8 @@
       ]
     ],
     "transform": [
-      "unit_div_690370000"
+      "divide_1e8",
+      "currency_conversion_by_date"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -3367,16 +4354,22 @@
       "edb_unit": "元",
       "index_id": "M003809217"
     },
-    "verified_at": "2026-06-22T14:33:28.247653"
+    "verified_at": "2026-06-22T14:33:28.247653",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "fx_crossborder:U",
     "display_name": "境内银行代客涉外支出:直接投资:当月值",
     "module": "3.涉外收付",
     "wind_indicator": "境内银行代客涉外支出:直接投资:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "644.12439",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -3392,7 +4385,8 @@
       ]
     ],
     "transform": [
-      "unit_div_600786119"
+      "divide_1e8",
+      "currency_conversion_by_date"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -3423,19 +4417,25 @@
       "edb_indicator": "银行代客涉外收付款:以人民币计价:收入:资本和金融项目:直接投资",
       "edb_unit": "元",
       "index_id": "M003809217",
-      "note": "Close match (likely data revision within ±5%)",
+      "note": "Close match (likely data revision within ±5%) [via iFind EDB]",
       "tolerance": "extended_5pct"
     },
-    "verified_at": "2026-06-22T14:33:34.119450"
+    "verified_at": "2026-06-22T14:33:34.119450",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "sec_eq:B",
     "display_name": "即期汇率:美元兑人民币",
     "module": "3.证券EQ",
     "wind_indicator": "即期汇率:美元兑人民币",
-    "frequency": "6.78",
+    "frequency": "daily",
     "unit": "6.781699999999999",
-    "status": "verified",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-05-26",
@@ -3478,7 +4478,14 @@
       "edb_unit": "",
       "index_id": "M004370159"
     },
-    "verified_at": "2026-06-22T14:15:56.176466"
+    "verified_at": "2026-06-22T14:15:56.176466",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_exact",
+    "_pending_reason": "Insufficient overlap (17 pts < 40 for daily) — needs Wind re-verification"
   },
   {
     "series_id": "sec_eq:C",
@@ -3487,7 +4494,7 @@
     "wind_indicator": "巨潮人民币名义有效汇率指数",
     "frequency": "daily",
     "unit": "",
-    "status": "edb_no_exact_match",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-05-26",
@@ -3502,18 +4509,51 @@
         0.0
       ]
     ],
-    "verify_details": "Only 0 overlap points: DB dates=['2026-05-26', '2026-05-27', '2026-05-28'], EDB dates=['2026-05-31']",
-    "verified_at": "2026-06-22T14:33:38.780514",
-    "verify_note": "DB has daily dates, EDB has monthly. 巨潮人民币名义有效汇率指数 — frequency mismatch."
+    "verify_details": {
+      "overlap_points": 2476,
+      "avg_diff_pct": 0.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2024-03-13",
+          "117.4295",
+          "117.4295"
+        ],
+        [
+          "2024-03-14",
+          "117.4236",
+          "117.4236"
+        ],
+        [
+          "2024-03-15",
+          "117.7180",
+          "117.7180"
+        ]
+      ],
+      "edb_indicator": "人民币名义汇率指数",
+      "edb_unit": "2010年6月19日=100",
+      "index_id": "M019770942",
+      "note": "Fixed by re-test with strategy: original — query=\"巨潮人民币名义有效汇率指数\" [via iFind EDB]",
+      "retest_fix": true
+    },
+    "verified_at": "2026-06-22T15:09:16.668206",
+    "verify_note": "Re-test fix: original → 人民币名义汇率指数",
+    "transform": [],
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "sec_eq:D",
     "display_name": "Wind人民币汇率预估指数",
     "module": "3.证券EQ",
     "wind_indicator": "Wind人民币汇率预估指数",
-    "frequency": "99.833",
+    "frequency": "daily",
     "unit": "99.8024",
-    "status": "verified",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-05-26",
@@ -3556,16 +4596,23 @@
       "edb_unit": "2014年12月31日=100",
       "index_id": "M004115462,M004115463,M004115464"
     },
-    "verified_at": "2026-06-22T14:16:17.873598"
+    "verified_at": "2026-06-22T14:16:17.873598",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_exact",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for 99.833)"
   },
   {
     "series_id": "sec_eq:E",
     "display_name": "沪深300指数",
     "module": "3.证券EQ",
     "wind_indicator": "沪深300指数",
-    "frequency": "4914.2133",
+    "frequency": "daily",
     "unit": "4908.1714",
-    "status": "verified",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-05-26",
@@ -3608,16 +4655,23 @@
       "edb_unit": "点",
       "index_id": "G002837008"
     },
-    "verified_at": "2026-06-22T14:16:25.114159"
+    "verified_at": "2026-06-22T14:16:25.114159",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_exact",
+    "_pending_reason": "Insufficient overlap (17 pts < 40 for daily) — needs Wind re-verification"
   },
   {
     "series_id": "sec_eq:F",
     "display_name": "恒生指数",
     "module": "3.证券EQ",
     "wind_indicator": "恒生指数",
-    "frequency": "25006.16",
+    "frequency": "daily",
     "unit": "25328.23",
-    "status": "verified",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-05-26",
@@ -3660,16 +4714,23 @@
       "edb_unit": "点",
       "index_id": "G002856503"
     },
-    "verified_at": "2026-06-22T14:16:34.918233"
+    "verified_at": "2026-06-22T14:16:34.918233",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_exact",
+    "_pending_reason": "Insufficient overlap (18 pts < 40 for daily) — needs Wind re-verification"
   },
   {
     "series_id": "sec_eq:H",
     "display_name": "港股通:当日买入成交净额(人民币)",
     "module": "3.证券EQ",
     "wind_indicator": "港股通:当日买入成交净额(人民币)",
-    "frequency": "日",
+    "frequency": "daily",
     "unit": "65.8859",
-    "status": "edb_no_exact_match",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-05-25",
@@ -3685,7 +4746,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 15,
@@ -3718,16 +4779,20 @@
       "index_id": "S006015792"
     },
     "verified_at": "2026-06-22T14:33:43.649249",
-    "verify_note": "EDB returns 港股通:净买入额(人民币), close to 当日买入成交净额 but 19% avg diff."
+    "verify_note": "EDB returns 港股通:净买入额(人民币), close to 当日买入成交净额 but 19% avg diff.",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "transform_standardized": true,
+    "_old_status": "edb_no_exact_match"
   },
   {
     "series_id": "sec_eq:I",
     "display_name": "港股通:累计买入成交净额(人民币)",
     "module": "3.证券EQ",
     "wind_indicator": "港股通:累计买入成交净额(人民币)",
-    "frequency": "日",
+    "frequency": "daily",
     "unit": "47944.9512",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-05-25",
@@ -3743,7 +4808,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 15,
@@ -3775,14 +4840,20 @@
       "edb_unit": "元",
       "index_id": "S006015794"
     },
-    "verified_at": "2026-06-22T14:16:58.208767"
+    "verified_at": "2026-06-22T14:16:58.208767",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (15 pts < 40 for daily)"
   },
   {
     "series_id": "sec_eq:J",
     "display_name": "陆股通:当日买入成交净额(人民币)",
     "module": "3.证券EQ",
     "wind_indicator": "陆股通:当日买入成交净额(人民币)",
-    "frequency": "日",
+    "frequency": "daily",
     "unit": "",
     "status": "no_data_in_db",
     "last_dates": [
@@ -3828,14 +4899,18 @@
       "index_id": "S006015803"
     },
     "verified_at": "2026-06-22T14:33:58.011831",
-    "verify_note": "DB has 0 for ALL records. Excel column is empty."
+    "verify_note": "DB has 0 for ALL records. Excel column is empty.",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "sec_eq:K",
     "display_name": "陆股通:累计买入成交净额(人民币)",
     "module": "3.证券EQ",
     "wind_indicator": "陆股通:累计买入成交净额(人民币)",
-    "frequency": "日",
+    "frequency": "daily",
     "unit": "",
     "status": "no_data_in_db",
     "last_dates": [
@@ -3881,16 +4956,20 @@
       "index_id": "S006015792"
     },
     "verified_at": "2026-06-22T14:34:06.959298",
-    "verify_note": "DB has 0 for ALL records. Excel column is empty."
+    "verify_note": "DB has 0 for ALL records. Excel column is empty.",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "sec_fi:AA",
     "display_name": "上清所:债券托管量:其他公司信用类债券:人民银行批准的境外机构",
     "module": "3.证券FI",
     "wind_indicator": "上清所:债券托管量:其他公司信用类债券:人民银行批准的境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "30.9545",
-    "status": "verified_with_transform",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -3906,7 +4985,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 59,
@@ -3938,16 +5017,21 @@
       "edb_unit": "元",
       "index_id": "M005945160"
     },
-    "verified_at": "2026-06-22T14:17:22.776825"
+    "verified_at": "2026-06-22T14:17:22.776825",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "sec_fi:AB",
     "display_name": "上清所:债券托管量:熊猫债:人民银行批准的境外机构",
     "module": "3.证券FI",
     "wind_indicator": "上清所:债券托管量:熊猫债:人民银行批准的境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "637.4621",
-    "status": "verified_with_transform",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -3963,7 +5047,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 59,
@@ -3995,14 +5079,19 @@
       "edb_unit": "元",
       "index_id": "M005945220"
     },
-    "verified_at": "2026-06-22T14:17:26.886958"
+    "verified_at": "2026-06-22T14:17:26.886958",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "sec_fi:AC",
     "display_name": "上清所:债券托管量:其他债券:人民银行批准的境外机构",
     "module": "3.证券FI",
     "wind_indicator": "上清所:债券托管量:其他债券:人民银行批准的境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "",
     "status": "no_data_in_db",
     "last_dates": [
@@ -4048,16 +5137,20 @@
       "index_id": "M035330431"
     },
     "verified_at": "2026-06-22T14:34:14.794275",
-    "verify_note": "DB has 0 for ALL records. Excel column is empty."
+    "verify_note": "DB has 0 for ALL records. Excel column is empty.",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "sec_fi:AD",
     "display_name": "上清所:债券托管量:标准化票据:人民银行批准的境外机构",
     "module": "3.证券FI",
     "wind_indicator": "上清所:债券托管量:标准化票据:人民银行批准的境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "",
-    "status": "verified",
+    "status": "verified_exact",
     "last_dates": [
       [
         "2026-02-28",
@@ -4100,16 +5193,22 @@
       "edb_unit": "元",
       "index_id": "M005945260"
     },
-    "verified_at": "2026-06-22T14:17:37.728556"
+    "verified_at": "2026-06-22T14:17:37.728556",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified"
   },
   {
     "series_id": "sec_fi:AE",
     "display_name": "上清所:债券托管量:资产支持证券:人民银行批准的境外机构",
     "module": "3.证券FI",
     "wind_indicator": "上清所:债券托管量:资产支持证券:人民银行批准的境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "",
-    "status": "verified_with_transform",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -4125,7 +5224,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 59,
@@ -4157,16 +5256,21 @@
       "edb_unit": "元",
       "index_id": "M005945240"
     },
-    "verified_at": "2026-06-22T14:17:41.906957"
+    "verified_at": "2026-06-22T14:17:41.906957",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "sec_fi:AF",
     "display_name": "境外投资者专项统计:债券托管量",
     "module": "3.证券FI",
     "wind_indicator": "境外投资者专项统计:债券托管量",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "26842.6164",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -4182,7 +5286,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -4214,16 +5318,22 @@
       "edb_unit": "元",
       "index_id": "M009335746"
     },
-    "verified_at": "2026-06-22T14:17:50.600142"
+    "verified_at": "2026-06-22T14:17:50.600142",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "sec_fi:B",
     "display_name": "中债:债券托管量:国债:境外机构",
     "module": "3.证券FI",
     "wind_indicator": "中债:债券托管量:国债:境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "19424.9326",
-    "status": "no_result",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -4238,15 +5348,53 @@
         19424.9326
       ]
     ],
-    "verify_details": "EDB returned empty data",
-    "verified_at": "2026-06-22T14:34:20.499361"
+    "verify_details": {
+      "overlap_points": 81,
+      "avg_diff_pct": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2020-12-31",
+          "18775.8145",
+          "18775.8145"
+        ],
+        [
+          "2021-01-31",
+          "19986.8683",
+          "19986.8683"
+        ],
+        [
+          "2021-02-28",
+          "20605.1589",
+          "20605.1589"
+        ]
+      ],
+      "edb_indicator": "债券持有量:国债:境外机构",
+      "edb_unit": "元",
+      "index_id": "M004364802",
+      "note": "Fixed by re-test with strategy: short_last2 — query=\"国债:境外机构\" [via iFind EDB]",
+      "retest_fix": true
+    },
+    "verified_at": "2026-06-22T15:11:21.822770",
+    "transform": [
+      "divide_1e8"
+    ],
+    "verify_note": "Re-test fix: short_last2 → 债券持有量:国债:境外机构",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "sec_fi:BE",
     "display_name": "中债-境外机构",
     "module": "3.证券FI",
     "wind_indicator": "",
-    "frequency": "中债-境外机构",
+    "frequency": "monthly",
     "unit": "8960.22",
     "status": "manual",
     "last_dates": [
@@ -4264,14 +5412,17 @@
       ]
     ],
     "verify_note": "中债-境外机构 — no Wind indicator name in Excel header",
-    "verified_at": "2026-06-22T14:23:52.999902"
+    "verified_at": "2026-06-22T14:23:52.999902",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "sec_fi:BF",
     "display_name": "上清-境外机构",
     "module": "3.证券FI",
     "wind_indicator": "",
-    "frequency": "上清-境外机构",
+    "frequency": "monthly",
     "unit": "1650.3106",
     "status": "manual",
     "last_dates": [
@@ -4289,16 +5440,19 @@
       ]
     ],
     "verify_note": "上清-境外机构 — no Wind indicator name in Excel header",
-    "verified_at": "2026-06-22T14:23:52.999903"
+    "verified_at": "2026-06-22T14:23:52.999903",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "sec_fi:BH",
     "display_name": "中债国债到期收益率:10年:月",
     "module": "3.证券FI",
     "wind_indicator": "中债国债到期收益率:10年:月",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "1.782038095238095",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -4314,7 +5468,7 @@
       ]
     ],
     "transform": [
-      "minor_revision"
+      "identity"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -4344,16 +5498,22 @@
       "edb_unit": "%",
       "index_id": "L001619604"
     },
-    "verified_at": "2026-06-22T14:18:09.462468"
+    "verified_at": "2026-06-22T14:18:09.462468",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "sec_fi:BI",
     "display_name": "美国:国债收益率:10年:月",
     "module": "3.证券FI",
     "wind_indicator": "美国:国债收益率:10年:月",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "4.319090909090909",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -4369,7 +5529,7 @@
       ]
     ],
     "transform": [
-      "minor_revision"
+      "identity"
     ],
     "verify_details": {
       "overlap_points": 2,
@@ -4394,16 +5554,22 @@
       "edb_unit": "%",
       "index_id": "G002600774"
     },
-    "verified_at": "2026-06-22T14:18:18.673791"
+    "verified_at": "2026-06-22T14:18:18.673791",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (2 points) — needs Wind MCP re-verification"
   },
   {
     "series_id": "sec_fi:C",
     "display_name": "中债:债券托管量:国家开发银行债:境外机构",
     "module": "3.证券FI",
     "wind_indicator": "中债:债券托管量:国家开发银行债:境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "",
-    "status": "no_result",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -4419,42 +5585,53 @@
       ]
     ],
     "verify_details": {
-      "overlap_points": 3,
-      "max_diff_pct": 277975907000000.0,
-      "avg_diff_pct": 272454511333333.34,
-      "max_abs_diff": 2779759070000.0,
-      "unit_factor": 1,
-      "transform": [],
+      "overlap_points": 81,
+      "avg_diff_pct": 1.66,
+      "unit_factor": 313902125.3716932,
+      "transform": [
+        "unit_div_313902125"
+      ],
       "samples": [
         [
-          "2026-02-28",
-          "0.0000",
-          "2779759070000.0000"
+          "2020-12-31",
+          "5993.1927",
+          "5981.4232"
         ],
         [
-          "2026-03-31",
-          "0.0000",
-          "2709614630000.0000"
+          "2021-01-31",
+          "6231.9219",
+          "6367.2294"
         ],
         [
-          "2026-04-30",
-          "0.0000",
-          "2684261640000.0000"
+          "2021-02-28",
+          "6426.0064",
+          "6564.1986"
         ]
       ],
-      "edb_indicator": "债券托管量:银行间债券市场:境外机构",
+      "edb_indicator": "债券持有量:国债:境外机构",
       "edb_unit": "元",
-      "index_id": "M009335746"
+      "index_id": "M004364802",
+      "note": "Fixed by re-test with strategy: short_last2 — query=\"国家开发银行债:境外机构\" [via iFind EDB]",
+      "retest_fix": true
     },
-    "verified_at": "2026-06-22T14:18:25.113357",
-    "verify_note": "EDB returned empty datas"
+    "verified_at": "2026-06-22T15:11:45.962858",
+    "verify_note": "Re-test fix: short_last2 → 债券持有量:国债:境外机构",
+    "transform": [
+      "verify_factor_313902125"
+    ],
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": false,
+    "_pending_reason": "Has non-standard transform factor — needs Wind MCP re-verification",
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "sec_fi:D",
     "display_name": "中债:债券托管量:中国进出口银行债:境外机构",
     "module": "3.证券FI",
     "wind_indicator": "中债:债券托管量:中国进出口银行债:境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "",
     "status": "no_data_in_db",
     "last_dates": [
@@ -4500,14 +5677,18 @@
       "index_id": "M009335746"
     },
     "verified_at": "2026-06-22T14:34:29.989074",
-    "verify_note": "DB has 0 for ALL records. Excel column is empty. EDB returns broader aggregate."
+    "verify_note": "DB has 0 for ALL records. Excel column is empty. EDB returns broader aggregate.",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "sec_fi:E",
     "display_name": "中债:债券托管量:中国农业发展银行债:境外机构",
     "module": "3.证券FI",
     "wind_indicator": "中债:债券托管量:中国农业发展银行债:境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "",
     "status": "no_result",
     "last_dates": [
@@ -4553,14 +5734,18 @@
       "index_id": "M009335746"
     },
     "verified_at": "2026-06-22T14:18:39.680495",
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "EDB returned empty datas",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "sec_fi:F",
     "display_name": "中债:债券托管量:商业银行普通债:境外机构",
     "module": "3.证券FI",
     "wind_indicator": "中债:债券托管量:商业银行普通债:境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "",
     "status": "no_data_in_db",
     "last_dates": [
@@ -4606,14 +5791,18 @@
       "edb_unit": "元",
       "index_id": "M004364579"
     },
-    "verified_at": "2026-06-22T14:34:38.412559"
+    "verified_at": "2026-06-22T14:34:38.412559",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "sec_fi:G",
     "display_name": "中债:债券托管量:商业银行次级债:境外机构",
     "module": "3.证券FI",
     "wind_indicator": "中债:债券托管量:商业银行次级债:境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "",
     "status": "no_result",
     "last_dates": [
@@ -4630,14 +5819,18 @@
         0.0
       ]
     ],
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "EDB returned empty datas",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "sec_fi:H",
     "display_name": "中债:债券托管量:商业银行混合资本债:境外机构",
     "module": "3.证券FI",
     "wind_indicator": "中债:债券托管量:商业银行混合资本债:境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "",
     "status": "no_result",
     "last_dates": [
@@ -4654,14 +5847,18 @@
         0.0
       ]
     ],
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "EDB returned empty datas",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "sec_fi:I",
     "display_name": "中债:债券托管量:二级资本工具:境外机构",
     "module": "3.证券FI",
     "wind_indicator": "中债:债券托管量:二级资本工具:境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "",
     "status": "no_result",
     "last_dates": [
@@ -4707,16 +5904,20 @@
       "index_id": "M009335746"
     },
     "verified_at": "2026-06-22T14:19:04.882230",
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "EDB returned empty datas",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "sec_fi:J",
     "display_name": "中债:债券托管量:企业债:境外机构",
     "module": "3.证券FI",
     "wind_indicator": "中债:债券托管量:企业债:境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "5.859",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -4732,8 +5933,7 @@
       ]
     ],
     "transform": [
-      "unit_div_451332857607",
-      "minor_revision"
+      "verify_factor_451332857607"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -4765,14 +5965,20 @@
       "edb_unit": "元",
       "index_id": "M009335746"
     },
-    "verified_at": "2026-06-22T14:34:52.866833"
+    "verified_at": "2026-06-22T14:34:52.866833",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": false,
+    "_pending_reason": "Has non-standard transform factor — needs Wind MCP re-verification",
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "sec_fi:K",
     "display_name": "中债:债券托管量:中期票据:境外机构",
     "module": "3.证券FI",
     "wind_indicator": "中债:债券托管量:中期票据:境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "",
     "status": "no_data_in_db",
     "last_dates": [
@@ -4818,16 +6024,20 @@
       "index_id": "M009335746"
     },
     "verified_at": "2026-06-22T14:35:12.460333",
-    "verify_note": "DB has 0 for ALL records. Excel column is empty."
+    "verify_note": "DB has 0 for ALL records. Excel column is empty.",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "sec_fi:L",
     "display_name": "全市场:债券托管量:中期票据:人民银行批准的境外机构",
     "module": "3.证券FI",
     "wind_indicator": "全市场:债券托管量:中期票据:人民银行批准的境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "",
-    "status": "no_data_in_db",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -4843,44 +6053,54 @@
       ]
     ],
     "verify_details": {
-      "overlap_points": 3,
-      "max_diff_pct": 2634769999999.9995,
-      "avg_diff_pct": 2521506466666.6665,
-      "max_abs_diff": 26347700000.0,
-      "unit_factor": 1,
-      "transform": [],
+      "overlap_points": 61,
+      "avg_diff_pct": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
       "samples": [
         [
-          "2026-02-28",
-          "0.0000",
-          "26347700000.0000"
+          "2019-10-31",
+          "580.4230",
+          "580.4230"
         ],
         [
-          "2026-03-31",
-          "0.0000",
-          "24302892000.0000"
+          "2019-11-30",
+          "610.8090",
+          "610.8090"
         ],
         [
-          "2026-04-30",
-          "0.0000",
-          "24994602000.0000"
+          "2019-12-31",
+          "600.8370",
+          "600.8370"
         ]
       ],
       "edb_indicator": "上清所:债券托管量:公司信用类债券:中期票据:人民银行批准的境外机构",
       "edb_unit": "元",
-      "index_id": "M005945140"
+      "index_id": "M005945140",
+      "note": "Fixed by re-test with strategy: short_last3 — query=\"债券托管量:中期票据:人民银行批准的境外机构\" [via iFind EDB]",
+      "retest_fix": true
     },
-    "verified_at": "2026-06-22T14:35:16.682062",
-    "verify_note": "DB has 0 for ALL records. Excel column is empty."
+    "verified_at": "2026-06-22T15:15:04.404018",
+    "verify_note": "Re-test fix: short_last3 → 上清所:债券托管量:公司信用类债券:中期票据:人民银行批准的境外机构",
+    "transform": [
+      "divide_1e8"
+    ],
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "sec_fi:M",
     "display_name": "上清所:债券托管量:短期融资券:人民银行批准的境外机构",
     "module": "3.证券FI",
     "wind_indicator": "上清所:债券托管量:短期融资券:人民银行批准的境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "11.312",
-    "status": "verified_with_transform",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -4896,7 +6116,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "avg_diff_pct": 0.0081,
@@ -4906,18 +6126,23 @@
       "transform": [
         "unit_div_1e8"
       ],
-      "note": "Fixed by alternative query: 上清所:债券托管量:短期融资券:人民银行批准的境外机构"
+      "note": "Fixed by alternative query: 上清所:债券托管量:短期融资券:人民银行批准的境外机构 [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:35:19.809375"
+    "verified_at": "2026-06-22T14:35:19.809375",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "sec_fi:N",
     "display_name": "上清所:债券托管量:超短期融资券:人民银行批准的境外机构",
     "module": "3.证券FI",
     "wind_indicator": "上清所:债券托管量:超短期融资券:人民银行批准的境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "21.552",
-    "status": "verified_with_transform",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -4933,7 +6158,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 59,
@@ -4965,16 +6190,21 @@
       "edb_unit": "元",
       "index_id": "M005945080"
     },
-    "verified_at": "2026-06-22T14:19:35.736565"
+    "verified_at": "2026-06-22T14:19:35.736565",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "sec_fi:O",
     "display_name": "上清所:债券托管量:中期票据:人民银行批准的境外机构",
     "module": "3.证券FI",
     "wind_indicator": "上清所:债券托管量:中期票据:人民银行批准的境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "249.946",
-    "status": "verified_with_transform",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -4990,7 +6220,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 59,
@@ -5022,16 +6252,21 @@
       "edb_unit": "元",
       "index_id": "M005945140"
     },
-    "verified_at": "2026-06-22T14:19:39.379330"
+    "verified_at": "2026-06-22T14:19:39.379330",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "sec_fi:P",
     "display_name": "上清所:债券托管量:同业存单:人民银行批准的境外机构",
     "module": "3.证券FI",
     "wind_indicator": "上清所:债券托管量:同业存单:人民银行批准的境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "2906.3050000000003",
-    "status": "verified_with_transform",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -5047,7 +6282,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 59,
@@ -5079,14 +6314,19 @@
       "edb_unit": "元",
       "index_id": "M005945200"
     },
-    "verified_at": "2026-06-22T14:19:42.259598"
+    "verified_at": "2026-06-22T14:19:42.259598",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "sec_fi:Q",
     "display_name": "上清所:债券托管量:区域集优中小企业集合票据:人民银行批准的境外机构",
     "module": "3.证券FI",
     "wind_indicator": "上清所:债券托管量:区域集优中小企业集合票据:人民银行批准的境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "",
     "status": "no_result",
     "last_dates": [
@@ -5103,14 +6343,18 @@
         0.0
       ]
     ],
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "EDB returned empty datas",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "sec_fi:R",
     "display_name": "上清所:债券托管量:金融企业短期融资券:人民银行批准的境外机构",
     "module": "3.证券FI",
     "wind_indicator": "上清所:债券托管量:金融企业短期融资券:人民银行批准的境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "",
     "status": "no_data_in_db",
     "last_dates": [
@@ -5156,14 +6400,18 @@
       "index_id": "M005945080"
     },
     "verified_at": "2026-06-22T14:35:29.314224",
-    "verify_note": "DB has 0 for ALL records. Excel column is empty."
+    "verify_note": "DB has 0 for ALL records. Excel column is empty.",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "sec_fi:S",
     "display_name": "上清所:债券托管量:信贷资产支持证券:人民银行批准的境外机构",
     "module": "3.证券FI",
     "wind_indicator": "上清所:债券托管量:信贷资产支持证券:人民银行批准的境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "",
     "status": "no_data_in_db",
     "last_dates": [
@@ -5209,14 +6457,18 @@
       "index_id": "M005945240"
     },
     "verified_at": "2026-06-22T14:35:35.764855",
-    "verify_note": "DB has 0 for ALL records. Excel column is empty."
+    "verify_note": "DB has 0 for ALL records. Excel column is empty.",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "sec_fi:T",
     "display_name": "上清所:债券托管量:资产管理公司金融债:人民银行批准的境外机构",
     "module": "3.证券FI",
     "wind_indicator": "上清所:债券托管量:资产管理公司金融债:人民银行批准的境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "",
     "status": "no_result",
     "last_dates": [
@@ -5233,14 +6485,18 @@
         0.0
       ]
     ],
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "EDB returned empty datas",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "sec_fi:U",
     "display_name": "上清所:债券托管量:政府支持机构债券:人民银行批准的境外机构",
     "module": "3.证券FI",
     "wind_indicator": "上清所:债券托管量:政府支持机构债券:人民银行批准的境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "",
     "status": "no_result",
     "last_dates": [
@@ -5257,14 +6513,18 @@
         0.0
       ]
     ],
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "EDB returned empty datas",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "sec_fi:V",
     "display_name": "上清所:债券托管量:绿色债务融资工具:人民银行批准的境外机构",
     "module": "3.证券FI",
     "wind_indicator": "上清所:债券托管量:绿色债务融资工具:人民银行批准的境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "",
     "status": "no_result",
     "last_dates": [
@@ -5281,16 +6541,20 @@
         0.0
       ]
     ],
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "EDB returned empty datas",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "sec_fi:W",
     "display_name": "中债:债券托管量:政策性银行债:境外机构",
     "module": "3.证券FI",
     "wind_indicator": "中债:债券托管量:政策性银行债:境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "7075.282499999999",
-    "status": "no_result",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -5305,17 +6569,55 @@
         7075.282499999999
       ]
     ],
-    "verify_details": "EDB returned empty data",
-    "verified_at": "2026-06-22T14:35:57.617386"
+    "verify_details": {
+      "overlap_points": 62,
+      "avg_diff_pct": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "7432.8842",
+          "7432.8842"
+        ],
+        [
+          "2026-03-31",
+          "7284.5764",
+          "7284.5764"
+        ],
+        [
+          "2026-04-30",
+          "7075.2825",
+          "7075.2825"
+        ]
+      ],
+      "edb_indicator": "债券持有量:政策性银行债:银行间债券市场:境外机构",
+      "edb_unit": "元",
+      "index_id": "M017430472,M009335686",
+      "note": "Fixed by re-test with strategy: short_last2 — query=\"政策性银行债:境外机构\" [via iFind EDB]",
+      "retest_fix": true
+    },
+    "verified_at": "2026-06-22T15:18:30.164893",
+    "transform": [
+      "divide_1e8"
+    ],
+    "verify_note": "Re-test fix: short_last2 → 债券持有量:政策性银行债:银行间债券市场:境外机构",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "sec_fi:X",
     "display_name": "中债:债券托管量:商业银行债券:境外机构",
     "module": "3.证券FI",
     "wind_indicator": "中债:债券托管量:商业银行债券:境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "59.01",
-    "status": "no_result",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -5330,16 +6632,55 @@
         59.01
       ]
     ],
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "Re-test fix: short_last2 → 债券持有量:商业银行债:银行间债券市场:境外机构",
+    "transform": [
+      "divide_1e8"
+    ],
+    "verify_details": {
+      "overlap_points": 62,
+      "avg_diff_pct": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "98.7000",
+          "98.7000"
+        ],
+        [
+          "2026-03-31",
+          "61.0600",
+          "61.0600"
+        ],
+        [
+          "2026-04-30",
+          "59.0100",
+          "59.0100"
+        ]
+      ],
+      "edb_indicator": "债券持有量:商业银行债:银行间债券市场:境外机构",
+      "edb_unit": "元",
+      "index_id": "M009335664",
+      "note": "Fixed by re-test with strategy: short_last2 — query=\"商业银行债券:境外机构\" [via iFind EDB]",
+      "retest_fix": true
+    },
+    "verified_at": "2026-06-22T15:18:52.560495",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "sec_fi:Y",
     "display_name": "上清所:债券托管量:金融债券:人民银行批准的境外机构",
     "module": "3.证券FI",
     "wind_indicator": "上清所:债券托管量:金融债券:人民银行批准的境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "515.9588",
-    "status": "verified_with_transform",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -5355,7 +6696,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 59,
@@ -5387,16 +6728,21 @@
       "edb_unit": "元",
       "index_id": "M005945180"
     },
-    "verified_at": "2026-06-22T14:20:42.570704"
+    "verified_at": "2026-06-22T14:20:42.570704",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "sec_fi:Z",
     "display_name": "上清所:债券托管量:非公开定向债务融资工具:人民银行批准的境外机构",
     "module": "3.证券FI",
     "wind_indicator": "上清所:债券托管量:非公开定向债务融资工具:人民银行批准的境外机构",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "16.461",
-    "status": "verified_with_transform",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -5412,7 +6758,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 59,
@@ -5444,7 +6790,12 @@
       "edb_unit": "元",
       "index_id": "M005945100"
     },
-    "verified_at": "2026-06-22T14:20:45.518014"
+    "verified_at": "2026-06-22T14:20:45.518014",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "trade_goods:AF",
@@ -5469,7 +6820,10 @@
       ]
     ],
     "verify_note": "Excel placeholder - sequence numbers 1,2,3",
-    "verified_at": "2026-06-22T14:23:52.999905"
+    "verified_at": "2026-06-22T14:23:52.999905",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "trade_goods:AY",
@@ -5494,16 +6848,19 @@
       ]
     ],
     "verify_note": "Column AY — no Wind indicator name in Excel header",
-    "verified_at": "2026-06-22T14:23:52.999906"
+    "verified_at": "2026-06-22T14:23:52.999906",
+    "wind_verified": false,
+    "transform": [],
+    "transform_standardized": true
   },
   {
     "series_id": "trade_goods:B",
     "display_name": "出口金额:当月值",
     "module": "3.货物贸易",
     "wind_indicator": "出口金额:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "3594.421362",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -5519,7 +6876,7 @@
       ]
     ],
     "transform": [
-      "unit_div_1e8"
+      "verify_factor_100000000"
     ],
     "verify_details": {
       "overlap_points": 5,
@@ -5538,16 +6895,22 @@
       ]
     },
     "verified_at": "2026-06-22T13:41:15.002760",
-    "verify_note": "Unit: 元→亿(÷1e8). Excellent match (<0.1%)"
+    "verify_note": "Unit: 元→亿(÷1e8). Excellent match (<0.1%)",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": false,
+    "_pending_reason": "Has non-standard transform factor — needs Wind MCP re-verification",
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "trade_goods:C",
     "display_name": "境内银行代客涉外收入:货物贸易:当月值",
     "module": "3.货物贸易",
     "wind_indicator": "境内银行代客涉外收入:货物贸易:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "3737.735704",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -5563,7 +6926,8 @@
       ]
     ],
     "transform": [
-      "unit_div_690370000"
+      "divide_1e8",
+      "currency_conversion_by_date"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -5595,16 +6959,22 @@
       "edb_unit": "元",
       "index_id": "M003809213"
     },
-    "verified_at": "2026-06-22T14:36:08.864025"
+    "verified_at": "2026-06-22T14:36:08.864025",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "trade_goods:D",
     "display_name": "银行代客结汇:货物贸易:当月值",
     "module": "3.货物贸易",
     "wind_indicator": "银行代客结汇:货物贸易:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "1801.685",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -5620,7 +6990,8 @@
       ]
     ],
     "transform": [
-      "unit_div_690370000"
+      "divide_1e8",
+      "currency_conversion_by_date"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -5652,16 +7023,22 @@
       "edb_unit": "元",
       "index_id": "M003806656"
     },
-    "verified_at": "2026-06-22T14:36:13.819175"
+    "verified_at": "2026-06-22T14:36:13.819175",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "trade_goods:E",
     "display_name": "进口金额:当月值",
     "module": "3.货物贸易",
     "wind_indicator": "进口金额:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "2746.182116",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -5677,7 +7054,7 @@
       ]
     ],
     "transform": [
-      "unit_div_43707217"
+      "verify_factor_43707217"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -5708,19 +7085,25 @@
       "edb_indicator": "进口金额(人民币计价):中国:当月值",
       "edb_unit": "元",
       "index_id": "M006718729",
-      "note": "Close match (likely data revision within ±5%)",
+      "note": "Close match (likely data revision within ±5%) [via iFind EDB]",
       "tolerance": "extended_5pct"
     },
-    "verified_at": "2026-06-22T14:36:18.833529"
+    "verified_at": "2026-06-22T14:36:18.833529",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": false,
+    "_pending_reason": "Has non-standard transform factor — needs Wind MCP re-verification",
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "trade_goods:F",
     "display_name": "境内银行代客涉外支出:货物贸易:当月值",
     "module": "3.货物贸易",
     "wind_indicator": "境内银行代客涉外支出:货物贸易:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "2993.996869",
-    "status": "no_result",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -5735,16 +7118,56 @@
         2993.996869
       ]
     ],
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "Re-test fix: original → 银行代客涉外收付款:以人民币计价:支出:经常项目:货物贸易",
+    "transform": [
+      "divide_1e8",
+      "currency_conversion_by_date"
+    ],
+    "verify_details": {
+      "overlap_points": 196,
+      "avg_diff_pct": 4.24,
+      "unit_factor": 667317499.7086754,
+      "transform": [
+        "unit_div_667317500"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "2223.4264",
+          "2314.3953"
+        ],
+        [
+          "2026-03-31",
+          "3209.9572",
+          "3320.8452"
+        ],
+        [
+          "2026-04-30",
+          "2993.9969",
+          "3081.5420"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以人民币计价:支出:经常项目:货物贸易",
+      "edb_unit": "元",
+      "index_id": "M003809221",
+      "note": "Fixed by re-test with strategy: original — query=\"境内银行代客涉外支出:货物贸易:当月值\" [via iFind EDB]",
+      "retest_fix": true
+    },
+    "verified_at": "2026-06-22T15:18:58.734673",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "trade_goods:G",
     "display_name": "银行代客售汇:货物贸易:当月值",
     "module": "3.货物贸易",
     "wind_indicator": "银行代客结售汇:以美元计价:售汇:货物贸易:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "1325.0503",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -5760,7 +7183,7 @@
       ]
     ],
     "transform": [
-      "unit_div_1713243354"
+      "verify_factor_1713243354"
     ],
     "verify_details": {
       "avg_diff_pct": 0.0,
@@ -5770,18 +7193,24 @@
       "transform": [
         "unit_div_1e8"
       ],
-      "note": "Fixed by alternative query: 银行代客结售汇:以美元计价:售汇:货物贸易:当月值"
+      "note": "Fixed by alternative query: 银行代客结售汇:以美元计价:售汇:货物贸易:当月值 [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:36:30.864219"
+    "verified_at": "2026-06-22T14:36:30.864219",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": false,
+    "_pending_reason": "Has non-standard transform factor — needs Wind MCP re-verification",
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "trade_goods:H",
     "display_name": "中国:银行代客远期结汇签约:当月值",
     "module": "3.货物贸易",
     "wind_indicator": "中国:银行代客远期结汇签约:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "482.919",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -5797,7 +7226,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -5829,16 +7258,22 @@
       "edb_unit": "美元",
       "index_id": "M003022221"
     },
-    "verified_at": "2026-06-22T14:21:31.679735"
+    "verified_at": "2026-06-22T14:21:31.679735",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "trade_goods:I",
     "display_name": "中国:银行代客远期售汇签约:当月值",
     "module": "3.货物贸易",
     "wind_indicator": "银行代客远期售汇签约:以美元计价:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "414.0625",
-    "status": "verified_with_transform",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -5854,7 +7289,7 @@
       ]
     ],
     "transform": [
-      "unit_div_100000000"
+      "divide_1e8"
     ],
     "verify_details": {
       "avg_diff_pct": 0.0,
@@ -5864,18 +7299,23 @@
       "transform": [
         "unit_div_1e8"
       ],
-      "note": "Fixed by alternative query: 银行代客远期售汇签约:以美元计价:当月值"
+      "note": "Fixed by alternative query: 银行代客远期售汇签约:以美元计价:当月值 [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:36:37.888666"
+    "verified_at": "2026-06-22T14:36:37.888666",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "trade_goods:J",
     "display_name": "中国:银行代客远期净结汇:当月值",
     "module": "3.货物贸易",
     "wind_indicator": "中国:银行代客远期净结汇:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "68.8565",
-    "status": "no_result",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -5890,7 +7330,45 @@
         68.8565
       ]
     ],
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "Exact path: 远期结售汇签约额:以美元计价:差额",
+    "transform": [
+      "divide_1e8"
+    ],
+    "verify_details": {
+      "overlap_points": 196,
+      "avg_diff_pct": 0.0,
+      "max_diff_pct": 0.0,
+      "unit_factor": 100000000.0,
+      "transform": [
+        "unit_div_100000000"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "316.0158",
+          "316.0158"
+        ],
+        [
+          "2026-03-31",
+          "177.8549",
+          "177.8549"
+        ],
+        [
+          "2026-04-30",
+          "68.8565",
+          "68.8565"
+        ]
+      ],
+      "edb_indicator": "远期结售汇签约额:以美元计价:差额",
+      "index_id": "M003806648",
+      "note": "Exact EDB path lookup [via iFind EDB]"
+    },
+    "verified_at": "2026-06-22T17:12:04.255958",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "trade_goods:N",
@@ -5899,7 +7377,7 @@
     "wind_indicator": "即期汇率:美元兑人民币:月:平均值",
     "frequency": "monthly",
     "unit": "6.795347058823529",
-    "status": "verified",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -5942,16 +7420,23 @@
       "edb_unit": "",
       "index_id": "M003990276"
     },
-    "verified_at": "2026-06-22T14:21:54.635603"
+    "verified_at": "2026-06-22T14:21:54.635603",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_exact",
+    "_pending_reason": "Insufficient overlap (<12 monthly points) — needs more data or alternative query"
   },
   {
     "series_id": "trade_merchant:AA",
     "display_name": "PMI",
     "module": "3.贸易商",
     "wind_indicator": "PMI",
-    "frequency": "%",
+    "frequency": "monthly",
     "unit": "50.3",
-    "status": "no_result",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -5966,16 +7451,51 @@
         50.3
       ]
     ],
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "Re-test fix: pmi_mfg → 制造业PMI",
+    "transform": [],
+    "verify_details": {
+      "overlap_points": 256,
+      "avg_diff_pct": 0.0,
+      "unit_factor": 1,
+      "transform": [],
+      "samples": [
+        [
+          "2026-02-28",
+          "49.0000",
+          "49.0000"
+        ],
+        [
+          "2026-03-31",
+          "50.4000",
+          "50.4000"
+        ],
+        [
+          "2026-04-30",
+          "50.3000",
+          "50.3000"
+        ]
+      ],
+      "edb_indicator": "制造业PMI",
+      "edb_unit": "%",
+      "index_id": "M002043802",
+      "note": "Fixed by re-test with strategy: pmi_mfg — query=\"制造业采购经理指数(PMI)\" [via iFind EDB]",
+      "retest_fix": true
+    },
+    "verified_at": "2026-06-22T15:19:34.979991",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "trade_merchant:AB",
     "display_name": "PMI:小型企业",
     "module": "3.贸易商",
     "wind_indicator": "PMI:小型企业",
-    "frequency": "%",
+    "frequency": "monthly",
     "unit": "50.1",
-    "status": "verified",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -6018,16 +7538,23 @@
       "edb_unit": "%",
       "index_id": "M003157006"
     },
-    "verified_at": "2026-06-22T14:22:08.330571"
+    "verified_at": "2026-06-22T14:22:08.330571",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform": [],
+    "transform_standardized": true,
+    "_old_status": "verified_exact",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for %)"
   },
   {
     "series_id": "trade_merchant:AC",
     "display_name": "中债国债到期收益率:10年:月:平均值",
     "module": "3.贸易商",
     "wind_indicator": "中债国债到期收益率:10年:月:平均值",
-    "frequency": "%",
+    "frequency": "monthly",
     "unit": "1.782038095238095",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -6043,7 +7570,7 @@
       ]
     ],
     "transform": [
-      "minor_revision"
+      "identity"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -6073,16 +7600,22 @@
       "edb_unit": "%",
       "index_id": "L001619604"
     },
-    "verified_at": "2026-06-22T14:22:17.634045"
+    "verified_at": "2026-06-22T14:22:17.634045",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for %)"
   },
   {
     "series_id": "trade_merchant:AD",
     "display_name": "美国:国债收益率:10年:月:平均值",
     "module": "3.贸易商",
     "wind_indicator": "美国:国债收益率:10年:月:平均值",
-    "frequency": "%",
+    "frequency": "monthly",
     "unit": "4.319090909090909",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -6098,7 +7631,7 @@
       ]
     ],
     "transform": [
-      "minor_revision"
+      "identity"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -6128,16 +7661,22 @@
       "edb_unit": "%",
       "index_id": "G006024828"
     },
-    "verified_at": "2026-06-22T14:22:24.773800"
+    "verified_at": "2026-06-22T14:22:24.773800",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for %)"
   },
   {
     "series_id": "trade_merchant:B",
     "display_name": "出口金额:当月值",
     "module": "3.贸易商",
     "wind_indicator": "出口金额:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "3594.421362",
-    "status": "edb_no_exact_match",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -6152,18 +7691,56 @@
         3594.421362
       ]
     ],
-    "verify_details": "Only 0 overlap points: DB dates=['2026-02-28', '2026-03-31', '2026-04-30'], EDB dates=['2026-12-31']",
-    "verified_at": "2026-06-22T14:36:58.123863",
-    "verify_note": "EDB returns end-of-year date (2026-12-31) instead of monthly. Likely cumulative/annual indicator."
+    "verify_details": {
+      "overlap_points": 160,
+      "avg_diff_pct": 4.1,
+      "unit_factor": 672272697.941696,
+      "transform": [
+        "unit_div_672272698"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "2998.1943",
+          "3122.0230"
+        ],
+        [
+          "2026-03-31",
+          "3210.4518",
+          "3316.6179"
+        ],
+        [
+          "2026-04-30",
+          "3594.4214",
+          "3688.8852"
+        ]
+      ],
+      "edb_indicator": "出口总额:当月值",
+      "edb_unit": "元",
+      "index_id": "Q004321180",
+      "note": "Fixed by re-test with strategy: original — query=\"出口金额:当月值\" [via iFind EDB]",
+      "retest_fix": true
+    },
+    "verified_at": "2026-06-22T15:19:44.078846",
+    "verify_note": "Re-test fix: original → 出口总额:当月值",
+    "transform": [
+      "divide_1e8",
+      "currency_conversion_by_date"
+    ],
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "trade_merchant:C",
     "display_name": "境内银行代客涉外收入:货物贸易:当月值",
     "module": "3.贸易商",
     "wind_indicator": "境内银行代客涉外收入:货物贸易:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "3737.735704",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -6179,7 +7756,8 @@
       ]
     ],
     "transform": [
-      "unit_div_690370000"
+      "divide_1e8",
+      "currency_conversion_by_date"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -6211,16 +7789,22 @@
       "edb_unit": "元",
       "index_id": "M003809213"
     },
-    "verified_at": "2026-06-22T14:37:03.865975"
+    "verified_at": "2026-06-22T14:37:03.865975",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "trade_merchant:D",
     "display_name": "银行代客结汇:货物贸易:当月值",
     "module": "3.贸易商",
     "wind_indicator": "银行代客结汇:货物贸易:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "1801.685",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -6236,7 +7820,8 @@
       ]
     ],
     "transform": [
-      "unit_div_690370000"
+      "divide_1e8",
+      "currency_conversion_by_date"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -6268,16 +7853,22 @@
       "edb_unit": "元",
       "index_id": "M003806656"
     },
-    "verified_at": "2026-06-22T14:37:08.768990"
+    "verified_at": "2026-06-22T14:37:08.768990",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_unit_transform",
+    "_pending_reason": "Insufficient overlap (3 pts < 12 for monthly)"
   },
   {
     "series_id": "trade_merchant:E",
     "display_name": "进口金额:当月值",
     "module": "3.贸易商",
     "wind_indicator": "进口金额:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "2746.182116",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -6293,7 +7884,7 @@
       ]
     ],
     "transform": [
-      "unit_div_43707217"
+      "verify_factor_43707217"
     ],
     "verify_details": {
       "overlap_points": 3,
@@ -6324,19 +7915,25 @@
       "edb_indicator": "进口金额(人民币计价):中国:当月值",
       "edb_unit": "元",
       "index_id": "M006718729",
-      "note": "Close match (likely data revision within ±5%)",
+      "note": "Close match (likely data revision within ±5%) [via iFind EDB]",
       "tolerance": "extended_5pct"
     },
-    "verified_at": "2026-06-22T14:37:16.137813"
+    "verified_at": "2026-06-22T14:37:16.137813",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": false,
+    "_pending_reason": "Has non-standard transform factor — needs Wind MCP re-verification",
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "trade_merchant:F",
     "display_name": "境内银行代客涉外支出:货物贸易:当月值",
     "module": "3.贸易商",
     "wind_indicator": "境内银行代客涉外支出:货物贸易:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "2993.996869",
-    "status": "no_result",
+    "status": "verified_unit_transform",
     "last_dates": [
       [
         "2026-02-28",
@@ -6351,16 +7948,56 @@
         2993.996869
       ]
     ],
-    "verify_note": "EDB returned empty datas"
+    "verify_note": "Re-test fix: original → 银行代客涉外收付款:以人民币计价:支出:经常项目:货物贸易",
+    "transform": [
+      "divide_1e8",
+      "currency_conversion_by_date"
+    ],
+    "verify_details": {
+      "overlap_points": 196,
+      "avg_diff_pct": 4.24,
+      "unit_factor": 667317499.7086754,
+      "transform": [
+        "unit_div_667317500"
+      ],
+      "samples": [
+        [
+          "2026-02-28",
+          "2223.4264",
+          "2314.3953"
+        ],
+        [
+          "2026-03-31",
+          "3209.9572",
+          "3320.8452"
+        ],
+        [
+          "2026-04-30",
+          "2993.9969",
+          "3081.5420"
+        ]
+      ],
+      "edb_indicator": "银行代客涉外收付款:以人民币计价:支出:经常项目:货物贸易",
+      "edb_unit": "元",
+      "index_id": "M003809221",
+      "note": "Fixed by re-test with strategy: original — query=\"境内银行代客涉外支出:货物贸易:当月值\" [via iFind EDB]",
+      "retest_fix": true
+    },
+    "verified_at": "2026-06-22T15:19:51.569609",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": true,
+    "_old_status": "verified_with_transform"
   },
   {
     "series_id": "trade_merchant:G",
     "display_name": "银行代客售汇:货物贸易:当月值",
     "module": "3.贸易商",
     "wind_indicator": "银行代客结售汇:以美元计价:售汇:货物贸易:当月值",
-    "frequency": "月",
+    "frequency": "monthly",
     "unit": "1325.0503",
-    "status": "verified_with_transform",
+    "status": "mapping_pending",
     "last_dates": [
       [
         "2026-02-28",
@@ -6376,7 +8013,7 @@
       ]
     ],
     "transform": [
-      "unit_div_1713243354"
+      "verify_factor_1713243354"
     ],
     "verify_details": {
       "avg_diff_pct": 0.0,
@@ -6386,8 +8023,14 @@
       "transform": [
         "unit_div_1e8"
       ],
-      "note": "Fixed by alternative query: 银行代客结售汇:以美元计价:售汇:货物贸易:当月值"
+      "note": "Fixed by alternative query: 银行代客结售汇:以美元计价:售汇:货物贸易:当月值 [via iFind EDB]"
     },
-    "verified_at": "2026-06-22T14:37:29.594232"
+    "verified_at": "2026-06-22T14:37:29.594232",
+    "external_source": "ifind_edb",
+    "wind_verified": false,
+    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "transform_standardized": false,
+    "_pending_reason": "Has non-standard transform factor — needs Wind MCP re-verification",
+    "_old_status": "verified_with_transform"
   }
 ]

@@ -15,16 +15,40 @@ from lib import get_db
 
 def fetch_via_wind_mcp(plan_entry):
     """
-    Fetch data via Wind MCP for a single series.
-    This is the production path — requires Wind MCP server to be configured.
+    Fetch data via Wind MCP for a single series (production path).
 
-    Expected MCP call:
-        mcp__wind__wsd(codes=indicator, beginDate=start, endDate=end, options=...)
+    Uses wind_mcp_adapter.wind_mcp_query → economic_data.get_economic_data CLI.
+    Maps the plan's indicator + last DB dates into a Wind MCP query, returns
+    only NEW observations (after last_date) for downstream overlap validation.
 
-    Returns: {date: value} or None on failure
+    Returns: {date: value} of fetched data (incl. overlap dates), or None.
     """
-    # STUB: When Wind MCP is available, implement the actual MCP call here.
-    # For now, return None to indicate "not fetched"
+    try:
+        from wind_mcp_adapter import wind_mcp_query
+    except ImportError:
+        return None
+
+    indicator = plan_entry.get("query") or plan_entry.get("wind_indicator")
+    if not indicator:
+        return None
+
+    # Fetch window: from second-to-last DB date through today (for overlap check)
+    val_dates = plan_entry.get("validation_dates") or []
+    if val_dates:
+        begin = min(val_dates).replace("-", "")
+    else:
+        begin = plan_entry.get("fetch_start_date", "20240101").replace("-", "")
+    end = datetime.now().strftime("%Y%m%d")
+
+    freq_map = {"monthly": "月", "daily": "日", "quarterly": "季", "yearly": "年"}
+    freq = freq_map.get(plan_entry.get("frequency", "monthly"), "月")
+
+    # Try USD first, then CNY (matching how Excel/iFind stored the data)
+    for currency in ("USD", "CNY"):
+        result = wind_mcp_query(indicator, begin_date=begin, end_date=end,
+                                freq=freq, magnitude="亿", currency=currency)
+        if result and result.get("data"):
+            return result["data"]
     return None
 
 

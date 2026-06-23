@@ -1,390 +1,385 @@
+#!/usr/bin/env python3
 """
-Generate single-file, self-contained HTML dashboard for all 9 modules.
-Data embedded as JSON, Chart.js + datalabels plugin inlined.
+generate_dashboard.py — Catalog-driven HTML dashboard generator.
+Loads chart_catalog.json to drive all chart creation. Single-file, offline.
 """
-import sys
-import json
+import sys, json
 from pathlib import Path
 from datetime import datetime
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lib import get_db, REPORTS_DIR, TEMPLATES_DIR
+from lib import get_db, REPORTS_DIR, TEMPLATES_DIR, CONFIG_DIR
 
-# Module definitions with chart configurations
-MODULES = [
-    {
-        "id": "fx-fwd", "name": "即远期供求", "sheet": "3.即远期", "prefix": "fx_fwd",
-        "charts": [
-            {"id": "supply-demand", "title": "外汇市场即远期总供求", "type": "line",
-             "series": [
-                 {"id": "fx_fwd:supply_demand", "label": "即远期总供求", "color": "blue"},
-                 {"id": "fx_fwd:supply_demand_3mma", "label": "3MMA", "color": "orange"},
-                 {"id": "fx_fwd:supply_demand_12mma", "label": "12MMA", "color": "green"},
-             ]},
-            {"id": "spot-deriv-breakdown", "title": "即期 vs 衍生品净结汇（堆叠柱状）", "type": "bar",
-             "series": [
-                 {"id": "fx_fwd:spot_flow", "label": "即期结售汇差额", "color": "blue"},
-                 {"id": "fx_fwd:deriv_flow", "label": "衍生品净签约", "color": "red"},
-             ]},
-            {"id": "bank-own-fx", "title": "银行自身结售汇", "type": "line",
-             "series": [
-                 {"id": "fx_fwd:B", "label": "自身结汇", "color": "green"},
-                 {"id": "fx_fwd:C", "label": "自身售汇", "color": "red"},
-                 {"id": "fx_fwd:D", "label": "差额", "color": "blue"},
-             ]},
-            {"id": "fwd-signing", "title": "银行代客远期签约", "type": "line",
-             "series": [
-                 {"id": "fx_fwd:E", "label": "远期结汇签约", "color": "green"},
-                 {"id": "fx_fwd:F", "label": "远期售汇签约", "color": "red"},
-                 {"id": "fx_fwd:G", "label": "净结汇", "color": "blue"},
-             ]},
-        ]
-    },
-    {
-        "id": "fx-cspot", "name": "代客即期结构", "sheet": "3.代客即期", "prefix": "fx_cspot",
-        "charts": []  # Will auto-discover key series
-    },
-    {
-        "id": "fx-crossborder", "name": "涉外收付", "sheet": "3.涉外收付", "prefix": "fx_crossborder",
-        "charts": []
-    },
-    {
-        "id": "trade-goods", "name": "货物贸易", "sheet": "3.货物贸易", "prefix": "trade_goods",
-        "charts": []
-    },
-    {
-        "id": "trade-merchant", "name": "贸易商意愿", "sheet": "3.贸易商", "prefix": "trade_merchant",
-        "charts": []
-    },
-    {
-        "id": "trade-services", "name": "服务贸易", "sheet": "3.服务贸易", "prefix": "trade_services",
-        "charts": []
-    },
-    {
-        "id": "fdi", "name": "FDI", "sheet": "3.FDI", "prefix": "fdi",
-        "charts": []
-    },
-    {
-        "id": "sec-eq", "name": "证券资金流：EQ", "sheet": "3.证券EQ", "prefix": "sec_eq",
-        "charts": []
-    },
-    {
-        "id": "sec-fi", "name": "证券资金流：FI", "sheet": "3.证券FI", "prefix": "sec_fi",
-        "charts": []
-    },
-]
-
-COLORS_JS = {
-    "blue": "rgba(54, 162, 235, 1)",
-    "blue_bg": "rgba(54, 162, 235, 0.2)",
-    "red": "rgba(255, 99, 132, 1)",
-    "red_bg": "rgba(255, 99, 132, 0.2)",
-    "green": "rgba(75, 192, 192, 1)",
-    "green_bg": "rgba(75, 192, 192, 0.2)",
-    "orange": "rgba(255, 159, 64, 1)",
-    "orange_bg": "rgba(255, 159, 64, 0.2)",
-    "purple": "rgba(153, 102, 255, 1)",
-    "purple_bg": "rgba(153, 102, 255, 0.2)",
-    "gray": "rgba(100, 100, 100, 1)",
+# ── helpers ──────────────────────────────────────────────────
+MODULE_SHEET_MAP = {
+    "3.即远期":"fx-fwd","3.代客即期":"fx-cspot","3.涉外收付":"fx-crossborder",
+    "3.货物贸易":"trade-goods","3.贸易商":"trade-merchant","3.服务贸易":"trade-services",
+    "3.FDI":"fdi","3.证券EQ":"sec-eq","3.证券FI":"sec-fi",
+}
+MODULE_NAMES = {
+    "3.即远期":"即远期供求","3.代客即期":"代客即期结构","3.涉外收付":"涉外收付",
+    "3.货物贸易":"货物贸易","3.贸易商":"贸易商意愿","3.服务贸易":"服务贸易",
+    "3.FDI":"FDI","3.证券EQ":"证券资金流 EQ","3.证券FI":"证券资金流 FI",
+}
+MODULE_PREFIX = {
+    "3.即远期":"fx_fwd","3.代客即期":"fx_cspot","3.涉外收付":"fx_crossborder",
+    "3.货物贸易":"trade_goods","3.贸易商":"trade_merchant","3.服务贸易":"trade_services",
+    "3.FDI":"fdi","3.证券EQ":"sec_eq","3.证券FI":"sec_fi",
 }
 
+def load_chart_catalog():
+    p = CONFIG_DIR / "chart_catalog.json"
+    if p.exists():
+        with open(p) as f:
+            return json.load(f).get("modules", {})
+    return {}
 
-def build_payload(conn):
-    """Build data payload from SQLite."""
-    payload = {"generated_at": datetime.now().isoformat(), "data_through": {}, "modules": {}}
+def build_modules():
+    cat = load_chart_catalog()
+    mods = []
+    for sheet in ["3.即远期","3.代客即期","3.涉外收付","3.货物贸易",
+                  "3.贸易商","3.服务贸易","3.FDI","3.证券EQ","3.证券FI"]:
+        md = cat.get(sheet, {})
+        charts_out = []
+        for ch in md.get("charts", []):
+            series_out = []
+            for ds in ch.get("datasets", []):
+                series_out.append({
+                    "id": ds["series_id"], "label": ds["label"],
+                    "color": ds.get("color","blue"), "type": ds.get("type","line"),
+                    "axis": ds.get("axis","left"),
+                })
+            charts_out.append({
+                "id": ch["chart_id"], "title": ch["title"],
+                "subtitle": ch.get("subtitle",""), "type": ch["chart_type"],
+                "family": ch.get("family","trend"), "priority": ch.get("priority","primary"),
+                "range": ch.get("default_range","5y"), "zero_line": ch.get("zero_line",False),
+                "dual_axis": ch.get("dual_axis",False),
+                "seasonality_selector": ch.get("seasonality_selector",False),
+                "series": series_out, "y_min": ch.get("y_min"), "y_max": ch.get("y_max"),
+                "scatter": ch.get("scatter", False),
+                "scatter_x": ch.get("scatter_x"), "scatter_y": ch.get("scatter_y"),
+                "scatter_x_alt": ch.get("scatter_x_alt"),
+            })
+        mods.append({
+            "id": MODULE_SHEET_MAP.get(sheet,sheet),
+            "name": MODULE_NAMES.get(sheet,sheet),
+            "sheet": sheet, "prefix": MODULE_PREFIX.get(sheet,""),
+            "charts": charts_out,
+        })
+    return mods
 
-    for mod in MODULES:
-        series_rows = conn.execute(
-            "SELECT series_id, display_name, series_type, frequency, unit, first_date, last_date "
-            "FROM series WHERE module=? ORDER BY series_id", (mod["sheet"],)
-        ).fetchall()
+MODULES = build_modules()
 
-        if not series_rows:
-            payload["modules"][mod["id"]] = {"series": [], "observations": {}}
-            continue
+# ── color palette ───────────────────────────────────────────
+COLORS_JS = """
+const C = {
+    blue: '#1a3a5c', blue_bg: 'rgba(26,58,92,0.15)',
+    red: '#c0392b', red_bg: 'rgba(192,57,43,0.15)',
+    green: '#27ae60', green_bg: 'rgba(39,174,96,0.15)',
+    orange: '#d4841a', orange_bg: 'rgba(212,132,26,0.15)',
+    purple: '#8e44ad', purple_bg: 'rgba(142,68,173,0.15)',
+    teal: '#1abc9c', teal_bg: 'rgba(26,188,156,0.15)',
+    grey: '#7f8c8d', grey_bg: 'rgba(127,140,141,0.15)',
+    dark: '#2c3e50', gold: '#f39c12',
+};
+function hexToRgba(hex, alpha) {
+    const r = parseInt(hex.slice(1,3), 16);
+    const g = parseInt(hex.slice(3,5), 16);
+    const b = parseInt(hex.slice(5,7), 16);
+    return 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+}
+"""
 
-        series_ids = [r["series_id"] for r in series_rows]
-        placeholders = ",".join("?" for _ in series_ids)
-        obs_rows = conn.execute(
-            f"SELECT series_id, date, value FROM observations WHERE series_id IN ({placeholders}) ORDER BY series_id, date ASC",
-            series_ids
-        ).fetchall()
-
-        obs_dict = {}
-        for row in obs_rows:
-            sid = row["series_id"]
-            if sid not in obs_dict:
-                obs_dict[sid] = []
-            obs_dict[sid].append([row["date"], row["value"]])
-
-        latest = None
-        for s in series_rows:
-            if s["last_date"] and (latest is None or s["last_date"] > latest):
-                latest = s["last_date"]
-
-        payload["data_through"][mod["id"]] = latest
-        payload["modules"][mod["id"]] = {
-            "series": [
-                {"id": r["series_id"], "name": r["display_name"][:120], "type": r["series_type"],
-                 "freq": r["frequency"], "unit": r["unit"], "first": r["first_date"], "last": r["last_date"]}
-                for r in series_rows
-            ],
-            "observations": obs_dict,
-        }
-
-    return payload
-
-
-def generate_html(payload, output_path):
-    """Generate complete HTML with inlined Chart.js + data."""
+# ── generate ────────────────────────────────────────────────
+def generate_html(output_path):
     chart_js = (TEMPLATES_DIR / "chart.min.js").read_text()
     datalabels_js = (TEMPLATES_DIR / "datalabels.min.js").read_text()
 
-    # Build chart configs as JS
-    charts_js_parts = []
+    conn = get_db()
+    conn.row_factory = None
+    cur = conn.execute
+
+    payload = {"modules": {}, "data_through": {}}
     for mod in MODULES:
         mid = mod["id"]
-        mod_data = payload["modules"].get(mid, {})
-        obs = mod_data.get("observations", {})
-        series_list = mod_data.get("series", [])
+        prefix = mod["prefix"]
+        # Series list
+        rows = cur("SELECT series_id,display_name,series_type,unit FROM series WHERE module=? ORDER BY series_id",
+                   (mod["sheet"],)).fetchall()
+        series_list = [{"id": r[0], "name": r[1] or r[0], "type": r[2], "unit": r[3] or ""} for r in rows]
+        # Observations
+        obs = {}
+        data_through = ""
+        for r in rows:
+            sid = r[0]
+            pts = cur("SELECT date,value FROM observations WHERE series_id=? AND value IS NOT NULL AND value!=0 ORDER BY date",
+                      (sid,)).fetchall()
+            obs[sid] = [[p[0], p[1]] for p in pts]
+            if pts:
+                data_through = max(data_through, pts[-1][0]) if data_through else pts[-1][0]
+        payload["modules"][mid] = {"series": series_list, "observations": obs}
+        payload["data_through"][mid] = data_through
 
-        if mod.get("charts"):
-            # Use predefined charts
-            chart_configs = []
-            for ch in mod["charts"]:
-                # Check data availability
-                available = []
-                for s in ch["series"]:
-                    if s["id"] in obs and len(obs[s["id"]]) > 0:
-                        available.append(s)
-                if available:
-                    chart_configs.append({"id": ch["id"], "title": ch["title"], "type": ch["type"], "series": available})
-            charts_js_parts.append(f'  "{mid}": {json.dumps(chart_configs, ensure_ascii=False)}')
-        else:
-            # Auto-discover: pick first 4-6 raw series
-            raw_sids = [s["id"] for s in series_list if s["type"] == "raw" and s["id"] in obs and len(obs.get(s["id"], [])) > 10]
-            auto_charts = []
-            color_keys = ["blue", "red", "green", "orange", "purple"]
-            for i, sid in enumerate(raw_sids[:6]):
-                s_info = next((s for s in series_list if s["id"] == sid), None)
-                auto_charts.append({
-                    "id": f"auto-{i}",
-                    "title": s_info["name"][:60] if s_info else sid,
-                    "type": "line",
-                    "series": [{"id": sid, "label": s_info["name"][:40] if s_info else sid, "color": color_keys[i % len(color_keys)]}]
-                })
-            charts_js_parts.append(f'  "{mid}": {json.dumps(auto_charts, ensure_ascii=False)}')
+    conn.close()
 
-    chart_configs_js = "{\n" + ",\n".join(charts_js_parts) + "\n}"
-
-    # Pre-serialize JS data to avoid f-string brace escaping issues
-    modules_js = json.dumps([{"id": m["id"], "name": m["name"], "sheet": m["sheet"], "prefix": m["prefix"]} for m in MODULES], ensure_ascii=False)
+    # Serialize for JS embedding
+    mods_js = json.dumps([{"id":m["id"],"name":m["name"],"sheet":m["sheet"],"prefix":m["prefix"]} for m in MODULES], ensure_ascii=False)
     payload_js = json.dumps(payload, ensure_ascii=False)
-    colors_js = json.dumps(COLORS_JS)
+    chart_configs = {}
+    for mod in MODULES:
+        chart_configs[mod["id"]] = mod["charts"]
+    chart_configs_js = json.dumps(chart_configs, ensure_ascii=False)
 
     html = f'''<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>FX Flow Dashboard — 结售汇与跨境资金流</title>
 <style>
-* {{ margin: 0; padding: 0; box-sizing: border-box; }}
-body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f0f2f5; color: #333; }}
-
-/* Header */
-.header {{ background: linear-gradient(135deg, #0d1b3e 0%, #1a3365 50%, #264785 100%); color: white; padding: 20px 32px; position: sticky; top: 0; z-index: 100; }}
-.header h1 {{ font-size: 22px; font-weight: 600; letter-spacing: 0.5px; }}
-.header .meta {{ font-size: 12px; opacity: 0.75; margin-top: 4px; display: flex; gap: 20px; flex-wrap: wrap; }}
-.header .meta span {{ white-space: nowrap; }}
-
-/* Controls bar */
-.controls-bar {{ background: white; padding: 12px 24px; border-bottom: 1px solid #e0e0e0; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }}
-.controls-bar label {{ font-size: 13px; color: #666; font-weight: 500; }}
-.controls-bar select {{ padding: 6px 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px; background: white; }}
-.range-preset {{ padding: 5px 12px; border: 1px solid #ddd; border-radius: 16px; background: white; cursor: pointer; font-size: 12px; transition: all 0.15s; }}
-.range-preset:hover {{ background: #e8eaf6; border-color: #3949ab; }}
-.range-preset.active {{ background: #3949ab; color: white; border-color: #3949ab; }}
-
-/* Navigation */
-.nav {{ display: flex; gap: 2px; padding: 8px 24px; background: white; border-bottom: 2px solid #e0e0e0; overflow-x: auto; }}
-.nav-btn {{ padding: 8px 14px; border: none; border-bottom: 2px solid transparent; background: transparent; cursor: pointer; font-size: 13px; white-space: nowrap; color: #666; transition: all 0.2s; margin-bottom: -2px; }}
-.nav-btn:hover {{ color: #3949ab; }}
-.nav-btn.active {{ color: #3949ab; border-bottom-color: #3949ab; font-weight: 600; }}
-
-/* Module panels */
-.module {{ display: none; padding: 24px; }}
-.module.active {{ display: block; }}
-.module-title {{ font-size: 20px; font-weight: 700; margin-bottom: 8px; color: #0d1b3e; }}
-.module-subtitle {{ font-size: 13px; color: #999; margin-bottom: 20px; }}
-
-/* Charts grid */
-.charts-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(460px, 1fr)); gap: 16px; }}
-.chart-card {{ background: white; border-radius: 10px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); transition: box-shadow 0.2s; }}
-.chart-card:hover {{ box-shadow: 0 2px 12px rgba(0,0,0,0.1); }}
-.chart-card h3 {{ font-size: 14px; font-weight: 600; margin-bottom: 8px; color: #555; }}
-.chart-card .chart-wrap {{ position: relative; height: 300px; }}
-.chart-card .chart-wrap canvas {{ width: 100% !important; height: 100% !important; }}
-.chart-card .chart-actions {{ display: flex; gap: 8px; margin-top: 8px; justify-content: flex-end; }}
-.chart-card .chart-actions button {{ padding: 4px 10px; border: 1px solid #ddd; border-radius: 4px; background: white; cursor: pointer; font-size: 11px; color: #888; }}
-.chart-card .chart-actions button:hover {{ background: #f5f5f5; color: #333; }}
-
-/* Summary table */
-.summary-section {{ margin-top: 24px; }}
-.summary-section h3 {{ font-size: 16px; font-weight: 600; margin-bottom: 12px; color: #0d1b3e; }}
-.data-table {{ width: 100%; border-collapse: collapse; font-size: 13px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }}
-.data-table th, .data-table td {{ padding: 8px 14px; text-align: right; border-bottom: 1px solid #f0f0f0; }}
-.data-table th {{ background: #f8f9fa; color: #555; font-weight: 600; font-size: 12px; text-transform: uppercase; }}
-.data-table td:first-child, .data-table th:first-child {{ text-align: left; }}
-.data-table tr:hover {{ background: #fafbfc; }}
-
-/* Placeholder */
-.placeholder {{ padding: 60px 20px; text-align: center; color: #aaa; font-size: 16px; background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }}
-.placeholder .icon {{ font-size: 40px; margin-bottom: 12px; }}
-
-/* Footer */
-.footer {{ padding: 16px 32px; text-align: center; color: #999; font-size: 11px; border-top: 1px solid #e0e0e0; margin-top: 40px; }}
+*{{margin:0;padding:0;box-sizing:border-box}}
+body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;background:#f0f2f5;color:#333}}
+.nav{{display:flex;gap:2px;padding:8px 24px;background:white;border-bottom:2px solid #e0e0e0;overflow-x:auto;position:sticky;top:0;z-index:100}}
+.nav-btn{{padding:6px 14px;border:1px solid #ddd;border-radius:4px;background:white;cursor:pointer;font-size:12px;white-space:nowrap;transition:all .2s}}
+.nav-btn:hover{{background:#1a3a5c;color:white;border-color:#1a3a5c}}
+.nav-btn.active{{background:#1a3a5c;color:white;border-color:#1a3a5c}}
+.module{{display:none;padding:20px 24px}}
+.module.active{{display:block}}
+.module-title{{font-size:20px;font-weight:700;color:#1a3a5c;margin-bottom:4px}}
+.module-subtitle{{font-size:12px;color:#999;margin-bottom:16px}}
+.charts-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:16px}}
+.chart-card{{background:white;border-radius:8px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,0.08)}}
+.chart-card h3{{font-size:13px;color:#666;margin-bottom:2px}}
+.chart-card .chart-subtitle{{font-size:11px;color:#bbb;margin-bottom:8px}}
+.chart-wrap{{position:relative;height:300px}}
+.chart-wrap canvas{{width:100%!important;height:100%!important}}
+.chart-actions{{display:flex;gap:8px;margin-top:8px}}
+.chart-actions button{{padding:4px 10px;border:1px solid #ddd;border-radius:4px;background:white;cursor:pointer;font-size:11px;color:#666}}
+.chart-actions button:hover{{background:#f5f5f5}}
+.placeholder{{text-align:center;padding:40px;color:#bbb}}
+.placeholder .icon{{font-size:40px;margin-bottom:8px}}
+.range-bar{{display:flex;gap:4px;padding:0 24px 12px}}
+.range-preset{{padding:4px 12px;border:1px solid #ddd;border-radius:4px;background:white;cursor:pointer;font-size:11px;color:#666}}
+.range-preset:hover,.range-preset.active{{background:#1a3a5c;color:white;border-color:#1a3a5c}}
+.summary-section{{margin-top:20px;background:white;border-radius:8px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,0.08)}}
+.summary-section h3{{font-size:13px;color:#666;margin-bottom:8px}}
+.data-table{{width:100%;border-collapse:collapse;font-size:12px}}
+.data-table th,.data-table td{{padding:6px 10px;border-bottom:1px solid #f0f0f0;text-align:left}}
+.data-table th{{font-weight:600;color:#999;font-size:11px}}
+.data-table td b{{color:#1a3a5c}}
+@@media(max-width:768px){{.charts-grid{{grid-template-columns:1fr}}}}
 </style>
 </head>
 <body>
-
-<div class="header">
-  <h1>结售汇与跨境资金流看板</h1>
-  <div class="meta">
-    <span>📅 数据截至：<b id="data-through">—</b></span>
-    <span>🕐 生成：{payload["generated_at"][:19]}</span>
-    <span>📊 数据源：SQLite (Excel 种子)</span>
-  </div>
+<div class="nav" id="nav-bar"></div>
+<div class="range-bar">
+    <span style="font-size:11px;color:#999;line-height:24px;margin-right:4px">时间范围:</span>
+    <button class="range-preset active" data-range="all">全部</button>
+    <button class="range-preset" data-range="5y">5年</button>
+    <button class="range-preset" data-range="3y">3年</button>
+    <button class="range-preset" data-range="1y">1年</button>
+    <button class="range-preset" data-range="ytd">YTD</button>
+    <span style="margin-left:auto;font-size:12px;color:#999">点击图表下方按钮导出图片/数据</span>
 </div>
+<div id="modules-container"></div>
 
-<div class="controls-bar">
-  <label>时间范围：</label>
-  <button class="range-preset active" data-range="all">全部</button>
-  <button class="range-preset" data-range="5y">5年</button>
-  <button class="range-preset" data-range="3y">3年</button>
-  <button class="range-preset" data-range="1y">1年</button>
-  <button class="range-preset" data-range="ytd">年初至今</button>
-  <span style="margin-left:auto;font-size:12px;color:#999">💡 点击图表下方按钮导出图片/数据</span>
-</div>
-
-<div class="nav" id="nav"></div>
-<div id="modules"></div>
-<div class="footer">FX Flow Dashboard · SQLite → Python 复算 → Chart.js 渲染 · 离线可用</div>
-
+<script>{chart_js}</script>
+<script>{datalabels_js}</script>
 <script>
-/* ---- Chart.js ---- */
-{chart_js}
-
-/* ---- Chart.js Datalabels Plugin ---- */
-{datalabels_js}
-
-/* ---- Data ---- */
 const DATA = {payload_js};
-const MODULES = {modules_js};
+const MODULES = {mods_js};
 const CHART_CONFIGS = {chart_configs_js};
-const C = {colors_js};
-
-Chart.register(ChartDataLabels);
-
-// State
 let currentRange = 'all';
-let chartInstances = {{}};
+{COLORS_JS}
 
-// Navigation
-function buildNav() {{
-    const nav = document.getElementById('nav');
-    MODULES.forEach((m, i) => {{
-        const btn = document.createElement('button');
-        btn.className = 'nav-btn' + (i === 0 ? ' active' : '');
-        btn.textContent = m.name;
-        btn.onclick = () => switchModule(m.id, btn);
-        nav.appendChild(btn);
+// ── range filter ──────────────────────────────────────
+function filterByRange(dates) {{
+    if (currentRange === 'all' || !dates.length) return dates;
+    const last = dates[dates.length-1][0];
+    const lastDt = new Date(last);
+    let cutoff;
+    if (currentRange === '5y') {{ cutoff = new Date(lastDt); cutoff.setFullYear(cutoff.getFullYear()-5); }}
+    else if (currentRange === '3y') {{ cutoff = new Date(lastDt); cutoff.setFullYear(cutoff.getFullYear()-3); }}
+    else if (currentRange === '1y') {{ cutoff = new Date(lastDt); cutoff.setFullYear(cutoff.getFullYear()-1); }}
+    else if (currentRange === 'ytd') {{ cutoff = new Date(lastDt.getFullYear(), 0, 1); }}
+    else return dates;
+    const cs = cutoff.toISOString().slice(0,10);
+    return dates.filter(d => d[0] >= cs);
+}}
+
+// ── chart builder ─────────────────────────────────────
+function computeOLS(points) {{
+    // points: [{{x, y}}]; returns {{slope, intercept, r, n}}
+    const n = points.length;
+    if (n < 2) return null;
+    let sx=0, sy=0, sxy=0, sxx=0, syy=0;
+    points.forEach(p => {{ sx+=p.x; sy+=p.y; sxy+=p.x*p.y; sxx+=p.x*p.x; syy+=p.y*p.y; }});
+    const denom = (n*sxx - sx*sx);
+    if (denom === 0) return null;
+    const slope = (n*sxy - sx*sy) / denom;
+    const intercept = (sy - slope*sx) / n;
+    const rDenom = Math.sqrt((n*sxx - sx*sx) * (n*syy - sy*sy));
+    const r = rDenom === 0 ? 0 : (n*sxy - sx*sy) / rDenom;
+    return {{ slope, intercept, r, n }};
+}}
+
+function buildScatterConfig(ch, obs) {{
+    // Pair x and y series by date
+    const xs = obs[ch.scatter_x.series_id] || [];
+    const ys = obs[ch.scatter_y.series_id] || [];
+    const xMap = {{}}; xs.forEach(p => xMap[p[0]] = p[1]);
+    const yMap = {{}}; ys.forEach(p => yMap[p[0]] = p[1]);
+    let points = [];
+    Object.keys(xMap).forEach(d => {{
+        if (d in yMap) points.push({{ x: xMap[d], y: yMap[d], date: d }});
     }});
-}}
-
-function buildModules() {{
-    const container = document.getElementById('modules');
-    MODULES.forEach((m, i) => {{
-        const div = document.createElement('div');
-        div.className = 'module' + (i === 0 ? ' active' : '');
-        div.id = 'module-' + m.id;
-        container.appendChild(div);
-    }});
-}}
-
-function switchModule(id, btn) {{
-    document.querySelectorAll('.module').forEach(el => el.classList.remove('active'));
-    document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
-    const mod = document.getElementById('module-' + id);
-    if (mod) mod.classList.add('active');
-    if (btn) btn.classList.add('active');
-    if (!mod.dataset.rendered) renderModule(id, mod);
-    updateDataThrough(id);
-}}
-
-function updateDataThrough(id) {{
-    const latest = DATA.data_through[id];
-    if (latest) document.getElementById('data-through').textContent = latest;
-}}
-
-// Range filtering
-function getDateRange() {{
-    const now = new Date();
-    switch(currentRange) {{
-        case '5y': return new Date(now.getFullYear() - 5, 0, 1).toISOString().slice(0,10);
-        case '3y': return new Date(now.getFullYear() - 3, 0, 1).toISOString().slice(0,10);
-        case '1y': return new Date(now.getFullYear() - 1, now.getMonth(), 1).toISOString().slice(0,10);
-        case 'ytd': return new Date(now.getFullYear(), 0, 1).toISOString().slice(0,10);
-        default: return null;
+    // Apply range filter by date
+    if (currentRange !== 'all' && points.length) {{
+        const sorted = points.map(p => [p.date, 0]).sort();
+        const allowed = new Set(filterByRange(sorted).map(p => p[0]));
+        points = points.filter(p => allowed.has(p.date));
     }}
-}}
+    if (points.length < 3) return null;
 
-function filterData(data, minDate) {{
-    if (!minDate || !data) return data;
-    return data.filter(p => p[0] >= minDate);
-}}
+    const ols = computeOLS(points);
+    // Build regression line endpoints
+    const xVals = points.map(p => p.x);
+    const xMin = Math.min(...xVals), xMax = Math.max(...xVals);
+    const regLine = ols ? [
+        {{ x: xMin, y: ols.slope*xMin + ols.intercept }},
+        {{ x: xMax, y: ols.slope*xMax + ols.intercept }},
+    ] : [];
 
-// Chart rendering
-function commonOptions(yLabel) {{
+    const subtitle = ols ?
+        ('n=' + ols.n + ' · r=' + ols.r.toFixed(3) + ' · R²=' + (ols.r*ols.r).toFixed(3) +
+         ' · y=' + ols.slope.toFixed(2) + 'x+' + ols.intercept.toFixed(1)) : '';
+
     return {{
-        responsive: true,
-        maintainAspectRatio: false,
-        animation: {{ duration: 300 }},
-        interaction: {{ mode: 'index', intersect: false }},
-        plugins: {{
-            legend: {{ position: 'top', labels: {{ usePointStyle: true, padding: 16, font: {{ size: 12 }} }} }},
-            tooltip: {{ callbacks: {{ label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString(undefined, {{minimumFractionDigits: 1, maximumFractionDigits: 2}}) }} }},
-            datalabels: {{ display: false }},
+        config: {{
+            type: 'scatter',
+            data: {{
+                datasets: [
+                    {{ label: '观测点', data: points, backgroundColor: hexToRgba('#1a3a5c', 0.45),
+                       pointRadius: 3, pointHoverRadius: 5, type: 'scatter' }},
+                    {{ label: 'OLS回归线', data: regLine, type: 'line', borderColor: '#c0392b',
+                       borderWidth: 2, pointRadius: 0, fill: false }},
+                ]
+            }},
+            options: {{
+                responsive: true, maintainAspectRatio: false,
+                animation: {{ duration: 300 }},
+                plugins: {{
+                    legend: {{ position: 'top', labels: {{ usePointStyle: true, padding: 12, font: {{ size: 11 }} }} }},
+                    tooltip: {{ callbacks: {{ label: ctx => '(' + ctx.parsed.x.toFixed(2) + ', ' + ctx.parsed.y.toFixed(1) + ')' }} }},
+                    datalabels: {{ display: false }},
+                }},
+                scales: {{
+                    x: {{ type: 'linear', title: {{ display: true, text: ch.scatter_x.label, font: {{ size: 11 }} }},
+                          grid: {{ color: 'rgba(0,0,0,0.05)' }} }},
+                    y: {{ title: {{ display: true, text: ch.scatter_y.label, font: {{ size: 11 }} }},
+                          grid: {{ color: 'rgba(0,0,0,0.05)' }} }},
+                }},
+            }},
         }},
-        scales: {{
-            x: {{ grid: {{ color: 'rgba(0,0,0,0.05)' }}, ticks: {{ maxTicksLimit: 10, maxRotation: 0, font: {{ size: 11 }} }} }},
-            y: {{ grid: {{ color: 'rgba(0,0,0,0.05)' }}, title: {{ display: !!yLabel, text: yLabel || '', font: {{ size: 12 }} }} }},
-        }},
+        subtitle: subtitle,
     }};
 }}
 
-function makeDataset(data, label, colorKey, chartType) {{
-    const color = C[colorKey] || C.blue;
-    const bgColor = C[colorKey + '_bg'] || C.blue_bg;
+function buildChartConfig(ch, obs) {{
+    const datasets = [];
+    let hasRightAxis = false;
+
+    // Build a unified sorted label axis from all series in this chart
+    const labelSet = new Set();
+    ch.series.forEach(s => {{
+        const data = obs[s.id];
+        if (!data) return;
+        filterByRange(data).forEach(p => labelSet.add(p[0]));
+    }});
+    const labels = Array.from(labelSet).sort();
+    if (!labels.length) return null;
+    const labelIdx = {{}}; labels.forEach((l, i) => labelIdx[l] = i);
+
+    ch.series.forEach(s => {{
+        const data = obs[s.id];
+        if (!data || !data.length) return;
+        const filtered = filterByRange(data);
+        if (!filtered.length) return;
+        const valMap = {{}}; filtered.forEach(p => valMap[p[0]] = p[1]);
+        // Align to label axis (null for missing — no future placeholder zeros)
+        const aligned = labels.map(l => l in valMap ? valMap[l] : null);
+
+        const color = s.color || '#1a3a5c';
+        const ds = {{
+            label: s.label, data: aligned,
+            borderColor: color, backgroundColor: s.type === 'bar' ? hexToRgba(color, 0.6) : hexToRgba(color, 0.1),
+            borderWidth: s.type === 'bar' ? 0 : 2, pointRadius: 0, pointHoverRadius: 4,
+            tension: 0.05, fill: false, spanGaps: true,
+        }};
+
+        if (s.type === 'bar') {{
+            ds.type = 'bar';
+            if (s.stack) ds.stack = s.stack;
+            ds.order = 1;
+        }} else {{
+            ds.type = 'line';
+            ds.order = 0;
+        }}
+
+        if (s.axis === 'right') {{ ds.yAxisID = 'y1'; hasRightAxis = true; }}
+        datasets.push(ds);
+    }});
+
+    if (!datasets.length) return null;
+
     const config = {{
-        label, data, borderColor: color, backgroundColor: bgColor,
-        borderWidth: 2, pointRadius: 0, pointHoverRadius: 4, tension: 0.05,
-        type: chartType || 'line', fill: chartType === 'bar' ? false : true,
+        type: 'bar', data: {{ labels, datasets }},
+        options: {{
+            responsive: true, maintainAspectRatio: false,
+            animation: {{ duration: 300 }},
+            interaction: {{ mode: 'index', intersect: false }},
+            plugins: {{
+                legend: {{ position: 'top', labels: {{ usePointStyle: true, padding: 12, font: {{ size: 11 }} }} }},
+                tooltip: {{ callbacks: {{ label: ctx => ctx.dataset.label + ': ' + (ctx.parsed.y==null?'—':ctx.parsed.y.toLocaleString(undefined, {{maximumFractionDigits: 2}})) }} }},
+                datalabels: {{ display: false }},
+            }},
+            scales: {{
+                x: {{ type: 'category',
+                      grid: {{ color: 'rgba(0,0,0,0.05)' }},
+                      ticks: {{ maxTicksLimit: 10, maxRotation: 0, autoSkip: true, font: {{ size: 10 }},
+                                callback: function(val, i) {{ const l = this.getLabelForValue(val); return l ? l.slice(0,7) : l; }} }} }},
+                y: {{ grid: {{ color: 'rgba(0,0,0,0.05)' }},
+                      title: {{ display: true, text: '亿美元', font: {{ size: 11 }} }} }},
+            }},
+        }},
     }};
-    if (chartType === 'bar') {{
-        config.backgroundColor = bgColor;
-        config.borderColor = color;
+
+    if (ch.zero_line) {{
+        config.options.scales.y.beginAtZero = false;
+        config.options.scales.y.grid.color = (ctx) => ctx.tick.value === 0 ? 'rgba(0,0,0,0.4)' : 'rgba(0,0,0,0.05)';
     }}
+
+    if (hasRightAxis) {{
+        config.options.scales.y1 = {{
+            position: 'right', grid: {{ drawOnChartArea: false }},
+            title: {{ display: true, text: '右轴', font: {{ size: 11 }} }},
+        }};
+    }}
+
+    if (ch.y_min !== undefined && ch.y_min !== null) config.options.scales.y.min = ch.y_min;
+    if (ch.y_max !== undefined && ch.y_max !== null) config.options.scales.y.max = ch.y_max;
+
     return config;
 }}
 
+// ── render ────────────────────────────────────────────
 function renderModule(id, modEl) {{
     modEl.dataset.rendered = '1';
     const modData = DATA.modules[id];
     const modInfo = MODULES.find(m => m.id === id);
-
     if (!modData || !modData.series.length) {{
-        modEl.innerHTML = '<div class="placeholder"><div class="icon">📭</div><p>数据尚未导入</p><p style="font-size:13px;color:#ccc">模块: ' + (modInfo ? modInfo.name : id) + '</p></div>';
+        modEl.innerHTML = '<div class="placeholder"><div class="icon">📭</div><p>数据尚未导入</p></div>';
         return;
     }}
 
@@ -392,103 +387,87 @@ function renderModule(id, modEl) {{
     const charts = CHART_CONFIGS[id] || [];
 
     let html = '<div class="module-title">' + (modInfo ? modInfo.name : id) + '</div>';
-    html += '<div class="module-subtitle">' + modData.series.length + ' 个序列 · 数据截至 ' + (DATA.data_through[id] || 'N/A') + '</div>';
+    html += '<div class="module-subtitle">' + modData.series.length + ' 序列 · 数据截至 ' + (DATA.data_through[id] || 'N/A') + '</div>';
 
-    if (charts.length === 0) {{
-        html += '<div class="placeholder"><div class="icon">📋</div><p>图表配置待添加</p></div>';
+    if (!charts.length) {{
+        html += '<div class="placeholder"><div class="icon">📋</div><p>图表配置待添加</p><p style="font-size:12px;color:#ddd">编辑 config/chart_catalog.json 添加图表定义</p></div>';
     }} else {{
         html += '<div class="charts-grid">';
         charts.forEach(ch => {{
-            const chartId = 'chart-' + id + '-' + ch.id;
+            const cid = 'chart-' + id + '-' + ch.id;
             html += '<div class="chart-card">';
             html += '<h3>' + ch.title + '</h3>';
-            html += '<div class="chart-wrap"><canvas id="' + chartId + '"></canvas></div>';
+            if (ch.subtitle) html += '<div class="chart-subtitle">' + ch.subtitle + '</div>';
+            html += '<div class="chart-wrap"><canvas id="' + cid + '"></canvas></div>';
             html += '<div class="chart-actions">';
-            html += '<button onclick="exportChartImage(\'' + chartId + '\', \'' + ch.title.replace(/'/g, "\\'") + '\')">📷 导出图片</button>';
-            html += '<button onclick="exportChartData(\'' + chartId + '\', \'' + ch.title.replace(/'/g, "\\'") + '\')">📥 下载数据</button>';
-            html += '</div>';
-            html += '</div>';
+            html += '<button data-export="png" data-chart-id="' + cid + '" data-chart-title="' + ch.title.replace(/"/g, '&quot;') + '">📷 导出图片</button>';
+            html += '<button data-export="csv" data-chart-id="' + cid + '" data-chart-title="' + ch.title.replace(/"/g, '&quot;') + '">📥 下载数据</button>';
+            html += '</div></div>';
         }});
         html += '</div>';
     }}
 
-    // Summary table
+    // Summary table — top 8 raw series
     const keySeries = modData.series.filter(s => s.type === 'raw' && obs[s.id] && obs[s.id].length > 1).slice(0, 10);
-    if (keySeries.length > 0) {{
-        html += '<div class="summary-section"><h3>最新数据摘要</h3><table class="data-table"><thead><tr><th>指标</th><th>最新值</th><th>前值</th><th>环比变化</th><th>日期</th></tr></thead><tbody>';
+    if (keySeries.length) {{
+        html += '<div class="summary-section"><h3>核心指标摘要</h3><table class="data-table"><thead><tr><th>指标</th><th>最新值</th><th>前值</th><th>变化</th><th>日期</th></tr></thead><tbody>';
         keySeries.forEach(s => {{
-            const data = obs[s.id];
-            if (!data || data.length < 2) return;
-            const latest = data[data.length - 1];
-            const prev = data[data.length - 2];
-            const pctChange = prev[1] !== 0 ? ((latest[1] - prev[1]) / Math.abs(prev[1]) * 100) : 0;
-            const arrow = pctChange > 0 ? '↑' : pctChange < 0 ? '↓' : '→';
-            const color = pctChange > 0 ? '#e74c3c' : pctChange < 0 ? '#27ae60' : '#999';
-            html += '<tr><td>' + s.name + '</td><td><b>' + latest[1].toLocaleString(undefined, {{maximumFractionDigits: 2}}) + '</b></td><td>' + prev[1].toLocaleString(undefined, {{maximumFractionDigits: 2}}) + '</td><td style="color:' + color + '">' + arrow + ' ' + Math.abs(pctChange).toFixed(2) + '%</td><td>' + latest[0] + '</td></tr>';
+            const d = obs[s.id]; if (!d || d.length < 2) return;
+            const latest = d[d.length-1], prev = d[d.length-2];
+            const chg = prev[1] !== 0 ? ((latest[1]-prev[1])/Math.abs(prev[1])*100) : 0;
+            const arrow = chg > 0 ? '↑' : chg < 0 ? '↓' : '→';
+            html += '<tr><td>' + s.name + '</td><td><b>' + latest[1].toLocaleString(undefined, {{maximumFractionDigits:1}}) + '</b></td><td>' + prev[1].toLocaleString(undefined, {{maximumFractionDigits:1}}) + '</td><td style="color:' + (chg>0?'#e74c3c':chg<0?'#27ae60':'#999') + '">' + arrow + ' ' + Math.abs(chg).toFixed(1) + '%</td><td>' + latest[0] + '</td></tr>';
         }});
         html += '</tbody></table></div>';
     }}
 
     modEl.innerHTML = html;
 
-    // Render charts
-    const minDate = getDateRange();
-    charts.forEach(ch => {{
-        const chartId = 'chart-' + id + '-' + ch.id;
-        const canvas = document.getElementById(chartId);
-        if (!canvas) return;
-
-        // Build datasets
-        const allLabels = new Set();
-        const datasets = [];
-        ch.series.forEach(s => {{
-            const rawData = obs[s.id];
-            if (!rawData) return;
-            const filtered = filterData(rawData, minDate);
-            if (filtered.length === 0) return;
-            filtered.forEach(p => allLabels.add(p[0]));
-            datasets.push({{
-                data: filtered,
-                label: s.label,
-                color: s.color,
-                type: ch.type,
-            }});
+    // Render charts AFTER DOM is set
+    setTimeout(() => {{
+        charts.forEach(ch => {{
+            const cid = 'chart-' + id + '-' + ch.id;
+            const canvas = document.getElementById(cid);
+            if (!canvas) return;
+            let config, subtitleOverride = null;
+            if (ch.scatter) {{
+                const sc = buildScatterConfig(ch, obs);
+                if (!sc) return;
+                config = sc.config;
+                subtitleOverride = sc.subtitle;
+            }} else {{
+                config = buildChartConfig(ch, obs);
+            }}
+            if (!config) return;
+            const inst = new Chart(canvas, config);
+            canvas._chartInstance = inst;
+            canvas._chartTitle = ch.title;
+            if (ch.scatter) {{
+                canvas._chartData = {{ scatter: true, datasets: config.data.datasets.map(ds => ({{ label: ds.label, data: ds.data.map(p => [p.x, p.y]) }})) }};
+            }} else {{
+                canvas._chartData = {{ labels: config.data.labels, datasets: config.data.datasets.map(ds => ({{ label: ds.label, data: ds.data }})) }};
+            }}
+            // Update subtitle for scatter (shows n, r, R²)
+            if (subtitleOverride) {{
+                const card = canvas.closest('.chart-card');
+                if (card) {{
+                    let sub = card.querySelector('.chart-subtitle');
+                    if (!sub) {{ sub = document.createElement('div'); sub.className = 'chart-subtitle'; card.querySelector('h3').after(sub); }}
+                    sub.textContent = subtitleOverride;
+                }}
+            }}
         }});
-
-        if (datasets.length === 0) return;
-
-        const labels = Array.from(allLabels).sort();
-
-        // Build Chart.js data
-        const chartDatasets = datasets.map(ds => {{
-            const dataMap = {{}};
-            ds.data.forEach(p => {{ dataMap[p[0]] = p[1]; }});
-            const values = labels.map(l => dataMap[l] !== undefined ? dataMap[l] : null);
-            return makeDataset(values, ds.label, ds.color, ds.type);
-        }});
-
-        const ctx = canvas.getContext('2d');
-        const inst = new Chart(ctx, {{
-            type: ch.type || 'line',
-            data: {{ labels, datasets: chartDatasets }},
-            options: commonOptions(null),
-        }});
-
-        // Store for export
-        canvas._chartInstance = inst;
-        canvas._chartTitle = ch.title;
-        canvas._chartData = {{ labels, datasets: datasets.map(ds => ({{ label: ds.label, data: ds.data }})) }};
-    }});
+    }}, 0);
 }}
 
-// Export functions
+// ── export ────────────────────────────────────────────
 function exportChartImage(chartId, title) {{
     const canvas = document.getElementById(chartId);
     if (!canvas) return;
     canvas.toBlob(blob => {{
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
-        a.href = url; a.download = (title || 'chart') + '.png'; a.click();
+        a.href = url; a.download = (title||'chart') + '.png'; a.click();
         URL.revokeObjectURL(url);
     }}, 'image/png', 2);
 }}
@@ -497,26 +476,57 @@ function exportChartData(chartId, title) {{
     const canvas = document.getElementById(chartId);
     if (!canvas || !canvas._chartData) return;
     const cd = canvas._chartData;
-
-    // Build CSV
-    let csv = '\\uFEFFDate';
-    cd.datasets.forEach(ds => csv += ',' + ds.label);
-    csv += '\\n';
-    cd.labels.forEach((label, i) => {{
-        csv += label;
+    let csv;
+    if (cd.scatter) {{
+        // scatter: x,y pairs per dataset
+        csv = '\\uFEFF';
         cd.datasets.forEach(ds => {{
-            const point = ds.data.find(p => p[0] === label);
-            csv += ',' + (point ? point[1] : '');
+            csv += ds.label + '_x,' + ds.label + '_y\\n';
+            ds.data.forEach(p => {{ csv += p[0] + ',' + p[1] + '\\n'; }});
+            csv += '\\n';
         }});
+    }} else {{
+        // category: shared labels axis, aligned arrays
+        const labels = cd.labels || [];
+        csv = '\\uFEFFDate';
+        cd.datasets.forEach(ds => csv += ',' + ds.label);
         csv += '\\n';
-    }});
-
+        labels.forEach((label, i) => {{
+            csv += label;
+            cd.datasets.forEach(ds => {{
+                const v = ds.data[i];
+                csv += ',' + (v == null ? '' : v);
+            }});
+            csv += '\\n';
+        }});
+    }}
     const blob = new Blob([csv], {{ type: 'text/csv;charset=utf-8' }});
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
-    a.href = url; a.download = (title || 'data') + '.csv'; a.click();
+    a.href = url; a.download = (title||'data') + '.csv'; a.click();
     URL.revokeObjectURL(url);
 }}
+
+// ── nav & events ──────────────────────────────────────
+function switchModule(id, btn) {{
+    document.querySelectorAll('.module').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
+    const mod = document.getElementById('module-' + id);
+    if (mod) mod.classList.add('active');
+    if (btn) btn.classList.add('active');
+    if (mod && !mod.dataset.rendered) renderModule(id, mod);
+}}
+
+// Export delegated handler
+document.addEventListener('click', e => {{
+    const btn = e.target.closest('[data-export]');
+    if (!btn) {{}}
+    else {{
+        const et = btn.dataset.export, cid = btn.dataset.chartId, t = btn.dataset.chartTitle || 'chart';
+        if (et === 'png') exportChartImage(cid, t);
+        else if (et === 'csv') exportChartData(cid, t);
+    }}
+}});
 
 // Range presets
 document.addEventListener('click', e => {{
@@ -524,22 +534,22 @@ document.addEventListener('click', e => {{
         document.querySelectorAll('.range-preset').forEach(b => b.classList.remove('active'));
         e.target.classList.add('active');
         currentRange = e.target.dataset.range;
-        // Re-render all visible modules
         document.querySelectorAll('.module.active').forEach(mod => {{
             mod.dataset.rendered = '';
-            const id = mod.id.replace('module-', '');
-            renderModule(id, mod);
+            renderModule(mod.id.replace('module-', ''), mod);
         }});
     }}
 }});
 
 // Init
 document.addEventListener('DOMContentLoaded', () => {{
-    buildNav();
-    buildModules();
-    updateDataThrough(MODULES[0].id);
-    const firstMod = document.getElementById('module-' + MODULES[0].id);
-    if (firstMod) renderModule(MODULES[0].id, firstMod);
+    const nav = document.getElementById('nav-bar');
+    const container = document.getElementById('modules-container');
+    MODULES.forEach((m, i) => {{
+        nav.innerHTML += '<button class="nav-btn' + (i===0?' active':'') + '" onclick="switchModule(\\'' + m.id + '\\',this)">' + m.name + '</button>';
+        container.innerHTML += '<div class="module' + (i===0?' active':'') + '" id="module-' + m.id + '"></div>';
+    }});
+    if (MODULES.length) switchModule(MODULES[0].id, nav.querySelector('.nav-btn'));
 }});
 </script>
 </body>
@@ -547,38 +557,11 @@ document.addEventListener('DOMContentLoaded', () => {{
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(html, encoding='utf-8')
+    size_kb = round(len(html) / 1024)
+    print(f"Done: {output_path} ({size_kb} KB)")
     return output_path
 
 
-def main():
-    conn = get_db()
-
-    # Ensure derived series exist
-    from recompute_derived import recompute_all, start_update_run, finish_update_run
-    run_id = start_update_run(conn, 0)
-    print("Recomputing all derived indicators...")
-    recompute_all(conn, run_id)
-    finish_update_run(conn, run_id, "completed", successful=88, new_obs=0)
-
-    print("\nBuilding data payload...")
-    payload = build_payload(conn)
-
-    for mod in MODULES:
-        mid = mod["id"]
-        mod_data = payload["modules"].get(mid, {})
-        n_series = len(mod_data.get("series", []))
-        latest = payload["data_through"].get(mid, "N/A")
-        print(f"  {mid}: {n_series} series, through {latest}")
-
-    output_path = REPORTS_DIR / "fx_flow_dashboard.html"
-    print(f"\nGenerating: {output_path}")
-    generate_html(payload, output_path)
-
-    size_kb = output_path.stat().st_size / 1024
-    print(f"Done: {output_path} ({size_kb:,.0f} KB)")
-
-    conn.close()
-
-
 if __name__ == "__main__":
-    main()
+    out = REPORTS_DIR / "fx_flow_dashboard.html"
+    generate_html(out)

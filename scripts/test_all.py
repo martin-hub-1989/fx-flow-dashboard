@@ -266,6 +266,160 @@ def test_validate_db_checks():
 
 
 # =============================================================================
+# Loop A8: Production Gate Tests
+# =============================================================================
+
+def test_gate_arbitrary_factor_rejected():
+    """Gate: Arbitrary data-derived scale factors must not produce 'verified' status."""
+    print("\n--- test_gate_arbitrary_factor_rejected ---")
+    import json
+    with open('config/wind_mapping.json') as f:
+        mappings = json.load(f)
+    entries = [m for m in mappings if isinstance(m, dict) and 'series_id' in m]
+
+    for m in entries:
+        if m['status'] in ('verified_exact', 'verified_unit_transform'):
+            transforms = m.get('transform', [])
+            for t in transforms:
+                # No verify_factor_* or unit_div_<arbitrary> in verified entries
+                assert not t.startswith('verify_factor_'), \
+                    f"P0 FAIL: {m['series_id']} has arbitrary factor {t} but status={m['status']}"
+                assert not (t.startswith('unit_div_') and t not in ('unit_div_10000', 'unit_div_100000000', 'unit_div_100')), \
+                    f"P0 FAIL: {m['series_id']} has non-standard unit_div {t}"
+
+def test_gate_transform_whitelist():
+    """Gate: Only allowed transforms used in verified entries."""
+    print("\n--- test_gate_transform_whitelist ---")
+    import json
+    ALLOWED = {'identity', 'divide_1e4', 'divide_1e8', 'multiply_100', 'divide_100',
+               'sign_flip', 'currency_conversion_by_date', 'cumulative_to_period'}
+
+    with open('config/wind_mapping.json') as f:
+        mappings = json.load(f)
+    entries = [m for m in mappings if isinstance(m, dict) and 'series_id' in m]
+
+    violations = []
+    for m in entries:
+        if m['status'] in ('verified_exact', 'verified_unit_transform'):
+            for t in m.get('transform', []):
+                if t not in ALLOWED:
+                    violations.append(f"{m['series_id']}: transform='{t}'")
+
+    assert len(violations) == 0, f"Transform violations: {violations}"
+
+def test_gate_overlap_requirement():
+    """Gate: Verified entries must have >= minimum overlap points."""
+    print("\n--- test_gate_overlap_requirement ---")
+    import json
+    with open('config/wind_mapping.json') as f:
+        mappings = json.load(f)
+    entries = [m for m in mappings if isinstance(m, dict) and 'series_id' in m]
+
+    for m in entries:
+        if m['status'] in ('verified_exact', 'verified_unit_transform'):
+            overlap = m.get('verify_details', {}).get('overlap_points', 0)
+            freq = m.get('frequency', 'monthly')
+
+            min_overlap = {'monthly': 12, 'quarterly': 4, 'annual': 3, 'daily': 40}.get(freq, 12)
+            assert overlap >= min_overlap, \
+                f"P0 FAIL: {m['series_id']} has {overlap} overlap points (<{min_overlap} for {freq})"
+
+def test_gate_metric_definitions_complete():
+    """Gate: All derived series must have metric_definitions."""
+    print("\n--- test_gate_metric_definitions_complete ---")
+    conn = get_db()
+    missing = conn.execute("""
+        SELECT COUNT(*) FROM series s
+        WHERE s.series_type='derived'
+        AND s.series_id NOT IN (SELECT series_id FROM metric_definitions)
+    """).fetchone()[0]
+    conn.close()
+    assert missing == 0, f"P0 FAIL: {missing} derived series missing metric_definitions"
+
+def test_gate_no_semantic_substitution():
+    """Gate: Verified 国开债 must not map to 国债."""
+    print("\n--- test_gate_no_semantic_substitution ---")
+    import json
+    with open('config/wind_mapping.json') as f:
+        mappings = json.load(f)
+    entries = [m for m in mappings if isinstance(m, dict) and 'series_id' in m]
+
+    # sec_fi:C was originally 开行债 matched to 国债 — should be mapping_pending
+    m = next((x for x in entries if x['series_id'] == 'sec_fi:C'), None)
+    if m:
+        # Check that if verified, the edb_indicator actually contains 开行债
+        if m['status'] in ('verified_exact', 'verified_unit_transform'):
+            edb_ind = m.get('verify_details', {}).get('edb_indicator', '')
+            assert '开行' in edb_ind or '国家开发银行' in edb_ind or '国开' in edb_ind, \
+                f"P0 FAIL: sec_fi:C mapped to '{edb_ind}' — semantic mismatch (开行债→国债)"
+
+def test_gate_update_plan_validation_dates():
+    """Gate: Update plan validation_dates must be 2 different real DB dates."""
+    print("\n--- test_gate_update_plan_validation_dates ---")
+    import json
+    with open('config/update_plan.json') as f:
+        plan = json.load(f)
+
+    for entry in plan:
+        vd = entry.get('validation_dates', [])
+        assert len(vd) == 2, f"FAIL: {entry['series_id']}: {len(vd)} validation_dates (need 2)"
+        assert vd[0] != vd[1], f"FAIL: {entry['series_id']}: identical dates {vd}"
+
+def test_gate_html_js_syntax():
+    """Gate: Generated HTML JavaScript must pass syntax check."""
+    print("\n--- test_gate_html_js_syntax ---")
+    import re, subprocess, os
+
+    html_path = 'reports/fx_flow_dashboard.html'
+    if not os.path.exists(html_path):
+        print("SKIP: HTML not generated")
+        return
+
+    with open(html_path) as f:
+        html = f.read()
+
+    scripts = re.findall(r'<script[^>]*?>(.*?)</script>', html, re.DOTALL)
+    for i, s in enumerate(scripts):
+        if 'dashboard-data' not in str(s[:50]) and s.strip():
+            tmp = f'/tmp/gate_test_{i}.js'
+            with open(tmp, 'w') as fout:
+                fout.write(s)
+            result = subprocess.run(['node', '--check', tmp], capture_output=True, text=True)
+            os.unlink(tmp)
+            assert result.returncode == 0, \
+                f"P0 FAIL: HTML script {i} has JS syntax error: {result.stderr[:200]}"
+
+def test_gate_chart_catalog_exists():
+    """Gate: chart_catalog.json must exist and reference valid series."""
+    print("\n--- test_gate_chart_catalog_exists ---")
+    import json, os
+
+    path = 'config/chart_catalog.json'
+    assert os.path.exists(path), "P0 FAIL: config/chart_catalog.json missing"
+
+    with open(path) as f:
+        catalog = json.load(f)
+
+    modules = catalog.get('modules', {})
+    assert len(modules) > 0, "P0 FAIL: chart_catalog has no modules"
+
+    # Check that 3.即远期 has charts
+    fwd = modules.get('3.即远期', {})
+    assert len(fwd.get('charts', [])) > 0, "P0 FAIL: 3.即远期 has no catalog charts"
+
+    # Verify all referenced series exist in DB
+    conn = get_db()
+    for mod_name, mod_data in modules.items():
+        for ch in mod_data.get('charts', []):
+            for ds in ch.get('datasets', []):
+                sid = ds.get('series_id', '')
+                if sid:
+                    exists = conn.execute("SELECT COUNT(*) FROM series WHERE series_id=?", (sid,)).fetchone()[0]
+                    assert exists > 0, f"P0 FAIL: {ch['chart_id']} references non-existent series {sid}"
+    conn.close()
+
+
+# =============================================================================
 # recompute_derived.py tests
 # =============================================================================
 
@@ -537,6 +691,16 @@ def main():
 
     # Integration
     test_integration_import_and_recompute()
+
+    # Loop A8: Production gate tests
+    test_gate_arbitrary_factor_rejected()
+    test_gate_transform_whitelist()
+    test_gate_overlap_requirement()
+    test_gate_metric_definitions_complete()
+    test_gate_no_semantic_substitution()
+    test_gate_update_plan_validation_dates()
+    test_gate_html_js_syntax()
+    test_gate_chart_catalog_exists()
 
     print("\n" + "=" * 60)
     print(f"RESULTS: {TESTS_PASSED} passed, {TESTS_FAILED} failed, "
