@@ -86,6 +86,10 @@ def build_plan(conn, mapping_path="config/wind_mapping.json"):
             "unit": m.get("unit", ""),
             "transform": m.get("transform") or [],
             "tolerance": m.get("tolerance", 1e-6),
+            # Exact Wind closure fields (Loop 6) for precise fetch.
+            "wind_query_exact": m.get("wind_query_exact", ""),
+            "wind_code": m.get("wind_code", ""),
+            "wind_name": m.get("wind_name", ""),
         }
         plan.append(entry)
 

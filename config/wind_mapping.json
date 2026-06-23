@@ -1577,7 +1577,7 @@
       ]
     ],
     "transform": [
-      "divide_1e8"
+      "identity"
     ],
     "verify_details": {
       "avg_diff_pct": 0.0,
@@ -1591,10 +1591,15 @@
     },
     "verified_at": "2026-06-22T14:29:09.493572",
     "external_source": "ifind_edb",
-    "wind_verified": false,
-    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "wind_verified": true,
+    "wind_verification_note": "Real Wind MCP closure: M5201660 中国:银行代客结汇金额:证券投资:当月值, 2 overlap pts, max_rel=0.0000%",
     "transform_standardized": true,
-    "_old_status": "verified_with_transform"
+    "_old_status": "verified_with_transform",
+    "wind_code": "M5201660",
+    "wind_name": "中国:银行代客结汇金额:证券投资:当月值",
+    "wind_query_exact": "中国:银行代客结汇:证券投资:当月值",
+    "wind_verified_at": "2026-06-23",
+    "wind_unit_confirmed": "亿美元 (Wind matches DB unit, no transform needed)"
   },
   {
     "series_id": "fx_cspot:I",
@@ -1980,7 +1985,7 @@
       ]
     ],
     "transform": [
-      "divide_1e8"
+      "identity"
     ],
     "verify_details": {
       "avg_diff_pct": 0.0,
@@ -1994,10 +1999,15 @@
     },
     "verified_at": "2026-06-22T14:29:48.912214",
     "external_source": "ifind_edb",
-    "wind_verified": false,
-    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "wind_verified": true,
+    "wind_verification_note": "Real Wind MCP closure: M5201665 中国:银行代客售汇金额:证券投资:当月值, 2 overlap pts, max_rel=0.0000%",
     "transform_standardized": true,
-    "_old_status": "verified_with_transform"
+    "_old_status": "verified_with_transform",
+    "wind_code": "M5201665",
+    "wind_name": "中国:银行代客售汇金额:证券投资:当月值",
+    "wind_query_exact": "中国:银行代客售汇金额:证券投资:当月值",
+    "wind_verified_at": "2026-06-23",
+    "wind_unit_confirmed": "亿美元 (Wind matches DB unit, no transform needed)"
   },
   {
     "series_id": "fx_fwd:AL",
@@ -2077,7 +2087,7 @@
     ],
     "verify_note": "Exact path: 银行代客结售汇:以美元计价:结汇:银行自身",
     "transform": [
-      "divide_1e8"
+      "identity"
     ],
     "verify_details": {
       "overlap_points": 59,
@@ -2110,10 +2120,15 @@
     },
     "verified_at": "2026-06-22T17:11:50.661678",
     "external_source": "ifind_edb",
-    "wind_verified": false,
-    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "wind_verified": true,
+    "wind_verification_note": "Real Wind MCP closure: M5207846 中国:银行自身结汇金额:当月值, 2 overlap pts, max_rel=0.0000%",
     "transform_standardized": true,
-    "_old_status": "verified_with_transform"
+    "_old_status": "verified_with_transform",
+    "wind_code": "M5207846",
+    "wind_name": "中国:银行自身结汇金额:当月值",
+    "wind_query_exact": "中国:银行自身结汇金额:当月值",
+    "wind_verified_at": "2026-06-23",
+    "wind_unit_confirmed": "亿美元 (Wind matches DB unit, no transform needed)"
   },
   {
     "series_id": "fx_fwd:C",
@@ -2139,7 +2154,7 @@
     ],
     "verify_note": "Exact path: 银行代客结售汇:以美元计价:售汇:银行自身",
     "transform": [
-      "divide_1e8"
+      "identity"
     ],
     "verify_details": {
       "overlap_points": 59,
@@ -2172,10 +2187,15 @@
     },
     "verified_at": "2026-06-22T17:11:53.458088",
     "external_source": "ifind_edb",
-    "wind_verified": false,
-    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "wind_verified": true,
+    "wind_verification_note": "Real Wind MCP closure: M5207848 中国:银行自身售汇金额:当月值, 2 overlap pts, max_rel=0.0000%",
     "transform_standardized": true,
-    "_old_status": "verified_with_transform"
+    "_old_status": "verified_with_transform",
+    "wind_code": "M5207848",
+    "wind_name": "中国:银行自身售汇金额:当月值",
+    "wind_query_exact": "中国:银行自身售汇金额:当月值",
+    "wind_verified_at": "2026-06-23",
+    "wind_unit_confirmed": "亿美元 (Wind matches DB unit, no transform needed)"
   },
   {
     "series_id": "fx_fwd:D",
@@ -2314,7 +2334,7 @@
     ],
     "verify_note": "Re-test fix: fwd_sell → 远期结售汇签约额:以美元计价:售汇",
     "transform": [
-      "divide_1e8"
+      "identity"
     ],
     "verify_details": {
       "overlap_points": 196,
@@ -2348,10 +2368,15 @@
     },
     "verified_at": "2026-06-22T15:05:56.870609",
     "external_source": "ifind_edb",
-    "wind_verified": false,
-    "wind_verification_note": "Previously verified via iFind EDB; needs Wind MCP re-verification",
+    "wind_verified": true,
+    "wind_verification_note": "Real Wind MCP closure: M5206742 中国:银行代客远期售汇签约金额:当月值, 2 overlap pts, max_rel=0.0000%",
     "transform_standardized": true,
-    "_old_status": "verified_with_transform"
+    "_old_status": "verified_with_transform",
+    "wind_code": "M5206742",
+    "wind_name": "中国:银行代客远期售汇签约金额:当月值",
+    "wind_query_exact": "中国:银行代客远期售汇签约额:当月值",
+    "wind_verified_at": "2026-06-23",
+    "wind_unit_confirmed": "亿美元 (Wind matches DB unit, no transform needed)"
   },
   {
     "series_id": "fx_fwd:G",

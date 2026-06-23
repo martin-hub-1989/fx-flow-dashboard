@@ -5,7 +5,7 @@ Step 6c: Safe incremental update with two-point overlap validation.
 - Uses transaction: BEGIN → write → validate → COMMIT or ROLLBACK
 - Records all events in validation_events table
 """
-import sys, json, math
+import sys, json, math, sqlite3
 from pathlib import Path
 from datetime import datetime
 
@@ -116,7 +116,7 @@ def apply_update(conn, run_id, plan_entry, new_data):
     """
     series_id = plan_entry["series_id"]
     tolerance = plan_entry.get("tolerance", 1e-6)
-    sp = f"sp_{series_id.replace(':', '_').replace('.', '_')}"
+    sp = _sp_name(series_id)
 
     conn.execute(f"SAVEPOINT {sp}")
     try:
@@ -138,7 +138,7 @@ def apply_update(conn, run_id, plan_entry, new_data):
             ))
 
         if not passed:
-            conn.execute(f"ROLLBACK TO {sp}")
+            _safe_rollback(conn, sp)
             fail = [i for i in issues if i.get("status") == "fail"]
             msg = fail[0].get("message", "overlap validation failed") if fail else "overlap validation failed"
             return False, msg, {"new": 0, "unchanged": 0, "revision": 0}
@@ -146,12 +146,35 @@ def apply_update(conn, run_id, plan_entry, new_data):
         # 3. Safe write (counts computed before write inside safe_write).
         stats = safe_write(conn, series_id, new_data, run_id=run_id, source="wind_mcp")
 
-        conn.execute(f"RELEASE {sp}")
+        _safe_release(conn, sp)
         return True, f"new={stats['new']} unchanged={stats['unchanged']} revision={stats['revision']}", stats
 
     except Exception as e:
-        conn.execute(f"ROLLBACK TO {sp}")
+        _safe_rollback(conn, sp)
         return False, f"Exception: {str(e)}", {"new": 0, "unchanged": 0, "revision": 0}
+
+
+def _sp_name(series_id):
+    """Safe SAVEPOINT identifier (alnum + underscore only)."""
+    import re
+    return "sp_" + re.sub(r"[^A-Za-z0-9]", "_", series_id)
+
+
+def _safe_rollback(conn, sp):
+    """ROLLBACK TO a savepoint if it exists; never raise."""
+    try:
+        conn.execute(f"ROLLBACK TO {sp}")
+        conn.execute(f"RELEASE {sp}")
+    except sqlite3.OperationalError:
+        pass
+
+
+def _safe_release(conn, sp):
+    """RELEASE a savepoint if it exists; never raise."""
+    try:
+        conn.execute(f"RELEASE {sp}")
+    except sqlite3.OperationalError:
+        pass
 
 
 def process_update(conn, run_id, plan_entries, fetched_data_by_series):

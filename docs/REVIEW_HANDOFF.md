@@ -27,15 +27,45 @@
 
 **Loop 0 门禁**: ✅ 基线可复现，与 NEXT_PHASE_PLAN 预期一致，无既有改动被覆盖。
 
-### 待修复项（按 Loop 顺序）
+## Phase 1 完成 (Loop 1-6) — 生产更新门禁闭环 ✅
 
-- **Loop 1**: build_update_plan 不能处理 _metadata / 仅认旧状态名 / 103条计划不可复现 / 用日期减法猜overlap
-- **Loop 2**: fetch_wind transform 未在校验前应用 / 统一猜"亿美元" / staging 是空模拟
-- **Loop 3**: validate_update 零重叠通过 / 只要1个重叠点
-- **Loop 4**: INSERT OR REPLACE 静默覆盖 / 无 revision audit / 新增修订写入后才判断
-- **Loop 5**: raw 更新后无下游 derived 复算
-- **Loop 6**: 0 条真实 Wind 闭环
-- **Loop 7**: 7 条 chart-critical cached/vlookup derived 待迁移
+### 真实 Wind 闭环结果 (Loop 6, 2026-06-23)
+
+5 条序列用真实 Wind MCP 验证，精确命中 EDB code，0% 误差：
+
+| series_id | Wind code | Wind 指标名 | 重叠点 | max_rel |
+|-----------|-----------|------------|--------|---------|
+| fx_fwd:B | M5207846 | 中国:银行自身结汇金额:当月值 | 2 | 0.00% |
+| fx_fwd:C | M5207848 | 中国:银行自身售汇金额:当月值 | 2 | 0.00% |
+| fx_fwd:F | M5206742 | 中国:银行代客远期售汇签约额:当月值 | 2 | 0.00% |
+| fx_cspot:H | M5201660 | 中国:银行代客结汇金额:证券投资:当月值 | 2 | 0.00% |
+| fx_cspot:O | M5201665 | 中国:银行代客售汇金额:证券投资:当月值 | 2 | 0.00% |
+
+**受控写入**: 4 条成功写入 2026-05-31 新观测 (source=wind_mcp), 0 revision (无静默覆盖),
+12 validation_events 全 pass, update_run=completed。
+fx_fwd:F 因限流未 fetch 完整, 下次重试。
+
+### Phase 1 Gate 达成
+
+- ✅ 至少 3 条真实 Wind 闭环 (4 条成功)
+- ✅ update plan 可由当前代码重复生成 (5 条, 之前103条已废止)
+- ✅ transform 在校验前执行 (staging 保存 raw+transformed)
+- ✅ 两点重叠强制执行 (0/1点拒绝)
+- ✅ revision audit 生效 (observation_revisions 表, pending状态)
+- ✅ downstream derived 自动复算 (dependency_graph.py, 拓扑序)
+- ✅ 全部 Phase 1 测试通过 (37 pytest + 84 self-test)
+
+### Loop 1-5 改动
+
+- **Loop 1**: build_update_plan 重写 — 跳过_metadata, wind_verified=true过滤, validation_dates=DB真实最后两点, 确定性可复现
+- **Loop 2**: transforms.py — 8个受控白名单, 未知transform拒绝, transform在overlap前应用, staging审计
+- **Loop 3**: validate_overlap 强制≥2重叠点, 0/1点拒绝, NaN/Inf拒绝, 反转错误测试
+- **Loop 4**: safe_write.py + observation_revisions表 — new/unchanged/revision分类, INSERT不覆盖, 审计pending
+- **Loop 5**: dependency_graph.py — 从metric_definitions建反向依赖, 拓扑序, ≥2层
+
+### 待修复项（Phase 2+）
+
+- **Loop 7**: 7 条 chart-critical cached/vlookup derived 待迁移 (fx_fwd:AB/AD/AJ/AN, sec_eq:AF/AH/AJ)
 - **Loop 8**: catalog 412 vs SQLite 383 / 86 Column_* / 144 空单位
 - **Loop 9**: 9 序列无观测 / trailing zeros
 - **Loop 10**: seasonality 仍是普通时间轴

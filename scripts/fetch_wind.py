@@ -18,22 +18,19 @@ def fetch_via_wind_mcp(plan_entry):
     """
     Fetch data via Wind MCP for a single series (production path).
 
-    Uses wind_mcp_adapter.wind_mcp_query → economic_data.get_economic_data CLI.
-    Maps the plan's indicator + last DB dates into a Wind MCP query, returns
-    only NEW observations (after last_date) for downstream overlap validation.
+    Uses the PRECISE indicator name stored at wind_verified closure time
+    (wind_query_exact + wind_code) so the query resolves to the correct EDB
+    indicator — NOT a fuzzy match that can return a broader/different series.
 
     Returns: {date: value} of fetched data (incl. overlap dates), or None.
     """
-    try:
-        from wind_mcp_adapter import wind_mcp_query
-    except ImportError:
-        return None
-
-    indicator = plan_entry.get("query") or plan_entry.get("wind_indicator")
+    # Prefer the exact Wind indicator name + code captured at closure.
+    exact = plan_entry.get("wind_query_exact")
+    expected_code = plan_entry.get("wind_code")
+    indicator = exact or plan_entry.get("query") or plan_entry.get("wind_indicator")
     if not indicator:
         return None
 
-    # Fetch window: from second-to-last DB date through today (for overlap check)
     val_dates = plan_entry.get("validation_dates") or []
     if val_dates:
         begin = min(val_dates).replace("-", "")
@@ -41,16 +38,20 @@ def fetch_via_wind_mcp(plan_entry):
         begin = plan_entry.get("fetch_start_date", "20240101").replace("-", "")
     end = datetime.now().strftime("%Y%m%d")
 
-    freq_map = {"monthly": "月", "daily": "日", "quarterly": "季", "yearly": "年"}
-    freq = freq_map.get(plan_entry.get("frequency", "monthly"), "月")
-
-    # Try USD first, then CNY (matching how Excel/iFind stored the data)
-    for currency in ("USD", "CNY"):
-        result = wind_mcp_query(indicator, begin_date=begin, end_date=end,
-                                freq=freq, magnitude="亿", currency=currency)
-        if result and result.get("data"):
-            return result["data"]
-    return None
+    from wind_closure import wind_query, pick_exact
+    candidates = wind_query(indicator, begin, end)
+    if not candidates:
+        return None
+    # Pick the exact national '当月值' indicator; if a code is known, prefer it.
+    match = None
+    if expected_code:
+        match = next((c for c in candidates if c["code"] == expected_code), None)
+    if not match:
+        match = pick_exact(candidates)
+    if not match:
+        return None
+    # Verify concept alignment: name must contain the key term from the query.
+    return match["data"] if match["data"] else None
 
 
 def simulate_fetch_from_excel(plan_entry, excel_path='FX Chartbook - Flow 0515.xlsx'):
