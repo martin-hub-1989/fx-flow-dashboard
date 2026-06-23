@@ -236,7 +236,25 @@ body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang S
 .data-table th,.data-table td{{padding:6px 10px;border-bottom:1px solid #f0f0f0;text-align:left}}
 .data-table th{{font-weight:600;color:#999;font-size:11px}}
 .data-table td b{{color:#1a3a5c}}
-@@media(max-width:768px){{.charts-grid{{grid-template-columns:1fr}}}}
+/* Responsive — valid media query. Mobile-first overflow prevention. */
+@media(max-width:768px){{
+    .module{{padding:12px 12px}}
+    .nav{{padding:6px 8px}}
+    .nav-btn{{padding:5px 10px;font-size:11px}}
+    .range-bar{{padding:0 8px 8px;flex-wrap:wrap}}
+    .charts-grid{{grid-template-columns:1fr;gap:12px}}
+    .chart-card{{padding:10px;min-width:0}}
+    .chart-wrap{{height:240px}}
+    .chart-card h3{{font-size:12px;word-break:break-word}}
+    .chart-card .chart-subtitle{{font-size:10px;word-break:break-word}}
+    .chart-actions{{flex-wrap:wrap}}
+    .chart-actions button{{padding:3px 8px;font-size:10px}}
+    .season-selector{{gap:3px}}
+    .season-sel-btn{{padding:2px 7px;font-size:10px}}
+    .data-table{{font-size:11px}}
+    .data-table th,.data-table td{{padding:4px 6px;white-space:nowrap}}
+    .data-table{{display:block;overflow-x:auto;white-space:nowrap}}
+}}
 </style>
 </head>
 <body>
