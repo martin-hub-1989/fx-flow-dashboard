@@ -132,9 +132,19 @@ def test_reproducible():
     assert json.dumps(p1, sort_keys=True) == json.dumps(p2, sort_keys=True), "plan must be reproducible"
 
 
-def test_production_plan_currently_zero():
-    """With real wind_mapping.json (0 wind_verified=true), production plan must be 0."""
+def test_production_plan_matches_wind_verified():
+    """Production plan count must equal the number of wind_verified=true mappings
+    in the real config/wind_mapping.json (deterministic, code-reproducible)."""
     conn = bup.get_db()
     plan = bup.build_plan(conn, mapping_path="config/wind_mapping.json")
     conn.close()
-    assert len(plan) == 0, f"no wind_verified mappings yet, expected 0, got {len(plan)}"
+    import json as _j
+    mappings = _j.load(open("config/wind_mapping.json", encoding="utf-8"))
+    expected = sum(1 for x in mappings
+                   if isinstance(x, dict) and x.get("wind_verified") is True
+                   and x.get("status") in ("verified_exact", "verified_unit_transform"))
+    assert len(plan) == expected, f"plan {len(plan)} != wind_verified {expected}"
+    # every plan entry must carry the wind closure fields
+    for e in plan:
+        assert e.get("wind_code"), f"{e['series_id']} missing wind_code"
+        assert e.get("wind_query_exact"), f"{e['series_id']} missing wind_query_exact"
