@@ -11,6 +11,7 @@ from datetime import datetime
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib import get_db
+from transforms import transform_with_audit as apply_transforms_with_audit
 
 
 def fetch_via_wind_mcp(plan_entry):
@@ -140,6 +141,7 @@ def main():
     print(f"Fetching data for {len(plan)} series...")
 
     results = {}
+    staging_records = {}
     fetched_count = 0
     failed_count = 0
 
@@ -152,19 +154,44 @@ def main():
             data = fetch_via_wind_mcp(entry)
 
         if data:
-            results[sid] = data
+            # Apply controlled transform chain BEFORE staging (so overlap
+            # validation downstream compares transformed values).
+            chain = entry.get('transform') or []
+            try:
+                audit = apply_transforms_with_audit(data, chain)
+            except ValueError as e:
+                print(f"  ❌ {sid}: transform rejected — {e}")
+                failed_count += 1
+                continue
+
+            transformed = audit['transformed_observations']
+            results[sid] = transformed
+            staging_records[sid] = {
+                "series_id": sid,
+                "query": entry.get('query', ''),
+                "wind_code": entry.get('wind_code', ''),
+                "wind_name": entry.get('wind_indicator', ''),
+                "wind_unit": entry.get('unit', ''),
+                "requested_frequency": entry.get('frequency', ''),
+                "requested_currency": entry.get('currency', ''),
+                "fetched_at": datetime.now().isoformat(),
+                "raw_observations": audit['raw_observations'],
+                "transform_chain": audit['transform_chain'],
+                "transformed_observations": transformed,
+            }
             fetched_count += 1
-            print(f"  ✅ {sid}: {len(data)} new points, "
-                  f"range {min(data.keys())} to {max(data.keys())}")
+            print(f"  ✅ {sid}: {len(transformed)} new points, "
+                  f"range {min(transformed.keys())} to {max(transformed.keys())}")
         else:
             failed_count += 1
 
-    # Save staging file
+    # Save staging file (full audit contract)
     staging = {
         "fetched_at": datetime.now().isoformat(),
         "method": "simulated" if args.simulate else "wind_mcp",
         "series_count": len(results),
         "series_data": results,
+        "staging_records": staging_records,
     }
 
     output_path = Path(args.output)

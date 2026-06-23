@@ -560,7 +560,11 @@ def test_validate_overlap_fail():
 
 
 def test_validate_overlap_no_overlap():
-    """Test validation with no overlapping dates (should pass — no contradiction)."""
+    """Test validation with no overlapping dates.
+
+    CONTRACT (NEXT_PHASE Loop 3): zero overlap must be REJECTED, not passed.
+    Fewer than two real overlap points can never auto-write.
+    """
     print("\n--- test_validate_overlap_no_overlap ---")
     conn = sqlite3.connect(":memory:")
     conn.row_factory = sqlite3.Row
@@ -571,11 +575,11 @@ def test_validate_overlap_no_overlap():
     conn.execute("INSERT INTO observations (series_id, date, value) VALUES ('vtest:C', '2025-01-31', 100)")
     conn.commit()
 
-    # No overlap dates
+    # No overlap dates — must be rejected.
     new_data = {"2025-04-30": 400.0, "2025-05-31": 500.0}
     passed, issues = validate_overlap(conn, "vtest:C", new_data)
-    assert_true(passed, "no overlap passes")
-    assert_eq(len(issues), 0, "no overlap => 0 issues")
+    assert_false(passed, "zero overlap REJECTED")
+    assert_true(len(issues) >= 1, "zero overlap produces a failure issue")
 
     conn.close()
 

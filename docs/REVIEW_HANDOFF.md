@@ -5,6 +5,46 @@
 
 ---
 
+## NEXT_PHASE 执行 (生产化 v1) — Loop 0 基线快照
+
+> 基准 commit `4b96770` · 快照时间 2026-06-23
+
+| 指标 | 实测值 | 计划预期 | 一致 |
+|------|--------|----------|------|
+| series | 383 | 383 | ✅ |
+| observations | 137,622 | 137,622 | ✅ |
+| metric_definitions | 224 | 224 | ✅ |
+| series类型 | 157 raw / 224 derived / 2 manual | — | — |
+| chart catalog | 29 (20 primary + 9 dd) | 29 | ✅ |
+| chart-critical cached/vlookup derived | 7 (fx_fwd:AB/AD/AJ/AN, sec_eq:AF/AH/AJ) | 6+1 | ✅ |
+| wind_verified=true | 0 | 0 | ✅ |
+| update_plan 条数 | 103 (不可由代码复现) | 103 | ✅ |
+| test_all.py | 84 passed (含错误合同) | 84 | ✅ |
+| validate_all.py | 7/8 (失败项:9序列无观测) | 7/8 | ✅ |
+| HTML JS 语法 | ✅ PASS | — | — |
+| CSS @@media bug | 存在 (`@@media`, 应为`@media`) | 是 | ✅ |
+| 数据库表 | series/observations/metric_definitions/update_runs/validation_events | — | — |
+
+**Loop 0 门禁**: ✅ 基线可复现，与 NEXT_PHASE_PLAN 预期一致，无既有改动被覆盖。
+
+### 待修复项（按 Loop 顺序）
+
+- **Loop 1**: build_update_plan 不能处理 _metadata / 仅认旧状态名 / 103条计划不可复现 / 用日期减法猜overlap
+- **Loop 2**: fetch_wind transform 未在校验前应用 / 统一猜"亿美元" / staging 是空模拟
+- **Loop 3**: validate_update 零重叠通过 / 只要1个重叠点
+- **Loop 4**: INSERT OR REPLACE 静默覆盖 / 无 revision audit / 新增修订写入后才判断
+- **Loop 5**: raw 更新后无下游 derived 复算
+- **Loop 6**: 0 条真实 Wind 闭环
+- **Loop 7**: 7 条 chart-critical cached/vlookup derived 待迁移
+- **Loop 8**: catalog 412 vs SQLite 383 / 86 Column_* / 144 空单位
+- **Loop 9**: 9 序列无观测 / trailing zeros
+- **Loop 10**: seasonality 仍是普通时间轴
+- **Loop 11**: 左轴硬编码"亿美元" / 摘要自动取前10
+- **Loop 12**: @@media bug / 390px 横向溢出
+- **Loop 13**: 无机器化 66 图处置表
+
+---
+
 ## 完成摘要
 
 ### 数据状态

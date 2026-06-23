@@ -5,7 +5,7 @@ Step 6c: Safe incremental update with two-point overlap validation.
 - Uses transaction: BEGIN → write → validate → COMMIT or ROLLBACK
 - Records all events in validation_events table
 """
-import sys, json
+import sys, json, math
 from pathlib import Path
 from datetime import datetime
 
@@ -22,57 +22,86 @@ def load_fetched_data(staging_path):
         return json.load(f)
 
 
+MIN_OVERLAP_POINTS = 2
+
+
 def validate_overlap(conn, series_id, new_data, tolerance=1e-6):
     """
     Compare new data with existing DB values on overlapping dates.
-    Returns: (passed, issues_list)
+
+    CONTRACT (NEXT_PHASE Loop 3):
+    - Requires at least MIN_OVERLAP_POINTS (2) overlapping dates.
+    - Every overlapping point must pass tolerance.
+    - Non-finite fetched values (NaN/Inf) cause rejection.
+    - Fewer than 2 valid overlaps → REJECT (never pass-through).
+
+    Returns: (passed: bool, issues: list[dict])
     """
     issues = []
 
-    # Get existing values for overlapping dates
-    overlap_dates = list(new_data.keys())
-    if not overlap_dates:
-        return True, []
+    if not new_data:
+        return False, [{"date": None, "status": "fail",
+                        "message": "empty fetched data — nothing to validate"}]
 
+    # Reject non-finite values up front.
+    for d, v in new_data.items():
+        if v is None or (isinstance(v, float) and not math.isfinite(v)):
+            return False, [{"date": d, "status": "fail",
+                            "database_value": None, "fetched_value": v,
+                            "difference": None, "relative_difference": None,
+                            "tolerance": tolerance,
+                            "message": f"non-finite or null fetched value at {d}"}]
+
+    overlap_dates = list(new_data.keys())
     placeholders = ','.join('?' for _ in overlap_dates)
     existing = conn.execute(
         f"SELECT date, value FROM observations WHERE series_id=? AND date IN ({placeholders})",
         [series_id] + overlap_dates
     ).fetchall()
-    existing_map = {r['date']: r['value'] for r in existing}
+    existing_map = {}
+    for r in existing:
+        d = r['date'] if hasattr(r, 'keys') else r[0]
+        v = r['value'] if hasattr(r, 'keys') else r[1]
+        existing_map[d] = v
 
+    overlap_count = 0
     for d, new_val in sorted(new_data.items()):
         old_val = existing_map.get(d)
-        if old_val is not None:
-            diff = abs(new_val - old_val)
-            rel_diff = diff / abs(old_val) if abs(old_val) > 1e-9 else diff
+        if old_val is None:
+            continue  # new date, not an overlap point
+        overlap_count += 1
+        diff = abs(new_val - old_val)
+        rel_diff = diff / abs(old_val) if abs(old_val) > 1e-9 else diff
+        passed = diff <= tolerance or rel_diff <= tolerance
+        issue = {
+            "date": d,
+            "database_value": old_val,
+            "fetched_value": new_val,
+            "difference": diff,
+            "relative_difference": rel_diff,
+            "tolerance": tolerance,
+            "status": "pass" if passed else "fail",
+        }
+        if not passed:
+            issue["message"] = (
+                f"Overlap FAILED at {d}: db={old_val}, fetched={new_val}, "
+                f"diff={diff:.6g}, rel={rel_diff:.6g}, tol={tolerance:.6g}"
+            )
+        issues.append(issue)
 
-            # Determine if pass
-            passed = diff <= tolerance or rel_diff <= tolerance
+    # Hard gate: need at least 2 overlapping points.
+    if overlap_count < MIN_OVERLAP_POINTS:
+        issues.append({
+            "date": None, "status": "fail",
+            "message": f"insufficient overlap: {overlap_count} point(s), "
+                       f"need >= {MIN_OVERLAP_POINTS}",
+        })
+        return False, issues
 
-            issues.append({
-                "date": d,
-                "database_value": old_val,
-                "fetched_value": new_val,
-                "difference": diff,
-                "relative_difference": rel_diff,
-                "tolerance": tolerance,
-                "status": "pass" if passed else "fail",
-            })
-
-            if not passed:
-                issues[-1]["message"] = (
-                    f"Overlap validation FAILED: diff={diff:.6f}, rel_diff={rel_diff:.6f}"
-                )
-
-    # Check: at least 2 overlapping points should pass
-    passing = sum(1 for i in issues if i["status"] == "pass")
-    failing = len(issues) - passing
-
+    # Every overlap must pass.
+    failing = sum(1 for i in issues if i["status"] == "fail")
     if failing > 0:
         return False, issues
-    if len(issues) < 1:
-        return True, issues  # No overlap points found (warning, not error)
 
     return True, issues
 
