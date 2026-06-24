@@ -1,3 +1,4 @@
+> 当前状态见 docs/REVIEW_HANDOFF_STATUS.md (自动生成)
 # Review Handoff — Final
 
 # NEXT_PHASE v1 最终状态 (2026-06-23, 由 gen_status_docs.py 生成)

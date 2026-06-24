@@ -1,10 +1,17 @@
 """
-gen_status_docs.py — Generate status documents from DB + config (Loop 15).
+gen_status_docs.py — Generate status documents from DB + config (Loop 15 / Loop 4).
 
 Single source of truth: queries DB and config files, writes:
   - docs/PROGRESS_REPORT.md
   - docs/WIND_COVERAGE.md
-  - docs/REVIEW_HANDOFF.md (status section)
+  - docs/REVIEW_HANDOFF_STATUS.md  (Loop 4: generated current-status snapshot)
+
+REVIEW_HANDOFF.md itself is NOT regenerated (it carries hand-maintained
+historical execution records). This script only prepends a one-line pointer
+to its top, directing readers to REVIEW_HANDOFF_STATUS.md for the live
+snapshot — the documented exception to the 'no hand-edits to generated docs'
+rule. (Earlier docstring wrongly claimed main() wrote REVIEW_HANDOFF.md's
+status section; that was the latent trap Loop 1 reviewer flagged.)
 
 No hand-maintained percentages; every number is computed.
 """
@@ -55,6 +62,17 @@ def stats():
         # cannot slip past the chart-critical gate (matches test_loop14_gates).
         if r and r[0] and r[0].startswith(("excel_cached","excel_vlookup")): cached.append(sid)
     s["chart_cached"] = len(cached)
+    # chart-critical unknown-unit count (Loop 4 boundary: must be 0 for v1).
+    sids_list = list(chart_sids)
+    if sids_list:
+        s["chart_critical_unknown_unit"] = c.execute(
+            "SELECT COUNT(*) FROM series WHERE series_id IN ({}) "
+            "AND (unit IS NULL OR unit='' OR unit='unknown')".format(
+                ",".join("?" * len(sids_list))),
+            sids_list,
+        ).fetchone()[0]
+    else:
+        s["chart_critical_unknown_unit"] = 0
     # disposition
     disp = json.load(open(ROOT/"config/excel_chart_disposition.json"))
     s["disposition"] = dict(Counter(r["status"] for r in disp["dispositions"]))
@@ -113,6 +131,12 @@ def gen_progress(s):
 |------|------|
 """ + "\n".join(f"| {k} | {v} |" for k,v in s["disposition"].items()) + f"""
 
+## 文档边界 (v1 范围)
+
+- **正式图表引用范围**：{s['chart_sids']} 条序列全部有真实单位（unknown unit {s['chart_critical_unknown_unit']} 条，应为 0）— 满足图表展示合同。
+- **DB-only 中间列**：仍有 `Column_*` / unknown unit 的序列为 Excel 历史中间计算列，保留在 DB 但不属于 v1 展示范围（不进入 chart_catalog，不进入 series_catalog 主表）。
+- **fx_fwd:AN (USDCNY)**：当前作为 raw 外部 seed 汇率序列（`series_type=raw`, `unit=CNY/USD`, `source=excel_seed`），历史值来自 Excel VLOOKUP 汇率查找表；后续建议完成 Wind USDCNY 月度汇率序列映射。
+
 ## 更新运行
 
 {dict(s['runs'])}
@@ -134,11 +158,80 @@ def gen_wind_coverage(s):
 """
 
 
+REVIEW_HANDOFF_POINTER = "> 当前状态见 docs/REVIEW_HANDOFF_STATUS.md (自动生成)\n"
+
+
+def gen_review_handoff_status(s):
+    """Loop 4: generated current-status snapshot, written to
+    docs/REVIEW_HANDOFF_STATUS.md. Replaces the hand-maintained top status
+    section of REVIEW_HANDOFF.md (which is no longer edited by this script)."""
+    wv_pct = (s["wind_verified"]/s["mapping_total"]*100) if s["mapping_total"] else 0
+    disp = ", ".join(f"{k} {v}" for k, v in sorted(s["disposition"].items()))
+    return f"""# Review Handoff — 当前状态 (自动生成)
+
+> 自动生成：{datetime.now().strftime('%Y-%m-%d %H:%M')} · 由 gen_status_docs.py 从数据库与配置生成
+> 历史执行记录与限制说明见 docs/REVIEW_HANDOFF.md（手维护；本文件仅承载当前快照，不覆盖历史）
+
+## 真实数据快照
+
+| 维度 | 值 |
+|------|-----|
+| series | {s['series_total']} (raw {s['by_type'].get('raw',0)} / derived {s['by_type'].get('derived',0)} / manual {s['by_type'].get('manual',0)}) |
+| observations (非空) | {s['observations']:,} |
+| metric_definitions | {s['metric_definitions']} |
+| 时间跨度 | {s['date_range'][0]} → {s['date_range'][1]} |
+| Python 复算观测 | {s['python_recompute']:,} |
+| Wind MCP 写入观测 | {s['wind_mcp_obs']} |
+| Wind verified 序列 | {s['wind_verified']}/{s['mapping_total']}（{wv_pct:.1f}%）|
+| 生产 update_plan | {s['update_plan']} 条（仅 wind_verified）|
+| 正式图表 | {s['charts_total']}（{s['charts_primary']} primary + {s['charts_drilldown']} drill-down）|
+| 散点图 | {s['scatter']} |
+| 季节性图 | {s['seasonality']} |
+| 图表引用序列 | {s['chart_sids']} |
+| chart-critical Excel 缓存 | {s['chart_cached']}（应为 0）|
+| chart-critical unknown unit | {s['chart_critical_unknown_unit']}（应为 0）|
+| 66 图处置 | {sum(s['disposition'].values())} ({disp}) |
+| update_runs | {dict(s['runs'])} |
+| revision 审计 | {s['revision_audits']} |
+
+## 文档边界 (v1 范围)
+
+- **正式图表引用范围**：{s['chart_sids']} 条序列全部有真实单位（unknown unit {s['chart_critical_unknown_unit']} 条，应为 0）— 满足图表展示合同。
+- **DB-only 中间列**：仍有 `Column_*` / unknown unit 的序列为 Excel 历史中间计算列，保留在 DB 但不属于 v1 展示范围（不进入 chart_catalog，不进入 series_catalog 主表）。
+- **fx_fwd:AN (USDCNY)**：当前作为 raw 外部 seed 汇率序列（`series_type=raw`, `unit=CNY/USD`, `source=excel_seed`），历史值来自 Excel VLOOKUP 汇率查找表；后续建议完成 Wind USDCNY 月度汇率序列映射。
+
+> 不出现"全库完全清理"等超出事实的表述：正式图表口径已清理，全库中间列仍保留待处理。
+"""
+
+
+def write_review_handoff_pointer():
+    """Idempotently prepend a one-line pointer to the top of REVIEW_HANDOFF.md
+    directing readers to the generated REVIEW_HANDOFF_STATUS.md. Does NOT
+    rewrite the hand-maintained historical content below — the documented
+    exception to the 'no hand-edits to generated docs' rule. Returns True if
+    the pointer was added, False if it was already present."""
+    p = ROOT / "docs" / "REVIEW_HANDOFF.md"
+    if not p.exists():
+        return False
+    text = p.read_text(encoding="utf-8")
+    needle = "REVIEW_HANDOFF_STATUS.md (自动生成)"
+    head = "\n".join(text.splitlines()[:3])
+    if needle in head:
+        return False  # already pointed
+    p.write_text(REVIEW_HANDOFF_POINTER + text, encoding="utf-8")
+    return True
+
+
 def main():
     s = stats()
     (ROOT/"docs"/"PROGRESS_REPORT.md").write_text(gen_progress(s), encoding="utf-8")
     (ROOT/"docs"/"WIND_COVERAGE.md").write_text(gen_wind_coverage(s), encoding="utf-8")
-    print("Generated docs/PROGRESS_REPORT.md + docs/WIND_COVERAGE.md")
+    (ROOT/"docs"/"REVIEW_HANDOFF_STATUS.md").write_text(gen_review_handoff_status(s), encoding="utf-8")
+    added = write_review_handoff_pointer()
+    actions = "Generated docs/PROGRESS_REPORT.md + docs/WIND_COVERAGE.md + docs/REVIEW_HANDOFF_STATUS.md"
+    if added:
+        actions += " (+ pointer prepended to docs/REVIEW_HANDOFF.md)"
+    print(actions)
     print(json.dumps(s, ensure_ascii=False, indent=2, default=str))
 
 
