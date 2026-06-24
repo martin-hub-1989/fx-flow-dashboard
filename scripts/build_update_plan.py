@@ -20,6 +20,18 @@ from lib import get_db
 PRODUCTION_STATUSES = ("verified_exact", "verified_unit_transform")
 
 
+def _is_numeric_unit(s):
+    """True if s is a pure numeric string (e.g. '444.8627' — a polluted last
+    observation value that must NEVER represent a unit). Empty/None -> False."""
+    if s is None or s == "":
+        return False
+    try:
+        float(str(s))
+        return True
+    except (ValueError, TypeError):
+        return False
+
+
 def get_last_two_dates(conn, series_id):
     """Return the last two actual observation dates (ascending) or None.
 
@@ -72,6 +84,26 @@ def build_plan(conn, mapping_path="config/wind_mapping.json"):
                    (row[0] if row else None))
         frequency = m.get("frequency") or db_freq or "monthly"
 
+        # --- Unit resolution (Loop 2: unit must be a UNIT, never a last value) ---
+        # Priority: mapping.target_unit -> mapping.wind_unit_confirmed -> "".
+        #
+        # DB series.unit is deliberately BYPASSED for the production plan: in
+        # this project it holds 'monthly_amount' — a frequency-style generic
+        # label, NOT the currency-magnitude unit the plan needs (e.g. '亿美元').
+        # The true confirmed unit lives in the Wind-verified mapping fields used
+        # below (target_unit is the clean canonical field; wind_unit_confirmed
+        # is the human-confirmed value). See docs/REVIEW_HANDOFF.md.
+        #
+        # The legacy mapping `unit` field is NEVER read here: it has been
+        # polluted with the last observation value on the 5 verified rows.
+        # Final guard: reject any numeric-looking value (defensive; should
+        # never occur after the mapping fix) -> empty string.
+        target_unit = m.get("target_unit") or ""
+        wind_unit_confirmed = m.get("wind_unit_confirmed") or ""
+        unit = target_unit or wind_unit_confirmed or ""
+        if _is_numeric_unit(unit):
+            unit = ""  # a polluted last value must never represent a unit
+
         entry = {
             "series_id": sid,
             "display_name": m.get("display_name", ""),
@@ -83,13 +115,15 @@ def build_plan(conn, mapping_path="config/wind_mapping.json"):
             "wind_method": m.get("wind_method", "economic_data.get_economic_data"),
             "query": m.get("wind_indicator", ""),
             "frequency": frequency,
-            "unit": m.get("unit", ""),
+            "unit": unit,
             "transform": m.get("transform") or [],
             "tolerance": m.get("tolerance", 1e-6),
             # Exact Wind closure fields (Loop 6) for precise fetch.
             "wind_query_exact": m.get("wind_query_exact", ""),
             "wind_code": m.get("wind_code", ""),
             "wind_name": m.get("wind_name", ""),
+            # Loop 2: echo the Wind-confirmed unit (clean canonical value).
+            "wind_unit_confirmed": wind_unit_confirmed,
         }
         plan.append(entry)
 

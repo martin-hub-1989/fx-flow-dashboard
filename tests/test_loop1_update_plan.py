@@ -49,6 +49,130 @@ def write_mapping(entries):
     return f.name
 
 
+def _looks_numeric(s):
+    """True if s is a pure numeric string (e.g. '444.8627' — a polluted last value,
+    NOT a real unit). Empty strings and None are NOT numeric."""
+    if s is None:
+        return False
+    try:
+        float(str(s))
+        return True
+    except (ValueError, TypeError):
+        return False
+
+
+def _make_verified_mapping(sid="x:A", **overrides):
+    """A verified_unit_transform mapping with sensible defaults for unit tests."""
+    m = {
+        "series_id": sid,
+        "status": "verified_unit_transform",
+        "wind_verified": True,
+        "frequency": "monthly",
+        "wind_code": "M5201660",
+        "wind_query_exact": "中国:test:当月值",
+    }
+    m.update(overrides)
+    return m
+
+
+# --- Loop 2: unit field must carry a UNIT, never a last observation value ---
+
+def test_numeric_mapping_unit_not_propagated():
+    """A numeric `unit` in the mapping (polluted with a last value) must NOT
+    pass through into plan.unit."""
+    conn = make_db({"x:A": [("2026-03-31", 1.0), ("2026-04-30", 2.0)]})
+    mp = write_mapping([_make_verified_mapping(
+        unit="444.8627",                 # polluted last value, must NOT propagate
+        target_unit="亿美元",            # the clean, correct unit source
+    )])
+    plan = bup.build_plan(conn, mapping_path=mp)
+    os.unlink(mp)
+    assert len(plan) == 1
+    entry = plan[0]
+    assert not _looks_numeric(entry["unit"]), \
+        f"numeric mapping unit leaked into plan: entry['unit']={entry['unit']!r}"
+
+
+def test_target_unit_propagates_when_db_unit_absent():
+    """When DB series.unit is NULL (the real production case — DB unit is
+    'monthly_amount', a frequency-style label bypassed by build_plan), the
+    mapping's clean `target_unit` must propagate to plan.unit."""
+    conn = make_db({"x:A": [("2026-03-31", 1.0), ("2026-04-30", 2.0)]})
+    # make_db does NOT populate series.unit -> DB unit is NULL here.
+    mp = write_mapping([_make_verified_mapping(
+        target_unit="亿美元",
+        unit="",                          # no polluted value, but also no unit
+    )])
+    plan = bup.build_plan(conn, mapping_path=mp)
+    os.unlink(mp)
+    assert len(plan) == 1
+    assert plan[0]["unit"] == "亿美元", \
+        f"target_unit should propagate; got {plan[0]['unit']!r}"
+
+
+def test_wind_unit_confirmed_echoed():
+    """The plan entry must echo the mapping's wind_unit_confirmed field."""
+    conn = make_db({"x:A": [("2026-03-31", 1.0), ("2026-04-30", 2.0)]})
+    mp = write_mapping([_make_verified_mapping(
+        target_unit="亿美元",
+        wind_unit_confirmed="亿美元",
+    )])
+    plan = bup.build_plan(conn, mapping_path=mp)
+    os.unlink(mp)
+    assert len(plan) == 1
+    assert plan[0].get("wind_unit_confirmed") == "亿美元", \
+        f"wind_unit_confirmed not echoed; got {plan[0].get('wind_unit_confirmed')!r}"
+
+
+def test_numeric_unit_rejected_when_no_clean_source():
+    """If mapping.unit is numeric AND no target_unit/wind_unit_confirmed is
+    available, plan.unit must be empty (never the numeric value)."""
+    conn = make_db({"x:A": [("2026-03-31", 1.0), ("2026-04-30", 2.0)]})
+    mp = write_mapping([_make_verified_mapping(
+        unit="72.3267",                  # polluted, no clean alternative provided
+        target_unit=None,
+        wind_unit_confirmed="",
+    )])
+    plan = bup.build_plan(conn, mapping_path=mp)
+    os.unlink(mp)
+    assert len(plan) == 1
+    assert plan[0]["unit"] == "", \
+        f"numeric unit with no clean source must be empty; got {plan[0]['unit']!r}"
+    assert not _looks_numeric(plan[0]["unit"])
+
+
+def test_target_unit_preferred_over_wind_unit_confirmed_sentence():
+    """Priority: target_unit first. Even if wind_unit_confirmed is a verbose
+    sentence (legacy form), the clean target_unit must win."""
+    conn = make_db({"x:A": [("2026-03-31", 1.0), ("2026-04-30", 2.0)]})
+    mp = write_mapping([_make_verified_mapping(
+        target_unit="亿美元",
+        wind_unit_confirmed="亿美元 (Wind matches DB unit, no transform needed)",
+        unit="414.0625",
+    )])
+    plan = bup.build_plan(conn, mapping_path=mp)
+    os.unlink(mp)
+    assert len(plan) == 1
+    assert plan[0]["unit"] == "亿美元", \
+        f"target_unit must take priority; got {plan[0]['unit']!r}"
+
+
+def test_production_plan_units_not_numeric():
+    """Integration: every entry in the REAL production plan (built from the real
+    config/wind_mapping.json + real DB) must carry a non-numeric unit and a
+    clean wind_unit_confirmed of '亿美元'."""
+    conn = bup.get_db()
+    plan = bup.build_plan(conn, mapping_path="config/wind_mapping.json")
+    conn.close()
+    assert len(plan) > 0, "expected wind_verified entries in production config"
+    for e in plan:
+        assert not _looks_numeric(e["unit"]), \
+            f"{e['series_id']}: numeric unit leaked into production plan: {e['unit']!r}"
+        assert e.get("wind_unit_confirmed") == "亿美元", \
+            f"{e['series_id']}: wind_unit_confirmed must be clean '亿美元'; " \
+            f"got {e.get('wind_unit_confirmed')!r}"
+
+
 def test_metadata_row_does_not_error():
     conn = make_db({"x:A": [("2026-03-31", 1.0), ("2026-04-30", 2.0)]})
     mp = write_mapping([
