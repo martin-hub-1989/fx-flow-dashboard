@@ -34,13 +34,23 @@ def chart_sids():
 
 
 def test_chart_critical_derived_not_cached(conn, chart_sids):
-    """Loop 7 gate: chart-referenced derived must not be excel_cached/vlookup."""
+    """Loop 7 gate: chart-referenced derived must not be excel_cached/vlookup.
+
+    Uses a prefix check (not exact membership) so implementation variants like
+    ``excel_vlookup_lookup`` cannot slip past the gate.
+    """
+    bad_prefixes = ("excel_cached", "excel_vlookup")
     cached = []
     for sid in chart_sids:
         r = conn.execute("SELECT implementation FROM metric_definitions WHERE series_id=?",
                          (sid,)).fetchone()
-        if r and r[0] in ("excel_cached", "excel_vlookup"):
-            cached.append((sid, r[0]))
+        implementation = r[0] if r else None
+        if implementation and implementation.startswith(bad_prefixes):
+            cached.append((sid, implementation))
+        # explicit per-series assertion: no chart-critical series may be an
+        # excel_vlookup* lookup (covers excel_vlookup_lookup and friends).
+        assert not (implementation and implementation.startswith("excel_vlookup")), \
+            f"chart-critical series {sid} is excel_vlookup*: {implementation!r}"
     assert cached == [], f"chart-critical still cached: {cached}"
 
 

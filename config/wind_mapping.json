@@ -1560,7 +1560,8 @@
     "module": "3.代客即期",
     "wind_indicator": "银行代客结售汇:以美元计价:结汇:证券投资:当月值",
     "frequency": "monthly",
-    "unit": "444.8627",
+    "unit": "",
+    "target_unit": "亿美元",
     "status": "verified_unit_transform",
     "last_dates": [
       [
@@ -1599,7 +1600,7 @@
     "wind_name": "中国:银行代客结汇金额:证券投资:当月值",
     "wind_query_exact": "中国:银行代客结汇:证券投资:当月值",
     "wind_verified_at": "2026-06-23",
-    "wind_unit_confirmed": "亿美元 (Wind matches DB unit, no transform needed)"
+    "wind_unit_confirmed": "亿美元"
   },
   {
     "series_id": "fx_cspot:I",
@@ -1968,7 +1969,8 @@
     "module": "3.代客即期",
     "wind_indicator": "银行代客结售汇:以美元计价:售汇:证券投资:当月值",
     "frequency": "monthly",
-    "unit": "328.4384",
+    "unit": "",
+    "target_unit": "亿美元",
     "status": "verified_unit_transform",
     "last_dates": [
       [
@@ -2007,7 +2009,7 @@
     "wind_name": "中国:银行代客售汇金额:证券投资:当月值",
     "wind_query_exact": "中国:银行代客售汇金额:证券投资:当月值",
     "wind_verified_at": "2026-06-23",
-    "wind_unit_confirmed": "亿美元 (Wind matches DB unit, no transform needed)"
+    "wind_unit_confirmed": "亿美元"
   },
   {
     "series_id": "fx_fwd:AL",
@@ -2069,7 +2071,8 @@
     "module": "3.即远期",
     "wind_indicator": "银行自身结汇:当月值",
     "frequency": "monthly",
-    "unit": "72.3267",
+    "unit": "",
+    "target_unit": "亿美元",
     "status": "verified_unit_transform",
     "last_dates": [
       [
@@ -2128,7 +2131,7 @@
     "wind_name": "中国:银行自身结汇金额:当月值",
     "wind_query_exact": "中国:银行自身结汇金额:当月值",
     "wind_verified_at": "2026-06-23",
-    "wind_unit_confirmed": "亿美元 (Wind matches DB unit, no transform needed)"
+    "wind_unit_confirmed": "亿美元"
   },
   {
     "series_id": "fx_fwd:C",
@@ -2136,7 +2139,8 @@
     "module": "3.即远期",
     "wind_indicator": "银行自身售汇:当月值",
     "frequency": "monthly",
-    "unit": "91.7948",
+    "unit": "",
+    "target_unit": "亿美元",
     "status": "verified_unit_transform",
     "last_dates": [
       [
@@ -2195,7 +2199,7 @@
     "wind_name": "中国:银行自身售汇金额:当月值",
     "wind_query_exact": "中国:银行自身售汇金额:当月值",
     "wind_verified_at": "2026-06-23",
-    "wind_unit_confirmed": "亿美元 (Wind matches DB unit, no transform needed)"
+    "wind_unit_confirmed": "亿美元"
   },
   {
     "series_id": "fx_fwd:D",
@@ -2316,7 +2320,8 @@
     "module": "3.即远期",
     "wind_indicator": "银行代客远期售汇签约:当月值",
     "frequency": "monthly",
-    "unit": "414.0625",
+    "unit": "",
+    "target_unit": "亿美元",
     "status": "verified_unit_transform",
     "last_dates": [
       [
@@ -2376,7 +2381,7 @@
     "wind_name": "中国:银行代客远期售汇签约金额:当月值",
     "wind_query_exact": "中国:银行代客远期售汇签约额:当月值",
     "wind_verified_at": "2026-06-23",
-    "wind_unit_confirmed": "亿美元 (Wind matches DB unit, no transform needed)"
+    "wind_unit_confirmed": "亿美元"
   },
   {
     "series_id": "fx_fwd:G",

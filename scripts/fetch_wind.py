@@ -14,6 +14,22 @@ from lib import get_db
 from transforms import transform_with_audit as apply_transforms_with_audit
 
 
+def _is_numeric_unit(s):
+    """True if s is a pure numeric string (e.g. '444.8627' — a polluted last
+    observation value that must NEVER represent a unit). Empty/None -> False.
+
+    Duplicated tiny from build_update_plan.py to avoid coupling fetch_wind to
+    the plan-builder module; kept in sync. See build_update_plan._is_numeric_unit.
+    """
+    if s is None or s == "":
+        return False
+    try:
+        float(str(s))
+        return True
+    except (ValueError, TypeError):
+        return False
+
+
 def fetch_via_wind_mcp(plan_entry):
     """
     Fetch data via Wind MCP for a single series (production path).
@@ -22,7 +38,24 @@ def fetch_via_wind_mcp(plan_entry):
     (wind_query_exact + wind_code) so the query resolves to the correct EDB
     indicator — NOT a fuzzy match that can return a broader/different series.
 
-    Returns: {date: value} of fetched data (incl. overlap dates), or None.
+    Returns a dict carrying the Wind-RETURNED metadata so staging records can be
+    truthful about what Wind actually returned (Loop 3):
+
+        {
+          "data": {date: value},            # observations (match["data"])
+          "wind_code": match["code"],        # Wind-returned EDB code
+          "wind_name": match["name"],        # Wind-returned indicator name
+          "wind_unit": match["unit"],        # Wind-returned unit
+          "raw_response_summary": {          # small summary
+              "n_points": <int>, "code": ..., "name": ...,
+          },
+        }
+
+    Returns None when there is no data / no match.
+
+    The precise-indicator selection logic (wind_query_exact + wind_code +
+    pick_exact) is UNCHANGED — only the return shape changed (Loop 3) so that
+    staging records carry Wind-RETURNED metadata rather than plan-sourced values.
     """
     # Prefer the exact Wind indicator name + code captured at closure.
     exact = plan_entry.get("wind_query_exact")
@@ -51,7 +84,19 @@ def fetch_via_wind_mcp(plan_entry):
     if not match:
         return None
     # Verify concept alignment: name must contain the key term from the query.
-    return match["data"] if match["data"] else None
+    if not match["data"]:
+        return None
+    return {
+        "data": match["data"],
+        "wind_code": match["code"],
+        "wind_name": match["name"],
+        "wind_unit": match["unit"],
+        "raw_response_summary": {
+            "n_points": len(match["data"]),
+            "code": match["code"],
+            "name": match["name"],
+        },
+    }
 
 
 def simulate_fetch_from_excel(plan_entry, excel_path='FX Chartbook - Flow 0515.xlsx'):
@@ -149,10 +194,19 @@ def main():
     for entry in plan:
         sid = entry['series_id']
 
+        # meta holds Wind-RETURNED metadata (the new structured fetch result).
+        # Empty for the --simulate path (which returns bare {date: value} and
+        # therefore must fall back to plan fields for staging metadata).
+        meta = {}
         if args.simulate:
             data = simulate_fetch_from_excel(entry)
         else:
-            data = fetch_via_wind_mcp(entry)
+            result = fetch_via_wind_mcp(entry)
+            if result and result.get("data"):
+                data = result["data"]
+                meta = result
+            else:
+                data = None
 
         if data:
             # Apply controlled transform chain BEFORE staging (so overlap
@@ -167,12 +221,25 @@ def main():
 
             transformed = audit['transformed_observations']
             results[sid] = transformed
+
+            # Loop 3: staging metadata is Wind-RETURNED (authoritative) with
+            # plan fallback ONLY when Wind metadata is absent. wind_unit is
+            # guarded so a numeric-looking (polluted last-value) string is
+            # never stored — it is set to "" instead.
+            wind_unit = (meta.get("wind_unit")
+                         or entry.get("wind_unit_confirmed")
+                         or entry.get("unit", ""))
+            if _is_numeric_unit(wind_unit):
+                wind_unit = ""
+
             staging_records[sid] = {
                 "series_id": sid,
                 "query": entry.get('query', ''),
-                "wind_code": entry.get('wind_code', ''),
-                "wind_name": entry.get('wind_indicator', ''),
-                "wind_unit": entry.get('unit', ''),
+                "wind_code": meta.get("wind_code") or entry.get("wind_code", ""),
+                "wind_name": (meta.get("wind_name")
+                              or entry.get("wind_name")
+                              or entry.get("wind_indicator", "")),
+                "wind_unit": wind_unit,
                 "requested_frequency": entry.get('frequency', ''),
                 "requested_currency": entry.get('currency', ''),
                 "fetched_at": datetime.now().isoformat(),

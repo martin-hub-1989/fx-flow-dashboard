@@ -1,24 +1,27 @@
 # Data Dictionary
 
-> Auto-generated from SQLite series table by Loop A2  
-> Generated: 2026-06-22
+> Auto-generated from SQLite `series` table by `gen_data_dictionary.py`
+> Generated: 2026-06-24 22:05
+> Single source of truth: `data/monthly_brief.sqlite` · `series` table
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Series (SQLite) | 385 |
-| Raw | 159 |
-| Derived | 224 |
+| Total Series (SQLite) | 383 |
+| Raw | 158 |
+| Derived | 223 |
 | Manual | 2 |
-| With Observations | 376 |
+| With Observations | 371 |
 | Time Range | 1994-01-31 → 2026-05-31 |
+| Column_* (Excel intermediate) | 86 |
+| Unknown / empty unit | 139 |
 
 ## Known Issues
 
-- **86** series still named `Column_*` (primarily derived intermediates from Excel columns)
-- **146** series with empty/unknown units (primarily derived)
-- **27** catalog entries not imported to DB (empty/skipped columns)
+- **86** series still named `Column_*` (Excel intermediate columns; out of v1 display scope, retained in DB).
+- **139** series with empty/unknown units (primarily DB-only intermediates; chart-critical series all have a real unit).
+- `fx_fwd:AN` (USDCNY): raw external seed rate (`source=excel_seed`), history from an Excel VLOOKUP FX-rate lookup table; pending Wind USDCNY monthly-rate mapping.
 
 ## Series by Module
 
@@ -141,16 +144,16 @@
 | fx_fwd:A | 指标名称 | raw | monthly | unknown |
 | fx_fwd:AA | 远期和期权敞口变动=签约-履约 | derived | monthly | unknown |
 | fx_fwd:AB | 即期代客结售汇差额（Headline） | derived | monthly | balance |
-| fx_fwd:AC | 由于黄金买卖行为经常发生，而且规模较大，所以在多数时间里，影响“银行自身结售汇”数据波动的主要因素是 | derived | monthly | unknown |
+| fx_fwd:AC | 由于黄金买卖行为经常发生，而且规模较大，所以在多数时间里，影响“银行自身结售汇”数据波动的主要因素是国际金价的波动，这种波动和黄金市场的波动关系密切，和人民币升贬值预期基本无直接无关。 | derived | monthly | unknown |
 | fx_fwd:AD | 代客衍生品净结汇 | derived | monthly | net_flow |
 | fx_fwd:AE | 与当前市场情绪和预期变化毫无关系。计算方法：远期结售汇累计未到期额变动+本月远期结售汇签约额 | derived | monthly | cumulative_amount |
 | fx_fwd:AF | 正数流入 | derived | monthly | unknown |
 | fx_fwd:AG | 负数流出 | derived | monthly | unknown |
 | fx_fwd:AH | 远期结汇签约 | derived | monthly | unknown |
 | fx_fwd:AI | 远期购汇签约 | derived | monthly | unknown |
-| fx_fwd:AJ | 期权Delta净变动 | derived | monthly | unknown |
+| fx_fwd:AJ | 期权Delta净变动 | derived | monthly | 亿美元 |
 | fx_fwd:AL | 即期汇率:美元兑人民币:月 | raw | monthly | exchange_rate |
-| fx_fwd:AN | USDCNY | derived | monthly | unknown |
+| fx_fwd:AN | USDCNY | raw | monthly | CNY/USD |
 | fx_fwd:AO | 代客衍生品签约 | derived | monthly | unknown |
 | fx_fwd:AP | 代客衍生品签约3MMA | derived | monthly | moving_average |
 | fx_fwd:AQ | 外汇市场供求 | derived | monthly | unknown |
@@ -167,15 +170,15 @@
 | fx_fwd:L | 银行代客售汇:当月值 | raw | monthly | monthly_amount |
 | fx_fwd:M | 银行代客结售汇顺差:当月值 | raw | monthly | monthly_amount |
 | fx_fwd:N | 银行结售汇:未到期期权Delta净敞口 | raw | monthly | 亿美元 |
-| fx_fwd:Q | 银行对外股息和红利支付、海外利润汇回和注资、客户黄金买卖在国际市场平盘带来的结售汇需求（规模大常波动 | derived | monthly | unknown |
-| fx_fwd:R | 企业和个人当月真实的结售汇操作，是企业和个人根据当前市场形势作出判断后的操作结果（即期代客-远期履约 | derived | monthly | monthly_amount |
+| fx_fwd:Q | 银行对外股息和红利支付、海外利润汇回和注资、客户黄金买卖在国际市场平盘带来的结售汇需求（规模大常波动） | derived | monthly | unknown |
+| fx_fwd:R | 企业和个人当月真实的结售汇操作，是企业和个人根据当前市场形势作出判断后的操作结果（即期代客-远期履约） | derived | monthly | monthly_amount |
 | fx_fwd:S | 反映市场情绪非常直接；净结汇看升值；净售汇看贬值 | derived | monthly | net_flow |
 | fx_fwd:T | 未到期期权Delta净敞口变动 | derived | monthly | unknown |
-| fx_fwd:U | 银行自身结售汇+即期代客结售汇差额当月发生额+远期签约额+期权Delta净敞口变化（含期权，不含远期 | derived | monthly | monthly_amount |
+| fx_fwd:U | 银行自身结售汇+即期代客结售汇差额当月发生额+远期签约额+期权Delta净敞口变化（含期权，不含远期履约） | derived | monthly | monthly_amount |
 | fx_fwd:V | 即远期结售汇合计6MMA | derived | monthly | moving_average |
 | fx_fwd:W | 即远期结售汇合计12MMA | derived | monthly | moving_average |
 | fx_fwd:X | 银行自身结售汇+即期代客结售汇差额当月发生额=（headline-远期履约） | derived | monthly | monthly_amount |
-| fx_fwd:Y | 远期新增签约 | derived | monthly | unknown |
+| fx_fwd:Y | 远期新增签约 | derived | monthly | 亿美元 |
 | fx_fwd:Z | 银行自身结售汇+代客即期结售汇（含远期履约） | derived | monthly | unknown |
 | fx_fwd:deriv_flow | 衍生品当月净签约（远期+期权） | derived | monthly | net_flow |
 | fx_fwd:spot_flow | 即期结售汇发生额（银行自身+代客） | derived | monthly | net_flow |
@@ -289,7 +292,7 @@
 | sec_eq:Y | Column_Y | derived | daily | unknown |
 | sec_eq:Z | Column_Z | derived | daily | unknown |
 
-### 3.证券FI (56 series)
+### 3.证券FI (54 series)
 
 | series_id | display_name | type | frequency | unit |
 |-----------|-------------|------|-----------|------|
@@ -319,8 +322,6 @@
 | sec_fi:B | 中债:债券托管量:国债:境外机构 | raw | monthly | custody_amount |
 | sec_fi:BA | 利率债合计变动 | derived | monthly | flow |
 | sec_fi:BB | 国债+政金债变动3MMA | derived | monthly | moving_average |
-| sec_fi:BE | 中债-境外机构 | raw | monthly | unknown |
-| sec_fi:BF | 上清-境外机构 | raw | monthly | unknown |
 | sec_fi:BH | 中债国债到期收益率:10年:月 | raw | monthly | yield_pct |
 | sec_fi:BI | 美国:国债收益率:10年:月 | raw | monthly | yield_pct |
 | sec_fi:BJ | 中美利差 | derived | monthly | bp |
@@ -357,7 +358,7 @@
 | trade_goods:A | 指标名称 | raw | monthly | unknown |
 | trade_goods:AA | 滚动12个月 跨境-结汇(TTM) | derived | monthly | ttm |
 | trade_goods:AB | 滚动12个月 顺差-结汇(TTM) | derived | monthly | ttm |
-| trade_goods:AC | 已跨境未结汇头寸-滚动分位置 | derived | monthly | unknown |
+| trade_goods:AC | 已跨境未结汇头寸-滚动分位置 | derived | monthly | 分位(0-100) |
 | trade_goods:AD | 顺差未结汇头寸-滚动分位置 | derived | monthly | balance |
 | trade_goods:AF | Column_AF | raw | monthly | unknown |
 | trade_goods:AG | Column_AG | derived | monthly | unknown |
@@ -394,7 +395,7 @@
 | trade_goods:R | 进出口差额 | derived | monthly | net_flow |
 | trade_goods:S | 涉外收付差额 | derived | monthly | net_flow |
 | trade_goods:T | 即期结汇差额 | derived | monthly | net_flow |
-| trade_goods:U | 即远期结汇(估） | derived | monthly | unknown |
+| trade_goods:U | 即远期结汇(估） | derived | monthly | 亿美元 |
 | trade_goods:V | 顺差TTM | derived | monthly | ttm |
 | trade_goods:W | 流入TTM | derived | monthly | ttm |
 | trade_goods:X | 即期结汇TTM | derived | monthly | ttm |
@@ -451,4 +452,3 @@
 | trade_merchant:W | 购汇/支出 3M | derived | monthly | ratio_3m |
 | trade_merchant:X | 收付顺差净结汇意愿 | derived | monthly | ratio |
 | trade_merchant:Y | 贸易顺差净结汇意愿 | derived | monthly | ratio |
-

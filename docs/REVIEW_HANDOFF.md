@@ -1,3 +1,4 @@
+> 当前状态见 docs/REVIEW_HANDOFF_STATUS.md (自动生成)
 # Review Handoff — Final
 
 # NEXT_PHASE v1 最终状态 (2026-06-23, 由 gen_status_docs.py 生成)
@@ -26,7 +27,7 @@
 | 正式图表 | 29 (20 primary + 9 drilldown) |
 | 散点图 | 2 (含OLS回归+R²) |
 | 季节性图 | 4 (1-12月band) |
-| chart-critical Excel缓存 | 0 |
+| chart-critical Excel缓存 | 0 (Loop 1 前缀检查校正后真值为0; fx_fwd:AN→external_lookup_seed) |
 | 66图处置 | 66/66 (retained 28/merged 30/rebuilt 1/deleted 7) |
 | update_runs | 28 completed + 1 cancelled (无running) |
 | revision审计 | 0 (本次Wind写入0修订) |
@@ -50,6 +51,8 @@
 2. **fx_fwd:F 限流**: Wind MCP 间歇限流导致该序列 fetch 不全,下次重试可补。
 3. **80条mapping_pending**: iFind已验证但未用Wind重新确认;历史数据匹配可用,但未达wind_verified生产门禁。
 4. **71条DB-only序列**: Excel中间计算列(非业务展示),保留在DB但不在catalog展示主表。
+5. **fx_fwd:AN (USDCNY)**: raw 外部汇率 seed 序列(非衍生复算), `implementation=external_lookup_seed`; 历史值来自 Excel VLOOKUP 汇率查找表, 待映射 Wind USDCNY 月度汇率序列。Loop 1 校正: 原 `excel_vlookup_lookup` 绕过了 chart-critical 门禁(旧 exact-match 漏检), 已改前缀检查并经 `scripts/migrate_chart_derived3.py` 修正(brief 命名 `migrate_chart_derived2.py` 已被 Loop 7 占用, 见实时代码为准)。
+6. **DB series.unit 被 build_plan 绕过 (Loop 2)**: 5 条 wind_verified 序列的 DB `series.unit='monthly_amount'` 是频率式通用标签，非货币量纲单位；生产 `update_plan.json` 的 `unit` 改由 mapping 的 `target_unit`/`wind_unit_confirmed`（`亿美元`）解析，DB unit 不参与。原 mapping 的 `unit` 字段曾被污染为最近观测值，已置空。
 
 ## 关键脚本
 
