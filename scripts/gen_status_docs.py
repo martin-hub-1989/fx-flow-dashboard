@@ -51,7 +51,9 @@ def stats():
     cached=[]
     for sid in chart_sids:
         r=c.execute("SELECT implementation FROM metric_definitions WHERE series_id=?",(sid,)).fetchone()
-        if r and r[0] in ("excel_cached","excel_vlookup"): cached.append(sid)
+        # prefix check (not exact match) so variants like excel_vlookup_lookup
+        # cannot slip past the chart-critical gate (matches test_loop14_gates).
+        if r and r[0] and r[0].startswith(("excel_cached","excel_vlookup")): cached.append(sid)
     s["chart_cached"] = len(cached)
     # disposition
     disp = json.load(open(ROOT/"config/excel_chart_disposition.json"))

@@ -208,13 +208,18 @@ def main():
         if ok:
             passed.append((sid, comp, desc, inputs, impl, mr, sc))
 
-    # fx_fwd:AN: reclassify as raw (VLOOKUP exchange-rate lookup, not derived)
+    # fx_fwd:AN: reclassify as raw (VLOOKUP exchange-rate lookup, not derived).
+    # Loop 1 correction: implementation is 'external_lookup_seed' (NOT
+    # 'excel_vlookup_lookup', which slipped past the old exact-match chart
+    # gate). Kept consistent with scripts/migrate_chart_derived3.py so a
+    # re-run of this script cannot re-introduce the gate miss.
     conn.execute("UPDATE series SET series_type='raw', "
                  "notes=COALESCE('VLOOKUP汇率查找表(AM->AK:AL);本质raw外部数据',notes) "
                  "WHERE series_id='fx_fwd:AN' AND series_type='derived'")
     write_def(conn, 'fx_fwd:AN',
-              "VLOOKUP(AM[t],AK:AL,2,FALSE) — 按日期查USDCNY汇率查找表",
-              ['excel:AK:AL'], 'excel_vlookup_lookup',
+              "VLOOKUP(AM[t],AK:AL,2,FALSE) — Excel-seed 历史 USDCNY 汇率查找表值; "
+              "raw external_lookup_seed, 待 Wind USDCNY 月度汇率序列映射",
+              ['excel:AK:AL'], 'external_lookup_seed',
               'skip if date not in lookup table', 'CNY per USD',
               '重分类为raw: 汇率查找非计算衍生')
     print(f"\nfx_fwd:AN           reclassified raw (VLOOKUP rate lookup, not derived)")
