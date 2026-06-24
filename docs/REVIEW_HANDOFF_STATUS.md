@@ -1,6 +1,6 @@
 # Review Handoff — 当前状态 (自动生成)
 
-> 自动生成：2026-06-24 22:07 · 由 gen_status_docs.py 从数据库与配置生成
+> 自动生成：2026-06-24 22:11 · 由 gen_status_docs.py 从数据库与配置生成
 > 历史执行记录与限制说明见 docs/REVIEW_HANDOFF.md（手维护；本文件仅承载当前快照，不覆盖历史）
 
 ## 真实数据快照
