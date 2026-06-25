@@ -17,7 +17,7 @@ from lib import (
     start_update_run, finish_update_run, DB_PATH
 )
 
-WORKBOOK = Path("/Users/martin_ai/Desktop/Martin Monthly Brief/FX Chartbook - Flow 0515.xlsx")
+WORKBOOK = Path(__file__).resolve().parent.parent / "FX Chartbook - Flow 0515.xlsx"
 
 # Module prefix mapping
 MODULE_PREFIX = {

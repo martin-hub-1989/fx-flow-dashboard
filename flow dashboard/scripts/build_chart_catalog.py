@@ -29,7 +29,9 @@ CHART_COLORS = {
 }
 
 def load_chart_inventory():
-    with open(PROJECT_ROOT / '.inspection' / 'chart_inventory.json') as f:
+    # chart_inventory.json moved to 相关开发文档/.inspection/ during folder reorg
+    inv_path = PROJECT_ROOT.parent / '相关开发文档' / '.inspection' / 'chart_inventory.json'
+    with open(inv_path) as f:
         return json.load(f)
 
 def col_to_series_id(sheet, col):

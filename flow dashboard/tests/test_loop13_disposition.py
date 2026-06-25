@@ -44,7 +44,10 @@ def test_deleted_has_reason():
 
 
 def test_matches_inventory():
-    inv = json.load(open(".inspection/chart_inventory.json", encoding="utf-8"))
+    # chart_inventory.json moved to 相关开发文档/.inspection/ during folder reorg
+    inv_path = (Path(__file__).resolve().parent.parent.parent
+                / "相关开发文档" / ".inspection" / "chart_inventory.json")
+    inv = json.load(open(inv_path, encoding="utf-8"))
     inv_ids = {c["chart_id"] for c in inv}
     d = json.load(open("config/excel_chart_disposition.json", encoding="utf-8"))
     disp_ids = {r["excel_chart_id"] for r in d["dispositions"]}

@@ -97,7 +97,9 @@ DISPOSITIONS = {
 
 
 def main():
-    inv = json.load(open(PROJECT_ROOT / ".inspection" / "chart_inventory.json"))
+    # chart_inventory.json moved to 相关开发文档/.inspection/ during folder reorg
+    inv_path = PROJECT_ROOT.parent / "相关开发文档" / ".inspection" / "chart_inventory.json"
+    inv = json.load(open(inv_path))
     inv_ids = {c["chart_id"] for c in inv}
     disp_ids = set(DISPOSITIONS.keys())
 
